@@ -1,0 +1,1127 @@
+{
+  "platform": "firefox",
+  "headed": true,
+  "environment": {
+    "os": "Ubuntu 24.04.5 LTS",
+    "device": "Cyborg 15 A12VF",
+    "vendor": "Micro-Star International Co., Ltd.",
+    "execution": "headed browser on local physical laptop; no mobile emulation",
+    "student": {
+      "name": "Phạm Quang Vinh",
+      "student_id": "23120202",
+      "email": "23120202@student.hcmus.edu.vn",
+      "repository": "https://github.com/vinh-code/HW03-Software-Testing"
+    },
+    "required_platform_3": "Safari or real Android Chrome / Expo Go; pending availability",
+    "prepared_at_utc": "2026-11-10T04:26:00.684484+00:00"
+  },
+  "fixture": {
+    "users": {
+      "main": 6,
+      "empty": 7,
+      "other": 8
+    },
+    "orders": {
+      "pending": 17,
+      "confirmed": 18,
+      "shipping": 19,
+      "delivered": 20,
+      "canceled": 21,
+      "other": 22
+    }
+  },
+  "runs": {
+    "login": {
+      "results": [
+        {
+          "id": "GUI-001",
+          "status": "Failed",
+          "actual": "Tiêu đề thực tế: Đăng Ký",
+          "screenshot": "../screenshots/firefox/GUI-001.png",
+          "url": "http://localhost:5173/login",
+          "time": "2026-11-10T04:26:55.745Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-002",
+          "status": "Failed",
+          "actual": "Số h1: 0",
+          "screenshot": "../screenshots/firefox/GUI-002.png",
+          "url": "http://localhost:5173/login",
+          "time": "2026-11-10T04:26:55.788Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-003",
+          "status": "Failed",
+          "actual": "Nhãn email: Username",
+          "screenshot": "../screenshots/firefox/GUI-003.png",
+          "url": "http://localhost:5173/login",
+          "time": "2026-11-10T04:26:55.851Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-004",
+          "status": "Failed",
+          "actual": "Nhãn nút: Sign In",
+          "screenshot": "../screenshots/firefox/GUI-004.png",
+          "url": "http://localhost:5173/login",
+          "time": "2026-11-10T04:26:55.901Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-005",
+          "status": "Failed",
+          "actual": "type email: text",
+          "screenshot": "../screenshots/firefox/GUI-005.png",
+          "url": "http://localhost:5173/login",
+          "time": "2026-11-10T04:26:55.950Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-006",
+          "status": "Failed",
+          "actual": "type mật khẩu: text; nhập dữ liệu thử DemoOnly123!",
+          "screenshot": "../screenshots/firefox/GUI-006.png",
+          "url": "http://localhost:5173/login",
+          "time": "2026-11-10T04:26:56.010Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-007",
+          "status": "Failed",
+          "actual": "Nhãn: Username / Mật khẩu",
+          "screenshot": "../screenshots/firefox/GUI-007.png",
+          "url": "http://localhost:5173/login",
+          "time": "2026-11-10T04:26:56.056Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-008",
+          "status": "Passed",
+          "actual": "{\"valid\":false,\"message\":\"Please fill out this field.\"}",
+          "screenshot": "",
+          "url": "http://localhost:5173/login",
+          "time": "2026-11-10T04:26:56.099Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-009",
+          "status": "Passed",
+          "actual": "{\"valid\":false,\"message\":\"Please fill out this field.\"}",
+          "screenshot": "",
+          "url": "http://localhost:5173/login",
+          "time": "2026-11-10T04:26:56.167Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-010",
+          "status": "Failed",
+          "actual": "{\"valid\":true,\"typeMismatch\":false}; form gửi tới API và hiện lỗi đăng nhập",
+          "screenshot": "../screenshots/firefox/GUI-010.png",
+          "url": "http://localhost:5173/login",
+          "time": "2026-11-10T04:26:56.312Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-011",
+          "status": "Failed",
+          "actual": "error.y=516, button.y=424",
+          "screenshot": "../screenshots/firefox/GUI-011.png",
+          "url": "http://localhost:5173/login",
+          "time": "2026-11-10T04:26:56.366Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-012",
+          "status": "Passed",
+          "actual": "Đăng nhập thất bại. Vui lòng kiểm tra lại.",
+          "screenshot": "",
+          "url": "http://localhost:5173/login",
+          "time": "2026-11-10T04:26:56.371Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-013",
+          "status": "Failed",
+          "actual": "{\"tag\":\"BUTTON\",\"text\":\"Sign In\",\"tabIndex\":1}",
+          "screenshot": "../screenshots/firefox/GUI-013.png",
+          "url": "http://localhost:5173/login",
+          "time": "2026-11-10T04:26:56.892Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-014",
+          "status": "Passed",
+          "actual": "http://localhost:5173/forgot-password",
+          "screenshot": "",
+          "url": "http://localhost:5173/forgot-password",
+          "time": "2026-11-10T04:26:56.950Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-015",
+          "status": "Passed",
+          "actual": "http://localhost:5173/register",
+          "screenshot": "",
+          "url": "http://localhost:5173/register",
+          "time": "2026-11-10T04:26:57.095Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-016",
+          "status": "Passed",
+          "actual": "Enter đăng nhập thành công, tới http://localhost:5173/",
+          "screenshot": "",
+          "url": "http://localhost:5173/",
+          "time": "2026-11-10T04:26:57.232Z",
+          "browser": "159.0"
+        }
+      ],
+      "dialogs": [],
+      "browser": "159.0",
+      "ua": "Mozilla/5.0 (X11; Linux x86_64; rv:159.0) Gecko/20100101 Firefox/159.0",
+      "locale": "en-US"
+    },
+    "profile": {
+      "results": [
+        {
+          "id": "GUI-017",
+          "status": "Passed",
+          "actual": "Mã ĐH | Ngày đặt | Tổng tiền | Trạng thái | Thao tác",
+          "screenshot": "",
+          "url": "http://localhost:5173/profile",
+          "time": "2026-11-10T04:26:59.464Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-018",
+          "status": "Passed",
+          "actual": "Đã hủy | Đã giao | Đang giao | Đã xác nhận | Chờ xác nhận",
+          "screenshot": "",
+          "url": "http://localhost:5173/profile",
+          "time": "2026-11-10T04:26:59.469Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-019",
+          "status": "Passed",
+          "actual": "[\"rgb(254, 226, 226)\",\"rgb(220, 252, 231)\",\"rgb(219, 234, 254)\",\"rgb(224, 231, 255)\",\"rgb(254, 249, 195)\"]",
+          "screenshot": "",
+          "url": "http://localhost:5173/profile",
+          "time": "2026-11-10T04:26:59.473Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-020",
+          "status": "Passed",
+          "actual": "1,238,000 ₫ | 1,237,000 ₫ | 1,236,000 ₫ | 1,235,000 ₫ | 1,234,000 ₫",
+          "screenshot": "",
+          "url": "http://localhost:5173/profile",
+          "time": "2026-11-10T04:26:59.476Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-021",
+          "status": "Passed",
+          "actual": "[[\"#21\",\"11/10/2026\"],[\"#20\",\"11/10/2026\"],[\"#19\",\"11/10/2026\"],[\"#18\",\"11/10/2026\"],[\"#17\",\"11/10/2026\"]]",
+          "screenshot": "",
+          "url": "http://localhost:5173/profile",
+          "time": "2026-11-10T04:26:59.479Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-022",
+          "status": "Passed",
+          "actual": "background: rgb(239, 68, 68)",
+          "screenshot": "",
+          "url": "http://localhost:5173/profile",
+          "time": "2026-11-10T04:26:59.487Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-023",
+          "status": "Failed",
+          "actual": "Số h1: 0",
+          "screenshot": "../screenshots/firefox/GUI-023.png",
+          "url": "http://localhost:5173/profile",
+          "time": "2026-11-10T04:26:59.534Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-024",
+          "status": "Passed",
+          "actual": "Email disabled=true",
+          "screenshot": "",
+          "url": "http://localhost:5173/profile",
+          "time": "2026-11-10T04:26:59.538Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-025",
+          "status": "Failed",
+          "actual": "Nhãn: Họ Tên",
+          "screenshot": "../screenshots/firefox/GUI-025.png",
+          "url": "http://localhost:5173/profile",
+          "time": "2026-11-10T04:26:59.578Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-026",
+          "status": "Passed",
+          "actual": "background: rgb(37, 99, 235)",
+          "screenshot": "",
+          "url": "http://localhost:5173/profile",
+          "time": "2026-11-10T04:26:59.584Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-027",
+          "status": "Failed",
+          "actual": "[{\"type\":\"alert\",\"message\":\"Số điện thoại không hợp lệ. Vui lòng nhập đúng 9-10 chữ số.\"}]",
+          "screenshot": "../screenshots/firefox/GUI-027.png",
+          "url": "http://localhost:5173/profile",
+          "time": "2026-11-10T04:27:00.080Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-028",
+          "status": "Failed",
+          "actual": "[{\"type\":\"alert\",\"message\":\"Cập nhật thành công!\"}]",
+          "screenshot": "../screenshots/firefox/GUI-028.png",
+          "url": "http://localhost:5173/profile",
+          "time": "2026-11-10T04:27:00.517Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-029",
+          "status": "Passed",
+          "actual": "pending và confirmed đều có nút Hủy đơn",
+          "screenshot": "",
+          "url": "http://localhost:5173/profile",
+          "time": "2026-11-10T04:27:00.534Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-030",
+          "status": "Failed",
+          "actual": "shipping có 1 nút Hủy đơn",
+          "screenshot": "../screenshots/firefox/GUI-030.png",
+          "url": "http://localhost:5173/profile",
+          "time": "2026-11-10T04:27:00.577Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-031",
+          "status": "Passed",
+          "actual": "Tổng nút ở delivered/canceled: 0",
+          "screenshot": "",
+          "url": "http://localhost:5173/profile",
+          "time": "2026-11-10T04:27:00.591Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-032",
+          "status": "Passed",
+          "actual": "[{\"type\":\"alert\",\"message\":\"Hủy đơn thành công!\"}]; dòng đơn hiển thị Đã hủy",
+          "screenshot": "",
+          "url": "http://localhost:5173/profile",
+          "time": "2026-11-10T04:27:00.720Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-033",
+          "status": "Passed",
+          "actual": "[{\"type\":\"alert\",\"message\":\"Hủy đơn thành công!\"}]; dòng đơn hiển thị Đã hủy",
+          "screenshot": "",
+          "url": "http://localhost:5173/profile",
+          "time": "2026-11-10T04:27:00.871Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-034",
+          "status": "Passed",
+          "actual": "Sau reload: 5 đơn, phiên vẫn còn",
+          "screenshot": "",
+          "url": "http://localhost:5173/profile",
+          "time": "2026-11-10T04:27:01.003Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-035",
+          "status": "Passed",
+          "actual": "Các đơn hiển thị #21, #20, #19, #18, #17; đơn khác #22",
+          "screenshot": "",
+          "url": "http://localhost:5173/profile",
+          "time": "2026-11-10T04:27:01.023Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-036",
+          "status": "Failed",
+          "actual": "Nội dung trong lúc API trì hoãn 1800ms: Hồ sơ của bạn\nEmail (Không đổi)\nHọ Tên\nSố điện thoại\nĐịa chỉ giao hàng\nCập nhật\nLịch sử đơn hàng\n\nBạn chưa có đơn hàng nào.",
+          "screenshot": "../screenshots/firefox/GUI-036.png",
+          "url": "http://localhost:5173/profile",
+          "time": "2026-11-10T04:27:01.210Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-037",
+          "status": "Failed",
+          "actual": "HTTP 500 được mô phỏng tại biên mạng; UI: Hồ sơ của bạn\nEmail (Không đổi)\nHọ Tên\nSố điện thoại\nĐịa chỉ giao hàng\nCập nhật\nLịch sử đơn hàng\n\nBạn chưa có đơn hàng nào.",
+          "screenshot": "../screenshots/firefox/GUI-037.png",
+          "url": "http://localhost:5173/profile",
+          "time": "2026-11-10T04:27:03.624Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-038",
+          "status": "Failed",
+          "actual": "Thông điệp: Bạn chưa có đơn hàng nào.; số icon/ảnh: 0",
+          "screenshot": "../screenshots/firefox/GUI-038.png",
+          "url": "http://localhost:5173/profile",
+          "time": "2026-11-10T04:27:04.639Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-039",
+          "status": "Failed",
+          "actual": "Nhãn: Thoát",
+          "screenshot": "../screenshots/firefox/GUI-039.png",
+          "url": "http://localhost:5173/profile",
+          "time": "2026-11-10T04:27:05.666Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-040",
+          "status": "Failed",
+          "actual": "class tại Profile=hover:underline text-yellow-300; tại Home=hover:underline text-yellow-300",
+          "screenshot": "../screenshots/firefox/GUI-040.png",
+          "url": "http://localhost:5173/",
+          "time": "2026-11-10T04:27:05.762Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-041",
+          "status": "Passed",
+          "actual": "http://localhost:5173/profile",
+          "screenshot": "",
+          "url": "http://localhost:5173/profile",
+          "time": "2026-11-10T04:27:05.810Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-042",
+          "status": "Passed",
+          "actual": "Back -> http://localhost:5173/; link hồ sơ vẫn hiện",
+          "screenshot": "",
+          "url": "http://localhost:5173/",
+          "time": "2026-11-10T04:27:05.824Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-043",
+          "status": "Failed",
+          "actual": "Đã thêm 1 sản phẩm; link giỏ: Giỏ hàng",
+          "screenshot": "../screenshots/firefox/GUI-043.png",
+          "url": "http://localhost:5173/",
+          "time": "2026-11-10T04:27:05.903Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-044",
+          "status": "Passed",
+          "actual": "Đăng xuất -> Vui lòng đăng nhập; không hiện đơn",
+          "screenshot": "",
+          "url": "http://localhost:5173/profile",
+          "time": "2026-11-10T04:27:06.012Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-056",
+          "status": "Failed",
+          "actual": "[{\"type\":\"INPUT\",\"labels\":0},{\"type\":\"INPUT\",\"labels\":0},{\"type\":\"TEXTAREA\",\"labels\":0}]",
+          "screenshot": "../screenshots/firefox/GUI-056.png",
+          "url": "http://localhost:5173/profile",
+          "time": "2026-11-10T04:27:07.045Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-057",
+          "status": "Failed",
+          "actual": "{\"viewport\":360,\"scroll\":394}",
+          "screenshot": "../screenshots/firefox/GUI-057.png",
+          "url": "http://localhost:5173/profile",
+          "time": "2026-11-10T04:27:07.476Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-058",
+          "status": "Failed",
+          "actual": "Số thẻ b được render: 1; text: Chào, GUI_NAME",
+          "screenshot": "../screenshots/firefox/GUI-058.png",
+          "url": "http://localhost:5173/profile",
+          "time": "2026-11-10T04:27:08.049Z",
+          "browser": "159.0"
+        }
+      ],
+      "dialogs": [
+        {
+          "type": "alert",
+          "message": "Số điện thoại không hợp lệ. Vui lòng nhập đúng 9-10 chữ số."
+        },
+        {
+          "type": "alert",
+          "message": "Cập nhật thành công!"
+        },
+        {
+          "type": "alert",
+          "message": "Hủy đơn thành công!"
+        },
+        {
+          "type": "alert",
+          "message": "Hủy đơn thành công!"
+        }
+      ],
+      "browser": "159.0",
+      "ua": "Mozilla/5.0 (X11; Linux x86_64; rv:159.0) Gecko/20100101 Firefox/159.0",
+      "locale": "en-US"
+    },
+    "admin": {
+      "results": [
+        {
+          "id": "GUI-045",
+          "status": "Passed",
+          "actual": "Chờ xác nhận | Đã xác nhận | Đang giao | Đã giao | Đã hủy",
+          "screenshot": "",
+          "url": "http://localhost:5174/",
+          "time": "2026-11-10T04:27:09.621Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-046",
+          "status": "Passed",
+          "actual": "pending: Xác nhận | Hủy",
+          "screenshot": "",
+          "url": "http://localhost:5174/",
+          "time": "2026-11-10T04:27:09.656Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-047",
+          "status": "Passed",
+          "actual": "confirmed: Giao hàng | Hủy",
+          "screenshot": "",
+          "url": "http://localhost:5174/",
+          "time": "2026-11-10T04:27:09.667Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-048",
+          "status": "Passed",
+          "actual": "shipping: Hoàn thành",
+          "screenshot": "",
+          "url": "http://localhost:5174/",
+          "time": "2026-11-10T04:27:09.680Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-049",
+          "status": "Passed",
+          "actual": "delivered: []",
+          "screenshot": "",
+          "url": "http://localhost:5174/",
+          "time": "2026-11-10T04:27:09.692Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-050",
+          "status": "Failed",
+          "actual": "canceled: [\"Đánh dấu Đã giao\"]",
+          "screenshot": "../screenshots/firefox/GUI-050.png",
+          "url": "http://localhost:5174/",
+          "time": "2026-11-10T04:27:09.766Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-051",
+          "status": "Passed",
+          "actual": "{\"class\":\"cursor-pointer hover:text-blue-300 text-blue-400\",\"color\":\"rgb(147, 197, 253)\"}",
+          "screenshot": "",
+          "url": "http://localhost:5174/",
+          "time": "2026-11-10T04:27:09.781Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-052",
+          "status": "Failed",
+          "actual": "[\"rgb(156, 163, 175)\",\"rgb(156, 163, 175)\",\"rgb(156, 163, 175)\",\"rgb(156, 163, 175)\",\"rgb(156, 163, 175)\",\"rgb(156, 163, 175)\",\"rgb(156, 163, 175)\"]",
+          "screenshot": "../screenshots/firefox/GUI-052.png",
+          "url": "http://localhost:5174/",
+          "time": "2026-11-10T04:27:09.834Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-053",
+          "status": "Failed",
+          "actual": "Thẻ b render: 1; text: GUI_ADDRESS",
+          "screenshot": "../screenshots/firefox/GUI-053.png",
+          "url": "http://localhost:5174/",
+          "time": "2026-11-10T04:27:09.914Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-054",
+          "status": "Passed",
+          "actual": "Admin xác nhận #17; user tải lại thấy Đã xác nhận",
+          "screenshot": "",
+          "url": "http://localhost:5173/profile",
+          "time": "2026-11-10T04:27:10.967Z",
+          "browser": "159.0"
+        },
+        {
+          "id": "GUI-055",
+          "status": "Failed",
+          "actual": "[{\"type\":\"alert\",\"message\":\"Lỗi: Cannot cancel this order.\"}]; user đang xem trang cũ, admin đã chuyển đơn sang delivered",
+          "screenshot": "../screenshots/firefox/GUI-055.png",
+          "url": "http://localhost:5173/profile",
+          "time": "2026-11-10T04:27:11.460Z",
+          "browser": "159.0"
+        }
+      ],
+      "dialogs": [
+        {
+          "type": "alert",
+          "message": "Lỗi: Cannot cancel this order."
+        }
+      ],
+      "browser": "159.0",
+      "ua": "Mozilla/5.0 (X11; Linux x86_64; rv:159.0) Gecko/20100101 Firefox/159.0",
+      "locale": "en-US"
+    }
+  },
+  "results": [
+    {
+      "id": "GUI-001",
+      "status": "Failed",
+      "actual": "Tiêu đề thực tế: Đăng Ký",
+      "screenshot": "../screenshots/firefox/GUI-001.png",
+      "url": "http://localhost:5173/login",
+      "time": "2026-11-10T04:26:55.745Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-002",
+      "status": "Failed",
+      "actual": "Số h1: 0",
+      "screenshot": "../screenshots/firefox/GUI-002.png",
+      "url": "http://localhost:5173/login",
+      "time": "2026-11-10T04:26:55.788Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-003",
+      "status": "Failed",
+      "actual": "Nhãn email: Username",
+      "screenshot": "../screenshots/firefox/GUI-003.png",
+      "url": "http://localhost:5173/login",
+      "time": "2026-11-10T04:26:55.851Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-004",
+      "status": "Failed",
+      "actual": "Nhãn nút: Sign In",
+      "screenshot": "../screenshots/firefox/GUI-004.png",
+      "url": "http://localhost:5173/login",
+      "time": "2026-11-10T04:26:55.901Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-005",
+      "status": "Failed",
+      "actual": "type email: text",
+      "screenshot": "../screenshots/firefox/GUI-005.png",
+      "url": "http://localhost:5173/login",
+      "time": "2026-11-10T04:26:55.950Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-006",
+      "status": "Failed",
+      "actual": "type mật khẩu: text; nhập dữ liệu thử DemoOnly123!",
+      "screenshot": "../screenshots/firefox/GUI-006.png",
+      "url": "http://localhost:5173/login",
+      "time": "2026-11-10T04:26:56.010Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-007",
+      "status": "Failed",
+      "actual": "Nhãn: Username / Mật khẩu",
+      "screenshot": "../screenshots/firefox/GUI-007.png",
+      "url": "http://localhost:5173/login",
+      "time": "2026-11-10T04:26:56.056Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-008",
+      "status": "Passed",
+      "actual": "{\"valid\":false,\"message\":\"Please fill out this field.\"}",
+      "screenshot": "",
+      "url": "http://localhost:5173/login",
+      "time": "2026-11-10T04:26:56.099Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-009",
+      "status": "Passed",
+      "actual": "{\"valid\":false,\"message\":\"Please fill out this field.\"}",
+      "screenshot": "",
+      "url": "http://localhost:5173/login",
+      "time": "2026-11-10T04:26:56.167Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-010",
+      "status": "Failed",
+      "actual": "{\"valid\":true,\"typeMismatch\":false}; form gửi tới API và hiện lỗi đăng nhập",
+      "screenshot": "../screenshots/firefox/GUI-010.png",
+      "url": "http://localhost:5173/login",
+      "time": "2026-11-10T04:26:56.312Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-011",
+      "status": "Failed",
+      "actual": "error.y=516, button.y=424",
+      "screenshot": "../screenshots/firefox/GUI-011.png",
+      "url": "http://localhost:5173/login",
+      "time": "2026-11-10T04:26:56.366Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-012",
+      "status": "Passed",
+      "actual": "Đăng nhập thất bại. Vui lòng kiểm tra lại.",
+      "screenshot": "",
+      "url": "http://localhost:5173/login",
+      "time": "2026-11-10T04:26:56.371Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-013",
+      "status": "Failed",
+      "actual": "{\"tag\":\"BUTTON\",\"text\":\"Sign In\",\"tabIndex\":1}",
+      "screenshot": "../screenshots/firefox/GUI-013.png",
+      "url": "http://localhost:5173/login",
+      "time": "2026-11-10T04:26:56.892Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-014",
+      "status": "Passed",
+      "actual": "http://localhost:5173/forgot-password",
+      "screenshot": "",
+      "url": "http://localhost:5173/forgot-password",
+      "time": "2026-11-10T04:26:56.950Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-015",
+      "status": "Passed",
+      "actual": "http://localhost:5173/register",
+      "screenshot": "",
+      "url": "http://localhost:5173/register",
+      "time": "2026-11-10T04:26:57.095Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-016",
+      "status": "Passed",
+      "actual": "Enter đăng nhập thành công, tới http://localhost:5173/",
+      "screenshot": "",
+      "url": "http://localhost:5173/",
+      "time": "2026-11-10T04:26:57.232Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-017",
+      "status": "Passed",
+      "actual": "Mã ĐH | Ngày đặt | Tổng tiền | Trạng thái | Thao tác",
+      "screenshot": "",
+      "url": "http://localhost:5173/profile",
+      "time": "2026-11-10T04:26:59.464Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-018",
+      "status": "Passed",
+      "actual": "Đã hủy | Đã giao | Đang giao | Đã xác nhận | Chờ xác nhận",
+      "screenshot": "",
+      "url": "http://localhost:5173/profile",
+      "time": "2026-11-10T04:26:59.469Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-019",
+      "status": "Passed",
+      "actual": "[\"rgb(254, 226, 226)\",\"rgb(220, 252, 231)\",\"rgb(219, 234, 254)\",\"rgb(224, 231, 255)\",\"rgb(254, 249, 195)\"]",
+      "screenshot": "",
+      "url": "http://localhost:5173/profile",
+      "time": "2026-11-10T04:26:59.473Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-020",
+      "status": "Passed",
+      "actual": "1,238,000 ₫ | 1,237,000 ₫ | 1,236,000 ₫ | 1,235,000 ₫ | 1,234,000 ₫",
+      "screenshot": "",
+      "url": "http://localhost:5173/profile",
+      "time": "2026-11-10T04:26:59.476Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-021",
+      "status": "Passed",
+      "actual": "[[\"#21\",\"11/10/2026\"],[\"#20\",\"11/10/2026\"],[\"#19\",\"11/10/2026\"],[\"#18\",\"11/10/2026\"],[\"#17\",\"11/10/2026\"]]",
+      "screenshot": "",
+      "url": "http://localhost:5173/profile",
+      "time": "2026-11-10T04:26:59.479Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-022",
+      "status": "Passed",
+      "actual": "background: rgb(239, 68, 68)",
+      "screenshot": "",
+      "url": "http://localhost:5173/profile",
+      "time": "2026-11-10T04:26:59.487Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-023",
+      "status": "Failed",
+      "actual": "Số h1: 0",
+      "screenshot": "../screenshots/firefox/GUI-023.png",
+      "url": "http://localhost:5173/profile",
+      "time": "2026-11-10T04:26:59.534Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-024",
+      "status": "Passed",
+      "actual": "Email disabled=true",
+      "screenshot": "",
+      "url": "http://localhost:5173/profile",
+      "time": "2026-11-10T04:26:59.538Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-025",
+      "status": "Failed",
+      "actual": "Nhãn: Họ Tên",
+      "screenshot": "../screenshots/firefox/GUI-025.png",
+      "url": "http://localhost:5173/profile",
+      "time": "2026-11-10T04:26:59.578Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-026",
+      "status": "Passed",
+      "actual": "background: rgb(37, 99, 235)",
+      "screenshot": "",
+      "url": "http://localhost:5173/profile",
+      "time": "2026-11-10T04:26:59.584Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-027",
+      "status": "Failed",
+      "actual": "[{\"type\":\"alert\",\"message\":\"Số điện thoại không hợp lệ. Vui lòng nhập đúng 9-10 chữ số.\"}]",
+      "screenshot": "../screenshots/firefox/GUI-027.png",
+      "url": "http://localhost:5173/profile",
+      "time": "2026-11-10T04:27:00.080Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-028",
+      "status": "Failed",
+      "actual": "[{\"type\":\"alert\",\"message\":\"Cập nhật thành công!\"}]",
+      "screenshot": "../screenshots/firefox/GUI-028.png",
+      "url": "http://localhost:5173/profile",
+      "time": "2026-11-10T04:27:00.517Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-029",
+      "status": "Passed",
+      "actual": "pending và confirmed đều có nút Hủy đơn",
+      "screenshot": "",
+      "url": "http://localhost:5173/profile",
+      "time": "2026-11-10T04:27:00.534Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-030",
+      "status": "Failed",
+      "actual": "shipping có 1 nút Hủy đơn",
+      "screenshot": "../screenshots/firefox/GUI-030.png",
+      "url": "http://localhost:5173/profile",
+      "time": "2026-11-10T04:27:00.577Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-031",
+      "status": "Passed",
+      "actual": "Tổng nút ở delivered/canceled: 0",
+      "screenshot": "",
+      "url": "http://localhost:5173/profile",
+      "time": "2026-11-10T04:27:00.591Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-032",
+      "status": "Passed",
+      "actual": "[{\"type\":\"alert\",\"message\":\"Hủy đơn thành công!\"}]; dòng đơn hiển thị Đã hủy",
+      "screenshot": "",
+      "url": "http://localhost:5173/profile",
+      "time": "2026-11-10T04:27:00.720Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-033",
+      "status": "Passed",
+      "actual": "[{\"type\":\"alert\",\"message\":\"Hủy đơn thành công!\"}]; dòng đơn hiển thị Đã hủy",
+      "screenshot": "",
+      "url": "http://localhost:5173/profile",
+      "time": "2026-11-10T04:27:00.871Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-034",
+      "status": "Passed",
+      "actual": "Sau reload: 5 đơn, phiên vẫn còn",
+      "screenshot": "",
+      "url": "http://localhost:5173/profile",
+      "time": "2026-11-10T04:27:01.003Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-035",
+      "status": "Passed",
+      "actual": "Các đơn hiển thị #21, #20, #19, #18, #17; đơn khác #22",
+      "screenshot": "",
+      "url": "http://localhost:5173/profile",
+      "time": "2026-11-10T04:27:01.023Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-036",
+      "status": "Failed",
+      "actual": "Nội dung trong lúc API trì hoãn 1800ms: Hồ sơ của bạn\nEmail (Không đổi)\nHọ Tên\nSố điện thoại\nĐịa chỉ giao hàng\nCập nhật\nLịch sử đơn hàng\n\nBạn chưa có đơn hàng nào.",
+      "screenshot": "../screenshots/firefox/GUI-036.png",
+      "url": "http://localhost:5173/profile",
+      "time": "2026-11-10T04:27:01.210Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-037",
+      "status": "Failed",
+      "actual": "HTTP 500 được mô phỏng tại biên mạng; UI: Hồ sơ của bạn\nEmail (Không đổi)\nHọ Tên\nSố điện thoại\nĐịa chỉ giao hàng\nCập nhật\nLịch sử đơn hàng\n\nBạn chưa có đơn hàng nào.",
+      "screenshot": "../screenshots/firefox/GUI-037.png",
+      "url": "http://localhost:5173/profile",
+      "time": "2026-11-10T04:27:03.624Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-038",
+      "status": "Failed",
+      "actual": "Thông điệp: Bạn chưa có đơn hàng nào.; số icon/ảnh: 0",
+      "screenshot": "../screenshots/firefox/GUI-038.png",
+      "url": "http://localhost:5173/profile",
+      "time": "2026-11-10T04:27:04.639Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-039",
+      "status": "Failed",
+      "actual": "Nhãn: Thoát",
+      "screenshot": "../screenshots/firefox/GUI-039.png",
+      "url": "http://localhost:5173/profile",
+      "time": "2026-11-10T04:27:05.666Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-040",
+      "status": "Failed",
+      "actual": "class tại Profile=hover:underline text-yellow-300; tại Home=hover:underline text-yellow-300",
+      "screenshot": "../screenshots/firefox/GUI-040.png",
+      "url": "http://localhost:5173/",
+      "time": "2026-11-10T04:27:05.762Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-041",
+      "status": "Passed",
+      "actual": "http://localhost:5173/profile",
+      "screenshot": "",
+      "url": "http://localhost:5173/profile",
+      "time": "2026-11-10T04:27:05.810Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-042",
+      "status": "Passed",
+      "actual": "Back -> http://localhost:5173/; link hồ sơ vẫn hiện",
+      "screenshot": "",
+      "url": "http://localhost:5173/",
+      "time": "2026-11-10T04:27:05.824Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-043",
+      "status": "Failed",
+      "actual": "Đã thêm 1 sản phẩm; link giỏ: Giỏ hàng",
+      "screenshot": "../screenshots/firefox/GUI-043.png",
+      "url": "http://localhost:5173/",
+      "time": "2026-11-10T04:27:05.903Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-044",
+      "status": "Passed",
+      "actual": "Đăng xuất -> Vui lòng đăng nhập; không hiện đơn",
+      "screenshot": "",
+      "url": "http://localhost:5173/profile",
+      "time": "2026-11-10T04:27:06.012Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-045",
+      "status": "Passed",
+      "actual": "Chờ xác nhận | Đã xác nhận | Đang giao | Đã giao | Đã hủy",
+      "screenshot": "",
+      "url": "http://localhost:5174/",
+      "time": "2026-11-10T04:27:09.621Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-046",
+      "status": "Passed",
+      "actual": "pending: Xác nhận | Hủy",
+      "screenshot": "",
+      "url": "http://localhost:5174/",
+      "time": "2026-11-10T04:27:09.656Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-047",
+      "status": "Passed",
+      "actual": "confirmed: Giao hàng | Hủy",
+      "screenshot": "",
+      "url": "http://localhost:5174/",
+      "time": "2026-11-10T04:27:09.667Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-048",
+      "status": "Passed",
+      "actual": "shipping: Hoàn thành",
+      "screenshot": "",
+      "url": "http://localhost:5174/",
+      "time": "2026-11-10T04:27:09.680Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-049",
+      "status": "Passed",
+      "actual": "delivered: []",
+      "screenshot": "",
+      "url": "http://localhost:5174/",
+      "time": "2026-11-10T04:27:09.692Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-050",
+      "status": "Failed",
+      "actual": "canceled: [\"Đánh dấu Đã giao\"]",
+      "screenshot": "../screenshots/firefox/GUI-050.png",
+      "url": "http://localhost:5174/",
+      "time": "2026-11-10T04:27:09.766Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-051",
+      "status": "Passed",
+      "actual": "{\"class\":\"cursor-pointer hover:text-blue-300 text-blue-400\",\"color\":\"rgb(147, 197, 253)\"}",
+      "screenshot": "",
+      "url": "http://localhost:5174/",
+      "time": "2026-11-10T04:27:09.781Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-052",
+      "status": "Failed",
+      "actual": "[\"rgb(156, 163, 175)\",\"rgb(156, 163, 175)\",\"rgb(156, 163, 175)\",\"rgb(156, 163, 175)\",\"rgb(156, 163, 175)\",\"rgb(156, 163, 175)\",\"rgb(156, 163, 175)\"]",
+      "screenshot": "../screenshots/firefox/GUI-052.png",
+      "url": "http://localhost:5174/",
+      "time": "2026-11-10T04:27:09.834Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-053",
+      "status": "Failed",
+      "actual": "Thẻ b render: 1; text: GUI_ADDRESS",
+      "screenshot": "../screenshots/firefox/GUI-053.png",
+      "url": "http://localhost:5174/",
+      "time": "2026-11-10T04:27:09.914Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-054",
+      "status": "Passed",
+      "actual": "Admin xác nhận #17; user tải lại thấy Đã xác nhận",
+      "screenshot": "",
+      "url": "http://localhost:5173/profile",
+      "time": "2026-11-10T04:27:10.967Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-055",
+      "status": "Failed",
+      "actual": "[{\"type\":\"alert\",\"message\":\"Lỗi: Cannot cancel this order.\"}]; user đang xem trang cũ, admin đã chuyển đơn sang delivered",
+      "screenshot": "../screenshots/firefox/GUI-055.png",
+      "url": "http://localhost:5173/profile",
+      "time": "2026-11-10T04:27:11.460Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-056",
+      "status": "Failed",
+      "actual": "[{\"type\":\"INPUT\",\"labels\":0},{\"type\":\"INPUT\",\"labels\":0},{\"type\":\"TEXTAREA\",\"labels\":0}]",
+      "screenshot": "../screenshots/firefox/GUI-056.png",
+      "url": "http://localhost:5173/profile",
+      "time": "2026-11-10T04:27:07.045Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-057",
+      "status": "Failed",
+      "actual": "{\"viewport\":360,\"scroll\":394}",
+      "screenshot": "../screenshots/firefox/GUI-057.png",
+      "url": "http://localhost:5173/profile",
+      "time": "2026-11-10T04:27:07.476Z",
+      "browser": "159.0"
+    },
+    {
+      "id": "GUI-058",
+      "status": "Failed",
+      "actual": "Số thẻ b được render: 1; text: Chào, GUI_NAME",
+      "screenshot": "../screenshots/firefox/GUI-058.png",
+      "url": "http://localhost:5173/profile",
+      "time": "2026-11-10T04:27:08.049Z",
+      "browser": "159.0"
+    }
+  ]
+}

@@ -5,11 +5,11 @@
     "other": 8
   },
   "orders": {
-    "pending": 11,
-    "confirmed": 12,
-    "shipping": 13,
-    "delivered": 14,
-    "canceled": 15,
-    "other": 16
+    "pending": 17,
+    "confirmed": 18,
+    "shipping": 19,
+    "delivered": 20,
+    "canceled": 21,
+    "other": 22
   }
 }
