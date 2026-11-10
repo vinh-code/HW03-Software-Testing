@@ -9,7 +9,7 @@ const screenshotWithMetadata=async(path,id)=>{
  const metadata={id,student:environment.student,platform:platformKey,version:browserVersion,os:environment.os,device:environment.device,url:page.url(),utc:new Date().toISOString()};
  await page.evaluate(m=>{
   const box=document.createElement('aside');box.id='hw03-evidence-overlay';box.setAttribute('aria-hidden','true');
-  Object.assign(box.style,{position:'fixed',bottom:'0',left:'0',maxWidth:'100vw',boxSizing:'border-box',padding:'7px 12px',background:'#10243a',color:'#fff',font:'12px/1.4 sans-serif',zIndex:'2147483647',pointerEvents:'none',whiteSpace:'pre-wrap',overflowWrap:'anywhere'});
+  Object.assign(box.style,{position:'relative',width:innerWidth+'px',maxWidth:'100vw',boxSizing:'border-box',padding:'7px 12px',background:'#10243a',color:'#fff',font:'12px/1.4 sans-serif',zIndex:'2147483647',pointerEvents:'none',whiteSpace:'pre-wrap',overflowWrap:'anywhere'});
   box.textContent=`BẰNG CHỨNG KIỂM THỬ • ${m.id}\n${m.student.name} • MSSV ${m.student.student_id} • ${m.student.email}\n${m.platform} ${m.version} • ${m.os} • ${m.device}\n${m.url} • ${m.utc}`;
   document.body.appendChild(box);
  },metadata);

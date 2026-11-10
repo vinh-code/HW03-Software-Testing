@@ -1,6 +1,6 @@
 # Task 1 — GUI checklist đã thực thi
 
-58 mục; Chrome headless 156.0.8078.79 / Linux. 30 Passed, 28 Failed. Firefox và nền tảng 3 chưa chạy.
+58 mục; Chrome headless 156.0.8078.79 / Linux. 30 Passed, 28 Failed. Kết quả Firefox và nền tảng 3 xem sheet Cross-platform và báo cáo Task 3.
 
 Sinh viên 23120202 đã xác nhận duyệt Task 1. Origin AI-reviewed/AI-added vẫn ghi nguồn AI; xem task1/evidence/human_review.json.
 

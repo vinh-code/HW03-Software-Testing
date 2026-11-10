@@ -9,7 +9,7 @@ def inline(s):
  s=re.sub(r'`([^`]+)`',r'<code>\1</code>',s)
  return s
 jobs=[]
-for name in ['report/main_report','ai_audit_report','ai_critique']:
+for name in ['report/main_report','ai_audit_report','ai_critique','cross_platform/README']:
  lines=(R/(name+'.md')).read_text().splitlines();parts=[];table=False
  for line in lines:
   if line.startswith('|'):

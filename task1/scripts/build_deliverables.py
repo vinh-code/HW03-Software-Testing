@@ -52,7 +52,7 @@ counts=Counter(r['status'] for r in results.values());ias=Counter(d['ia'] for d 
 wb=Workbook();ws=wb.active;ws.title='Checklist'
 headers=['ID','IA','Screen','Expected result','Spec / basis','Origin','Why earlier AI draft missed it','Status (Chrome)','Actual / Notes','Bug ID','Screenshot','Executed UTC','Status (Firefox)','Status (Platform 3)']
 ws.append(headers)
-md=['# Task 1 — GUI checklist đã thực thi','','58 mục; Chrome headless 156.0.8078.79 / Linux. 30 Passed, 28 Failed. Firefox và nền tảng 3 chưa chạy.','','Sinh viên 23120202 đã xác nhận duyệt Task 1. Origin AI-reviewed/AI-added vẫn ghi nguồn AI; xem task1/evidence/human_review.json.','','| ID | IA | Màn hình | Mong đợi / Cơ sở | Kết quả | Thực tế | Bug / ảnh |','|---|---|---|---|---|---|---|']
+md=['# Task 1 — GUI checklist đã thực thi','','58 mục; Chrome headless 156.0.8078.79 / Linux. 30 Passed, 28 Failed. Kết quả Firefox và nền tảng 3 xem sheet Cross-platform và báo cáo Task 3.','','Sinh viên 23120202 đã xác nhận duyệt Task 1. Origin AI-reviewed/AI-added vẫn ghi nguồn AI; xem task1/evidence/human_review.json.','','| ID | IA | Màn hình | Mong đợi / Cơ sở | Kết quả | Thực tế | Bug / ảnh |','|---|---|---|---|---|---|---|']
 def esc(s):return s.replace('|',' / ').replace('\n','; ').replace('<','&lt;').replace('>','&gt;')
 for d in design:
  r=results[d['id']];bid=mapping.get(d['id'],'');ws.append([d['id'],d['ia'],d['screen'],d['expected'],d['spec'],d['origin'],d['why'],r['status'],r['actual'],bid,r['screenshot'],r['time'],'Not run','Not run'])
@@ -76,11 +76,40 @@ for d in design:
 for col,w in [('A',15),('B',38),('C',100)]:rev.column_dimensions[col].width=w
 for row in rev:
  for c in row:c.alignment=Alignment(wrap_text=True,vertical='top')
+# Read actual Task 3 runs without overwriting the reviewed Task 1 baseline.
+cross_runs={}
+for browser in ('chrome','firefox'):
+ path=ROOT/f'cross_platform/evidence/{browser}.json'
+ if path.exists():cross_runs[browser]=json.loads(path.read_text())
+if cross_runs:
+ cross=wb.create_sheet('Cross-platform')
+ cross.append(['Platform','Version','ID','Status','Actual / Notes','Screenshot','Executed UTC'])
+ for browser,run in cross_runs.items():
+  version=run['runs']['login']['browser']
+  for result in run['results']:
+   shot=f'../cross_platform/screenshots/{browser}/{result["id"]}.png' if result['screenshot'] else ''
+   cross.append([browser,version,result['id'],result['status'],result['actual'],shot,result['time']])
+   if shot:cross.cell(cross.max_row,6).hyperlink=shot
+  if browser=='firefox':
+   mapped={r['id']:r['status'] for r in run['results']}
+   for row in ws.iter_rows(min_row=2):row[12].value=mapped[row[0].value]
+   for row in s.iter_rows(min_row=2):
+    if row[0].value=='Firefox':row[1].value=f'{len(mapped)} executed; see Cross-platform'
+ cross.freeze_panes='D2';cross.auto_filter.ref=cross.dimensions
+ for col,width in zip('ABCDEFG',[14,24,14,14,90,65,28]):cross.column_dimensions[col].width=width
+ for row in cross:
+  for cell in row:cell.alignment=Alignment(wrap_text=True,vertical='top')
+ s.append(['Task 3 platforms',f'{len(cross_runs)}/3; incomplete'])
 wb.save(ROOT/'checklist/GUI_Checklist.xlsx');(ROOT/'checklist/GUI_Checklist.md').write_text('\n'.join(md)+'\n')
 for row in ws.iter_rows(min_row=2):
  if row[10].value:
   row[10].value=row[10].value.removeprefix('../')
   row[10].hyperlink=row[10].value
+if 'Cross-platform' in wb.sheetnames:
+ for row in wb['Cross-platform'].iter_rows(min_row=2):
+  if row[5].value:
+   row[5].value=row[5].value.removeprefix('../')
+   row[5].hyperlink=row[5].value
 wb.save(ROOT/'GUI_Checklist.xlsx')
 # Root Markdown is a pointer: relative evidence links remain correct in the canonical checklist.
 (ROOT/'GUI_Checklist.md').write_text('# GUI Checklist\n\nBản chính: [checklist/GUI_Checklist.md](checklist/GUI_Checklist.md). Excel ở đây đồng bộ với [bản chính](checklist/GUI_Checklist.xlsx).\n\n58 mục đã chạy: 30 Passed, 28 Failed.\n')
