@@ -8,6 +8,7 @@
   "python_scripts": "AST parse passed",
   "existing_orders": "preserved compared to SQLite backup",
   "sut_source_changes": "none; database fixtures only",
-  "github": "pending target repository",
-  "human_review": "pending"
+  "github": "23 issues published; 28 screenshot URLs verified HTTP 200 image/png",
+  "human_review": "pending",
+  "publication_verified_utc": "2026-11-10T04:19:51.041353+00:00"
 }

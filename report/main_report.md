@@ -6,7 +6,7 @@ Sinh viên: Phạm Quang Vinh — 23120202 — 23120202@student.hcmus.edu.vn.
 
 Task 1 được thực thi trên Login, Profile/Hồ sơ và Lịch sử đơn, Admin Orders; navbar và Home hỗ trợ điều hướng/thêm giỏ. Task 2 và Task 3 chưa thực thi trong báo cáo này. Phạm vi màn hình/flow không trùng thành viên khác vẫn cần sinh viên xác nhận.
 
-Kết quả: **58 mục đã chạy; 30 Passed; 28 Failed; 23 bug/phát hiện**, gồm 19 vi phạm đặc tả và 4 vấn đề UX bổ sung. Có 28 ảnh thực tế cho các mục Failed. Chưa đăng GitHub Issues vì chưa có repository đích của sinh viên. Human review và mục sinh viên tự bổ sung chưa được xác nhận.
+Kết quả: **58 mục đã chạy; 30 Passed; 28 Failed; 23 bug/phát hiện**, gồm 19 vi phạm đặc tả và 4 vấn đề UX bổ sung. Có 28 ảnh thực tế cho các mục Failed. Đã đăng 23 GitHub Issues kèm ảnh tại [HW03-Software-Testing](https://github.com/vinh-code/HW03-Software-Testing/issues). Human review và mục sinh viên tự bổ sung chưa được xác nhận.
 
 ## 2. Môi trường và phương pháp
 
@@ -51,7 +51,7 @@ Loại timeline, địa chỉ trong lịch sử, breadcrumb Profile và xác nh�
 | Màn hình chính | 3 |
 | Bug/phát hiện đã ghi file | 23 |
 | Ảnh lỗi | 28 |
-| GitHub Issues đã đăng | 0 — chờ repo đích |
+| GitHub Issues đã đăng | 23 |
 | Phiên usability đã thực hiện | 0 |
 | Nền tảng đã chạy trong Task 1 | 1 — Chrome headless/Linux |
 
@@ -63,29 +63,29 @@ Các mục Failed cùng nguyên nhân được gom để tránh báo trùng. Cá
 
 | Bug | Nội dung | Mức độ | Mục Failed |
 |---|---|---|---|
-| [BUG-001](../bugs/BUG-001.md) | Trang đăng nhập mang tiêu đề Đăng Ký | Minor | GUI-001 |
-| [BUG-002](../bugs/BUG-002.md) | Login và Profile thiếu h1 mô tả trang | Minor | GUI-002, GUI-023 |
-| [BUG-003](../bugs/BUG-003.md) | Nhãn email và nút đăng nhập dùng tiếng Anh | Minor | GUI-003, GUI-004 |
-| [BUG-004](../bugs/BUG-004.md) | Email dùng text và không chặn định dạng sai | Moderate | GUI-005, GUI-010 |
-| [BUG-005](../bugs/BUG-005.md) | Mật khẩu đăng nhập hiển thị nguyên văn | Major | GUI-006 |
-| [BUG-006](../bugs/BUG-006.md) | Thiếu dấu sao ở nhãn các trường bắt buộc | Minor | GUI-007, GUI-025 |
-| [BUG-007](../bugs/BUG-007.md) | Lỗi đăng nhập nằm dưới nút gửi | Moderate | GUI-011 |
-| [BUG-008](../bugs/BUG-008.md) | Tab từ đầu trang nhảy thẳng tới Sign In | Moderate | GUI-013 |
-| [BUG-009](../bugs/BUG-009.md) | Validation điện thoại từ chối số hợp lệ và nhận số sai | Major | GUI-027, GUI-028 |
-| [BUG-010](../bugs/BUG-010.md) | User thấy nút Hủy đơn khi đơn đang giao | Major | GUI-030 |
-| [BUG-011](../bugs/BUG-011.md) | UX: đang tải đơn lại báo chưa có đơn | Moderate | GUI-036 |
-| [BUG-012](../bugs/BUG-012.md) | UX: API tải đơn lỗi 500 bị hiển thị thành danh sách trống | Moderate | GUI-037 |
-| [BUG-013](../bugs/BUG-013.md) | Empty state lịch sử đơn thiếu hình minh họa | Minor | GUI-038 |
-| [BUG-014](../bugs/BUG-014.md) | Nút đăng xuất mang nhãn Thoát | Minor | GUI-039 |
-| [BUG-015](../bugs/BUG-015.md) | Navbar không đổi highlight theo trang hiện tại | Minor | GUI-040 |
-| [BUG-016](../bugs/BUG-016.md) | Giỏ hàng trên navbar không có badge số lượng | Moderate | GUI-043 |
-| [BUG-017](../bugs/BUG-017.md) | Admin vẫn có nút chuyển đơn Đã hủy sang Đã giao | Major | GUI-050 |
-| [BUG-018](../bugs/BUG-018.md) | Nút Hủy đơn trong Admin có màu xám | Minor | GUI-052 |
-| [BUG-019](../bugs/BUG-019.md) | Địa chỉ giao hàng trong Admin bị render HTML | Major | GUI-053 |
-| [BUG-020](../bugs/BUG-020.md) | Lỗi hủy đơn hiển thị chuỗi tiếng Anh từ API | Moderate | GUI-055 |
-| [BUG-021](../bugs/BUG-021.md) | UX: nhãn form hồ sơ không liên kết với ô nhập | Moderate | GUI-056 |
-| [BUG-022](../bugs/BUG-022.md) | UX: lịch sử đơn làm tràn ngang ở viewport 360px | Moderate | GUI-057 |
-| [BUG-023](../bugs/BUG-023.md) | Tên người dùng trên navbar bị render HTML | Major | GUI-058 |
+| [BUG-001](https://github.com/vinh-code/HW03-Software-Testing/issues/1) | Trang đăng nhập mang tiêu đề Đăng Ký | Minor | GUI-001 |
+| [BUG-002](https://github.com/vinh-code/HW03-Software-Testing/issues/2) | Login và Profile thiếu h1 mô tả trang | Minor | GUI-002, GUI-023 |
+| [BUG-003](https://github.com/vinh-code/HW03-Software-Testing/issues/3) | Nhãn email và nút đăng nhập dùng tiếng Anh | Minor | GUI-003, GUI-004 |
+| [BUG-004](https://github.com/vinh-code/HW03-Software-Testing/issues/4) | Email dùng text và không chặn định dạng sai | Moderate | GUI-005, GUI-010 |
+| [BUG-005](https://github.com/vinh-code/HW03-Software-Testing/issues/5) | Mật khẩu đăng nhập hiển thị nguyên văn | Major | GUI-006 |
+| [BUG-006](https://github.com/vinh-code/HW03-Software-Testing/issues/6) | Thiếu dấu sao ở nhãn các trường bắt buộc | Minor | GUI-007, GUI-025 |
+| [BUG-007](https://github.com/vinh-code/HW03-Software-Testing/issues/7) | Lỗi đăng nhập nằm dưới nút gửi | Moderate | GUI-011 |
+| [BUG-008](https://github.com/vinh-code/HW03-Software-Testing/issues/8) | Tab từ đầu trang nhảy thẳng tới Sign In | Moderate | GUI-013 |
+| [BUG-009](https://github.com/vinh-code/HW03-Software-Testing/issues/9) | Validation điện thoại từ chối số hợp lệ và nhận số sai | Major | GUI-027, GUI-028 |
+| [BUG-010](https://github.com/vinh-code/HW03-Software-Testing/issues/10) | User thấy nút Hủy đơn khi đơn đang giao | Major | GUI-030 |
+| [BUG-011](https://github.com/vinh-code/HW03-Software-Testing/issues/11) | UX: đang tải đơn lại báo chưa có đơn | Moderate | GUI-036 |
+| [BUG-012](https://github.com/vinh-code/HW03-Software-Testing/issues/12) | UX: API tải đơn lỗi 500 bị hiển thị thành danh sách trống | Moderate | GUI-037 |
+| [BUG-013](https://github.com/vinh-code/HW03-Software-Testing/issues/13) | Empty state lịch sử đơn thiếu hình minh họa | Minor | GUI-038 |
+| [BUG-014](https://github.com/vinh-code/HW03-Software-Testing/issues/14) | Nút đăng xuất mang nhãn Thoát | Minor | GUI-039 |
+| [BUG-015](https://github.com/vinh-code/HW03-Software-Testing/issues/15) | Navbar không đổi highlight theo trang hiện tại | Minor | GUI-040 |
+| [BUG-016](https://github.com/vinh-code/HW03-Software-Testing/issues/16) | Giỏ hàng trên navbar không có badge số lượng | Moderate | GUI-043 |
+| [BUG-017](https://github.com/vinh-code/HW03-Software-Testing/issues/17) | Admin vẫn có nút chuyển đơn Đã hủy sang Đã giao | Major | GUI-050 |
+| [BUG-018](https://github.com/vinh-code/HW03-Software-Testing/issues/18) | Nút Hủy đơn trong Admin có màu xám | Minor | GUI-052 |
+| [BUG-019](https://github.com/vinh-code/HW03-Software-Testing/issues/19) | Địa chỉ giao hàng trong Admin bị render HTML | Major | GUI-053 |
+| [BUG-020](https://github.com/vinh-code/HW03-Software-Testing/issues/20) | Lỗi hủy đơn hiển thị chuỗi tiếng Anh từ API | Moderate | GUI-055 |
+| [BUG-021](https://github.com/vinh-code/HW03-Software-Testing/issues/21) | UX: nhãn form hồ sơ không liên kết với ô nhập | Moderate | GUI-056 |
+| [BUG-022](https://github.com/vinh-code/HW03-Software-Testing/issues/22) | UX: lịch sử đơn làm tràn ngang ở viewport 360px | Moderate | GUI-057 |
+| [BUG-023](https://github.com/vinh-code/HW03-Software-Testing/issues/23) | Tên người dùng trên navbar bị render HTML | Major | GUI-058 |
 
 ### Quan sát thực tế cho từng lỗi
 
@@ -189,7 +189,7 @@ Các mục Failed cùng nguyên nhân được gom để tránh báo trùng. Cá
 ## 6. Giới hạn và việc cần làm trước khi nộp
 
 1. Sinh viên duyệt kết quả, tự bổ sung các mục AI bỏ sót và ghi lý do theo đề; xác nhận thông tin cá nhân và phạm vi không trùng nhóm.
-2. Đăng 23 issue bodies lên GitHub repo của sinh viên, đính kèm ảnh và cập nhật link; bước này đang chờ repo đích.
+2. GitHub Issues đã đăng đủ 23 mục kèm ảnh; xem [danh sách Issues](https://github.com/vinh-code/HW03-Software-Testing/issues).
 3. Task 2 (pilot, 7 người thật, phân tích) và Task 3 (ít nhất ba nền tảng) chưa hoàn thành. Không dùng số lượng dự kiến trong template làm kết quả thực tế.
 4. AI Audit Report của phiên hiện tại được lưu; lịch sử sinh checklist trước phiên này chưa có log đầy đủ. AI Critique là bản nháp, cần sinh viên tự chỉnh.
 5. Các tiêu chí bổ sung không tự động trở thành yêu cầu của đặc tả. Kết quả chỉ phản ánh môi trường và dữ liệu thử đã ghi, không chứng minh ứng dụng hoàn toàn an toàn hay tương thích mọi nền tảng.

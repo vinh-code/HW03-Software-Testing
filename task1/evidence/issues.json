@@ -8,7 +8,7 @@
     ],
     "steps": "Mở /login. Quan sát tiêu đề form.",
     "kind": "Vi phạm đặc tả",
-    "url": ""
+    "url": "https://github.com/vinh-code/HW03-Software-Testing/issues/1"
   },
   {
     "id": "BUG-002",
@@ -20,7 +20,7 @@
     ],
     "steps": "Mở /login rồi /profile sau đăng nhập. Inspect DOM trong main: kiểm tra số h1.",
     "kind": "Vi phạm đặc tả",
-    "url": ""
+    "url": "https://github.com/vinh-code/HW03-Software-Testing/issues/2"
   },
   {
     "id": "BUG-003",
@@ -32,7 +32,7 @@
     ],
     "steps": "Mở /login. Quan sát nhãn Username và nút Sign In.",
     "kind": "Vi phạm đặc tả",
-    "url": ""
+    "url": "https://github.com/vinh-code/HW03-Software-Testing/issues/3"
   },
   {
     "id": "BUG-004",
@@ -44,7 +44,7 @@
     ],
     "steps": "Mở /login. Nhập not-an-email và DemoOnly123!, bấm Sign In. Kiểm tra HTML validity và phản hồi.",
     "kind": "Vi phạm đặc tả",
-    "url": ""
+    "url": "https://github.com/vinh-code/HW03-Software-Testing/issues/4"
   },
   {
     "id": "BUG-005",
@@ -55,7 +55,7 @@
     ],
     "steps": "Mở /login. Nhập mật khẩu thử DemoOnly123!. Quan sát ký tự hiển thị và type của input.",
     "kind": "Vi phạm đặc tả",
-    "url": ""
+    "url": "https://github.com/vinh-code/HW03-Software-Testing/issues/5"
   },
   {
     "id": "BUG-006",
@@ -67,7 +67,7 @@
     ],
     "steps": "Mở /login rồi /profile với tài khoản fixture. Quan sát email, mật khẩu và Họ Tên; đối chiếu required với nhãn.",
     "kind": "Vi phạm đặc tả",
-    "url": ""
+    "url": "https://github.com/vinh-code/HW03-Software-Testing/issues/6"
   },
   {
     "id": "BUG-007",
@@ -78,7 +78,7 @@
     ],
     "steps": "Mở /login. Nhập not-an-email và DemoOnly123!, gửi form. Quan sát vị trí thông báo lỗi so với Sign In.",
     "kind": "Vi phạm đặc tả",
-    "url": ""
+    "url": "https://github.com/vinh-code/HW03-Software-Testing/issues/7"
   },
   {
     "id": "BUG-008",
@@ -89,7 +89,7 @@
     ],
     "steps": "Mở mới /login và chờ form render. Nhấn Tab lần đầu. Quan sát phần tử focus; kiểm tra tabIndex.",
     "kind": "Vi phạm đặc tả",
-    "url": ""
+    "url": "https://github.com/vinh-code/HW03-Software-Testing/issues/8"
   },
   {
     "id": "BUG-009",
@@ -101,7 +101,7 @@
     ],
     "steps": "Đăng nhập task1-main@example.test / GuiTest123!. Mở /profile. Nhập 0912345678, bấm Cập nhật; tiếp tục thử 123456789. Ghi nội dung alert mỗi lần.",
     "kind": "Vi phạm đặc tả",
-    "url": ""
+    "url": "https://github.com/vinh-code/HW03-Software-Testing/issues/9"
   },
   {
     "id": "BUG-010",
@@ -112,7 +112,7 @@
     ],
     "steps": "Seed fixture, đăng nhập tài khoản task1-main. Mở /profile, tìm đơn trạng thái Đang giao. Quan sát nút Hủy đơn.",
     "kind": "Vi phạm đặc tả",
-    "url": ""
+    "url": "https://github.com/vinh-code/HW03-Software-Testing/issues/10"
   },
   {
     "id": "BUG-011",
@@ -123,7 +123,7 @@
     ],
     "steps": "Đăng nhập tài khoản có đơn. Trì hoãn GET /api/orders/my-orders 1800ms bằng Playwright route; tải lại /profile và quan sát trong khi chờ. Đây là fault injection có ghi trong script.",
     "kind": "UX bổ sung",
-    "url": ""
+    "url": "https://github.com/vinh-code/HW03-Software-Testing/issues/11"
   },
   {
     "id": "BUG-012",
@@ -134,7 +134,7 @@
     ],
     "steps": "Đăng nhập tài khoản có đơn. Dùng Playwright route trả HTTP 500 cho GET /api/orders/my-orders; tải lại /profile. Không thay dữ liệu DOM; phản hồi mạng lỗi là dữ liệu thử có kiểm soát.",
     "kind": "UX bổ sung",
-    "url": ""
+    "url": "https://github.com/vinh-code/HW03-Software-Testing/issues/12"
   },
   {
     "id": "BUG-013",
@@ -145,7 +145,7 @@
     ],
     "steps": "Đăng nhập task1-empty@example.test / GuiTest123!, mở /profile. Quan sát khối lịch sử đơn trống.",
     "kind": "Vi phạm đặc tả",
-    "url": ""
+    "url": "https://github.com/vinh-code/HW03-Software-Testing/issues/13"
   },
   {
     "id": "BUG-014",
@@ -156,7 +156,7 @@
     ],
     "steps": "Đăng nhập và quan sát nút ở navbar.",
     "kind": "Vi phạm đặc tả",
-    "url": ""
+    "url": "https://github.com/vinh-code/HW03-Software-Testing/issues/14"
   },
   {
     "id": "BUG-015",
@@ -167,7 +167,7 @@
     ],
     "steps": "Đăng nhập. Mở /profile rồi bấm EShop về Home. So sánh màu/class của link hồ sơ giữa hai trang.",
     "kind": "Vi phạm đặc tả",
-    "url": ""
+    "url": "https://github.com/vinh-code/HW03-Software-Testing/issues/15"
   },
   {
     "id": "BUG-016",
@@ -178,7 +178,7 @@
     ],
     "steps": "Đăng nhập, vào Home. Bấm Thêm vào giỏ ở sản phẩm đầu tiên. Quan sát link Giỏ hàng trên navbar.",
     "kind": "Vi phạm đặc tả",
-    "url": ""
+    "url": "https://github.com/vinh-code/HW03-Software-Testing/issues/16"
   },
   {
     "id": "BUG-017",
@@ -189,7 +189,7 @@
     ],
     "steps": "Đăng nhập Admin bằng tài khoản demo. Chọn Đơn hàng, tìm đơn fixture Đã hủy. Quan sát nút Đánh dấu Đã giao. Ca này xác minh nút hiện sai, không tuyên bố đã bấm chuyển trạng thái.",
     "kind": "Vi phạm đặc tả",
-    "url": ""
+    "url": "https://github.com/vinh-code/HW03-Software-Testing/issues/17"
   },
   {
     "id": "BUG-018",
@@ -200,7 +200,7 @@
     ],
     "steps": "Đăng nhập Admin, chọn Đơn hàng. Quan sát các nút Hủy của pending/confirmed, kiểm tra computed background-color.",
     "kind": "Vi phạm đặc tả",
-    "url": ""
+    "url": "https://github.com/vinh-code/HW03-Software-Testing/issues/18"
   },
   {
     "id": "BUG-019",
@@ -211,7 +211,7 @@
     ],
     "steps": "Seed địa chỉ đơn fixture thành chuỗi vô hại <b>GUI_ADDRESS</b>. Mở Admin > Đơn hàng. Quan sát chữ đậm và kiểm tra có node b trong ô địa chỉ. Không dùng payload thực thi script.",
     "kind": "Vi phạm đặc tả",
-    "url": ""
+    "url": "https://github.com/vinh-code/HW03-Software-Testing/issues/19"
   },
   {
     "id": "BUG-020",
@@ -222,7 +222,7 @@
     ],
     "steps": "User mở /profile khi đơn còn confirmed. Admin chuyển cùng đơn qua shipping rồi delivered bằng API. Không tải lại trang user; bấm Hủy đơn trên dữ liệu cũ. Ghi alert Lỗi: Cannot cancel this order.",
     "kind": "Vi phạm đặc tả",
-    "url": ""
+    "url": "https://github.com/vinh-code/HW03-Software-Testing/issues/20"
   },
   {
     "id": "BUG-021",
@@ -233,7 +233,7 @@
     ],
     "steps": "Đăng nhập, mở /profile. Inspect label/control của Họ Tên, Số điện thoại, Địa chỉ. Các control có labels.length=0; thử click nhãn để kiểm tra focus.",
     "kind": "UX bổ sung",
-    "url": ""
+    "url": "https://github.com/vinh-code/HW03-Software-Testing/issues/21"
   },
   {
     "id": "BUG-022",
@@ -244,7 +244,7 @@
     ],
     "steps": "Đăng nhập, mở /profile có đơn. Đặt viewport 360x800. So sánh documentElement.scrollWidth với innerWidth và quan sát bảng bị tràn. Đây là viewport desktop, không phải mobile thật.",
     "kind": "UX bổ sung",
-    "url": ""
+    "url": "https://github.com/vinh-code/HW03-Software-Testing/issues/22"
   },
   {
     "id": "BUG-023",
@@ -255,6 +255,6 @@
     ],
     "steps": "Dùng tài khoản fixture, cập nhật name thành <b>GUI_NAME</b> qua API. Tải lại /profile. Quan sát header hiển thị chữ đậm và có node b. Khôi phục tên sau ca thử.",
     "kind": "Vi phạm đặc tả",
-    "url": ""
+    "url": "https://github.com/vinh-code/HW03-Software-Testing/issues/23"
   }
 ]

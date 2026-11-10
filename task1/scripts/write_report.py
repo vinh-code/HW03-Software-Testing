@@ -10,7 +10,7 @@ Sinh viên: Phạm Quang Vinh — 23120202 — 23120202@student.hcmus.edu.vn.
 
 Task 1 được thực thi trên Login, Profile/Hồ sơ và Lịch sử đơn, Admin Orders; navbar và Home hỗ trợ điều hướng/thêm giỏ. Task 2 và Task 3 chưa thực thi trong báo cáo này. Phạm vi màn hình/flow không trùng thành viên khác vẫn cần sinh viên xác nhận.
 
-Kết quả: **58 mục đã chạy; 30 Passed; 28 Failed; 23 bug/phát hiện**, gồm 19 vi phạm đặc tả và 4 vấn đề UX bổ sung. Có 28 ảnh thực tế cho các mục Failed. Chưa đăng GitHub Issues vì chưa có repository đích của sinh viên. Human review và mục sinh viên tự bổ sung chưa được xác nhận.
+Kết quả: **58 mục đã chạy; 30 Passed; 28 Failed; 23 bug/phát hiện**, gồm 19 vi phạm đặc tả và 4 vấn đề UX bổ sung. Có 28 ảnh thực tế cho các mục Failed. Đã đăng 23 GitHub Issues kèm ảnh tại [HW03-Software-Testing](https://github.com/vinh-code/HW03-Software-Testing/issues). Human review và mục sinh viên tự bổ sung chưa được xác nhận.
 
 ## 2. Môi trường và phương pháp
 
@@ -48,7 +48,7 @@ report+='''
 | Màn hình chính | 3 |
 | Bug/phát hiện đã ghi file | 23 |
 | Ảnh lỗi | 28 |
-| GitHub Issues đã đăng | 0 — chờ repo đích |
+| GitHub Issues đã đăng | 23 |
 | Phiên usability đã thực hiện | 0 |
 | Nền tảng đã chạy trong Task 1 | 1 — Chrome headless/Linux |
 
@@ -61,7 +61,7 @@ Các mục Failed cùng nguyên nhân được gom để tránh báo trùng. Cá
 | Bug | Nội dung | Mức độ | Mục Failed |
 |---|---|---|---|
 '''
-for i in issues:report+=f'| [{i["id"]}](../bugs/{i["id"]}.md) | {i["title"]} | {i["severity"]} | {", ".join(i["cases"])} |\n'
+for i in issues:report+=f'| [{i["id"]}]({i["url"]}) | {i["title"]} | {i["severity"]} | {", ".join(i["cases"])} |\n'
 report+='\n### Quan sát thực tế cho từng lỗi\n\n'
 for i in issues:
  report+=f'**{i["id"]} — {i["title"]}**\n\n'
@@ -72,7 +72,7 @@ for i in issues:
 report+='''## 6. Giới hạn và việc cần làm trước khi nộp
 
 1. Sinh viên duyệt kết quả, tự bổ sung các mục AI bỏ sót và ghi lý do theo đề; xác nhận thông tin cá nhân và phạm vi không trùng nhóm.
-2. Đăng 23 issue bodies lên GitHub repo của sinh viên, đính kèm ảnh và cập nhật link; bước này đang chờ repo đích.
+2. GitHub Issues đã đăng đủ 23 mục kèm ảnh; xem [danh sách Issues](https://github.com/vinh-code/HW03-Software-Testing/issues).
 3. Task 2 (pilot, 7 người thật, phân tích) và Task 3 (ít nhất ba nền tảng) chưa hoàn thành. Không dùng số lượng dự kiến trong template làm kết quả thực tế.
 4. AI Audit Report của phiên hiện tại được lưu; lịch sử sinh checklist trước phiên này chưa có log đầy đủ. AI Critique là bản nháp, cần sinh viên tự chỉnh.
 5. Các tiêu chí bổ sung không tự động trở thành yêu cầu của đặc tả. Kết quả chỉ phản ánh môi trường và dữ liệu thử đã ghi, không chứng minh ứng dụng hoàn toàn an toàn hay tương thích mọi nền tảng.
@@ -91,7 +91,9 @@ report+='''## 6. Giới hạn và việc cần làm trước khi nộp
 
 Sinh viên: Phạm Quang Vinh — 23120202 — 23120202@student.hcmus.edu.vn.
 
-**Task 1 đã chạy tại local; GitHub Issues và human review còn chờ. Task 2/3 chưa thực hiện.**
+**Task 1 đã chạy và đăng 23 GitHub Issues kèm ảnh; sinh viên cần human review. Task 2/3 chưa thực hiện.**
+
+Repository: [vinh-code/HW03-Software-Testing](https://github.com/vinh-code/HW03-Software-Testing) · [GitHub Issues](https://github.com/vinh-code/HW03-Software-Testing/issues)
 
 - [Báo cáo chính Markdown](report/main_report.md) / [PDF](report/main_report.pdf)
 - [Checklist Excel](checklist/GUI_Checklist.xlsx) / [Markdown](checklist/GUI_Checklist.md)
@@ -109,7 +111,7 @@ Sinh viên: Phạm Quang Vinh — 23120202 — 23120202@student.hcmus.edu.vn.
 | Passed / Failed | 30 / 28 |
 | Bug/phát hiện | 23 (19 vi phạm spec, 4 UX bổ sung) |
 | Ảnh Failed | 28 |
-| GitHub Issues đã đăng | 0; chờ repo của sinh viên |
+| GitHub Issues đã đăng | 23 |
 | Flow usability / phiên / người tham gia thực tế | 0 / 0 / 0 |
 | Nền tảng đã test | 1: Chrome headless / Linux |
 | Demo video | Chưa thực hiện |
@@ -118,7 +120,7 @@ Sinh viên: Phạm Quang Vinh — 23120202 — 23120202@student.hcmus.edu.vn.
 
 | Tiêu chí | Điểm tối đa | Tự chấm |
 |---|---|---|
-| Task 1 | 30 | Chờ human review và GitHub Issues |
+| Task 1 | 30 | Chờ sinh viên duyệt/tự bổ sung |
 | Task 2 | 40 | Chưa thực hiện |
 | Task 3 | 20 | Chưa đủ ba nền tảng |
 | Agent Skills | 10 | Chưa xây skill riêng |

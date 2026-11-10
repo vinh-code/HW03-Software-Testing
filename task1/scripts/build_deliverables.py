@@ -57,6 +57,7 @@ def esc(s):return s.replace('|',' / ').replace('\n','; ').replace('<','&lt;').re
 for d in design:
  r=results[d['id']];bid=mapping.get(d['id'],'');ws.append([d['id'],d['ia'],d['screen'],d['expected'],d['spec'],d['origin'],d['why'],r['status'],r['actual'],bid,r['screenshot'],r['time'],'Not run','Not run'])
  if r['screenshot']:ws.cell(ws.max_row,11).hyperlink=r['screenshot']
+ if bid and previous.get(bid):ws.cell(ws.max_row,10).hyperlink=previous[bid]
  links=f'[{bid}](../bugs/{bid}.md) / [ảnh]({r["screenshot"]})' if bid else ''
  md.append('| '+' | '.join([d['id'],d['ia'],d['screen'],esc(d['expected']+' — '+d['spec']),r['status'],esc(r['actual']),links])+' |')
 ws.freeze_panes='D2';ws.auto_filter.ref=ws.dimensions

@@ -1,0 +1,241 @@
+{
+  "repository": "https://github.com/vinh-code/HW03-Software-Testing",
+  "issue_count": 23,
+  "image_count": 28,
+  "issues": [
+    {
+      "number": 23,
+      "url": "https://github.com/vinh-code/HW03-Software-Testing/issues/23"
+    },
+    {
+      "number": 22,
+      "url": "https://github.com/vinh-code/HW03-Software-Testing/issues/22"
+    },
+    {
+      "number": 21,
+      "url": "https://github.com/vinh-code/HW03-Software-Testing/issues/21"
+    },
+    {
+      "number": 20,
+      "url": "https://github.com/vinh-code/HW03-Software-Testing/issues/20"
+    },
+    {
+      "number": 19,
+      "url": "https://github.com/vinh-code/HW03-Software-Testing/issues/19"
+    },
+    {
+      "number": 18,
+      "url": "https://github.com/vinh-code/HW03-Software-Testing/issues/18"
+    },
+    {
+      "number": 17,
+      "url": "https://github.com/vinh-code/HW03-Software-Testing/issues/17"
+    },
+    {
+      "number": 16,
+      "url": "https://github.com/vinh-code/HW03-Software-Testing/issues/16"
+    },
+    {
+      "number": 15,
+      "url": "https://github.com/vinh-code/HW03-Software-Testing/issues/15"
+    },
+    {
+      "number": 14,
+      "url": "https://github.com/vinh-code/HW03-Software-Testing/issues/14"
+    },
+    {
+      "number": 13,
+      "url": "https://github.com/vinh-code/HW03-Software-Testing/issues/13"
+    },
+    {
+      "number": 12,
+      "url": "https://github.com/vinh-code/HW03-Software-Testing/issues/12"
+    },
+    {
+      "number": 11,
+      "url": "https://github.com/vinh-code/HW03-Software-Testing/issues/11"
+    },
+    {
+      "number": 10,
+      "url": "https://github.com/vinh-code/HW03-Software-Testing/issues/10"
+    },
+    {
+      "number": 9,
+      "url": "https://github.com/vinh-code/HW03-Software-Testing/issues/9"
+    },
+    {
+      "number": 8,
+      "url": "https://github.com/vinh-code/HW03-Software-Testing/issues/8"
+    },
+    {
+      "number": 7,
+      "url": "https://github.com/vinh-code/HW03-Software-Testing/issues/7"
+    },
+    {
+      "number": 6,
+      "url": "https://github.com/vinh-code/HW03-Software-Testing/issues/6"
+    },
+    {
+      "number": 5,
+      "url": "https://github.com/vinh-code/HW03-Software-Testing/issues/5"
+    },
+    {
+      "number": 4,
+      "url": "https://github.com/vinh-code/HW03-Software-Testing/issues/4"
+    },
+    {
+      "number": 3,
+      "url": "https://github.com/vinh-code/HW03-Software-Testing/issues/3"
+    },
+    {
+      "number": 2,
+      "url": "https://github.com/vinh-code/HW03-Software-Testing/issues/2"
+    },
+    {
+      "number": 1,
+      "url": "https://github.com/vinh-code/HW03-Software-Testing/issues/1"
+    }
+  ],
+  "images": [
+    {
+      "url": "https://raw.githubusercontent.com/vinh-code/HW03-Software-Testing/f9f6ee2a9548aa1463b5a5999596d26c01037606/bugs/screenshots/GUI-001.png",
+      "status": 200,
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/vinh-code/HW03-Software-Testing/f9f6ee2a9548aa1463b5a5999596d26c01037606/bugs/screenshots/GUI-002.png",
+      "status": 200,
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/vinh-code/HW03-Software-Testing/f9f6ee2a9548aa1463b5a5999596d26c01037606/bugs/screenshots/GUI-003.png",
+      "status": 200,
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/vinh-code/HW03-Software-Testing/f9f6ee2a9548aa1463b5a5999596d26c01037606/bugs/screenshots/GUI-004.png",
+      "status": 200,
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/vinh-code/HW03-Software-Testing/f9f6ee2a9548aa1463b5a5999596d26c01037606/bugs/screenshots/GUI-005.png",
+      "status": 200,
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/vinh-code/HW03-Software-Testing/f9f6ee2a9548aa1463b5a5999596d26c01037606/bugs/screenshots/GUI-006.png",
+      "status": 200,
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/vinh-code/HW03-Software-Testing/f9f6ee2a9548aa1463b5a5999596d26c01037606/bugs/screenshots/GUI-007.png",
+      "status": 200,
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/vinh-code/HW03-Software-Testing/f9f6ee2a9548aa1463b5a5999596d26c01037606/bugs/screenshots/GUI-010.png",
+      "status": 200,
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/vinh-code/HW03-Software-Testing/f9f6ee2a9548aa1463b5a5999596d26c01037606/bugs/screenshots/GUI-011.png",
+      "status": 200,
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/vinh-code/HW03-Software-Testing/f9f6ee2a9548aa1463b5a5999596d26c01037606/bugs/screenshots/GUI-013.png",
+      "status": 200,
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/vinh-code/HW03-Software-Testing/f9f6ee2a9548aa1463b5a5999596d26c01037606/bugs/screenshots/GUI-023.png",
+      "status": 200,
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/vinh-code/HW03-Software-Testing/f9f6ee2a9548aa1463b5a5999596d26c01037606/bugs/screenshots/GUI-025.png",
+      "status": 200,
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/vinh-code/HW03-Software-Testing/f9f6ee2a9548aa1463b5a5999596d26c01037606/bugs/screenshots/GUI-027.png",
+      "status": 200,
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/vinh-code/HW03-Software-Testing/f9f6ee2a9548aa1463b5a5999596d26c01037606/bugs/screenshots/GUI-028.png",
+      "status": 200,
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/vinh-code/HW03-Software-Testing/f9f6ee2a9548aa1463b5a5999596d26c01037606/bugs/screenshots/GUI-030.png",
+      "status": 200,
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/vinh-code/HW03-Software-Testing/f9f6ee2a9548aa1463b5a5999596d26c01037606/bugs/screenshots/GUI-036.png",
+      "status": 200,
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/vinh-code/HW03-Software-Testing/f9f6ee2a9548aa1463b5a5999596d26c01037606/bugs/screenshots/GUI-037.png",
+      "status": 200,
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/vinh-code/HW03-Software-Testing/f9f6ee2a9548aa1463b5a5999596d26c01037606/bugs/screenshots/GUI-038.png",
+      "status": 200,
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/vinh-code/HW03-Software-Testing/f9f6ee2a9548aa1463b5a5999596d26c01037606/bugs/screenshots/GUI-039.png",
+      "status": 200,
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/vinh-code/HW03-Software-Testing/f9f6ee2a9548aa1463b5a5999596d26c01037606/bugs/screenshots/GUI-040.png",
+      "status": 200,
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/vinh-code/HW03-Software-Testing/f9f6ee2a9548aa1463b5a5999596d26c01037606/bugs/screenshots/GUI-043.png",
+      "status": 200,
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/vinh-code/HW03-Software-Testing/f9f6ee2a9548aa1463b5a5999596d26c01037606/bugs/screenshots/GUI-050.png",
+      "status": 200,
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/vinh-code/HW03-Software-Testing/f9f6ee2a9548aa1463b5a5999596d26c01037606/bugs/screenshots/GUI-052.png",
+      "status": 200,
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/vinh-code/HW03-Software-Testing/f9f6ee2a9548aa1463b5a5999596d26c01037606/bugs/screenshots/GUI-053.png",
+      "status": 200,
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/vinh-code/HW03-Software-Testing/f9f6ee2a9548aa1463b5a5999596d26c01037606/bugs/screenshots/GUI-055.png",
+      "status": 200,
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/vinh-code/HW03-Software-Testing/f9f6ee2a9548aa1463b5a5999596d26c01037606/bugs/screenshots/GUI-056.png",
+      "status": 200,
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/vinh-code/HW03-Software-Testing/f9f6ee2a9548aa1463b5a5999596d26c01037606/bugs/screenshots/GUI-057.png",
+      "status": 200,
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/vinh-code/HW03-Software-Testing/f9f6ee2a9548aa1463b5a5999596d26c01037606/bugs/screenshots/GUI-058.png",
+      "status": 200,
+      "content_type": "image/png"
+    }
+  ]
+}
