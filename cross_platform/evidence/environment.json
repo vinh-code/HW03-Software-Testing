@@ -1,0 +1,14 @@
+{
+  "os": "Ubuntu 24.04.5 LTS",
+  "device": "Cyborg 15 A12VF",
+  "vendor": "Micro-Star International Co., Ltd.",
+  "execution": "headed browser on local physical laptop; no mobile emulation",
+  "student": {
+    "name": "Phạm Quang Vinh",
+    "student_id": "23120202",
+    "email": "23120202@student.hcmus.edu.vn",
+    "repository": "https://github.com/vinh-code/HW03-Software-Testing"
+  },
+  "required_platform_3": "Safari or real Android Chrome / Expo Go; pending availability",
+  "prepared_at_utc": "2026-11-10T04:26:00.684484+00:00"
+}
