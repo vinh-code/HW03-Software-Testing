@@ -4,7 +4,7 @@
 |---|---|
 | Chủ đề | Người dùng xem lại các đơn đã đặt, theo dõi trạng thái và hủy đơn |
 | FR liên quan | FR-10 (State machine), FR-11 (Lịch sử đơn), FR-18 (Admin đơn hàng), FR-20 (Mobile); GUI: FR-21 đến FR-24 |
-| Màn hình Task 1 | Order History (Web, trong `/profile`), Mobile Orders (Expo), Admin Orders; màn phụ trợ: Login, Global (navbar) |
+| Màn hình Task 1 | Đã điều chỉnh: Login, Profile/Lịch sử đơn (Web), Admin Orders; navbar/Home phụ trợ. Xem `../task1/DESIGN_REVIEW.md`. Mobile chưa kiểm thử. |
 | Flow Task 2 | Đăng nhập → Lịch sử đơn → Xem trạng thái (đã giao / đang giao) → Hủy đơn không còn cần → Thử hủy đơn đang giao |
 
 ## Những gì SUT có và không có (khảo sát mã nguồn, chưa chạy test)
@@ -21,5 +21,5 @@
 | Đổi trạng thái đơn | Có (Admin) | `frontend-admin` → "Quản lý Đơn hàng"; dùng để tạo tình huống đang giao/đã giao |
 
 ## Cách dùng trong bài
-- Các mục checklist có `Spec ref = "Ngoài spec"` là thực hành UX tốt nhưng spec không yêu cầu. Khi chạy có thể đánh **N/A** hoặc **Failed**, ghi lý do vào Notes. Hãy thống nhất cách chấm với TA nếu cần.
+- Task 1 dùng bộ 58 mục đã rà soát; tiêu chí UX bổ sung ghi rõ cơ sở và không được báo thành vi phạm FR. Bộ 70 mục cũ chỉ còn trong Git baseline.
 - Nếu làm nhóm, màn hình chính và flow phải khác bạn cùng nhóm (đề §5).

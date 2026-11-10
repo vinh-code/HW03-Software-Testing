@@ -1,85 +1,204 @@
-# HW03 – GUI & Usability: Báo cáo chính
+# HW03 — GUI & Usability: báo cáo thực thi Task 1
 
-| | |
+Sinh viên: <Họ tên> — <MSSV> — <email sinh viên> (chờ xác nhận).
+
+## 1. Phạm vi và trạng thái
+
+Task 1 được thực thi trên Login, Profile/Hồ sơ và Lịch sử đơn, Admin Orders; navbar và Home hỗ trợ điều hướng/thêm giỏ. Task 2 và Task 3 chưa thực thi trong báo cáo này. Phạm vi màn hình/flow không trùng thành viên khác vẫn cần sinh viên xác nhận.
+
+Kết quả: **58 mục đã chạy; 30 Passed; 28 Failed; 23 bug/phát hiện**, gồm 19 vi phạm đặc tả và 4 vấn đề UX bổ sung. Có 28 ảnh thực tế cho các mục Failed. Chưa đăng GitHub Issues vì chưa có repository đích của sinh viên. Human review và mục sinh viên tự bổ sung chưa được xác nhận.
+
+## 2. Môi trường và phương pháp
+
+- Ngày: 10/11/2026; thời gian từng mục lưu UTC trong JSON/Excel.
+- SUT: EShop, commit 85af3ba; không sửa mã nguồn SUT trong lượt kiểm thử.
+- OS: Linux x86_64. Trình duyệt thực: Chrome headless 156.0.8078.79, locale en-US.
+- Web: http://localhost:5173; Admin: http://localhost:5174; API: http://localhost:3000.
+- Viewport: 1366×900; GUI-057 dùng 360×800. Viewport hẹp không được tính là thiết bị mobile thật.
+- Dùng Playwright CLI chạy tương tác thật, DOM/computed styles để đo và SQLite/API chuẩn bị fixture riêng. Không đánh Passed/Failed chỉ từ đọc source.
+- Account fixture: task1-main@example.test, task1-empty@example.test, task1-other@example.test; mật khẩu demo GuiTest123!. Đây là dữ liệu thử, không phải participants Task 2.
+- Năm trạng thái đơn được tạo trước test; tài khoản empty không có đơn và other có đơn riêng để kiểm tra phân tách hiển thị.
+- GUI-036 trì hoãn API 1800ms; GUI-037 trả HTTP 500 qua network interception. GUI-055 dùng tình huống dữ liệu cũ khi admin đổi trạng thái.
+- Native alert được ghi text/type trong JSON rồi đóng tự động. Ảnh tương ứng là nền trang sau khi đóng; không giả lập ảnh hộp thoại.
+
+## 3. Thiết kế và rà soát với AI
+
+Checklist cũ có 70 mục, gồm mobile, các yêu cầu ngoài spec và mục gộp khó kết luận. Bản mới có 58 mục, IA-01: 15; IA-02: 19; IA-03: 10; IA-04: 14. Mỗi mục có tiêu chí mong đợi, cơ sở, nguồn, kết quả, thực tế, Bug ID và ảnh.
+
+Loại timeline, địa chỉ trong lịch sử, breadcrumb Profile và xác nhận hủy đơn vì đặc tả không bắt buộc. Loại mobile khỏi phạm vi Task 1. Thay ca đổi trạng thái không thể bấm trên UI bằng kiểm tra nút ở trạng thái kết thúc. Các tiêu chí UX bổ sung được ghi rõ, không gán sai FR.
+
+10 mục do AI bổ sung/sửa đáng kể có giải thích vì sao bản trước bỏ sót. Đây là AI-added, **không phải Student-authored**. Sinh viên cần tự đọc, sửa/bổ sung và xác nhận trước khi nộp. Không tạo bằng chứng giả về đóng góp của sinh viên.
+
+| ID | Vì sao bản AI trước bỏ sót |
 |---|---|
-| Sinh viên | <Họ tên> – <MSSV> – <email> |
-| SUT | EShop (`ttbhanh/eshop-sut`) |
-| Thời gian thực hiện | |
+| GUI-001 | Bản cũ tập trung vào đơn hàng, chưa đối chiếu tiêu đề màn đăng nhập với mục đích thực tế. |
+| GUI-003 | Bản cũ chỉ kiểm tra type của email, bỏ qua nội dung nhãn Username. |
+| GUI-004 | Bản cũ chưa kiểm tra riêng ngôn ngữ nút gửi. |
+| GUI-008 | Bản cũ gộp form, chưa tách tình huống thiếu email. |
+| GUI-009 | Bản cũ chưa tách tình huống thiếu mật khẩu. |
+| GUI-010 | Kiểm tra type đơn thuần chưa chứng minh chặn email sai. |
+| GUI-027 | Cần ca hợp lệ để phát hiện validation từ chối nhầm, không chỉ thử dữ liệu sai. |
+| GUI-028 | Cần ca không bắt đầu bằng 0 để xác minh biên validation. |
+| GUI-050 | Ca cũ Đã giao -> Đã xác nhận không thao tác được trên UI; thay bằng kiểm tra nút ở trạng thái kết thúc. |
+| GUI-052 | Bản cũ tập trung màu nút user, bỏ qua nút Hủy của Admin. |
 
----
-
-## 1. Phạm vi
-- Chủ đề: Lịch sử & Theo dõi đơn hàng (FR-10, FR-11). Chi tiết phạm vi và chức năng SUT có/không có: `usability/00_scope.md`
-- Màn hình được test (Task 1): Order History (Web, trong `/profile`), Mobile Orders, Admin Orders, cùng màn phụ trợ Login và Global (navbar)
-- Flow usability (Task 2): Đăng nhập → Lịch sử đơn → Xem trạng thái (đã giao / đang giao) → Hủy đơn không còn cần → Thử hủy đơn đang giao
-- Môi trường: OS, trình duyệt, URL SUT, commit của SUT
-
-## 2. Task 1 – GUI Checklist
-
-### 2.1 Thiết kế
-- Cách sinh bộ checklist ban đầu bằng AI (nêu các bước/prompt đã dùng, chi tiết ở AI Audit Report)
-- Số mục AI sinh: __ · Số mục bạn bổ sung: __ · Tổng: __
-- Phủ 4 IA: IA-01 __, IA-02 __, IA-03 __, IA-04 __
-
-### 2.2 Mục AI bỏ sót và lý do
-| ID | Mục bổ sung | Vì sao AI bỏ sót (prompt / giới hạn model / đặc thù giao diện) |
-|---|---|---|
-
-### 2.3 Thực thi
-Bảng Passed/Failed trong `checklist/GUI_Checklist.xlsx`. Tóm tắt:
+## 4. Kết quả thực thi
 
 | Chỉ số | Giá trị |
 |---|---|
-| Đã thiết kế | |
-| Đã thực thi | |
-| Passed | |
-| Failed | |
+| Thiết kế / thực thi | 58 / 58 |
+| Passed / Failed | 30 / 28 |
+| Màn hình chính | 3 |
+| Bug/phát hiện đã ghi file | 23 |
+| Ảnh lỗi | 28 |
+| GitHub Issues đã đăng | 0 — chờ repo đích |
+| Phiên usability đã thực hiện | 0 |
+| Nền tảng đã chạy trong Task 1 | 1 — Chrome headless/Linux |
 
-### 2.4 Các mục Failed
-| ID | Notes (lý do) | Bug ID | Screenshot |
+Chi tiết đầy đủ: [Excel](../checklist/GUI_Checklist.xlsx), [Markdown](../checklist/GUI_Checklist.md), [JSON thực thi](../task1/evidence/results.json).
+
+## 5. Bug report
+
+Các mục Failed cùng nguyên nhân được gom để tránh báo trùng. Các vấn đề UX bổ sung được gắn nhãn UX. Mỗi link bên dưới có bước tái hiện, mong đợi, thực tế, mức độ và ảnh chụp.
+
+| Bug | Nội dung | Mức độ | Mục Failed |
 |---|---|---|---|
+| [BUG-001](../bugs/BUG-001.md) | Trang đăng nhập mang tiêu đề Đăng Ký | Minor | GUI-001 |
+| [BUG-002](../bugs/BUG-002.md) | Login và Profile thiếu h1 mô tả trang | Minor | GUI-002, GUI-023 |
+| [BUG-003](../bugs/BUG-003.md) | Nhãn email và nút đăng nhập dùng tiếng Anh | Minor | GUI-003, GUI-004 |
+| [BUG-004](../bugs/BUG-004.md) | Email dùng text và không chặn định dạng sai | Moderate | GUI-005, GUI-010 |
+| [BUG-005](../bugs/BUG-005.md) | Mật khẩu đăng nhập hiển thị nguyên văn | Major | GUI-006 |
+| [BUG-006](../bugs/BUG-006.md) | Thiếu dấu sao ở nhãn các trường bắt buộc | Minor | GUI-007, GUI-025 |
+| [BUG-007](../bugs/BUG-007.md) | Lỗi đăng nhập nằm dưới nút gửi | Moderate | GUI-011 |
+| [BUG-008](../bugs/BUG-008.md) | Tab từ đầu trang nhảy thẳng tới Sign In | Moderate | GUI-013 |
+| [BUG-009](../bugs/BUG-009.md) | Validation điện thoại từ chối số hợp lệ và nhận số sai | Major | GUI-027, GUI-028 |
+| [BUG-010](../bugs/BUG-010.md) | User thấy nút Hủy đơn khi đơn đang giao | Major | GUI-030 |
+| [BUG-011](../bugs/BUG-011.md) | UX: đang tải đơn lại báo chưa có đơn | Moderate | GUI-036 |
+| [BUG-012](../bugs/BUG-012.md) | UX: API tải đơn lỗi 500 bị hiển thị thành danh sách trống | Moderate | GUI-037 |
+| [BUG-013](../bugs/BUG-013.md) | Empty state lịch sử đơn thiếu hình minh họa | Minor | GUI-038 |
+| [BUG-014](../bugs/BUG-014.md) | Nút đăng xuất mang nhãn Thoát | Minor | GUI-039 |
+| [BUG-015](../bugs/BUG-015.md) | Navbar không đổi highlight theo trang hiện tại | Minor | GUI-040 |
+| [BUG-016](../bugs/BUG-016.md) | Giỏ hàng trên navbar không có badge số lượng | Moderate | GUI-043 |
+| [BUG-017](../bugs/BUG-017.md) | Admin vẫn có nút chuyển đơn Đã hủy sang Đã giao | Major | GUI-050 |
+| [BUG-018](../bugs/BUG-018.md) | Nút Hủy đơn trong Admin có màu xám | Minor | GUI-052 |
+| [BUG-019](../bugs/BUG-019.md) | Địa chỉ giao hàng trong Admin bị render HTML | Major | GUI-053 |
+| [BUG-020](../bugs/BUG-020.md) | Lỗi hủy đơn hiển thị chuỗi tiếng Anh từ API | Moderate | GUI-055 |
+| [BUG-021](../bugs/BUG-021.md) | UX: nhãn form hồ sơ không liên kết với ô nhập | Moderate | GUI-056 |
+| [BUG-022](../bugs/BUG-022.md) | UX: lịch sử đơn làm tràn ngang ở viewport 360px | Moderate | GUI-057 |
+| [BUG-023](../bugs/BUG-023.md) | Tên người dùng trên navbar bị render HTML | Major | GUI-058 |
 
-### 2.5 Bug report
-Xem `bugs/` và GitHub Issues: <link repo issues>
+### Quan sát thực tế cho từng lỗi
 
-## 3. Task 2 – Usability Evaluation
+**BUG-001 — Trang đăng nhập mang tiêu đề Đăng Ký**
 
-### 3.1 Kế hoạch, mục tiêu, kịch bản
-Xem `usability/01_plan_objectives_scenario.md` (tóm tắt ở đây).
+- GUI-001: Tiêu đề thực tế: Đăng Ký. [Ảnh](../bugs/screenshots/GUI-001.png).
 
-### 3.2 Công cụ
-SUS + 4 chủ đề probe (clarity, error recovery, speed, trust).
+**BUG-002 — Login và Profile thiếu h1 mô tả trang**
 
-### 3.3 Participants
-Bảng 7 người: `usability/05_participants.md`.
+- GUI-002: Số h1: 0. [Ảnh](../bugs/screenshots/GUI-002.png).
+- GUI-023: Số h1: 0. [Ảnh](../bugs/screenshots/GUI-023.png).
 
-### 3.4 Pilot
-Kết quả và thay đổi: `usability/sessions/pilot.md`.
+**BUG-003 — Nhãn email và nút đăng nhập dùng tiếng Anh**
 
-### 3.5 Kết quả 7 buổi
-| P | Hoàn thành | Thời gian | SUS | Pain point chính |
-|---|---|---|---|---|
+- GUI-003: Nhãn email: Username. [Ảnh](../bugs/screenshots/GUI-003.png).
+- GUI-004: Nhãn nút: Sign In. [Ảnh](../bugs/screenshots/GUI-004.png).
 
-### 3.6 Phân tích và ưu tiên
-Xem `usability/07_analysis_template.md` (đã điền).
+**BUG-004 — Email dùng text và không chặn định dạng sai**
 
-### 3.7 Bug thật phát hiện
-| Bug | Issue |
-|---|---|
+- GUI-005: type email: text. [Ảnh](../bugs/screenshots/GUI-005.png).
+- GUI-010: {"valid":true,"typeMismatch":false}; form gửi tới API và hiện lỗi đăng nhập. [Ảnh](../bugs/screenshots/GUI-010.png).
 
-## 4. Task 3 – Cross-platform
+**BUG-005 — Mật khẩu đăng nhập hiển thị nguyên văn**
 
-| Nền tảng | Công cụ | Passed | Failed | Khác biệt đáng chú ý |
-|---|---|---|---|---|
+- GUI-006: type mật khẩu: text; nhập dữ liệu thử DemoOnly123!. [Ảnh](../bugs/screenshots/GUI-006.png).
 
-Ảnh: `cross_platform/screenshots/`
+**BUG-006 — Thiếu dấu sao ở nhãn các trường bắt buộc**
 
-## 5. Agent Skill (nếu làm)
-Link skill và video demo (YouTube).
+- GUI-007: Nhãn: Username / Mật khẩu. [Ảnh](../bugs/screenshots/GUI-007.png).
+- GUI-025: Nhãn: Họ Tên. [Ảnh](../bugs/screenshots/GUI-025.png).
 
-## 6. Kết luận và bài học
+**BUG-007 — Lỗi đăng nhập nằm dưới nút gửi**
 
-## Phụ lục
-- AI Audit Report: `ai_audit_report.md`
-- AI Critique (200-300 từ): `ai_critique.md`
-- Git commit log: `git_commit_log.txt`
+- GUI-011: error.y=517, button.y=425. [Ảnh](../bugs/screenshots/GUI-011.png).
+
+**BUG-008 — Tab từ đầu trang nhảy thẳng tới Sign In**
+
+- GUI-013: {"tag":"BUTTON","text":"Sign In","tabIndex":1}. [Ảnh](../bugs/screenshots/GUI-013.png).
+
+**BUG-009 — Validation điện thoại từ chối số hợp lệ và nhận số sai**
+
+- GUI-027: [{"type":"alert","message":"Số điện thoại không hợp lệ. Vui lòng nhập đúng 9-10 chữ số."}]. [Ảnh](../bugs/screenshots/GUI-027.png).
+- GUI-028: [{"type":"alert","message":"Cập nhật thành công!"}]. [Ảnh](../bugs/screenshots/GUI-028.png).
+
+**BUG-010 — User thấy nút Hủy đơn khi đơn đang giao**
+
+- GUI-030: shipping có 1 nút Hủy đơn. [Ảnh](../bugs/screenshots/GUI-030.png).
+
+**BUG-011 — UX: đang tải đơn lại báo chưa có đơn**
+
+- GUI-036: Nội dung trong lúc API trì hoãn 1800ms: Hồ sơ của bạn; Email (Không đổi); Họ Tên; Số điện thoại; Địa chỉ giao hàng; Cập nhật; Lịch sử đơn hàng; ; Bạn chưa có đơn hàng nào.. [Ảnh](../bugs/screenshots/GUI-036.png).
+
+**BUG-012 — UX: API tải đơn lỗi 500 bị hiển thị thành danh sách trống**
+
+- GUI-037: HTTP 500 được mô phỏng tại biên mạng; UI: Hồ sơ của bạn; Email (Không đổi); Họ Tên; Số điện thoại; Địa chỉ giao hàng; Cập nhật; Lịch sử đơn hàng; ; Bạn chưa có đơn hàng nào.. [Ảnh](../bugs/screenshots/GUI-037.png).
+
+**BUG-013 — Empty state lịch sử đơn thiếu hình minh họa**
+
+- GUI-038: Thông điệp: Bạn chưa có đơn hàng nào.; số icon/ảnh: 0. [Ảnh](../bugs/screenshots/GUI-038.png).
+
+**BUG-014 — Nút đăng xuất mang nhãn Thoát**
+
+- GUI-039: Nhãn: Thoát. [Ảnh](../bugs/screenshots/GUI-039.png).
+
+**BUG-015 — Navbar không đổi highlight theo trang hiện tại**
+
+- GUI-040: class tại Profile=hover:underline text-yellow-300; tại Home=hover:underline text-yellow-300. [Ảnh](../bugs/screenshots/GUI-040.png).
+
+**BUG-016 — Giỏ hàng trên navbar không có badge số lượng**
+
+- GUI-043: Đã thêm 1 sản phẩm; link giỏ: Giỏ hàng. [Ảnh](../bugs/screenshots/GUI-043.png).
+
+**BUG-017 — Admin vẫn có nút chuyển đơn Đã hủy sang Đã giao**
+
+- GUI-050: canceled: ["Đánh dấu Đã giao"]. [Ảnh](../bugs/screenshots/GUI-050.png).
+
+**BUG-018 — Nút Hủy đơn trong Admin có màu xám**
+
+- GUI-052: ["rgb(156, 163, 175)","rgb(156, 163, 175)","rgb(156, 163, 175)","rgb(156, 163, 175)","rgb(156, 163, 175)"]. [Ảnh](../bugs/screenshots/GUI-052.png).
+
+**BUG-019 — Địa chỉ giao hàng trong Admin bị render HTML**
+
+- GUI-053: Thẻ b render: 1; text: GUI_ADDRESS. [Ảnh](../bugs/screenshots/GUI-053.png).
+
+**BUG-020 — Lỗi hủy đơn hiển thị chuỗi tiếng Anh từ API**
+
+- GUI-055: [{"type":"alert","message":"Lỗi: Cannot cancel this order."}]; user đang xem trang cũ, admin đã chuyển đơn sang delivered. [Ảnh](../bugs/screenshots/GUI-055.png).
+
+**BUG-021 — UX: nhãn form hồ sơ không liên kết với ô nhập**
+
+- GUI-056: [{"type":"INPUT","labels":0},{"type":"INPUT","labels":0},{"type":"TEXTAREA","labels":0}]. [Ảnh](../bugs/screenshots/GUI-056.png).
+
+**BUG-022 — UX: lịch sử đơn làm tràn ngang ở viewport 360px**
+
+- GUI-057: {"viewport":360,"scroll":396}. [Ảnh](../bugs/screenshots/GUI-057.png).
+
+**BUG-023 — Tên người dùng trên navbar bị render HTML**
+
+- GUI-058: Số thẻ b được render: 1; text: Chào, GUI_NAME. [Ảnh](../bugs/screenshots/GUI-058.png).
+
+## 6. Giới hạn và việc cần làm trước khi nộp
+
+1. Sinh viên duyệt kết quả, tự bổ sung các mục AI bỏ sót và ghi lý do theo đề; xác nhận thông tin cá nhân và phạm vi không trùng nhóm.
+2. Đăng 23 issue bodies lên GitHub repo của sinh viên, đính kèm ảnh và cập nhật link; bước này đang chờ repo đích.
+3. Task 2 (pilot, 7 người thật, phân tích) và Task 3 (ít nhất ba nền tảng) chưa hoàn thành. Không dùng số lượng dự kiến trong template làm kết quả thực tế.
+4. AI Audit Report của phiên hiện tại được lưu; lịch sử sinh checklist trước phiên này chưa có log đầy đủ. AI Critique là bản nháp, cần sinh viên tự chỉnh.
+5. Các tiêu chí bổ sung không tự động trở thành yêu cầu của đặc tả. Kết quả chỉ phản ánh môi trường và dữ liệu thử đã ghi, không chứng minh ứng dụng hoàn toàn an toàn hay tương thích mọi nền tảng.
+
+## 7. Tài liệu và lịch sử
+
+- [Rà soát thiết kế](../task1/DESIGN_REVIEW.md).
+- [Quy trình và script chạy lại](../task1/README.md).
+- [Bug report](../bugs/README.md).
+- [AI Audit Report](../ai_audit_report.md).
+- [AI Critique — bản nháp](../ai_critique.md).
+- [Git commit log](../git_commit_log.txt).

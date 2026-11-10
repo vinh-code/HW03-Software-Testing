@@ -1,0 +1,13 @@
+{
+  "checklist_items": 58,
+  "passed": 30,
+  "failed": 28,
+  "issue_bodies": 23,
+  "screenshots": 28,
+  "xlsx_links": "all valid in both copies",
+  "python_scripts": "AST parse passed",
+  "existing_orders": "preserved compared to SQLite backup",
+  "sut_source_changes": "none; database fixtures only",
+  "github": "pending target repository",
+  "human_review": "pending"
+}

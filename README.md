@@ -1,91 +1,38 @@
-# HW03 – GUI & Usability (HW03-AI)
+# HW03 — GUI & Usability
 
-Sinh viên: `<Họ tên> – <MSSV>`  ·  Chủ đề: Lịch sử & Theo dõi đơn hàng (FR-10, FR-11)  ·  File nộp: `<MSSV>_HW03_AI_GUIUsability_<NNN>.zip`
+Sinh viên: <Họ tên> — <MSSV> — <email sinh viên>.
+
+**Task 1 đã chạy tại local; GitHub Issues và human review còn chờ. Task 2/3 chưa thực hiện.**
+
+- [Báo cáo chính Markdown](report/main_report.md) / [PDF](report/main_report.pdf)
+- [Checklist Excel](checklist/GUI_Checklist.xlsx) / [Markdown](checklist/GUI_Checklist.md)
+- [23 bug/phát hiện và ảnh](bugs/README.md)
+- [Dữ liệu thực thi](task1/evidence/results.json) / [Cách chạy lại](task1/README.md)
+- [AI Audit](ai_audit_report.md) / [AI Critique nháp](ai_critique.md)
+- [Git commit log](git_commit_log.txt)
 
 ## Test summary
 
-| Chỉ số | Giá trị |
+| Chỉ số | Kết quả thực tế |
 |---|---|
-| Số màn hình đã test | |
-| Số flow usability | 1 |
-| Số mục checklist đã thiết kế | |
-| Đã thực thi | |
-| Passed | |
-| Failed | |
-| Số bug (GitHub Issues) | |
-| Số participant (không tính pilot) | 7 |
-| Số nền tảng cross-platform | |
-| Link video demo | |
+| Màn hình chính Task 1 | 3: Login, Profile, Admin Orders |
+| Checklist thiết kế / thực thi | 58 / 58 |
+| Passed / Failed | 30 / 28 |
+| Bug/phát hiện | 23 (19 vi phạm spec, 4 UX bổ sung) |
+| Ảnh Failed | 28 |
+| GitHub Issues đã đăng | 0; chờ repo của sinh viên |
+| Flow usability / phiên / người tham gia thực tế | 0 / 0 / 0 |
+| Nền tảng đã test | 1: Chrome headless / Linux |
+| Demo video | Chưa thực hiện |
 
-## Self-assessment
+## Self-assessment — sinh viên tự điền sau khi hoàn thiện
 
-| No. | Tiêu chí | Điểm tối đa | Tự chấm |
-|---|---|---|---|
-| 1 | Task 1 – GUI Checklist (thiết kế + thực thi + bug report) | 30 | |
-| 2 | Task 2 – Usability Evaluation (kịch bản + 7 buổi + phân tích) | 40 | |
-| 3 | Task 3 – Cross-browser/platform (>= 3 nền tảng) | 20 | |
-| 4 | Agent Skills | 10 | |
-| | **Tổng** | **100** | |
+| Tiêu chí | Điểm tối đa | Tự chấm |
+|---|---|---|
+| Task 1 | 30 | Chờ human review và GitHub Issues |
+| Task 2 | 40 | Chưa thực hiện |
+| Task 3 | 20 | Chưa đủ ba nền tảng |
+| Agent Skills | 10 | Chưa xây skill riêng |
+| Tổng | 100 | Chưa chốt |
 
-## Cấu trúc thư mục
-
-```
-submission/
-├── README.md                      <- file này (self-assessment + test summary)
-├── report/main_report.md (+ .pdf) <- báo cáo chính (checklist + usability)
-├── checklist/
-│   ├── GUI_Checklist.xlsx         <- checklist >40 mục + Summary
-│   ├── GUI_Checklist.md
-│   └── build_checklist.py
-├── bugs/                          <- bug report + screenshots (+ ảnh trang GitHub Issues)
-├── usability/                     <- kế hoạch, kịch bản, SUS, participants, sessions, phân tích
-├── cross_platform/                <- screenshots từ >=3 nền tảng
-├── evidence/                      <- video ghi màn hình các buổi usability
-├── ai_audit_report.md (+ .pdf)    <- (bạn tự làm) AI Audit Report
-├── ai_critique.md                 <- (bạn tự làm) 200-300 từ
-├── git_commit_log.txt             <- xuất bằng make_commit_log.sh
-└── make_commit_log.sh
-```
-
-## Cách dựng và chạy SUT
-
-SUT được clone ở `../sut` (ngoài thư mục nộp bài, không nén vào zip).
-
-```bash
-cd ../sut/backend && npm install && node database.js && node server.js   # http://localhost:3000
-cd ../sut/frontend-web && npm install && npm run dev                      # http://localhost:5173
-cd ../sut/frontend-admin && npm install && npm run dev                    # http://localhost:5174
-cd ../sut/frontend-mobile && npm install && npx expo start                # Expo Go
-```
-
-Tài khoản (theo `sut/README.md`): admin `admin@eshop.com` / `Admin123!`, user `test@eshop.com` / `Test1234!`.
-> `setup_guide.md` ghi mật khẩu admin là `admin123`, mâu thuẫn với README. Thử cả hai.
-
-### Reset dữ liệu giữa các buổi usability
-```bash
-pkill -f "node server.js"
-cd ../sut/backend && node database.js     # DROP + tạo lại toàn bộ bảng và seed mẫu
-nohup node server.js > /dev/null 2>&1 &    # khởi động lại để đọc DB mới
-cd ../../submission/usability && node seed_orders.mjs   # tạo 4 đơn: pending / confirmed / shipping / delivered
-```
-Sau đó dùng cửa sổ ẩn danh (hoặc xóa localStorage) để participant tự đăng nhập `test@eshop.com`.
-
-## Quy trình git (mỗi bước một commit)
-
-1. `checklist: design` · 2. `checklist: execution` · 3. `bugs: logged` ·
-4. `usability: plan + pilot` · 5-11. `usability: session S01..S07` · 12. `usability: analysis` ·
-13. `cross-platform: <platform>` · 14. `report + AI audit/critique`
-
-Cuối cùng: `./make_commit_log.sh`.
-
-## Danh sách kiểm tra trước khi nộp (thiếu tài liệu bắt buộc = 0 điểm)
-
-- [ ] Báo cáo chính (MD + PDF)
-- [ ] Bug report + ảnh GitHub Issues
-- [ ] AI Critique (200-300 từ) + AI Audit Report (MD + PDF)
-- [ ] Git commit log (text)
-- [ ] Excel checklist (>40 mục) + test summary
-- [ ] Bằng chứng usability: kịch bản, notes, SUS, findings theo severity, video, bảng 7 participant
-- [ ] Screenshot cross-platform (có email + MSSV + họ tên)
-- [ ] README này đã điền
-- [ ] Tên zip đúng định dạng
+Chưa đóng gói ZIP nộp cuối vì các phần bắt buộc của toàn bài còn thiếu. Bản checklist cũ được giữ trong commit baseline. Không sửa code SUT để che lỗi; chỉ tạo dữ liệu thử riêng và thu bằng chứng. Không khởi động lại backend trước khi backup DB vì database.js tự reset khi import.

@@ -75,7 +75,11 @@ for col,w in [('A',15),('B',38),('C',100)]:rev.column_dimensions[col].width=w
 for row in rev:
  for c in row:c.alignment=Alignment(wrap_text=True,vertical='top')
 wb.save(ROOT/'checklist/GUI_Checklist.xlsx');(ROOT/'checklist/GUI_Checklist.md').write_text('\n'.join(md)+'\n')
-shutil.copy(ROOT/'checklist/GUI_Checklist.xlsx',ROOT/'GUI_Checklist.xlsx')
+for row in ws.iter_rows(min_row=2):
+ if row[10].value:
+  row[10].value=row[10].value.removeprefix('../')
+  row[10].hyperlink=row[10].value
+wb.save(ROOT/'GUI_Checklist.xlsx')
 # Root Markdown is a pointer: relative evidence links remain correct in the canonical checklist.
 (ROOT/'GUI_Checklist.md').write_text('# GUI Checklist\n\nBản chính: [checklist/GUI_Checklist.md](checklist/GUI_Checklist.md). Excel ở đây đồng bộ với [bản chính](checklist/GUI_Checklist.xlsx).\n\n58 mục đã chạy: 30 Passed, 28 Failed.\n')
 summary=['# Task 1 — Bug report','','28 mục Failed được gom thành 23 bug/phát hiện; trong đó 4 vấn đề UX bổ sung.','','| Bug | Nội dung | Mức độ | Checklist | GitHub |','|---|---|---|---|---|']
