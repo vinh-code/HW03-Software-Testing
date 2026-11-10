@@ -3,3 +3,6 @@
 de85e16 | 2026-11-10 11:09:47 +0700 | Phạm Quang Vinh | test: execute 58 GUI checks and record 30 passes and 28 failures
 cc9d211 | 2026-11-10 11:09:47 +0700 | Phạm Quang Vinh | test: document 23 findings with 28 actual browser screenshots
 088db27 | 2026-11-10 11:14:17 +0700 | Phạm Quang Vinh | docs: finalize Task 1 report PDFs audit and reproducible evidence
+0005990 | 2026-11-10 11:14:17 +0700 | Phạm Quang Vinh | docs: export testing procedure commit log
+f9f6ee2 | 2026-11-10 11:16:45 +0700 | Phạm Quang Vinh | docs: identify student 23120202 and preserve published issue URLs
+5d24db0 | 2026-11-10 11:19:51 +0700 | Phạm Quang Vinh | docs: publish 23 GitHub issues and verify all 28 screenshot links
