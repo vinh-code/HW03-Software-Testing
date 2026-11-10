@@ -8,3 +8,8 @@ f9f6ee2 | 2026-11-10 11:16:45 +0700 | Phạm Quang Vinh | docs: identify student
 5d24db0 | 2026-11-10 11:19:51 +0700 | Phạm Quang Vinh | docs: publish 23 GitHub issues and verify all 28 screenshot links
 cfba431 | 2026-11-10 11:19:51 +0700 | Phạm Quang Vinh | docs: update commit log through GitHub publication
 c8a8b22 | 2026-11-10 11:23:25 +0700 | Phạm Quang Vinh | docs: record student approval of Task 1 deliverables
+a3a761a | 2026-11-10 11:23:25 +0700 | Phạm Quang Vinh | docs: include student review confirmation in commit log
+1f2f6f7 | 2026-11-10 11:26:00 +0700 | Phạm Quang Vinh | test: prepare genuine desktop cross-browser runs with identity evidence
+4174402 | 2026-11-10 11:26:51 +0700 | Phạm Quang Vinh | test: execute 58 Task 3 checks on headed Chrome with 28 screenshots
+e0e8e9e | 2026-11-10 11:27:30 +0700 | Phạm Quang Vinh | test: execute 58 Task 3 checks on headed Firefox with 28 screenshots
+c0b055c | 2026-11-10 11:30:19 +0700 | Phạm Quang Vinh | test: compare Chrome and Firefox and document missing third platform
