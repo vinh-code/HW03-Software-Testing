@@ -34,13 +34,14 @@ groups=[
 ('UX: lịch sử đơn làm tràn ngang ở viewport 360px','Moderate',ids(57),'Đăng nhập, mở /profile có đơn. Đặt viewport 360x800. So sánh documentElement.scrollWidth với innerWidth và quan sát bảng bị tràn. Đây là viewport desktop, không phải mobile thật.'),
 ('Tên người dùng trên navbar bị render HTML','Major',ids(58),'Dùng tài khoản fixture, cập nhật name thành <b>GUI_NAME</b> qua API. Tải lại /profile. Quan sát header hiển thị chữ đậm và có node b. Khôi phục tên sau ca thử.'),
 ]
+previous={i['id']:i.get('url','') for i in load('task1/evidence/issues.json')} if (ROOT/'task1/evidence/issues.json').exists() else {}
 issues=[];mapping={}
 for i,(title,severity,cases,steps) in enumerate(groups,1):
  bid=f'BUG-{i:03}';kind='UX bổ sung' if title.startswith('UX:') else 'Vi phạm đặc tả'
- issue=dict(id=bid,title=title,severity=severity,cases=cases,steps=steps,kind=kind,url='')
+ issue=dict(id=bid,title=title,severity=severity,cases=cases,steps=steps,kind=kind,url=previous.get(bid,''))
  issues.append(issue)
  for cid in cases:mapping[cid]=bid
- lines=[f'# {bid} — {title}', '',f'- Mức độ: **{severity}**',f'- Loại: {kind}',f'- Checklist: {", ".join(cases)}','- Môi trường: Linux x86_64; Chrome headless 156.0.8078.79; 1366×900, trừ ca responsive 360×800.','- SUT: eshop-sut commit 85af3ba; code không sửa trong lượt test.','- GitHub Issue: Chưa đăng — chờ repository đích của sinh viên.','','## Các bước tái hiện','',steps,'','## Kết quả mong đợi và thực tế','']
+ lines=[f'# {bid} — {title}', '',f'- Mức độ: **{severity}**',f'- Loại: {kind}',f'- Checklist: {", ".join(cases)}','- Môi trường: Linux x86_64; Chrome headless 156.0.8078.79; 1366×900, trừ ca responsive 360×800.','- SUT: eshop-sut commit 85af3ba; code không sửa trong lượt test.',f'- GitHub Issue: {issue["url"] or "Chưa đăng"}','','## Các bước tái hiện','',steps,'','## Kết quả mong đợi và thực tế','']
  for cid in cases:
   item=next(x for x in design if x['id']==cid);r=results[cid]
   lines += [f'### {cid}',f'- Cơ sở: {item["spec"]}',f'- Mong đợi: {item["expected"]}',f'- Thực tế: {r["actual"]}',f'- URL: {r["url"]}',f'- Thời gian UTC: {r["time"]}','',f'![{cid}](screenshots/{cid}.png)','']
@@ -65,7 +66,7 @@ for row in ws:
 for c in ws[1]:c.fill=PatternFill('solid',fgColor='17365D');c.font=Font(color='FFFFFF',bold=True)
 for row in ws.iter_rows(min_row=2):row[7].fill=PatternFill('solid',fgColor='F8CBAD' if row[7].value=='Failed' else 'C6E0B4')
 s=wb.create_sheet('Summary');s.append(['Metric','Value']);
-for k,v in [('Designed',58),('Executed',58),('Passed',counts['Passed']),('Failed',counts['Failed']),('Bugs / findings',len(issues)),('Screens',3),('Platform','Chrome headless / Linux'),('Firefox','Not run'),('Platform 3','Not run'),('Human review','Pending'),('GitHub Issues','Pending target repository')]:s.append([k,v])
+for k,v in [('Designed',58),('Executed',58),('Passed',counts['Passed']),('Failed',counts['Failed']),('Bugs / findings',len(issues)),('Screens',3),('Platform','Chrome headless / Linux'),('Firefox','Not run'),('Platform 3','Not run'),('Human review','Pending'),('GitHub Issues',sum(bool(i['url']) for i in issues))]:s.append([k,v])
 for k,v in ias.items():s.append([k,v])
 s.column_dimensions['A'].width=28;s.column_dimensions['B'].width=45
 rev=wb.create_sheet('AI Review');rev.append(['ID','Origin','Why earlier draft missed it'])
@@ -83,6 +84,6 @@ wb.save(ROOT/'GUI_Checklist.xlsx')
 # Root Markdown is a pointer: relative evidence links remain correct in the canonical checklist.
 (ROOT/'GUI_Checklist.md').write_text('# GUI Checklist\n\nBản chính: [checklist/GUI_Checklist.md](checklist/GUI_Checklist.md). Excel ở đây đồng bộ với [bản chính](checklist/GUI_Checklist.xlsx).\n\n58 mục đã chạy: 30 Passed, 28 Failed.\n')
 summary=['# Task 1 — Bug report','','28 mục Failed được gom thành 23 bug/phát hiện; trong đó 4 vấn đề UX bổ sung.','','| Bug | Nội dung | Mức độ | Checklist | GitHub |','|---|---|---|---|---|']
-for i in issues:summary.append(f'| [{i["id"]}]({i["id"]}.md) | {i["title"]} | {i["severity"]} | {", ".join(i["cases"])} | Chờ repo đích |')
+for i in issues:summary.append(f'| [{i["id"]}]({i["id"]}.md) | {i["title"]} | {i["severity"]} | {", ".join(i["cases"])} | {i["url"] or "Chưa đăng"} |')
 (ROOT/'bugs/README.md').write_text('\n'.join(summary)+'\n')
 print('Generated:',dict(counts),'issues',len(issues),'IA',dict(ias))

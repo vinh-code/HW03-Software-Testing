@@ -1,6 +1,6 @@
 # HW03 — GUI & Usability
 
-Sinh viên: <Họ tên> — <MSSV> — <email sinh viên>.
+Sinh viên: Phạm Quang Vinh — 23120202 — 23120202@student.hcmus.edu.vn.
 
 **Task 1 đã chạy tại local; GitHub Issues và human review còn chờ. Task 2/3 chưa thực hiện.**
 

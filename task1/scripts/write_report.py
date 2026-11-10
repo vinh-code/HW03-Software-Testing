@@ -4,7 +4,7 @@ R=Path(__file__).resolve().parents[2]
 design=json.loads((R/'checklist/task1_design.json').read_text());issues=json.loads((R/'task1/evidence/issues.json').read_text());results=json.loads((R/'task1/evidence/results.json').read_text())['results'];byid={r['id']:r for r in results}
 report='''# HW03 — GUI & Usability: báo cáo thực thi Task 1
 
-Sinh viên: <Họ tên> — <MSSV> — <email sinh viên> (chờ xác nhận).
+Sinh viên: Phạm Quang Vinh — 23120202 — 23120202@student.hcmus.edu.vn.
 
 ## 1. Phạm vi và trạng thái
 
@@ -89,7 +89,7 @@ report+='''## 6. Giới hạn và việc cần làm trước khi nộp
 (R/'report/main_report.md').write_text(report)
 (R/'README.md').write_text('''# HW03 — GUI & Usability
 
-Sinh viên: <Họ tên> — <MSSV> — <email sinh viên>.
+Sinh viên: Phạm Quang Vinh — 23120202 — 23120202@student.hcmus.edu.vn.
 
 **Task 1 đã chạy tại local; GitHub Issues và human review còn chờ. Task 2/3 chưa thực hiện.**
 

@@ -1,6 +1,6 @@
 # HW03 — GUI & Usability: báo cáo thực thi Task 1
 
-Sinh viên: <Họ tên> — <MSSV> — <email sinh viên> (chờ xác nhận).
+Sinh viên: Phạm Quang Vinh — 23120202 — 23120202@student.hcmus.edu.vn.
 
 ## 1. Phạm vi và trạng thái
 
