@@ -1,0 +1,68 @@
+async (page) => {
+const fixture={
+  "users": {
+    "main": 3,
+    "empty": 4,
+    "other": 5
+  },
+  "orders": {
+    "pending": 5,
+    "confirmed": 6,
+    "shipping": 7,
+    "delivered": 8,
+    "canceled": 9,
+    "other": 10
+  }
+};
+const results=[];
+const dialogs=[];
+page.removeAllListeners('dialog');
+page.on('dialog',async d=>{dialogs.push({type:d.type(),message:d.message()});await d.accept();});
+await page.setViewportSize({width:1366,height:900});
+const web='http://localhost:5173',api='http://localhost:3000/api';
+const pause=()=>page.waitForTimeout(250);
+const check=async(n,ok,actual)=>{const id=`GUI-${String(n).padStart(3,'0')}`;const screenshot=ok?'':`output/playwright/task1/${id}.png`;if(screenshot)await page.screenshot({path:screenshot,fullPage:true});results.push({id,status:ok?'Passed':'Failed',actual, screenshot:screenshot?`../bugs/screenshots/${id}.png`:'',url:page.url(),time:new Date().toISOString()});};
+const login=async(which='main')=>{await page.goto(web+'/login');await page.locator('form input').nth(0).fill(`task1-${which}@example.test`);await page.locator('form input').nth(1).fill('GuiTest123!');await page.locator('form button[type=submit]').click();await page.waitForURL(web+'/');await pause();};
+const profile=async()=>{await page.goto(web+'/profile');await page.getByRole('heading',{name:'Lịch sử đơn hàng'}).waitFor();await pause();};
+const row=id=>page.locator('tbody tr').filter({has:page.getByRole('cell',{name:`#${id}`,exact:true})});
+const rgb=async loc=>loc.evaluate(e=>getComputedStyle(e).backgroundColor);
+const blue=x=>{const v=x.match(/\d+/g).map(Number);return v[2]>v[0]&&v[2]>v[1];};
+const red=x=>{const v=x.match(/\d+/g).map(Number);return v[0]>v[1]&&v[0]>v[2];};
+await login();await profile();await page.locator('tbody tr').first().waitFor();
+let headers=await page.locator('thead th').allTextContents();await check(17,JSON.stringify(headers)===JSON.stringify(['Mã ĐH','Ngày đặt','Tổng tiền','Trạng thái','Thao tác']),headers.join(' | '));
+let labels=await page.locator('tbody tr td:nth-child(4)').allTextContents();const allStates=['Chờ xác nhận','Đã xác nhận','Đang giao','Đã giao','Đã hủy'];await check(18,allStates.every(x=>labels.includes(x)),labels.join(' | '));
+let colors=await page.locator('tbody td:nth-child(4) span').evaluateAll(es=>es.map(e=>getComputedStyle(e).backgroundColor));await check(19,new Set(colors).size===5,JSON.stringify(colors));
+let amounts=await page.locator('tbody td:nth-child(3)').allTextContents();await check(20,amounts.every(x=>/1[.,]23\d[.,]000\s*₫/.test(x)),amounts.join(' | '));
+let fields=await page.locator('tbody tr').evaluateAll(es=>es.map(e=>[e.children[0].textContent,e.children[1].textContent]));await check(21,fields.every(x=>/^#\d+$/.test(x[0])&&x[1]&&!/Invalid/.test(x[1])),JSON.stringify(fields));
+let color=await rgb(page.getByRole('button',{name:'Hủy đơn'}).first());await check(22,red(color),'background: '+color);
+let count=await page.locator('main h1').count();await check(23,count===1,'Số h1: '+count);
+await check(24,await page.locator('form input').nth(0).isDisabled(),'Email disabled='+await page.locator('form input').nth(0).isDisabled());
+let nameLabel=await page.locator('form label').nth(1).innerText();await check(25,nameLabel.includes('*'),'Nhãn: '+nameLabel);
+color=await rgb(page.getByRole('button',{name:'Cập nhật'}));await check(26,blue(color),'background: '+color);
+await page.locator('form input').nth(2).fill('0912345678');let start=dialogs.length;await page.getByRole('button',{name:'Cập nhật'}).click();await pause();let ds=dialogs.slice(start);await check(27,ds.some(x=>/Cập nhật thành công/.test(x.message)),JSON.stringify(ds));
+await page.locator('form input').nth(2).fill('123456789');start=dialogs.length;await page.getByRole('button',{name:'Cập nhật'}).click();await pause();ds=dialogs.slice(start);await check(28,ds.some(x=>/không hợp lệ/.test(x.message)),JSON.stringify(ds));
+await check(29,await row(fixture.orders.pending).getByRole('button',{name:'Hủy đơn'}).count()===1&&await row(fixture.orders.confirmed).getByRole('button',{name:'Hủy đơn'}).count()===1,'pending và confirmed đều có nút Hủy đơn');
+count=await row(fixture.orders.shipping).getByRole('button',{name:'Hủy đơn'}).count();await check(30,count===0,'shipping có '+count+' nút Hủy đơn');
+count=await row(fixture.orders.delivered).getByRole('button').count()+await row(fixture.orders.canceled).getByRole('button').count();await check(31,count===0,'Tổng nút ở delivered/canceled: '+count);
+for(const [id,state] of [[32,'pending'],[33,'confirmed']]){start=dialogs.length;await row(fixture.orders[state]).getByRole('button',{name:'Hủy đơn'}).click();await row(fixture.orders[state]).getByText('Đã hủy',{exact:true}).waitFor();ds=dialogs.slice(start);await check(id,ds.some(x=>/thành công/.test(x.message)),JSON.stringify(ds)+'; dòng đơn hiển thị Đã hủy');}
+await page.reload();await page.locator('tbody tr').first().waitFor();await check(34,await page.locator('tbody tr').count()===5,'Sau reload: '+await page.locator('tbody tr').count()+' đơn, phiên vẫn còn');
+let ids=await page.locator('tbody td:first-child').allTextContents();await check(35,ids.length===5&&!ids.includes('#'+fixture.orders.other),'Các đơn hiển thị '+ids.join(', ')+'; đơn khác #'+fixture.orders.other);
+await page.route('**/api/orders/my-orders',async route=>{await new Promise(r=>setTimeout(r,1800));await route.continue();});await page.reload();await page.getByRole('heading',{name:'Lịch sử đơn hàng'}).waitFor();let content=await page.locator('main').innerText();await check(36,/đang tải|loading/i.test(content)&&!content.includes('Bạn chưa có đơn hàng nào'),'Nội dung trong lúc API trì hoãn 1800ms: '+content);await page.locator('tbody tr').first().waitFor();await page.unroute('**/api/orders/my-orders');
+await page.route('**/api/orders/my-orders',r=>r.fulfill({status:500,contentType:'application/json',body:'{"error":"Controlled test failure"}'}));await page.reload();await page.getByRole('heading',{name:'Lịch sử đơn hàng'}).waitFor();await pause();content=await page.locator('main').innerText();await check(37,/lỗi|không thể tải/i.test(content)&&!content.includes('Bạn chưa có đơn hàng nào'),'HTTP 500 được mô phỏng tại biên mạng; UI: '+content);await page.unroute('**/api/orders/my-orders');
+await login('empty');await profile();let empty=page.getByText('Bạn chưa có đơn hàng nào.',{exact:true});let panel=empty.locator('..');count=await panel.locator('img,svg,[role=img]').count();await check(38,await empty.isVisible()&&count>0,'Thông điệp: '+await empty.innerText()+'; số icon/ảnh: '+count);
+await login();await profile();let logout=await page.locator('header button').innerText();await check(39,logout==='Đăng xuất','Nhãn: '+logout);
+let profileClass=await page.locator('header a[href="/profile"]').getAttribute('class');await page.getByRole('link',{name:'EShop',exact:true}).click();let homeClass=await page.locator('header a[href="/profile"]').getAttribute('class');await check(40,profileClass!==homeClass,`class tại Profile=${profileClass}; tại Home=${homeClass}`);
+await page.locator('header a[href="/profile"]').click();await page.getByRole('heading',{name:'Lịch sử đơn hàng'}).waitFor();await check(41,page.url().endsWith('/profile'),page.url());
+await page.goBack();await page.locator('header a[href="/profile"]').waitFor();await check(42,page.url()===web+'/', 'Back -> '+page.url()+'; link hồ sơ vẫn hiện');
+await page.getByRole('button',{name:'Thêm vào giỏ',exact:true}).first().click();let cartText=await page.locator('header a[href="/cart"]').innerText();await check(43,/1/.test(cartText),'Đã thêm 1 sản phẩm; link giỏ: '+cartText);
+await page.locator('header button').click();await page.goto(web+'/profile');await page.getByText('Vui lòng đăng nhập',{exact:true}).waitFor();await check(44,await page.locator('tbody tr').count()===0,'Đăng xuất -> Vui lòng đăng nhập; không hiện đơn');
+await login();await profile();let assoc=await page.locator('form input,form textarea').evaluateAll(es=>es.filter(e=>!e.disabled).map(e=>({type:e.tagName,labels:e.labels.length})));await check(56,assoc.every(e=>e.labels>0),JSON.stringify(assoc));
+await page.setViewportSize({width:360,height:800});await pause();let widths=await page.evaluate(()=>({viewport:innerWidth,scroll:document.documentElement.scrollWidth}));await check(57,widths.scroll<=widths.viewport,JSON.stringify(widths));await page.setViewportSize({width:1366,height:900});
+// Benign HTML text fixture only; no executable payload.
+const token=await page.evaluate(()=>localStorage.getItem('token'));
+await page.request.put(api+'/users/me',{headers:{Authorization:`Bearer ${token}`},data:{name:'<b>GUI_NAME</b>',phone:'0912345678',shipping_address:'123 Test Street'}});
+await profile();let link=page.locator('header a[href="/profile"]');let rendered=await link.locator('b').count();await check(58,rendered===0&&(await link.innerText()).includes('<b>'),'Số thẻ b được render: '+rendered+'; text: '+await link.innerText());
+await page.request.put(api+'/users/me',{headers:{Authorization:`Bearer ${token}`},data:{name:'Task 1 Tester',phone:'0912345678',shipping_address:'123 Test Street'}});
+
+return {results,dialogs,browser:page.context().browser().version()};
+}

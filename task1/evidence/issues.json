@@ -1,0 +1,260 @@
+[
+  {
+    "id": "BUG-001",
+    "title": "Trang đăng nhập mang tiêu đề Đăng Ký",
+    "severity": "Minor",
+    "cases": [
+      "GUI-001"
+    ],
+    "steps": "Mở /login. Quan sát tiêu đề form.",
+    "kind": "Vi phạm đặc tả",
+    "url": ""
+  },
+  {
+    "id": "BUG-002",
+    "title": "Login và Profile thiếu h1 mô tả trang",
+    "severity": "Minor",
+    "cases": [
+      "GUI-002",
+      "GUI-023"
+    ],
+    "steps": "Mở /login rồi /profile sau đăng nhập. Inspect DOM trong main: kiểm tra số h1.",
+    "kind": "Vi phạm đặc tả",
+    "url": ""
+  },
+  {
+    "id": "BUG-003",
+    "title": "Nhãn email và nút đăng nhập dùng tiếng Anh",
+    "severity": "Minor",
+    "cases": [
+      "GUI-003",
+      "GUI-004"
+    ],
+    "steps": "Mở /login. Quan sát nhãn Username và nút Sign In.",
+    "kind": "Vi phạm đặc tả",
+    "url": ""
+  },
+  {
+    "id": "BUG-004",
+    "title": "Email dùng text và không chặn định dạng sai",
+    "severity": "Moderate",
+    "cases": [
+      "GUI-005",
+      "GUI-010"
+    ],
+    "steps": "Mở /login. Nhập not-an-email và DemoOnly123!, bấm Sign In. Kiểm tra HTML validity và phản hồi.",
+    "kind": "Vi phạm đặc tả",
+    "url": ""
+  },
+  {
+    "id": "BUG-005",
+    "title": "Mật khẩu đăng nhập hiển thị nguyên văn",
+    "severity": "Major",
+    "cases": [
+      "GUI-006"
+    ],
+    "steps": "Mở /login. Nhập mật khẩu thử DemoOnly123!. Quan sát ký tự hiển thị và type của input.",
+    "kind": "Vi phạm đặc tả",
+    "url": ""
+  },
+  {
+    "id": "BUG-006",
+    "title": "Thiếu dấu sao ở nhãn các trường bắt buộc",
+    "severity": "Minor",
+    "cases": [
+      "GUI-007",
+      "GUI-025"
+    ],
+    "steps": "Mở /login rồi /profile với tài khoản fixture. Quan sát email, mật khẩu và Họ Tên; đối chiếu required với nhãn.",
+    "kind": "Vi phạm đặc tả",
+    "url": ""
+  },
+  {
+    "id": "BUG-007",
+    "title": "Lỗi đăng nhập nằm dưới nút gửi",
+    "severity": "Moderate",
+    "cases": [
+      "GUI-011"
+    ],
+    "steps": "Mở /login. Nhập not-an-email và DemoOnly123!, gửi form. Quan sát vị trí thông báo lỗi so với Sign In.",
+    "kind": "Vi phạm đặc tả",
+    "url": ""
+  },
+  {
+    "id": "BUG-008",
+    "title": "Tab từ đầu trang nhảy thẳng tới Sign In",
+    "severity": "Moderate",
+    "cases": [
+      "GUI-013"
+    ],
+    "steps": "Mở mới /login và chờ form render. Nhấn Tab lần đầu. Quan sát phần tử focus; kiểm tra tabIndex.",
+    "kind": "Vi phạm đặc tả",
+    "url": ""
+  },
+  {
+    "id": "BUG-009",
+    "title": "Validation điện thoại từ chối số hợp lệ và nhận số sai",
+    "severity": "Major",
+    "cases": [
+      "GUI-027",
+      "GUI-028"
+    ],
+    "steps": "Đăng nhập task1-main@example.test / GuiTest123!. Mở /profile. Nhập 0912345678, bấm Cập nhật; tiếp tục thử 123456789. Ghi nội dung alert mỗi lần.",
+    "kind": "Vi phạm đặc tả",
+    "url": ""
+  },
+  {
+    "id": "BUG-010",
+    "title": "User thấy nút Hủy đơn khi đơn đang giao",
+    "severity": "Major",
+    "cases": [
+      "GUI-030"
+    ],
+    "steps": "Seed fixture, đăng nhập tài khoản task1-main. Mở /profile, tìm đơn trạng thái Đang giao. Quan sát nút Hủy đơn.",
+    "kind": "Vi phạm đặc tả",
+    "url": ""
+  },
+  {
+    "id": "BUG-011",
+    "title": "UX: đang tải đơn lại báo chưa có đơn",
+    "severity": "Moderate",
+    "cases": [
+      "GUI-036"
+    ],
+    "steps": "Đăng nhập tài khoản có đơn. Trì hoãn GET /api/orders/my-orders 1800ms bằng Playwright route; tải lại /profile và quan sát trong khi chờ. Đây là fault injection có ghi trong script.",
+    "kind": "UX bổ sung",
+    "url": ""
+  },
+  {
+    "id": "BUG-012",
+    "title": "UX: API tải đơn lỗi 500 bị hiển thị thành danh sách trống",
+    "severity": "Moderate",
+    "cases": [
+      "GUI-037"
+    ],
+    "steps": "Đăng nhập tài khoản có đơn. Dùng Playwright route trả HTTP 500 cho GET /api/orders/my-orders; tải lại /profile. Không thay dữ liệu DOM; phản hồi mạng lỗi là dữ liệu thử có kiểm soát.",
+    "kind": "UX bổ sung",
+    "url": ""
+  },
+  {
+    "id": "BUG-013",
+    "title": "Empty state lịch sử đơn thiếu hình minh họa",
+    "severity": "Minor",
+    "cases": [
+      "GUI-038"
+    ],
+    "steps": "Đăng nhập task1-empty@example.test / GuiTest123!, mở /profile. Quan sát khối lịch sử đơn trống.",
+    "kind": "Vi phạm đặc tả",
+    "url": ""
+  },
+  {
+    "id": "BUG-014",
+    "title": "Nút đăng xuất mang nhãn Thoát",
+    "severity": "Minor",
+    "cases": [
+      "GUI-039"
+    ],
+    "steps": "Đăng nhập và quan sát nút ở navbar.",
+    "kind": "Vi phạm đặc tả",
+    "url": ""
+  },
+  {
+    "id": "BUG-015",
+    "title": "Navbar không đổi highlight theo trang hiện tại",
+    "severity": "Minor",
+    "cases": [
+      "GUI-040"
+    ],
+    "steps": "Đăng nhập. Mở /profile rồi bấm EShop về Home. So sánh màu/class của link hồ sơ giữa hai trang.",
+    "kind": "Vi phạm đặc tả",
+    "url": ""
+  },
+  {
+    "id": "BUG-016",
+    "title": "Giỏ hàng trên navbar không có badge số lượng",
+    "severity": "Moderate",
+    "cases": [
+      "GUI-043"
+    ],
+    "steps": "Đăng nhập, vào Home. Bấm Thêm vào giỏ ở sản phẩm đầu tiên. Quan sát link Giỏ hàng trên navbar.",
+    "kind": "Vi phạm đặc tả",
+    "url": ""
+  },
+  {
+    "id": "BUG-017",
+    "title": "Admin vẫn có nút chuyển đơn Đã hủy sang Đã giao",
+    "severity": "Major",
+    "cases": [
+      "GUI-050"
+    ],
+    "steps": "Đăng nhập Admin bằng tài khoản demo. Chọn Đơn hàng, tìm đơn fixture Đã hủy. Quan sát nút Đánh dấu Đã giao. Ca này xác minh nút hiện sai, không tuyên bố đã bấm chuyển trạng thái.",
+    "kind": "Vi phạm đặc tả",
+    "url": ""
+  },
+  {
+    "id": "BUG-018",
+    "title": "Nút Hủy đơn trong Admin có màu xám",
+    "severity": "Minor",
+    "cases": [
+      "GUI-052"
+    ],
+    "steps": "Đăng nhập Admin, chọn Đơn hàng. Quan sát các nút Hủy của pending/confirmed, kiểm tra computed background-color.",
+    "kind": "Vi phạm đặc tả",
+    "url": ""
+  },
+  {
+    "id": "BUG-019",
+    "title": "Địa chỉ giao hàng trong Admin bị render HTML",
+    "severity": "Major",
+    "cases": [
+      "GUI-053"
+    ],
+    "steps": "Seed địa chỉ đơn fixture thành chuỗi vô hại <b>GUI_ADDRESS</b>. Mở Admin > Đơn hàng. Quan sát chữ đậm và kiểm tra có node b trong ô địa chỉ. Không dùng payload thực thi script.",
+    "kind": "Vi phạm đặc tả",
+    "url": ""
+  },
+  {
+    "id": "BUG-020",
+    "title": "Lỗi hủy đơn hiển thị chuỗi tiếng Anh từ API",
+    "severity": "Moderate",
+    "cases": [
+      "GUI-055"
+    ],
+    "steps": "User mở /profile khi đơn còn confirmed. Admin chuyển cùng đơn qua shipping rồi delivered bằng API. Không tải lại trang user; bấm Hủy đơn trên dữ liệu cũ. Ghi alert Lỗi: Cannot cancel this order.",
+    "kind": "Vi phạm đặc tả",
+    "url": ""
+  },
+  {
+    "id": "BUG-021",
+    "title": "UX: nhãn form hồ sơ không liên kết với ô nhập",
+    "severity": "Moderate",
+    "cases": [
+      "GUI-056"
+    ],
+    "steps": "Đăng nhập, mở /profile. Inspect label/control của Họ Tên, Số điện thoại, Địa chỉ. Các control có labels.length=0; thử click nhãn để kiểm tra focus.",
+    "kind": "UX bổ sung",
+    "url": ""
+  },
+  {
+    "id": "BUG-022",
+    "title": "UX: lịch sử đơn làm tràn ngang ở viewport 360px",
+    "severity": "Moderate",
+    "cases": [
+      "GUI-057"
+    ],
+    "steps": "Đăng nhập, mở /profile có đơn. Đặt viewport 360x800. So sánh documentElement.scrollWidth với innerWidth và quan sát bảng bị tràn. Đây là viewport desktop, không phải mobile thật.",
+    "kind": "UX bổ sung",
+    "url": ""
+  },
+  {
+    "id": "BUG-023",
+    "title": "Tên người dùng trên navbar bị render HTML",
+    "severity": "Major",
+    "cases": [
+      "GUI-058"
+    ],
+    "steps": "Dùng tài khoản fixture, cập nhật name thành <b>GUI_NAME</b> qua API. Tải lại /profile. Quan sát header hiển thị chữ đậm và có node b. Khôi phục tên sau ca thử.",
+    "kind": "Vi phạm đặc tả",
+    "url": ""
+  }
+]

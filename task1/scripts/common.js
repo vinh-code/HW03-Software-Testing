@@ -1,0 +1,14 @@
+const results=[];
+const dialogs=[];
+page.removeAllListeners('dialog');
+page.on('dialog',async d=>{dialogs.push({type:d.type(),message:d.message()});await d.accept();});
+await page.setViewportSize({width:1366,height:900});
+const web='http://localhost:5173',api='http://localhost:3000/api';
+const pause=()=>page.waitForTimeout(250);
+const check=async(n,ok,actual)=>{const id=`GUI-${String(n).padStart(3,'0')}`;const screenshot=ok?'':`output/playwright/task1/${id}.png`;if(screenshot)await page.screenshot({path:screenshot,fullPage:true});results.push({id,status:ok?'Passed':'Failed',actual, screenshot:screenshot?`../bugs/screenshots/${id}.png`:'',url:page.url(),time:new Date().toISOString()});};
+const login=async(which='main')=>{await page.goto(web+'/login');await page.locator('form input').nth(0).fill(`task1-${which}@example.test`);await page.locator('form input').nth(1).fill('GuiTest123!');await page.locator('form button[type=submit]').click();await page.waitForURL(web+'/');await pause();};
+const profile=async()=>{await page.goto(web+'/profile');await page.getByRole('heading',{name:'Lịch sử đơn hàng'}).waitFor();await pause();};
+const row=id=>page.locator('tbody tr').filter({has:page.getByRole('cell',{name:`#${id}`,exact:true})});
+const rgb=async loc=>loc.evaluate(e=>getComputedStyle(e).backgroundColor);
+const blue=x=>{const v=x.match(/\d+/g).map(Number);return v[2]>v[0]&&v[2]>v[1];};
+const red=x=>{const v=x.match(/\d+/g).map(Number);return v[0]>v[1]&&v[0]>v[2];};

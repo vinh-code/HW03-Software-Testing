@@ -1,0 +1,15 @@
+{
+  "users": {
+    "main": 3,
+    "empty": 4,
+    "other": 5
+  },
+  "orders": {
+    "pending": 5,
+    "confirmed": 6,
+    "shipping": 7,
+    "delivered": 8,
+    "canceled": 9,
+    "other": 10
+  }
+}
