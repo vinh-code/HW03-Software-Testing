@@ -1,0 +1,524 @@
+[
+  {
+    "id": "GUI-001",
+    "ia": "IA-01",
+    "screen": "Login",
+    "expected": "Tiêu đề trang mô tả đúng chức năng Đăng nhập",
+    "spec": "FR-21",
+    "origin": "AI-added; chờ sinh viên duyệt",
+    "why": "Bản cũ tập trung vào đơn hàng, chưa đối chiếu tiêu đề màn đăng nhập với mục đích thực tế."
+  },
+  {
+    "id": "GUI-002",
+    "ia": "IA-01",
+    "screen": "Login",
+    "expected": "Có đúng một h1 mô tả trang",
+    "spec": "FR-21",
+    "origin": "AI-reviewed; chờ sinh viên duyệt",
+    "why": ""
+  },
+  {
+    "id": "GUI-003",
+    "ia": "IA-01",
+    "screen": "Login",
+    "expected": "Nhãn trường email bằng tiếng Việt và đúng nội dung",
+    "spec": "FR-21",
+    "origin": "AI-added; chờ sinh viên duyệt",
+    "why": "Bản cũ chỉ kiểm tra type của email, bỏ qua nội dung nhãn Username."
+  },
+  {
+    "id": "GUI-004",
+    "ia": "IA-01",
+    "screen": "Login",
+    "expected": "Nút gửi có nhãn Đăng nhập bằng tiếng Việt",
+    "spec": "FR-21",
+    "origin": "AI-added; chờ sinh viên duyệt",
+    "why": "Bản cũ chưa kiểm tra riêng ngôn ngữ nút gửi."
+  },
+  {
+    "id": "GUI-005",
+    "ia": "IA-02",
+    "screen": "Login",
+    "expected": "Email dùng type=email",
+    "spec": "FR-02, FR-22",
+    "origin": "AI-reviewed; chờ sinh viên duyệt",
+    "why": ""
+  },
+  {
+    "id": "GUI-006",
+    "ia": "IA-02",
+    "screen": "Login",
+    "expected": "Mật khẩu dùng type=password",
+    "spec": "FR-22",
+    "origin": "AI-reviewed; chờ sinh viên duyệt",
+    "why": ""
+  },
+  {
+    "id": "GUI-007",
+    "ia": "IA-02",
+    "screen": "Login",
+    "expected": "Hai trường bắt buộc có dấu * ở nhãn",
+    "spec": "FR-22",
+    "origin": "AI-reviewed; chờ sinh viên duyệt",
+    "why": ""
+  },
+  {
+    "id": "GUI-008",
+    "ia": "IA-02",
+    "screen": "Login",
+    "expected": "Bỏ trống email bị chặn gửi form",
+    "spec": "HTML validation / tiêu chí bổ sung",
+    "origin": "AI-added; chờ sinh viên duyệt",
+    "why": "Bản cũ gộp form, chưa tách tình huống thiếu email."
+  },
+  {
+    "id": "GUI-009",
+    "ia": "IA-02",
+    "screen": "Login",
+    "expected": "Bỏ trống mật khẩu bị chặn gửi form",
+    "spec": "HTML validation / tiêu chí bổ sung",
+    "origin": "AI-added; chờ sinh viên duyệt",
+    "why": "Bản cũ chưa tách tình huống thiếu mật khẩu."
+  },
+  {
+    "id": "GUI-010",
+    "ia": "IA-02",
+    "screen": "Login",
+    "expected": "Email sai định dạng bị chặn tại form",
+    "spec": "FR-02",
+    "origin": "AI-added; chờ sinh viên duyệt",
+    "why": "Kiểm tra type đơn thuần chưa chứng minh chặn email sai."
+  },
+  {
+    "id": "GUI-011",
+    "ia": "IA-02",
+    "screen": "Login",
+    "expected": "Lỗi đăng nhập nằm phía trên nút gửi",
+    "spec": "FR-22",
+    "origin": "AI-reviewed; chờ sinh viên duyệt",
+    "why": ""
+  },
+  {
+    "id": "GUI-012",
+    "ia": "IA-04",
+    "screen": "Login",
+    "expected": "Đăng nhập sai có thông báo lỗi tiếng Việt",
+    "spec": "FR-02, FR-21",
+    "origin": "AI-reviewed; chờ sinh viên duyệt",
+    "why": ""
+  },
+  {
+    "id": "GUI-013",
+    "ia": "IA-01",
+    "screen": "Login",
+    "expected": "Tab đầu tiên đi vào phần tử tương tác trên cùng, không nhảy tới submit",
+    "spec": "FR-21",
+    "origin": "AI-reviewed; chờ sinh viên duyệt",
+    "why": ""
+  },
+  {
+    "id": "GUI-014",
+    "ia": "IA-03",
+    "screen": "Login",
+    "expected": "Liên kết Quên mật khẩu mở đúng trang",
+    "spec": "IA-03; yêu cầu điều hướng bổ sung",
+    "origin": "AI-reviewed; chờ sinh viên duyệt",
+    "why": ""
+  },
+  {
+    "id": "GUI-015",
+    "ia": "IA-03",
+    "screen": "Login",
+    "expected": "Liên kết Đăng ký mở đúng trang",
+    "spec": "IA-03; yêu cầu điều hướng bổ sung",
+    "origin": "AI-reviewed; chờ sinh viên duyệt",
+    "why": ""
+  },
+  {
+    "id": "GUI-016",
+    "ia": "IA-02",
+    "screen": "Login",
+    "expected": "Enter tại mật khẩu gửi form đăng nhập hợp lệ",
+    "spec": "IA-02; hỗ trợ bàn phím bổ sung",
+    "origin": "AI-reviewed; chờ sinh viên duyệt",
+    "why": ""
+  },
+  {
+    "id": "GUI-017",
+    "ia": "IA-01",
+    "screen": "Profile",
+    "expected": "Bảng có đủ tiêu đề Mã ĐH, Ngày đặt, Tổng tiền, Trạng thái, Thao tác",
+    "spec": "FR-11",
+    "origin": "AI-reviewed; chờ sinh viên duyệt",
+    "why": ""
+  },
+  {
+    "id": "GUI-018",
+    "ia": "IA-01",
+    "screen": "Profile",
+    "expected": "Cả năm trạng thái được dịch sang tiếng Việt",
+    "spec": "FR-11",
+    "origin": "AI-reviewed; chờ sinh viên duyệt",
+    "why": ""
+  },
+  {
+    "id": "GUI-019",
+    "ia": "IA-01",
+    "screen": "Profile",
+    "expected": "Cả năm trạng thái có màu phân biệt",
+    "spec": "FR-11",
+    "origin": "AI-reviewed; chờ sinh viên duyệt",
+    "why": ""
+  },
+  {
+    "id": "GUI-020",
+    "ia": "IA-01",
+    "screen": "Profile",
+    "expected": "Tổng tiền có phân cách hàng nghìn và ký hiệu ₫",
+    "spec": "FR-21",
+    "origin": "AI-reviewed; chờ sinh viên duyệt",
+    "why": ""
+  },
+  {
+    "id": "GUI-021",
+    "ia": "IA-01",
+    "screen": "Profile",
+    "expected": "Các dòng đơn có mã và ngày đặt không rỗng",
+    "spec": "FR-11",
+    "origin": "AI-reviewed; chờ sinh viên duyệt",
+    "why": ""
+  },
+  {
+    "id": "GUI-022",
+    "ia": "IA-01",
+    "screen": "Profile",
+    "expected": "Nút Hủy đơn có màu đỏ",
+    "spec": "FR-21",
+    "origin": "AI-reviewed; chờ sinh viên duyệt",
+    "why": ""
+  },
+  {
+    "id": "GUI-023",
+    "ia": "IA-01",
+    "screen": "Profile",
+    "expected": "Có đúng một h1 mô tả trang",
+    "spec": "FR-21",
+    "origin": "AI-reviewed; chờ sinh viên duyệt",
+    "why": ""
+  },
+  {
+    "id": "GUI-024",
+    "ia": "IA-02",
+    "screen": "Profile",
+    "expected": "Email bị khóa, người dùng không sửa được",
+    "spec": "FR-04",
+    "origin": "AI-reviewed; chờ sinh viên duyệt",
+    "why": ""
+  },
+  {
+    "id": "GUI-025",
+    "ia": "IA-02",
+    "screen": "Profile",
+    "expected": "Họ tên bắt buộc có dấu * ở nhãn",
+    "spec": "FR-22",
+    "origin": "AI-reviewed; chờ sinh viên duyệt",
+    "why": ""
+  },
+  {
+    "id": "GUI-026",
+    "ia": "IA-02",
+    "screen": "Profile",
+    "expected": "Nút Cập nhật có màu xanh dương",
+    "spec": "FR-21",
+    "origin": "AI-reviewed; chờ sinh viên duyệt",
+    "why": ""
+  },
+  {
+    "id": "GUI-027",
+    "ia": "IA-02",
+    "screen": "Profile",
+    "expected": "Số điện thoại hợp lệ 0912345678 được chấp nhận khi cập nhật",
+    "spec": "FR-04",
+    "origin": "AI-added; chờ sinh viên duyệt",
+    "why": "Cần ca hợp lệ để phát hiện validation từ chối nhầm, không chỉ thử dữ liệu sai."
+  },
+  {
+    "id": "GUI-028",
+    "ia": "IA-02",
+    "screen": "Profile",
+    "expected": "Số điện thoại sai 123456789 bị từ chối",
+    "spec": "FR-04",
+    "origin": "AI-added; chờ sinh viên duyệt",
+    "why": "Cần ca không bắt đầu bằng 0 để xác minh biên validation."
+  },
+  {
+    "id": "GUI-029",
+    "ia": "IA-04",
+    "screen": "Profile",
+    "expected": "Đơn pending và confirmed có nút Hủy đơn",
+    "spec": "FR-10",
+    "origin": "AI-reviewed; chờ sinh viên duyệt",
+    "why": ""
+  },
+  {
+    "id": "GUI-030",
+    "ia": "IA-04",
+    "screen": "Profile",
+    "expected": "Đơn shipping không có nút Hủy đơn cho user",
+    "spec": "FR-10",
+    "origin": "AI-reviewed; chờ sinh viên duyệt",
+    "why": ""
+  },
+  {
+    "id": "GUI-031",
+    "ia": "IA-04",
+    "screen": "Profile",
+    "expected": "Đơn delivered và canceled không có nút Hủy đơn",
+    "spec": "FR-10",
+    "origin": "AI-reviewed; chờ sinh viên duyệt",
+    "why": ""
+  },
+  {
+    "id": "GUI-032",
+    "ia": "IA-04",
+    "screen": "Profile",
+    "expected": "Hủy đơn pending có phản hồi thành công và cập nhật Đã hủy",
+    "spec": "FR-10; phản hồi bổ sung IA-04",
+    "origin": "AI-reviewed; chờ sinh viên duyệt",
+    "why": ""
+  },
+  {
+    "id": "GUI-033",
+    "ia": "IA-04",
+    "screen": "Profile",
+    "expected": "Hủy đơn confirmed có phản hồi thành công và cập nhật Đã hủy",
+    "spec": "FR-10; phản hồi bổ sung IA-04",
+    "origin": "AI-reviewed; chờ sinh viên duyệt",
+    "why": ""
+  },
+  {
+    "id": "GUI-034",
+    "ia": "IA-03",
+    "screen": "Profile",
+    "expected": "Tải lại trang vẫn giữ đăng nhập và tải lại đơn",
+    "spec": "IA-03; tính liên tục phiên bổ sung",
+    "origin": "AI-reviewed; chờ sinh viên duyệt",
+    "why": ""
+  },
+  {
+    "id": "GUI-035",
+    "ia": "IA-04",
+    "screen": "Profile",
+    "expected": "Chỉ hiển thị đơn của người dùng hiện tại",
+    "spec": "FR-11",
+    "origin": "AI-reviewed; chờ sinh viên duyệt",
+    "why": ""
+  },
+  {
+    "id": "GUI-036",
+    "ia": "IA-04",
+    "screen": "Profile",
+    "expected": "Đang chờ tải đơn có chỉ báo tải, không báo chưa có đơn",
+    "spec": "IA-04; tiêu chí trạng thái bổ sung",
+    "origin": "AI-reviewed; chờ sinh viên duyệt",
+    "why": ""
+  },
+  {
+    "id": "GUI-037",
+    "ia": "IA-04",
+    "screen": "Profile",
+    "expected": "Lỗi tải đơn có thông báo lỗi, không báo chưa có đơn",
+    "spec": "IA-04; tiêu chí phục hồi lỗi bổ sung",
+    "origin": "AI-reviewed; chờ sinh viên duyệt",
+    "why": ""
+  },
+  {
+    "id": "GUI-038",
+    "ia": "IA-04",
+    "screen": "Profile",
+    "expected": "Không có đơn: có thông điệp thân thiện và icon/hình minh họa",
+    "spec": "FR-24",
+    "origin": "AI-reviewed; chờ sinh viên duyệt",
+    "why": ""
+  },
+  {
+    "id": "GUI-039",
+    "ia": "IA-03",
+    "screen": "Global",
+    "expected": "Nhãn nút đăng xuất là Đăng xuất",
+    "spec": "FR-23",
+    "origin": "AI-reviewed; chờ sinh viên duyệt",
+    "why": ""
+  },
+  {
+    "id": "GUI-040",
+    "ia": "IA-03",
+    "screen": "Global",
+    "expected": "Navbar phân biệt trang đang chọn khi chuyển Home/Profile",
+    "spec": "FR-23",
+    "origin": "AI-reviewed; chờ sinh viên duyệt",
+    "why": ""
+  },
+  {
+    "id": "GUI-041",
+    "ia": "IA-03",
+    "screen": "Global",
+    "expected": "Link hồ sơ mở trang có lịch sử đơn",
+    "spec": "FR-11; IA-03",
+    "origin": "AI-reviewed; chờ sinh viên duyệt",
+    "why": ""
+  },
+  {
+    "id": "GUI-042",
+    "ia": "IA-03",
+    "screen": "Global",
+    "expected": "Back từ Profile trở về Home và giữ phiên",
+    "spec": "IA-03; lịch sử điều hướng bổ sung",
+    "origin": "AI-reviewed; chờ sinh viên duyệt",
+    "why": ""
+  },
+  {
+    "id": "GUI-043",
+    "ia": "IA-03",
+    "screen": "Global",
+    "expected": "Giỏ hàng có badge số lượng sau khi thêm một sản phẩm",
+    "spec": "FR-23",
+    "origin": "AI-reviewed; chờ sinh viên duyệt",
+    "why": ""
+  },
+  {
+    "id": "GUI-044",
+    "ia": "IA-03",
+    "screen": "Global",
+    "expected": "Đăng xuất làm trang Profile không còn hiển thị đơn",
+    "spec": "FR-11; IA-03",
+    "origin": "AI-reviewed; chờ sinh viên duyệt",
+    "why": ""
+  },
+  {
+    "id": "GUI-045",
+    "ia": "IA-01",
+    "screen": "Admin Orders",
+    "expected": "Trạng thái được dịch giống giao diện user",
+    "spec": "FR-11, FR-18, FR-21",
+    "origin": "AI-reviewed; chờ sinh viên duyệt",
+    "why": ""
+  },
+  {
+    "id": "GUI-046",
+    "ia": "IA-02",
+    "screen": "Admin Orders",
+    "expected": "Đơn pending có Xác nhận và Hủy",
+    "spec": "FR-10, FR-18",
+    "origin": "AI-reviewed; chờ sinh viên duyệt",
+    "why": ""
+  },
+  {
+    "id": "GUI-047",
+    "ia": "IA-02",
+    "screen": "Admin Orders",
+    "expected": "Đơn confirmed có Giao hàng và Hủy",
+    "spec": "FR-10, FR-18",
+    "origin": "AI-reviewed; chờ sinh viên duyệt",
+    "why": ""
+  },
+  {
+    "id": "GUI-048",
+    "ia": "IA-02",
+    "screen": "Admin Orders",
+    "expected": "Đơn shipping có Hoàn thành",
+    "spec": "FR-10, FR-18",
+    "origin": "AI-reviewed; chờ sinh viên duyệt",
+    "why": ""
+  },
+  {
+    "id": "GUI-049",
+    "ia": "IA-02",
+    "screen": "Admin Orders",
+    "expected": "Đơn delivered không có nút chuyển trạng thái",
+    "spec": "FR-10, FR-18",
+    "origin": "AI-reviewed; chờ sinh viên duyệt",
+    "why": ""
+  },
+  {
+    "id": "GUI-050",
+    "ia": "IA-02",
+    "screen": "Admin Orders",
+    "expected": "Đơn canceled không có nút chuyển trạng thái",
+    "spec": "FR-10, FR-18",
+    "origin": "AI-added; chờ sinh viên duyệt",
+    "why": "Ca cũ Đã giao -> Đã xác nhận không thao tác được trên UI; thay bằng kiểm tra nút ở trạng thái kết thúc."
+  },
+  {
+    "id": "GUI-051",
+    "ia": "IA-03",
+    "screen": "Admin Orders",
+    "expected": "Menu highlight Quản lý Đơn hàng khi chọn",
+    "spec": "FR-23",
+    "origin": "AI-reviewed; chờ sinh viên duyệt",
+    "why": ""
+  },
+  {
+    "id": "GUI-052",
+    "ia": "IA-01",
+    "screen": "Admin Orders",
+    "expected": "Các nút Hủy có màu đỏ",
+    "spec": "FR-21",
+    "origin": "AI-added; chờ sinh viên duyệt",
+    "why": "Bản cũ tập trung màu nút user, bỏ qua nút Hủy của Admin."
+  },
+  {
+    "id": "GUI-053",
+    "ia": "IA-04",
+    "screen": "Admin Orders",
+    "expected": "Địa chỉ chứa <b> được hiển thị dưới dạng văn bản an toàn",
+    "spec": "FR-18, SEC-04",
+    "origin": "AI-reviewed; chờ sinh viên duyệt",
+    "why": ""
+  },
+  {
+    "id": "GUI-054",
+    "ia": "IA-04",
+    "screen": "Admin Orders",
+    "expected": "Admin xác nhận pending: user tải lại thấy Đã xác nhận",
+    "spec": "FR-10, FR-11, FR-18",
+    "origin": "AI-reviewed; chờ sinh viên duyệt",
+    "why": ""
+  },
+  {
+    "id": "GUI-055",
+    "ia": "IA-04",
+    "screen": "Profile",
+    "expected": "Thông báo lỗi hủy đơn từ API dùng tiếng Việt dễ hiểu",
+    "spec": "FR-21; IA-04",
+    "origin": "AI-reviewed; chờ sinh viên duyệt",
+    "why": ""
+  },
+  {
+    "id": "GUI-056",
+    "ia": "IA-02",
+    "screen": "Profile",
+    "expected": "Nhãn Họ tên/Điện thoại/Địa chỉ liên kết với control tương ứng",
+    "spec": "IA-02; khả năng truy cập bổ sung",
+    "origin": "AI-reviewed; chờ sinh viên duyệt",
+    "why": ""
+  },
+  {
+    "id": "GUI-057",
+    "ia": "IA-01",
+    "screen": "Profile",
+    "expected": "Ở 360px nội dung không gây cuộn ngang toàn trang",
+    "spec": "IA-01; responsive bổ sung",
+    "origin": "AI-reviewed; chờ sinh viên duyệt",
+    "why": ""
+  },
+  {
+    "id": "GUI-058",
+    "ia": "IA-04",
+    "screen": "Profile",
+    "expected": "Tên người dùng chứa <b> hiển thị nguyên văn, không render HTML",
+    "spec": "SEC-04",
+    "origin": "AI-reviewed; chờ sinh viên duyệt",
+    "why": ""
+  }
+]
