@@ -1,14 +1,34 @@
 {
-  "verified_at_utc": "2026-11-10T04:30:01.854689+00:00",
-  "completed_platforms": 2,
+  "verified_at_utc": "2026-11-10T05:31:00.547117+00:00",
+  "completed_platforms": 3,
   "required_platforms": 3,
-  "checks_executed": 116,
-  "passed_per_platform": 30,
-  "failed_per_platform": 28,
-  "screenshot_count": 56,
+  "checks_executed": 174,
+  "per_platform": {
+    "chrome": {
+      "Failed": 28,
+      "Passed": 30
+    },
+    "firefox": {
+      "Failed": 28,
+      "Passed": 30
+    },
+    "android": {
+      "Failed": 28,
+      "Passed": 30
+    }
+  },
+  "screenshot_count": 84,
   "different_status_count": 0,
   "xlsx_evidence_links": "verified in both workbooks",
   "preexisting_orders_including_task1": "preserved compared to pre-Task3 backup",
-  "third_platform": "not run; awaiting cloud/real device availability",
-  "task3_status": "incomplete"
+  "third_platform": {
+    "hashed_id": "b06eaac904738242824ca68b189c12e4aadac03d",
+    "name": "HW03 23120202 GUI checklist Android",
+    "browser_url": "https://automate.browserstack.com/builds/9c1d8829c902315882382e5d229eb28f2ea0d61e/sessions/b06eaac904738242824ca68b189c12e4aadac03d",
+    "device": "Samsung Galaxy S23",
+    "os": "android",
+    "os_version": "13.0",
+    "browser_version": null
+  },
+  "task3_status": "complete"
 }

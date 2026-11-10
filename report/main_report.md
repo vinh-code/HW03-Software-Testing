@@ -4,7 +4,7 @@ Sinh viên: Phạm Quang Vinh — 23120202 — 23120202@student.hcmus.edu.vn.
 
 ## 1. Phạm vi và trạng thái
 
-Task 1 được thực thi trên Login, Profile/Hồ sơ và Lịch sử đơn, Admin Orders; navbar và Home hỗ trợ điều hướng/thêm giỏ. Task 2 chưa thực thi; Task 3 đã chạy Chrome và Firefox, còn thiếu nền tảng thứ ba. Phạm vi màn hình/flow không trùng thành viên khác vẫn cần sinh viên xác nhận.
+Task 1 được thực thi trên Login, Profile/Hồ sơ và Lịch sử đơn, Admin Orders; navbar và Home hỗ trợ điều hướng/thêm giỏ. Task 2 chưa thực thi; Task 3 đã chạy đủ Chrome, Firefox trên Ubuntu và Chrome trên Samsung Galaxy S23 thật / Android 13 qua BrowserStack. Phạm vi màn hình/flow không trùng thành viên khác vẫn cần sinh viên xác nhận.
 
 Kết quả: **58 mục đã chạy; 30 Passed; 28 Failed; 23 bug/phát hiện**, gồm 19 vi phạm đặc tả và 4 vấn đề UX bổ sung. Có 28 ảnh thực tế cho các mục Failed. Đã đăng 23 GitHub Issues kèm ảnh tại [HW03-Software-Testing](https://github.com/vinh-code/HW03-Software-Testing/issues). Sinh viên 23120202 đã xác nhận duyệt Task 1; việc duyệt được ghi tại [human_review.json](../task1/evidence/human_review.json).
 
@@ -188,11 +188,11 @@ Các mục Failed cùng nguyên nhân được gom để tránh báo trùng. Cá
 
 ## 6. Task 3 — Cross-browser / Cross-platform
 
-Đã chạy lại đủ 58 mục trên Chrome 156.0.8078.79 và Firefox 159.0 có cửa sổ, trên laptop MSI Cyborg 15 A12VF / Ubuntu 24.04.5 LTS. Mỗi trình duyệt: 30 Passed, 28 Failed; tổng 116 lượt kiểm tra, 56 ảnh Failed. Không có khác biệt Passed/Failed trong các mục đã chạy. Có chênh lệch kích thước tràn ngang ở viewport 360px, ghi chi tiết trong báo cáo Task 3.
+Đã chạy lại đủ 58 mục trên Chrome 156.0.8078.79 và Firefox 159.0 có cửa sổ, trên laptop MSI Cyborg 15 A12VF / Ubuntu 24.04.5 LTS. Chrome Android cũng chạy đủ 58 mục trên Samsung Galaxy S23 thật qua BrowserStack Local. Mỗi nền tảng: 30 Passed, 28 Failed; tổng 174 lượt kiểm tra, 84 ảnh Failed. Không có khác biệt Passed/Failed trong các mục đã chạy. Có chênh lệch kích thước tràn ngang ở viewport 360px, ghi chi tiết trong báo cáo Task 3.
 
-Ảnh chụp thật có nhãn email, MSSV, họ tên, browser/version, OS/device và URL localhost. Nhãn được thêm vào cuối tài liệu sau khi đo rồi gỡ, không che nội dung SUT. Tên trong form Hồ sơ của fixture cũng chứa họ tên và MSSV. Không sửa code SUT.
+Ảnh chụp thật có nhãn email, MSSV, họ tên, browser/version, OS/device và URL localhost. Nhãn được thêm sau khi đo rồi gỡ: desktop đặt cuối tài liệu, Android chụp vùng web theo visualViewport, đặt nhãn phía trên và cuộn đến nội dung liên quan. Tên trong form Hồ sơ của fixture cũng chứa họ tên và MSSV. Không sửa code SUT.
 
-**Task 3 chưa hoàn tất: 2/3 nền tảng.** Chưa có Safari, Android Chrome hoặc Expo Go trên thiết bị thật; không tính WebKit Linux hoặc viewport giả lập là nền tảng thứ ba. Chưa dùng BrowserStack/LambdaTest. Xác nhận human review trước đó áp dụng Task 1.
+**Task 3 đã thực thi đủ 3/3 nền tảng.** Nền tảng thứ ba là Chrome 149.0.0.0 (user-agent rút gọn) trên Samsung Galaxy S23 / Android 13.0 thật do BrowserStack cung cấp, viewport ban đầu 360×649 CSS pixels. BrowserStack Local đưa thiết bị về localhost của máy chạy SUT. Metadata phiên xác nhận OS riêng vì user-agent Android bị rút gọn. Xác nhận human review trước đó áp dụng Task 1.
 
 [Báo cáo và bảng đối chiếu Task 3](../cross_platform/README.md) · [PDF](../cross_platform/README.pdf) · [Excel, sheet Cross-platform](../checklist/GUI_Checklist.xlsx).
 
@@ -200,7 +200,7 @@ Các mục Failed cùng nguyên nhân được gom để tránh báo trùng. Cá
 
 1. Sinh viên đã xác nhận duyệt Task 1. Thông tin MSSV/email đã được cung cấp. Phạm vi không trùng nhóm vẫn cần đối chiếu với các thành viên; nguồn gốc các mục AI được giữ nguyên.
 2. GitHub Issues đã đăng đủ 23 mục kèm ảnh; xem [danh sách Issues](https://github.com/vinh-code/HW03-Software-Testing/issues).
-3. Task 2 (pilot, 7 người thật, phân tích) chưa thực hiện. Task 3 đã chạy Chrome và Firefox trên máy thật, còn thiếu Safari/Android/Expo Go. Không dùng số lượng dự kiến trong template làm kết quả thực tế.
+3. Task 2 (pilot, 7 người thật, phân tích) chưa thực hiện. Task 3 đã chạy đủ Chrome/Firefox desktop và Chrome Android trên thiết bị thật. Không dùng số lượng dự kiến trong template làm kết quả thực tế.
 4. AI Audit Report của phiên hiện tại được lưu; lịch sử sinh checklist trước phiên này chưa có log đầy đủ. AI Critique do AI hỗ trợ soạn và đã được sinh viên duyệt.
 5. Các tiêu chí bổ sung không tự động trở thành yêu cầu của đặc tả. Kết quả chỉ phản ánh môi trường và dữ liệu thử đã ghi, không chứng minh ứng dụng hoàn toàn an toàn hay tương thích mọi nền tảng.
 

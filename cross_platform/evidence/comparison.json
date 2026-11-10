@@ -1,16 +1,18 @@
 {
   "completed_platforms": [
     "chrome",
-    "firefox"
+    "firefox",
+    "android"
   ],
   "required_platform_count": 3,
-  "status": "incomplete",
+  "status": "complete",
   "comparisons": [
     {
       "id": "GUI-001",
       "statuses": {
         "chrome": "Failed",
-        "firefox": "Failed"
+        "firefox": "Failed",
+        "android": "Failed"
       },
       "different_status": false
     },
@@ -18,7 +20,8 @@
       "id": "GUI-002",
       "statuses": {
         "chrome": "Failed",
-        "firefox": "Failed"
+        "firefox": "Failed",
+        "android": "Failed"
       },
       "different_status": false
     },
@@ -26,7 +29,8 @@
       "id": "GUI-003",
       "statuses": {
         "chrome": "Failed",
-        "firefox": "Failed"
+        "firefox": "Failed",
+        "android": "Failed"
       },
       "different_status": false
     },
@@ -34,7 +38,8 @@
       "id": "GUI-004",
       "statuses": {
         "chrome": "Failed",
-        "firefox": "Failed"
+        "firefox": "Failed",
+        "android": "Failed"
       },
       "different_status": false
     },
@@ -42,7 +47,8 @@
       "id": "GUI-005",
       "statuses": {
         "chrome": "Failed",
-        "firefox": "Failed"
+        "firefox": "Failed",
+        "android": "Failed"
       },
       "different_status": false
     },
@@ -50,7 +56,8 @@
       "id": "GUI-006",
       "statuses": {
         "chrome": "Failed",
-        "firefox": "Failed"
+        "firefox": "Failed",
+        "android": "Failed"
       },
       "different_status": false
     },
@@ -58,7 +65,8 @@
       "id": "GUI-007",
       "statuses": {
         "chrome": "Failed",
-        "firefox": "Failed"
+        "firefox": "Failed",
+        "android": "Failed"
       },
       "different_status": false
     },
@@ -66,7 +74,8 @@
       "id": "GUI-008",
       "statuses": {
         "chrome": "Passed",
-        "firefox": "Passed"
+        "firefox": "Passed",
+        "android": "Passed"
       },
       "different_status": false
     },
@@ -74,7 +83,8 @@
       "id": "GUI-009",
       "statuses": {
         "chrome": "Passed",
-        "firefox": "Passed"
+        "firefox": "Passed",
+        "android": "Passed"
       },
       "different_status": false
     },
@@ -82,7 +92,8 @@
       "id": "GUI-010",
       "statuses": {
         "chrome": "Failed",
-        "firefox": "Failed"
+        "firefox": "Failed",
+        "android": "Failed"
       },
       "different_status": false
     },
@@ -90,7 +101,8 @@
       "id": "GUI-011",
       "statuses": {
         "chrome": "Failed",
-        "firefox": "Failed"
+        "firefox": "Failed",
+        "android": "Failed"
       },
       "different_status": false
     },
@@ -98,7 +110,8 @@
       "id": "GUI-012",
       "statuses": {
         "chrome": "Passed",
-        "firefox": "Passed"
+        "firefox": "Passed",
+        "android": "Passed"
       },
       "different_status": false
     },
@@ -106,7 +119,8 @@
       "id": "GUI-013",
       "statuses": {
         "chrome": "Failed",
-        "firefox": "Failed"
+        "firefox": "Failed",
+        "android": "Failed"
       },
       "different_status": false
     },
@@ -114,7 +128,8 @@
       "id": "GUI-014",
       "statuses": {
         "chrome": "Passed",
-        "firefox": "Passed"
+        "firefox": "Passed",
+        "android": "Passed"
       },
       "different_status": false
     },
@@ -122,7 +137,8 @@
       "id": "GUI-015",
       "statuses": {
         "chrome": "Passed",
-        "firefox": "Passed"
+        "firefox": "Passed",
+        "android": "Passed"
       },
       "different_status": false
     },
@@ -130,7 +146,8 @@
       "id": "GUI-016",
       "statuses": {
         "chrome": "Passed",
-        "firefox": "Passed"
+        "firefox": "Passed",
+        "android": "Passed"
       },
       "different_status": false
     },
@@ -138,7 +155,8 @@
       "id": "GUI-017",
       "statuses": {
         "chrome": "Passed",
-        "firefox": "Passed"
+        "firefox": "Passed",
+        "android": "Passed"
       },
       "different_status": false
     },
@@ -146,7 +164,8 @@
       "id": "GUI-018",
       "statuses": {
         "chrome": "Passed",
-        "firefox": "Passed"
+        "firefox": "Passed",
+        "android": "Passed"
       },
       "different_status": false
     },
@@ -154,7 +173,8 @@
       "id": "GUI-019",
       "statuses": {
         "chrome": "Passed",
-        "firefox": "Passed"
+        "firefox": "Passed",
+        "android": "Passed"
       },
       "different_status": false
     },
@@ -162,7 +182,8 @@
       "id": "GUI-020",
       "statuses": {
         "chrome": "Passed",
-        "firefox": "Passed"
+        "firefox": "Passed",
+        "android": "Passed"
       },
       "different_status": false
     },
@@ -170,7 +191,8 @@
       "id": "GUI-021",
       "statuses": {
         "chrome": "Passed",
-        "firefox": "Passed"
+        "firefox": "Passed",
+        "android": "Passed"
       },
       "different_status": false
     },
@@ -178,7 +200,8 @@
       "id": "GUI-022",
       "statuses": {
         "chrome": "Passed",
-        "firefox": "Passed"
+        "firefox": "Passed",
+        "android": "Passed"
       },
       "different_status": false
     },
@@ -186,7 +209,8 @@
       "id": "GUI-023",
       "statuses": {
         "chrome": "Failed",
-        "firefox": "Failed"
+        "firefox": "Failed",
+        "android": "Failed"
       },
       "different_status": false
     },
@@ -194,7 +218,8 @@
       "id": "GUI-024",
       "statuses": {
         "chrome": "Passed",
-        "firefox": "Passed"
+        "firefox": "Passed",
+        "android": "Passed"
       },
       "different_status": false
     },
@@ -202,7 +227,8 @@
       "id": "GUI-025",
       "statuses": {
         "chrome": "Failed",
-        "firefox": "Failed"
+        "firefox": "Failed",
+        "android": "Failed"
       },
       "different_status": false
     },
@@ -210,7 +236,8 @@
       "id": "GUI-026",
       "statuses": {
         "chrome": "Passed",
-        "firefox": "Passed"
+        "firefox": "Passed",
+        "android": "Passed"
       },
       "different_status": false
     },
@@ -218,7 +245,8 @@
       "id": "GUI-027",
       "statuses": {
         "chrome": "Failed",
-        "firefox": "Failed"
+        "firefox": "Failed",
+        "android": "Failed"
       },
       "different_status": false
     },
@@ -226,7 +254,8 @@
       "id": "GUI-028",
       "statuses": {
         "chrome": "Failed",
-        "firefox": "Failed"
+        "firefox": "Failed",
+        "android": "Failed"
       },
       "different_status": false
     },
@@ -234,7 +263,8 @@
       "id": "GUI-029",
       "statuses": {
         "chrome": "Passed",
-        "firefox": "Passed"
+        "firefox": "Passed",
+        "android": "Passed"
       },
       "different_status": false
     },
@@ -242,7 +272,8 @@
       "id": "GUI-030",
       "statuses": {
         "chrome": "Failed",
-        "firefox": "Failed"
+        "firefox": "Failed",
+        "android": "Failed"
       },
       "different_status": false
     },
@@ -250,7 +281,8 @@
       "id": "GUI-031",
       "statuses": {
         "chrome": "Passed",
-        "firefox": "Passed"
+        "firefox": "Passed",
+        "android": "Passed"
       },
       "different_status": false
     },
@@ -258,7 +290,8 @@
       "id": "GUI-032",
       "statuses": {
         "chrome": "Passed",
-        "firefox": "Passed"
+        "firefox": "Passed",
+        "android": "Passed"
       },
       "different_status": false
     },
@@ -266,7 +299,8 @@
       "id": "GUI-033",
       "statuses": {
         "chrome": "Passed",
-        "firefox": "Passed"
+        "firefox": "Passed",
+        "android": "Passed"
       },
       "different_status": false
     },
@@ -274,7 +308,8 @@
       "id": "GUI-034",
       "statuses": {
         "chrome": "Passed",
-        "firefox": "Passed"
+        "firefox": "Passed",
+        "android": "Passed"
       },
       "different_status": false
     },
@@ -282,7 +317,8 @@
       "id": "GUI-035",
       "statuses": {
         "chrome": "Passed",
-        "firefox": "Passed"
+        "firefox": "Passed",
+        "android": "Passed"
       },
       "different_status": false
     },
@@ -290,7 +326,8 @@
       "id": "GUI-036",
       "statuses": {
         "chrome": "Failed",
-        "firefox": "Failed"
+        "firefox": "Failed",
+        "android": "Failed"
       },
       "different_status": false
     },
@@ -298,7 +335,8 @@
       "id": "GUI-037",
       "statuses": {
         "chrome": "Failed",
-        "firefox": "Failed"
+        "firefox": "Failed",
+        "android": "Failed"
       },
       "different_status": false
     },
@@ -306,7 +344,8 @@
       "id": "GUI-038",
       "statuses": {
         "chrome": "Failed",
-        "firefox": "Failed"
+        "firefox": "Failed",
+        "android": "Failed"
       },
       "different_status": false
     },
@@ -314,7 +353,8 @@
       "id": "GUI-039",
       "statuses": {
         "chrome": "Failed",
-        "firefox": "Failed"
+        "firefox": "Failed",
+        "android": "Failed"
       },
       "different_status": false
     },
@@ -322,7 +362,8 @@
       "id": "GUI-040",
       "statuses": {
         "chrome": "Failed",
-        "firefox": "Failed"
+        "firefox": "Failed",
+        "android": "Failed"
       },
       "different_status": false
     },
@@ -330,7 +371,8 @@
       "id": "GUI-041",
       "statuses": {
         "chrome": "Passed",
-        "firefox": "Passed"
+        "firefox": "Passed",
+        "android": "Passed"
       },
       "different_status": false
     },
@@ -338,7 +380,8 @@
       "id": "GUI-042",
       "statuses": {
         "chrome": "Passed",
-        "firefox": "Passed"
+        "firefox": "Passed",
+        "android": "Passed"
       },
       "different_status": false
     },
@@ -346,7 +389,8 @@
       "id": "GUI-043",
       "statuses": {
         "chrome": "Failed",
-        "firefox": "Failed"
+        "firefox": "Failed",
+        "android": "Failed"
       },
       "different_status": false
     },
@@ -354,7 +398,8 @@
       "id": "GUI-044",
       "statuses": {
         "chrome": "Passed",
-        "firefox": "Passed"
+        "firefox": "Passed",
+        "android": "Passed"
       },
       "different_status": false
     },
@@ -362,7 +407,8 @@
       "id": "GUI-045",
       "statuses": {
         "chrome": "Passed",
-        "firefox": "Passed"
+        "firefox": "Passed",
+        "android": "Passed"
       },
       "different_status": false
     },
@@ -370,7 +416,8 @@
       "id": "GUI-046",
       "statuses": {
         "chrome": "Passed",
-        "firefox": "Passed"
+        "firefox": "Passed",
+        "android": "Passed"
       },
       "different_status": false
     },
@@ -378,7 +425,8 @@
       "id": "GUI-047",
       "statuses": {
         "chrome": "Passed",
-        "firefox": "Passed"
+        "firefox": "Passed",
+        "android": "Passed"
       },
       "different_status": false
     },
@@ -386,7 +434,8 @@
       "id": "GUI-048",
       "statuses": {
         "chrome": "Passed",
-        "firefox": "Passed"
+        "firefox": "Passed",
+        "android": "Passed"
       },
       "different_status": false
     },
@@ -394,7 +443,8 @@
       "id": "GUI-049",
       "statuses": {
         "chrome": "Passed",
-        "firefox": "Passed"
+        "firefox": "Passed",
+        "android": "Passed"
       },
       "different_status": false
     },
@@ -402,7 +452,8 @@
       "id": "GUI-050",
       "statuses": {
         "chrome": "Failed",
-        "firefox": "Failed"
+        "firefox": "Failed",
+        "android": "Failed"
       },
       "different_status": false
     },
@@ -410,7 +461,8 @@
       "id": "GUI-051",
       "statuses": {
         "chrome": "Passed",
-        "firefox": "Passed"
+        "firefox": "Passed",
+        "android": "Passed"
       },
       "different_status": false
     },
@@ -418,7 +470,8 @@
       "id": "GUI-052",
       "statuses": {
         "chrome": "Failed",
-        "firefox": "Failed"
+        "firefox": "Failed",
+        "android": "Failed"
       },
       "different_status": false
     },
@@ -426,7 +479,8 @@
       "id": "GUI-053",
       "statuses": {
         "chrome": "Failed",
-        "firefox": "Failed"
+        "firefox": "Failed",
+        "android": "Failed"
       },
       "different_status": false
     },
@@ -434,7 +488,8 @@
       "id": "GUI-054",
       "statuses": {
         "chrome": "Passed",
-        "firefox": "Passed"
+        "firefox": "Passed",
+        "android": "Passed"
       },
       "different_status": false
     },
@@ -442,7 +497,8 @@
       "id": "GUI-055",
       "statuses": {
         "chrome": "Failed",
-        "firefox": "Failed"
+        "firefox": "Failed",
+        "android": "Failed"
       },
       "different_status": false
     },
@@ -450,7 +506,8 @@
       "id": "GUI-056",
       "statuses": {
         "chrome": "Failed",
-        "firefox": "Failed"
+        "firefox": "Failed",
+        "android": "Failed"
       },
       "different_status": false
     },
@@ -458,7 +515,8 @@
       "id": "GUI-057",
       "statuses": {
         "chrome": "Failed",
-        "firefox": "Failed"
+        "firefox": "Failed",
+        "android": "Failed"
       },
       "different_status": false
     },
@@ -466,7 +524,8 @@
       "id": "GUI-058",
       "statuses": {
         "chrome": "Failed",
-        "firefox": "Failed"
+        "firefox": "Failed",
+        "android": "Failed"
       },
       "different_status": false
     }

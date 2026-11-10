@@ -78,7 +78,7 @@ for row in rev:
  for c in row:c.alignment=Alignment(wrap_text=True,vertical='top')
 # Read actual Task 3 runs without overwriting the reviewed Task 1 baseline.
 cross_runs={}
-for browser in ('chrome','firefox'):
+for browser in ('chrome','firefox','android'):
  path=ROOT/f'cross_platform/evidence/{browser}.json'
  if path.exists():cross_runs[browser]=json.loads(path.read_text())
 if cross_runs:
@@ -90,16 +90,16 @@ if cross_runs:
    shot=f'../cross_platform/screenshots/{browser}/{result["id"]}.png' if result['screenshot'] else ''
    cross.append([browser,version,result['id'],result['status'],result['actual'],shot,result['time']])
    if shot:cross.cell(cross.max_row,6).hyperlink=shot
-  if browser=='firefox':
+  if browser in ('firefox','android'):
    mapped={r['id']:r['status'] for r in run['results']}
-   for row in ws.iter_rows(min_row=2):row[12].value=mapped[row[0].value]
+   for row in ws.iter_rows(min_row=2):row[12 if browser=='firefox' else 13].value=mapped[row[0].value]
    for row in s.iter_rows(min_row=2):
-    if row[0].value=='Firefox':row[1].value=f'{len(mapped)} executed; see Cross-platform'
+    if row[0].value==('Firefox' if browser=='firefox' else 'Platform 3'):row[1].value=f'{browser}: {len(mapped)} executed; see Cross-platform'
  cross.freeze_panes='D2';cross.auto_filter.ref=cross.dimensions
  for col,width in zip('ABCDEFG',[14,24,14,14,90,65,28]):cross.column_dimensions[col].width=width
  for row in cross:
   for cell in row:cell.alignment=Alignment(wrap_text=True,vertical='top')
- s.append(['Task 3 platforms',f'{len(cross_runs)}/3; incomplete'])
+ s.append(['Task 3 platforms',f'{len(cross_runs)}/3; '+('complete' if len(cross_runs)>=3 else 'incomplete')])
 wb.save(ROOT/'checklist/GUI_Checklist.xlsx');(ROOT/'checklist/GUI_Checklist.md').write_text('\n'.join(md)+'\n')
 for row in ws.iter_rows(min_row=2):
  if row[10].value:
