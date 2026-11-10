@@ -1,0 +1,5 @@
+5109aa5 | 2026-11-10 10:58:08 +0700 | Phạm Quang Vinh | docs: preserve pre-execution HW03 templates
+6542cf0 | 2026-11-10 10:59:05 +0700 | Phạm Quang Vinh | test: revise Task 1 scope and design 58 executable GUI checks
+de85e16 | 2026-11-10 11:09:47 +0700 | Phạm Quang Vinh | test: execute 58 GUI checks and record 30 passes and 28 failures
+cc9d211 | 2026-11-10 11:09:47 +0700 | Phạm Quang Vinh | test: document 23 findings with 28 actual browser screenshots
+088db27 | 2026-11-10 11:14:17 +0700 | Phạm Quang Vinh | docs: finalize Task 1 report PDFs audit and reproducible evidence
