@@ -1,4 +1,4 @@
-# AI Critique — bản nháp cần sinh viên tự duyệt
+# AI Critique — đã được sinh viên duyệt
 
 AI hỗ trợ thiết kế checklist và chạy kiểm thử nhanh, nhưng bản nháp ban đầu cho thấy số lượng mục không đồng nghĩa với chất lượng. Một số tiêu chí yêu cầu timeline đơn hàng, breadcrumb ở trang hồ sơ hoặc xác nhận hủy đơn dù đặc tả chưa bắt buộc. Nếu giữ nguyên và đánh Failed, báo cáo sẽ nhầm đề xuất cải thiện thành lỗi vi phạm yêu cầu. Nguyên nhân là AI suy rộng từ kinh nghiệm thiết kế giao diện và những màn hình tương tự, thay vì truy vết từng tiêu chí đến yêu cầu cụ thể.
 

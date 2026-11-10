@@ -2,7 +2,7 @@
 
 Sinh viên: Phạm Quang Vinh — 23120202 — 23120202@student.hcmus.edu.vn.
 
-**Task 1 đã chạy và đăng 23 GitHub Issues kèm ảnh; sinh viên cần human review. Task 2/3 chưa thực hiện.**
+**Task 1 đã chạy và đăng 23 GitHub Issues kèm ảnh; sinh viên đã xác nhận duyệt. Task 2/3 chưa thực hiện.**
 
 Repository: [vinh-code/HW03-Software-Testing](https://github.com/vinh-code/HW03-Software-Testing) · [GitHub Issues](https://github.com/vinh-code/HW03-Software-Testing/issues)
 
@@ -10,7 +10,7 @@ Repository: [vinh-code/HW03-Software-Testing](https://github.com/vinh-code/HW03-
 - [Checklist Excel](checklist/GUI_Checklist.xlsx) / [Markdown](checklist/GUI_Checklist.md)
 - [23 bug/phát hiện và ảnh](bugs/README.md)
 - [Dữ liệu thực thi](task1/evidence/results.json) / [Cách chạy lại](task1/README.md)
-- [AI Audit](ai_audit_report.md) / [AI Critique nháp](ai_critique.md)
+- [AI Audit](ai_audit_report.md) / [AI Critique — đã duyệt](ai_critique.md)
 - [Git commit log](git_commit_log.txt)
 
 ## Test summary
@@ -31,7 +31,7 @@ Repository: [vinh-code/HW03-Software-Testing](https://github.com/vinh-code/HW03-
 
 | Tiêu chí | Điểm tối đa | Tự chấm |
 |---|---|---|
-| Task 1 | 30 | Chờ sinh viên duyệt/tự bổ sung |
+| Task 1 | 30 | Đã duyệt; chưa tự chấm điểm |
 | Task 2 | 40 | Chưa thực hiện |
 | Task 3 | 20 | Chưa đủ ba nền tảng |
 | Agent Skills | 10 | Chưa xây skill riêng |

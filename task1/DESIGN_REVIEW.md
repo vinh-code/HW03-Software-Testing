@@ -8,4 +8,4 @@ Phạm vi cuối: Login, Profile (gồm lịch sử đơn), Admin Orders; navbar
 - Không chấm RTL/dark mode khi chưa xác nhận hỗ trợ. Thay các mục gộp bằng tiêu chí đơn có thể tái hiện.
 - Ca chuyển trạng thái không có nút trên UI được thay bằng kiểm tra nút ở trạng thái kết thúc.
 - Các tiêu chí bổ sung ghi rõ cơ sở IA, không gán nhầm cho FR. Phát hiện vi phạm tiêu chí bổ sung phải ghi là vấn đề UX, không giả định đó là lỗi vi phạm đặc tả.
-- AI thực hiện chỉnh sửa; các mục AI thêm có lý do bản cũ bỏ sót trong JSON/Excel. Chưa có bằng chứng sinh viên tự bổ sung hoặc duyệt: không gắn nhãn Student. Sinh viên phải đọc, chỉnh và xác nhận trước khi nộp theo quy định human review.
+- AI thực hiện chỉnh sửa; các mục AI thêm có lý do bản cũ bỏ sót trong JSON/Excel. Sinh viên 23120202 đã xác nhận duyệt Task 1; xác nhận lưu trong `evidence/human_review.json`. Các mục vẫn giữ nguồn AI và được ghi nhận là sinh viên đã duyệt.

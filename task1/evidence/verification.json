@@ -9,6 +9,6 @@
   "existing_orders": "preserved compared to SQLite backup",
   "sut_source_changes": "none; database fixtures only",
   "github": "23 issues published; 28 screenshot URLs verified HTTP 200 image/png",
-  "human_review": "pending",
+  "human_review": "approved by student 23120202; see human_review.json",
   "publication_verified_utc": "2026-11-10T04:19:51.041353+00:00"
 }

@@ -10,7 +10,7 @@ Sinh viên: Phạm Quang Vinh — 23120202 — 23120202@student.hcmus.edu.vn.
 
 Task 1 được thực thi trên Login, Profile/Hồ sơ và Lịch sử đơn, Admin Orders; navbar và Home hỗ trợ điều hướng/thêm giỏ. Task 2 và Task 3 chưa thực thi trong báo cáo này. Phạm vi màn hình/flow không trùng thành viên khác vẫn cần sinh viên xác nhận.
 
-Kết quả: **58 mục đã chạy; 30 Passed; 28 Failed; 23 bug/phát hiện**, gồm 19 vi phạm đặc tả và 4 vấn đề UX bổ sung. Có 28 ảnh thực tế cho các mục Failed. Đã đăng 23 GitHub Issues kèm ảnh tại [HW03-Software-Testing](https://github.com/vinh-code/HW03-Software-Testing/issues). Human review và mục sinh viên tự bổ sung chưa được xác nhận.
+Kết quả: **58 mục đã chạy; 30 Passed; 28 Failed; 23 bug/phát hiện**, gồm 19 vi phạm đặc tả và 4 vấn đề UX bổ sung. Có 28 ảnh thực tế cho các mục Failed. Đã đăng 23 GitHub Issues kèm ảnh tại [HW03-Software-Testing](https://github.com/vinh-code/HW03-Software-Testing/issues). Sinh viên 23120202 đã xác nhận duyệt Task 1; việc duyệt được ghi tại [human_review.json](../task1/evidence/human_review.json).
 
 ## 2. Môi trường và phương pháp
 
@@ -31,7 +31,7 @@ Checklist cũ có 70 mục, gồm mobile, các yêu cầu ngoài spec và mục 
 
 Loại timeline, địa chỉ trong lịch sử, breadcrumb Profile và xác nhận hủy đơn vì đặc tả không bắt buộc. Loại mobile khỏi phạm vi Task 1. Thay ca đổi trạng thái không thể bấm trên UI bằng kiểm tra nút ở trạng thái kết thúc. Các tiêu chí UX bổ sung được ghi rõ, không gán sai FR.
 
-10 mục do AI bổ sung/sửa đáng kể có giải thích vì sao bản trước bỏ sót. Đây là AI-added, **không phải Student-authored**. Sinh viên cần tự đọc, sửa/bổ sung và xác nhận trước khi nộp. Không tạo bằng chứng giả về đóng góp của sinh viên.
+10 mục do AI bổ sung/sửa đáng kể có giải thích vì sao bản trước bỏ sót. Sinh viên đã duyệt bộ checklist và kết quả. Cột Origin giữ nguồn AI-added/AI-reviewed và ghi nhận sinh viên đã duyệt; việc duyệt không thay đổi tác giả ban đầu của các mục.
 
 | ID | Vì sao bản AI trước bỏ sót |
 |---|---|
@@ -71,10 +71,10 @@ for i in issues:
  report+='\n'
 report+='''## 6. Giới hạn và việc cần làm trước khi nộp
 
-1. Sinh viên duyệt kết quả, tự bổ sung các mục AI bỏ sót và ghi lý do theo đề; xác nhận thông tin cá nhân và phạm vi không trùng nhóm.
+1. Sinh viên đã xác nhận duyệt Task 1. Thông tin MSSV/email đã được cung cấp. Phạm vi không trùng nhóm vẫn cần đối chiếu với các thành viên; nguồn gốc các mục AI được giữ nguyên.
 2. GitHub Issues đã đăng đủ 23 mục kèm ảnh; xem [danh sách Issues](https://github.com/vinh-code/HW03-Software-Testing/issues).
 3. Task 2 (pilot, 7 người thật, phân tích) và Task 3 (ít nhất ba nền tảng) chưa hoàn thành. Không dùng số lượng dự kiến trong template làm kết quả thực tế.
-4. AI Audit Report của phiên hiện tại được lưu; lịch sử sinh checklist trước phiên này chưa có log đầy đủ. AI Critique là bản nháp, cần sinh viên tự chỉnh.
+4. AI Audit Report của phiên hiện tại được lưu; lịch sử sinh checklist trước phiên này chưa có log đầy đủ. AI Critique do AI hỗ trợ soạn và đã được sinh viên duyệt.
 5. Các tiêu chí bổ sung không tự động trở thành yêu cầu của đặc tả. Kết quả chỉ phản ánh môi trường và dữ liệu thử đã ghi, không chứng minh ứng dụng hoàn toàn an toàn hay tương thích mọi nền tảng.
 
 ## 7. Tài liệu và lịch sử
@@ -83,7 +83,7 @@ report+='''## 6. Giới hạn và việc cần làm trước khi nộp
 - [Quy trình và script chạy lại](../task1/README.md).
 - [Bug report](../bugs/README.md).
 - [AI Audit Report](../ai_audit_report.md).
-- [AI Critique — bản nháp](../ai_critique.md).
+- [AI Critique — đã duyệt](../ai_critique.md).
 - [Git commit log](../git_commit_log.txt).
 '''
 (R/'report/main_report.md').write_text(report)
@@ -91,7 +91,7 @@ report+='''## 6. Giới hạn và việc cần làm trước khi nộp
 
 Sinh viên: Phạm Quang Vinh — 23120202 — 23120202@student.hcmus.edu.vn.
 
-**Task 1 đã chạy và đăng 23 GitHub Issues kèm ảnh; sinh viên cần human review. Task 2/3 chưa thực hiện.**
+**Task 1 đã chạy và đăng 23 GitHub Issues kèm ảnh; sinh viên đã xác nhận duyệt. Task 2/3 chưa thực hiện.**
 
 Repository: [vinh-code/HW03-Software-Testing](https://github.com/vinh-code/HW03-Software-Testing) · [GitHub Issues](https://github.com/vinh-code/HW03-Software-Testing/issues)
 
@@ -99,7 +99,7 @@ Repository: [vinh-code/HW03-Software-Testing](https://github.com/vinh-code/HW03-
 - [Checklist Excel](checklist/GUI_Checklist.xlsx) / [Markdown](checklist/GUI_Checklist.md)
 - [23 bug/phát hiện và ảnh](bugs/README.md)
 - [Dữ liệu thực thi](task1/evidence/results.json) / [Cách chạy lại](task1/README.md)
-- [AI Audit](ai_audit_report.md) / [AI Critique nháp](ai_critique.md)
+- [AI Audit](ai_audit_report.md) / [AI Critique — đã duyệt](ai_critique.md)
 - [Git commit log](git_commit_log.txt)
 
 ## Test summary
@@ -120,7 +120,7 @@ Repository: [vinh-code/HW03-Software-Testing](https://github.com/vinh-code/HW03-
 
 | Tiêu chí | Điểm tối đa | Tự chấm |
 |---|---|---|
-| Task 1 | 30 | Chờ sinh viên duyệt/tự bổ sung |
+| Task 1 | 30 | Đã duyệt; chưa tự chấm điểm |
 | Task 2 | 40 | Chưa thực hiện |
 | Task 3 | 20 | Chưa đủ ba nền tảng |
 | Agent Skills | 10 | Chưa xây skill riêng |

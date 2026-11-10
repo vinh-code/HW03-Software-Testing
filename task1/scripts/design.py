@@ -64,5 +64,5 @@ rows = [
 added={1:'Bản cũ tập trung vào đơn hàng, chưa đối chiếu tiêu đề màn đăng nhập với mục đích thực tế.',3:'Bản cũ chỉ kiểm tra type của email, bỏ qua nội dung nhãn Username.',4:'Bản cũ chưa kiểm tra riêng ngôn ngữ nút gửi.',8:'Bản cũ gộp form, chưa tách tình huống thiếu email.',9:'Bản cũ chưa tách tình huống thiếu mật khẩu.',10:'Kiểm tra type đơn thuần chưa chứng minh chặn email sai.',27:'Cần ca hợp lệ để phát hiện validation từ chối nhầm, không chỉ thử dữ liệu sai.',28:'Cần ca không bắt đầu bằng 0 để xác minh biên validation.',50:'Ca cũ Đã giao -> Đã xác nhận không thao tác được trên UI; thay bằng kiểm tra nút ở trạng thái kết thúc.',52:'Bản cũ tập trung màu nút user, bỏ qua nút Hủy của Admin.'}
 items=[]
 for i,(ia,screen,expected,ref) in enumerate(rows,1):
- items.append(dict(id=f'GUI-{i:03}',ia=ia,screen=screen,expected=expected,spec=ref,origin='AI-added; chờ sinh viên duyệt' if i in added else 'AI-reviewed; chờ sinh viên duyệt',why=added.get(i,'')))
+ items.append(dict(id=f'GUI-{i:03}',ia=ia,screen=screen,expected=expected,spec=ref,origin='AI-added; sinh viên đã duyệt' if i in added else 'AI-reviewed; sinh viên đã duyệt',why=added.get(i,'')))
 Path('submission/checklist/task1_design.json').write_text(json.dumps(items,ensure_ascii=False,indent=2))

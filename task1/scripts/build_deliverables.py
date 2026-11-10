@@ -52,7 +52,7 @@ counts=Counter(r['status'] for r in results.values());ias=Counter(d['ia'] for d 
 wb=Workbook();ws=wb.active;ws.title='Checklist'
 headers=['ID','IA','Screen','Expected result','Spec / basis','Origin','Why earlier AI draft missed it','Status (Chrome)','Actual / Notes','Bug ID','Screenshot','Executed UTC','Status (Firefox)','Status (Platform 3)']
 ws.append(headers)
-md=['# Task 1 — GUI checklist đã thực thi','','58 mục; Chrome headless 156.0.8078.79 / Linux. 30 Passed, 28 Failed. Firefox và nền tảng 3 chưa chạy.','','Origin AI-reviewed/AI-added là công việc AI; chưa thay thế human review của sinh viên.','','| ID | IA | Màn hình | Mong đợi / Cơ sở | Kết quả | Thực tế | Bug / ảnh |','|---|---|---|---|---|---|---|']
+md=['# Task 1 — GUI checklist đã thực thi','','58 mục; Chrome headless 156.0.8078.79 / Linux. 30 Passed, 28 Failed. Firefox và nền tảng 3 chưa chạy.','','Sinh viên 23120202 đã xác nhận duyệt Task 1. Origin AI-reviewed/AI-added vẫn ghi nguồn AI; xem task1/evidence/human_review.json.','','| ID | IA | Màn hình | Mong đợi / Cơ sở | Kết quả | Thực tế | Bug / ảnh |','|---|---|---|---|---|---|---|']
 def esc(s):return s.replace('|',' / ').replace('\n','; ').replace('<','&lt;').replace('>','&gt;')
 for d in design:
  r=results[d['id']];bid=mapping.get(d['id'],'');ws.append([d['id'],d['ia'],d['screen'],d['expected'],d['spec'],d['origin'],d['why'],r['status'],r['actual'],bid,r['screenshot'],r['time'],'Not run','Not run'])
@@ -67,7 +67,7 @@ for row in ws:
 for c in ws[1]:c.fill=PatternFill('solid',fgColor='17365D');c.font=Font(color='FFFFFF',bold=True)
 for row in ws.iter_rows(min_row=2):row[7].fill=PatternFill('solid',fgColor='F8CBAD' if row[7].value=='Failed' else 'C6E0B4')
 s=wb.create_sheet('Summary');s.append(['Metric','Value']);
-for k,v in [('Designed',58),('Executed',58),('Passed',counts['Passed']),('Failed',counts['Failed']),('Bugs / findings',len(issues)),('Screens',3),('Platform','Chrome headless / Linux'),('Firefox','Not run'),('Platform 3','Not run'),('Human review','Pending'),('GitHub Issues',sum(bool(i['url']) for i in issues))]:s.append([k,v])
+for k,v in [('Designed',58),('Executed',58),('Passed',counts['Passed']),('Failed',counts['Failed']),('Bugs / findings',len(issues)),('Screens',3),('Platform','Chrome headless / Linux'),('Firefox','Not run'),('Platform 3','Not run'),('Human review','Approved by student 23120202'),('GitHub Issues',sum(bool(i['url']) for i in issues))]:s.append([k,v])
 for k,v in ias.items():s.append([k,v])
 s.column_dimensions['A'].width=28;s.column_dimensions['B'].width=45
 rev=wb.create_sheet('AI Review');rev.append(['ID','Origin','Why earlier draft missed it'])

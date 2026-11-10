@@ -1,0 +1,10 @@
+{
+  "student_id": "23120202",
+  "email": "23120202@student.hcmus.edu.vn",
+  "status": "approved",
+  "recorded_at_utc": "2026-11-10T04:23:06.051397+00:00",
+  "reviewed_commit": "cfba431c79308e910a83c6c3ac688bbff23cf877",
+  "confirmation": "tôi duyệt rồi bạn chỉnh lại là tôi đã duyệt giúp tôi đi",
+  "scope": "Task 1 deliverables: checklist, results, bug reports, main report, AI audit and critique",
+  "provenance": "Student approval of AI-assisted work; AI-authored items retain their original source."
+}

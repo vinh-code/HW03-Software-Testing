@@ -33,4 +33,4 @@ Run from HW03 root. Existing servers at localhost:3000, :5173, :5174 were reused
 
 ## Remaining student/external actions
 
-Human review is mandatory. AI-added criteria must not be represented as student-authored without actual student changes. 23 findings have been published with screenshot links at https://github.com/vinh-code/HW03-Software-Testing/issues. Student ID: 23120202; email: 23120202@student.hcmus.edu.vn. Task 2 and Task 3 remain separate unfinished tasks.
+Student 23120202 has confirmed review and approval of the Task 1 deliverables; see `evidence/human_review.json`. AI-added criteria retain their original authorship. 23 findings have been published with screenshot links at https://github.com/vinh-code/HW03-Software-Testing/issues. Student ID: 23120202; email: 23120202@student.hcmus.edu.vn. Task 2 and Task 3 remain separate unfinished tasks.

@@ -2,7 +2,7 @@
 
 58 mục; Chrome headless 156.0.8078.79 / Linux. 30 Passed, 28 Failed. Firefox và nền tảng 3 chưa chạy.
 
-Origin AI-reviewed/AI-added là công việc AI; chưa thay thế human review của sinh viên.
+Sinh viên 23120202 đã xác nhận duyệt Task 1. Origin AI-reviewed/AI-added vẫn ghi nguồn AI; xem task1/evidence/human_review.json.
 
 | ID | IA | Màn hình | Mong đợi / Cơ sở | Kết quả | Thực tế | Bug / ảnh |
 |---|---|---|---|---|---|---|
