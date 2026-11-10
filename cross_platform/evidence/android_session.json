@@ -1,0 +1,27 @@
+{
+  "ua": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Mobile Safari/537.36",
+  "version": "149.0.0.0",
+  "os": "Android 13.0",
+  "model": "SM-S911B",
+  "url": "http://localhost:5173/login",
+  "viewport": {
+    "width": 360,
+    "height": 649,
+    "dpr": 3
+  },
+  "session": {
+    "hashed_id": "b06eaac904738242824ca68b189c12e4aadac03d",
+    "name": "HW03 23120202 GUI checklist Android",
+    "browser_url": "https://automate.browserstack.com/builds/9c1d8829c902315882382e5d229eb28f2ea0d61e/sessions/b06eaac904738242824ca68b189c12e4aadac03d",
+    "device": "Samsung Galaxy S23",
+    "os": "android",
+    "os_version": "13.0",
+    "browser_version": null
+  },
+  "verified_at_utc": "2026-11-10T05:25:33.465Z",
+  "provider_result": {
+    "status": "passed",
+    "reason": "Checklist execution completed; application failures documented in report",
+    "duration": 337
+  }
+}

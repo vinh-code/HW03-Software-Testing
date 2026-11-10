@@ -9,6 +9,6 @@
     "email": "23120202@student.hcmus.edu.vn",
     "repository": "https://github.com/vinh-code/HW03-Software-Testing"
   },
-  "required_platform_3": "Safari or real Android Chrome / Expo Go; pending availability",
+  "required_platform_3": "Completed on real Samsung Galaxy S23 / Android 13.0 / Chrome via BrowserStack; see android.json and android_session.json",
   "prepared_at_utc": "2026-11-10T04:26:00.684484+00:00"
 }
