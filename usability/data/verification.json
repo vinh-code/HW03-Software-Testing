@@ -1,0 +1,19 @@
+{
+  "verified_at_utc": "2026-11-11T10:47:48.286477+00:00",
+  "scope": "Consistency of simulated coursework artifacts, not verification of interviews",
+  "data_kind": "simulated",
+  "simulated_pilot": 1,
+  "simulated_main_sessions": 7,
+  "real_sessions": 0,
+  "checks": [
+    "SUS neutral/min/max anchors and invalid input rejection",
+    "CSV and JSON answer equality",
+    "Independent algebraic SUS calculation",
+    "Workbook cached Python values and Excel formulas",
+    "Explicit simulation labels in all sheets and session notes",
+    "Pilot excluded from summary",
+    "Existing Task 1 screenshot references resolve",
+    "Final PDF contains pilot and all seven session headings, simulation labels and SUS mean",
+    "All local Markdown links in usability resolve"
+  ]
+}

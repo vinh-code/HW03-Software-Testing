@@ -1,84 +1,61 @@
-# Task 2 – Kế hoạch đánh giá Usability (Lịch sử & Theo dõi đơn hàng)
+# Kế hoạch Task 2 — quản lý đơn đã đặt
 
-**Flow đã chọn:** Đăng nhập → Truy cập Lịch sử đơn hàng → Tìm đơn cũ → Xem & theo dõi trạng thái (Đang giao / Đã giao) → Hủy đơn mình không còn cần.
+**KẾT QUẢ MÔ PHỎNG PHỤC VỤ BÀI TẬP** — hồ sơ, thời gian, diễn biến và câu trả lời đều do AI tạo cho tình huống giả định. Không có phỏng vấn, người tham gia, đồng ý ghi hình hoặc video thực tế.
 
-> Kịch bản chỉ dùng những gì SUT thật sự có (xem `00_scope.md`). SUT không có chi tiết đơn, lọc/tìm đơn hay đổi trả; nếu participant tự tìm các chức năng này thì đó cũng là dữ liệu usability đáng ghi nhận.
-> Nếu làm nhóm, flow này không được trùng với bạn cùng nhóm (đề §5).
+## Phạm vi
 
-## 1. Mục tiêu (Objectives)
+Một luồng: đăng nhập → tìm lịch sử → đọc trạng thái → hủy đúng đơn chưa xử lý → kiểm tra phản hồi. Bốn mục tiêu nhỏ thuộc cùng luồng này. Chưa đối chiếu lựa chọn với thành viên khác trong nhóm.
 
-| # | Mục tiêu | Câu hỏi cần trả lời | Chỉ số đo |
-|---|---|---|---|
-| O1 | Phát hiện nút thắt điều hướng | Người dùng có tìm được chỗ xem lịch sử đơn hàng không (lối vào là link "Chào, <tên>")? | Tỷ lệ tìm thấy không trợ giúp; thời gian tới lúc thấy danh sách đơn; số lần bấm sai |
-| O2 | Theo dõi trạng thái | Người dùng có hiểu đúng trạng thái đơn (Chờ xác nhận / Đã xác nhận / Đang giao / Đã giao / Đã hủy) và tự phân biệt được các đơn? | Số câu trả lời trạng thái đúng /2; số lần do dự |
-| O3 | Khôi phục lỗi / hủy đơn | Người dùng hủy đúng đơn chưa muốn, hiểu vì sao đơn đang giao không hủy được? | Hủy đúng đơn; hủy nhầm đơn; hiểu thông báo lỗi |
-| O4 | Độ tự tin & tin cậy | Người dùng có tin thông tin trạng thái đơn là đúng và đáng tin không? | SUS; câu probe về trust |
-| O5 | Hiệu suất | Mất bao lâu để hoàn thành các nhiệm vụ? | Thời gian (giây) |
+| Mục tiêu | Điều cần xem xét | Chỉ số trong mô phỏng |
+|---|---|---|
+| O1 | Khả năng tìm lịch sử đơn | Khó khăn U01; trợ giúp ở T1 |
+| O2 | Hiểu trạng thái và nhận diện đơn | Kết quả T1/T2; U02/U05 |
+| O3 | Thực hiện hủy đúng và hiểu phản hồi | Kết quả T3/T4; U03/U04 |
+| O4 | Cảm nhận về quá trình | SUS và bốn nhóm probe |
 
-## 2. Người dùng mục tiêu
+## Môi trường và dữ liệu giả định
 
-- Người mua sắm online phổ thông, 18-55 tuổi, từng theo dõi đơn hàng trên một sàn TMĐT.
-- Ưu tiên người **không làm IT / không phải tester**.
-- **Không** được là sinh viên đang học HW03.
-- Cần **7 người** + **1 pilot** (pilot không tính vào 7).
+Giả định: EShop web, Chrome desktop / Ubuntu, viewport 1366×900; không chạy phiên người dùng trong bộ dữ liệu này.
 
-## 3. Kịch bản tác vụ
+| Đơn ký hiệu — không phải ID DB | Số tiền | Trạng thái ban đầu |
+|---|---|---|
+| A | 28.000.000 đồng | Chờ xác nhận |
+| B | 1.500.000 đồng | Đã xác nhận |
+| C | 45.000.000 đồng | Đang giao |
+| D | 30.000.000 đồng | Đã giao |
 
-Đưa cho participant (in ra hoặc đọc to). **Không** liệt kê từng bước.
+Tài khoản và bốn đơn được giả định trở về cùng trạng thái ban đầu cho mỗi hồ sơ. Không seed, reset hoặc khởi động lại backend để tạo bộ mô phỏng này. `seed_orders.mjs` là công cụ cũ cho kiểm thử thật, không được chạy trong quy trình này.
 
-> *Tuần trước bạn đã đặt vài đơn hàng trên cửa hàng online EShop. Bạn đã có tài khoản
-> (email: `test@eshop.com`, mật khẩu: `Test1234!`).*
->
-> *Hôm nay bạn muốn:*
-> 1. *Kiểm tra đơn hàng khoảng **30 triệu đồng** của bạn đã được giao chưa.*
-> 2. *Biết đơn hàng khoảng **45 triệu đồng** hiện đang ở giai đoạn nào.*
-> 3. *Bạn đổi ý về đơn hàng khoảng **28 triệu đồng** và không muốn mua nữa, hãy hủy nó.*
-> 4. *Bạn cũng đổi ý về đơn 45 triệu. Hãy thử hủy nó.*
->
-> *Khi xong hoặc khi bạn thấy không làm tiếp được, hãy cho tôi biết.*
+## Tình huống v1 — dùng chung cho P01–P07
 
-(Nhiệm vụ nhỏ 1-4 là các mục tiêu của cùng một kịch bản, vẫn là mục tiêu cần đạt chứ không phải hướng dẫn thao tác. Đơn được nhận diện bằng số tiền vì SUT không hiển thị danh sách sản phẩm trong đơn.)
+Bạn đã có tài khoản và đã đặt một số đơn hàng trên EShop. Hôm nay bạn muốn kiểm tra các đơn đã đặt và xử lý một đơn không còn nhu cầu.
 
-**Ghi chú cho moderator (KHÔNG đọc cho participant):**
-- Dữ liệu seed bằng `node seed_orders.mjs`: #A 28 triệu = pending, #B 1,5 triệu = confirmed, #C 45 triệu = shipping, #D 30 triệu = delivered.
-- Đúng theo FR-10/FR-11: đơn 30 triệu "Đã giao"; đơn 45 triệu "Đang giao"; đơn 28 triệu hủy được; đơn 45 triệu (đang giao) **không** được hủy bởi user.
-- Nhiệm vụ 4 là "bẫy kỳ vọng": xem người dùng phản ứng ra sao khi giao diện cho phép/không cho phép hành động.
-- Cần reset + seed lại trước **mỗi** buổi (xem README mục Reset).
+1. Cho biết đơn **30.000.000 đồng** đã được giao hay chưa.
+2. Cho biết đơn **45.000.000 đồng** hiện ở trạng thái nào.
+3. Bạn không còn muốn mua đơn **28.000.000 đồng**. Hãy hủy đúng đơn đó.
+4. Cho biết trạng thái cuối của đơn vừa hủy và điều gì trên trang khiến bạn biết thao tác đã hoàn tất.
 
-## 4. Tiêu chí thành công
+Khi đã thực hiện xong hoặc thấy không thể tiếp tục, hãy báo cho người điều phối. Trong lúc thao tác, hãy nói điều bạn đang tìm hoặc đang phân vân. Không cần thao tác lên các đơn khác.
 
-| Nhiệm vụ | Thành công |
-|---|---|
-| T1 | Nói đúng "Đã giao" cho đơn 30 triệu, không cần gợi ý |
-| T2 | Nói đúng "Đang giao" cho đơn 45 triệu |
-| T3 | Hủy đúng đơn 28 triệu, thấy đơn đổi sang "Đã hủy", không hủy nhầm đơn khác |
-| T4 | Ghi nhận kết quả thực tế (hủy được hay không), người dùng hiểu rõ vì sao (không bị bối rối). Đối chiếu với FR-10 |
+**Thông tin demo trong thế giới giả định:** `usability-demo@example.test` / `UsabilityDemo123!`. Tài khoản này chưa được tạo trên SUT; không dùng thông tin trên như tài khoản đã sẵn sàng chạy thật.
 
-Mức hoàn thành mỗi nhiệm vụ: *không trợ giúp / có trợ giúp / thất bại*. Time-out toàn buổi: **10 phút** (chỉnh sau pilot).
+## Mục tiêu ban đầu dùng cho pilot v0
 
-## 5. Dữ liệu thu thập mỗi buổi
+Bạn có một số đơn hàng khoảng 30 triệu và 45 triệu đồng. Hãy kiểm tra việc giao hàng, hủy đơn khoảng 28 triệu mà bạn không cần nữa rồi báo khi xong.
 
-1. Thời gian bắt đầu/kết thúc từng nhiệm vụ, kết quả.
-2. Ghi chú quan sát có cấu trúc (`06_session_notes_template.md`).
-3. Video màn hình (+ audio khi có đồng ý).
-4. SUS (`02_SUS_questionnaire.md`).
-5. Probe (`03_probe_questions.md`).
+v0 cố ý thể hiện bản nháp còn mơ hồ để minh họa quy trình pilot. Phiên pilot là mô phỏng, không phải cuộc thử nghiệm đã diễn ra.
 
-## 6. Quy trình
+## Quy tắc ghi nhận
 
-1. **Pilot** → ghi vào `sessions/pilot.md`.
-2. 7 buổi: `sessions/S01.md` … `S07.md`.
-3. Chấm SUS bằng `sus_scoring.py`.
-4. Tổng hợp theo `07_analysis_template.md`.
-5. Bug thật → `bugs/` **và** GitHub Issues kèm screenshot.
+- T1: nhận diện đúng đơn 30 triệu và trả lời Đã giao; bao gồm bước đăng nhập và tìm lịch sử.
+- T2: nhận diện đúng đơn 45 triệu và trả lời Đang giao.
+- T3: chỉ đơn 28 triệu chuyển thành Đã hủy trong diễn biến giả định.
+- T4: hồ sơ nói được trạng thái Đã hủy và nêu nhãn trạng thái/thông tin sau tải lại làm căn cứ.
+- Toàn luồng không trợ giúp: cả bốn mục tiêu đạt và không có can thiệp. Có trợ giúp: đạt cả bốn, nhưng đã có gợi ý. Chưa hoàn thành: có mục tiêu thất bại hoặc chưa thực hiện khi dừng.
+- Đồng hồ tác vụ bắt đầu sau khi đã đọc mục tiêu, từ Home chưa đăng nhập; dừng khi báo kết quả cuối hoặc chạm 600 giây. Không cộng thời gian SUS/probe.
+- Khi bế tắc ít nhất 120 giây: mức 1 nhắc lại mục tiêu, mức 2 gợi ý khu vực, mức 3 chỉ vị trí; ghi mức và thời điểm, không bấm thay.
+- Pilot P00 tách khỏi bảy hồ sơ v1; không cộng vào điểm trung bình hoặc tần suất phát hiện.
 
-## 7. Chuẩn bị môi trường (mỗi buổi)
+## Công cụ và sản phẩm
 
-```bash
-# 1. Dừng backend, reset DB, chạy lại, seed đơn mẫu
-cd sut/backend && node database.js && node server.js &
-cd submission/usability && node seed_orders.mjs
-```
-- Mở `http://localhost:5173` trong cửa sổ ẩn danh (chưa đăng nhập), để participant tự đăng nhập.
-- Bật screen recording. Dùng một thiết bị cho cả 7 buổi (hoặc ghi rõ khi đổi).
-- Nếu muốn một buổi trên mobile (Expo Go), ghi rõ trong bảng participant.
+Dùng SUS tiếng Việt trong tài liệu sẵn có (chưa xác minh thẩm định bản dịch), bốn câu probe trung lập, timeline giả định, CSV và Excel. Không tạo danh tính, liên hệ, chữ ký đồng ý, ngày phỏng vấn hay video giả.

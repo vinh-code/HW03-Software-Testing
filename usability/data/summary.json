@@ -1,0 +1,32 @@
+{
+  "data_kind": "simulated",
+  "simulated_pilot_count": 1,
+  "simulated_main_sessions": 7,
+  "real_sessions": 0,
+  "real_participants": 0,
+  "outcome_counts": {
+    "independent": 4,
+    "assisted": 2,
+    "timeout": 1
+  },
+  "completion_rate": 0.8571428571428571,
+  "independent_completion_rate": 0.5714285714285714,
+  "sus_mean": 58.92857142857143,
+  "sus_median": 62.5,
+  "sus_sample_sd": 20.909384996990728,
+  "sus_min": 27.5,
+  "sus_max": 87.5,
+  "duration_all_mean": 324,
+  "duration_all_median": 268,
+  "duration_success_mean": 278,
+  "duration_min": 160,
+  "duration_max": 600,
+  "pilot_included_in_summary": false,
+  "finding_counts": {
+    "U01": 5,
+    "U02": 3,
+    "U03": 3,
+    "U04": 3,
+    "U05": 4
+  }
+}

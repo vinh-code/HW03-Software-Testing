@@ -1,22 +1,16 @@
-# Danh sách 7 participant
+# Danh sách hồ sơ giả định P00–P07
 
-> ⚠️ **Phải là người thật, nằm ngoài lớp HW03.** Đề cấm AI sinh hoặc bịa danh sách này (§11). TA có thể gọi ngẫu nhiên 2 người để xác minh; giả mạo → 0 điểm Task 2.
-> Che **4 số giữa** của SĐT/Zalo. Ví dụ số 10 chữ số `0912345678` → `091****678`... tức giữ 3 số đầu, che 4 số giữa, giữ 3 số cuối.
-> Bảng này cố ý để trống. Hãy tự điền thông tin thật.
+**KẾT QUẢ MÔ PHỎNG PHỤC VỤ BÀI TẬP** — hồ sơ, thời gian, diễn biến và câu trả lời đều do AI tạo cho tình huống giả định. Không có phỏng vấn, người tham gia, đồng ý ghi hình hoặc video thực tế.
 
-| # | Họ tên | Tuổi | Nghề nghiệp | IT/non-IT | Liên hệ (Zalo/SĐT/email, che 4 số giữa) | Ngày giờ buổi test | Thiết bị | Đã đồng ý ghi hình? | File video |
-|---|---|---|---|---|---|---|---|---|---|
-| Pilot | | | | | | | | | |
-| S01 | | | | | | | | | |
-| S02 | | | | | | | | | |
-| S03 | | | | | | | | | |
-| S04 | | | | | | | | | |
-| S05 | | | | | | | | | |
-| S06 | | | | | | | | | |
-| S07 | | | | | | | | | |
+| Mã | Vai trò | Đặc điểm giả định | Kinh nghiệm giả định | Liên hệ / ngày phỏng vấn / ghi hình |
+|---|---|---|---|---|
+| P00 | Pilot | Hồ sơ pilot giả định: non-IT, nhóm tuổi 25–34 | Mua online khoảng mỗi tháng | Không áp dụng — không có người thật |
+| P01 | Phiên chính mô phỏng | Nhân viên văn phòng, nhóm tuổi 25–34; non-IT | Mua online 2–3 lần/tháng | Không áp dụng — không có người thật |
+| P02 | Phiên chính mô phỏng | Nhân viên bán hàng, nhóm tuổi 25–34; non-IT | Mua online khoảng mỗi tuần | Không áp dụng — không có người thật |
+| P03 | Phiên chính mô phỏng | Người làm công việc hành chính, nhóm tuổi 45–54; non-IT | Ít mua online; thường dùng điện thoại | Không áp dụng — không có người thật |
+| P04 | Phiên chính mô phỏng | Nhân viên kỹ thuật, nhóm tuổi 25–34; IT | Mua online thường xuyên; quen website thương mại điện tử | Không áp dụng — không có người thật |
+| P05 | Phiên chính mô phỏng | Người kinh doanh tự do, nhóm tuổi 35–44; non-IT | Mua online 1–2 lần/tháng | Không áp dụng — không có người thật |
+| P06 | Phiên chính mô phỏng | Người ít dùng dịch vụ trực tuyến, nhóm tuổi 45–54; non-IT | Hiếm mua online; mức quen công nghệ thấp | Không áp dụng — không có người thật |
+| P07 | Phiên chính mô phỏng | Sinh viên ngành kinh tế, nhóm tuổi 18–24; non-IT | Mua online vài lần/tháng | Không áp dụng — không có người thật |
 
-## Xác nhận điều kiện
-- [ ] Không ai trong 7 người là sinh viên đang học HW03
-- [ ] Mỗi người một buổi riêng
-- [ ] Mỗi người đã được thông báo có thể bị TA gọi xác minh
-- [ ] Thông tin liên hệ còn dùng được
+Không thay mã hồ sơ bằng tên một người thật để gán cho họ các câu trả lời này. Nếu sau này thu dữ liệu thật, lưu thành bộ dữ liệu khác với nguồn gốc và bằng chứng tương ứng.

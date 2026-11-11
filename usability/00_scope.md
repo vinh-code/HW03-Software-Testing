@@ -1,25 +1,11 @@
-# Phạm vi: Lịch sử & Theo dõi đơn hàng
+# Phạm vi và nguồn dữ liệu Task 2
 
-| Mục | Nội dung |
-|---|---|
-| Chủ đề | Người dùng xem lại các đơn đã đặt, theo dõi trạng thái và hủy đơn |
-| FR liên quan | FR-10 (State machine), FR-11 (Lịch sử đơn), FR-18 (Admin đơn hàng), FR-20 (Mobile); GUI: FR-21 đến FR-24 |
-| Màn hình Task 1 | Đã điều chỉnh: Login, Profile/Lịch sử đơn (Web), Admin Orders; navbar/Home phụ trợ. Xem `../task1/DESIGN_REVIEW.md`. Mobile chưa kiểm thử. |
-| Flow Task 2 | Đăng nhập → Lịch sử đơn → Xem trạng thái (đã giao / đang giao) → Hủy đơn không còn cần → Thử hủy đơn đang giao |
+**KẾT QUẢ MÔ PHỎNG PHỤC VỤ BÀI TẬP** — hồ sơ, thời gian, diễn biến và câu trả lời đều do AI tạo cho tình huống giả định. Không có phỏng vấn, người tham gia, đồng ý ghi hình hoặc video thực tế.
 
-## Những gì SUT có và không có (khảo sát mã nguồn, chưa chạy test)
+Luồng được chọn là quản lý các đơn đã đặt trên web EShop: Login, Home/navbar và Profile/Lịch sử đơn. Task 1/3 trước đó có dữ liệu thực thi trình duyệt thật; các phiên P00–P07 trong thư mục này là mô phỏng riêng.
 
-| Chức năng | Có không? | Ghi chú |
-|---|---|---|
-| Lịch sử đơn hàng (web) | Có | `frontend-web` → `/profile`, khối "Lịch sử đơn hàng" cạnh form Hồ sơ; không có trang `/orders` riêng |
-| Lịch sử đơn hàng (mobile) | Có | Expo app → Hồ sơ → "Lịch sử đơn hàng" |
-| Trạng thái đơn | Có (dạng nhãn + màu) | Không có timeline/tiến trình |
-| Hủy đơn | Có | Nút "Hủy đơn" trên web và mobile (theo FR-10) |
-| Chi tiết đơn (sản phẩm trong đơn) | Không | Bảng `orders` không có dòng hàng; chỉ id, user_id, total_amount, status, shipping_address, created_at. API `GET /api/orders/:id` có nhưng không có UI |
-| Lọc / tìm đơn | Không | |
-| Đổi trả | Không | |
-| Đổi trạng thái đơn | Có (Admin) | `frontend-admin` → "Quản lý Đơn hàng"; dùng để tạo tình huống đang giao/đã giao |
+Cơ sở xây tình huống: source `sut/frontend-web/src/pages/Profile.jsx`, các báo cáo Task 1 và 3. UI có danh sách đơn, số tiền, nhãn trạng thái và nút hủy. Không giả định có trang chi tiết sản phẩm trong đơn, tìm kiếm đơn hoặc chức năng hoàn tác.
 
-## Cách dùng trong bài
-- Task 1 dùng bộ 58 mục đã rà soát; tiêu chí UX bổ sung ghi rõ cơ sở và không được báo thành vi phạm FR. Bộ 70 mục cũ chỉ còn trong Git baseline.
-- Nếu làm nhóm, màn hình chính và flow phải khác bạn cùng nhóm (đề §5).
+Theo yêu cầu cập nhật của sinh viên, bộ này minh họa đầy đủ quy trình và kết quả mô phỏng. Đề gốc trong workspace vẫn yêu cầu bảy người thật; thông tin thay đổi yêu cầu do sinh viên cung cấp, không phải xác nhận độc lập từ giảng viên.
+
+Các con số mô phỏng không được dùng để suy ra hành vi hay mức hài lòng của người dùng thực tế.

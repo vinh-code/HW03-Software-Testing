@@ -2,7 +2,9 @@
 // Seed 4 đơn hàng ở 4 trạng thái khác nhau cho tài khoản test@eshop.com
 // để participant có dữ liệu "lịch sử đơn hàng" thật khi làm usability test.
 //
-// Dùng (backend phải đang chạy ở :3000, DB vừa seed bằng `node database.js`):
+// Công cụ cũ cho chạy SUT thật, không dùng trong bộ mô phỏng.
+// Chỉ dùng trên bản DB thử đã backup riêng; không reset database.js trên DB đang giữ bằng chứng.
+// Dùng (backend thử đang chạy ở :3000):
 //   node seed_orders.mjs
 //
 // Kết quả (mới nhất ở trên cùng trong giao diện, vì sắp xếp theo id giảm dần):

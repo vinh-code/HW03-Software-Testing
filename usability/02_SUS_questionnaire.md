@@ -1,4 +1,8 @@
-# Thang SUS (System Usability Scale) – bản tiếng Việt
+# Phiếu SUS — bản tiếng Việt dùng trong bài tập
+
+**KẾT QUẢ MÔ PHỎNG PHỤC VỤ BÀI TẬP** — hồ sơ, thời gian, diễn biến và câu trả lời đều do AI tạo cho tình huống giả định. Không có phỏng vấn, người tham gia, đồng ý ghi hình hoặc video thực tế.
+
+Bản diễn đạt tiếng Việt có sẵn trong workspace; chưa xác minh đây là bản dịch đã được thẩm định.
 
 Participant đánh giá mỗi câu từ **1 (Hoàn toàn không đồng ý)** đến **5 (Hoàn toàn đồng ý)**.
 Hoàn thành **ngay sau** tác vụ, trước khi hỏi probe.
@@ -22,19 +26,9 @@ Hoàn thành **ngay sau** tác vụ, trước khi hỏi probe.
 - Câu **chẵn** (2,4,6,8,10): điểm đóng góp = `5 − câu trả lời`
 - **SUS = tổng 10 đóng góp × 2.5** (thang 0-100)
 
-## Diễn giải (tham khảo, Sauro & Lewis)
 
-| SUS | Mức |
-|---|---|
-| ≥ 80.3 | A – Xuất sắc |
-| 68 – 80.2 | B/C – Tốt / Trung bình (68 là trung bình ngành) |
-| 51 – 67.9 | D – Dưới trung bình |
-| < 51 | F – Kém |
+## Nguồn và cách dùng
 
-## Nhập kết quả
+Công thức đối chiếu với [John Brooke — SUS](https://digital.ahrq.gov/sites/default/files/docs/survey/systemusabilityscale%2528sus%2529_comp%255B1%255D.pdf). Điểm 0–100 không phải phần trăm. Bộ này chỉ minh họa tính điểm; không suy ra mức hài lòng thực tế hoặc gán hạng A–F.
 
-Điền `sus_responses.csv` (1 dòng/participant, cột q1…q10), rồi chạy:
-
-```bash
-python3 sus_scoring.py sus_responses.csv
-```
+Câu trả lời bảy hồ sơ: `sus_responses.csv`; pilot lưu riêng trong `data/simulation.json`.
