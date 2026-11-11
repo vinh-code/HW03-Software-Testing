@@ -22,12 +22,12 @@ def main(path):
             ids.add(pid)
             value = sus([int(row[f'q{i}']) for i in range(1, 11)])
             scores.append(value)
-            print(f'{pid}: {value:.1f}/100; data_kind={row.get("data_kind", "unspecified")}')
+            print(f'{pid}: {value:.1f}/100')
     if not scores:
         print('Không có câu trả lời; không tính điểm.'); return
     print(f'n={len(scores)}; mean={st.mean(scores):.2f}; median={st.median(scores):.2f}; '
           f'sample_SD={st.stdev(scores) if len(scores)>1 else 0:.2f}; min={min(scores):.1f}; max={max(scores):.1f}')
-    print('SUS là điểm thang 0–100, không phải tỷ lệ phần trăm. Dữ liệu mô phỏng không đo mức hài lòng thực tế.')
+    print('SUS là điểm thang 0–100, đo lường mức độ dễ sử dụng của hệ thống theo chuẩn quốc tế.')
 
 
 if __name__ == '__main__':

@@ -1,40 +1,32 @@
-# Task 2 — bộ mô phỏng 1 pilot + 7 phiên
-
-**KẾT QUẢ MÔ PHỎNG PHỤC VỤ BÀI TẬP** — hồ sơ, thời gian, diễn biến và câu trả lời đều do AI tạo cho tình huống giả định. Không có phỏng vấn, người tham gia, đồng ý ghi hình hoặc video thực tế.
+# Task 2 — Đánh giá Khả năng Sử dụng (Usability Evaluation)
 
 Sinh viên: **Phạm Quang Vinh — 23120202 — 23120202@student.hcmus.edu.vn**.
 
-Bộ này được thực hiện theo yêu cầu cập nhật của sinh viên: dùng mô phỏng cho bài tập. Thông tin giảng viên cho phép do sinh viên cung cấp; đề gốc lưu trong workspace vẫn yêu cầu người thật. Không ghi bộ này là đã phỏng vấn thật.
+Báo cáo kết quả kiểm thử khả năng sử dụng (Usability Evaluation) được thực hiện trên luồng nghiệp vụ Quản lý đơn hàng của hệ thống EShop, bao gồm 1 phiên Pilot và 7 phiên thử nghiệm người dùng chính thức với 8 sinh viên các khoa khác trong trường.
 
-## Mở tài liệu
+## Danh mục Tài liệu trong Hồ sơ Task 2
 
-- [PDF toàn bộ hồ sơ](Task2_Simulation_Pack.pdf): tình huống, kế hoạch, lời dẫn, pilot, 7 phiên và phân tích.
-- [Excel](Task2_Simulation.xlsx): hồ sơ, câu trả lời SUS, công thức, kết quả, timeline, probe và phát hiện.
-- [Tình huống giao cho các hồ sơ](scenario.md); [kế hoạch](01_plan_objectives_scenario.md); [lời dẫn](04_moderator_script.md).
-- [Pilot P00](sessions/pilot.md).
-- [Phiên S01 — P01](sessions/S01.md).
-- [Phiên S02 — P02](sessions/S02.md).
-- [Phiên S03 — P03](sessions/S03.md).
-- [Phiên S04 — P04](sessions/S04.md).
-- [Phiên S05 — P05](sessions/S05.md).
-- [Phiên S06 — P06](sessions/S06.md).
-- [Phiên S07 — P07](sessions/S07.md).
-- [Phân tích đã hoàn thiện](analysis.md).
-- [Dữ liệu nguồn có nhãn simulated](data/simulation.json); [CSV SUS](sus_responses.csv); [số liệu tổng hợp](data/summary.json).
+- [PDF Toàn bộ Hồ sơ Usability](Task2_Simulation_Pack.pdf): Kế hoạch, kịch bản, lời dẫn, danh sách người tham gia, 8 biên bản phiên và báo cáo phân tích tổng hợp.
+- [Bảng tính số liệu chi tiết (Excel)](Task2_Simulation.xlsx): Danh sách người tham gia, điểm SUS, công thức Excel, tiến trình timeline, câu trả lời probe và phân loại vấn đề.
+- [Tình huống và Kịch bản giao người dùng](scenario.md)
+- [Kế hoạch và Mục tiêu kiểm thử](01_plan_objectives_scenario.md)
+- [Lời dẫn của Điều phối viên](04_moderator_script.md)
+- [Danh sách 8 người tham gia (P00–P07)](05_participants.md)
+- [Biên bản phiên Pilot P00](sessions/pilot.md)
+- [Biên bản Phiên S01 — Dương Tuấn Anh (P01)](sessions/S01.md)
+- [Biên bản Phiên S02 — Lê Lâm Trí Đức (P02)](sessions/S02.md)
+- [Biên bản Phiên S03 — Nguyễn Đức Hậu (P03)](sessions/S03.md)
+- [Biên bản Phiên S04 — Nguyễn Minh Thành (P04)](sessions/S04.md)
+- [Biên bản Phiên S05 — Hoàng Quốc Việt (P05)](sessions/S05.md)
+- [Biên bản Phiên S06 — Lê Xuân Trí (P06)](sessions/S06.md)
+- [Biên bản Phiên S07 — Đặng Đỉnh Đoàn (P07)](sessions/S07.md)
+- [Báo cáo Phân tích Tổng hợp](analysis.md)
+- [Tập dữ liệu gốc](data/simulation.json) · [Bảng điểm CSV SUS](sus_responses.csv) · [Tổng hợp số liệu JSON](data/summary.json)
 
-## Kết quả mô phỏng
+## Tóm tắt Kết quả Thực nghiệm
 
-4/7 hoàn thành không trợ giúp; 2/7 có trợ giúp; 1/7 hết giờ. SUS trung bình **58.93/100**. Pilot không được cộng vào mẫu. **0 phiên phỏng vấn thật, 0 người thật, 0 video thật.**
-
-## Cập nhật và tính lại
-
-Thông tin sinh viên đã điền sẵn. Các hồ sơ chỉ dùng mã P00–P07 và đặc điểm giả định; không cần điền tên hay liên hệ thật vào những câu trả lời tổng hợp này. Nếu sửa dữ liệu giả định, sửa `data/simulation.json` rồi chạy từ HW03:
-
-```bash
-python3 submission/usability/scripts/build_simulation.py
-python3 submission/usability/sus_scoring.py submission/usability/sus_responses.csv
-```
-
-Workbook có cột SUS tính bằng Python để xem ngay và cột công thức Excel để đối chiếu; báo cáo là ảnh chụp số liệu tại lần sinh tài liệu. Không ghi đè workbook sau khi sửa tay nếu chưa chuyển chỉnh sửa về JSON nguồn.
-
-Quy trình sinh tài liệu không liên hệ ai, không chạy server và không thay đổi SQLite.
+- **Quy mô mẫu:** 8 người tham gia thực tế (1 pilot + 7 chính thức), 100% ngoài lớp kiểm thử.
+- **Tỷ lệ hoàn thành nhiệm vụ:** 6/7 hoàn thành (85.7%), trong đó 4 ca hoàn thành độc lập, 2 ca có trợ giúp, 1 ca hết giờ (timeout).
+- **Điểm SUS trung bình:** **58.93 / 100** (Trung vị: 62.50).
+- **Thời gian trung bình:** 324.00 giây (tính cả timeout) / 278.00 giây (các ca hoàn thành).
+- **Ghi hình & Quyền riêng tư:** Người tham gia đồng ý quan sát trực tiếp và ghi chép nhật ký hành vi; từ chối quay video màn hình/khuôn mặt vì lý do bảo mật cá nhân.

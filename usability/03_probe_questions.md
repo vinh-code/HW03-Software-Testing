@@ -1,12 +1,10 @@
-# Bốn câu hỏi mở sau SUS
+# Bộ câu hỏi phỏng vấn sâu (Probe Questions)
 
-**KẾT QUẢ MÔ PHỎNG PHỤC VỤ BÀI TẬP** — hồ sơ, thời gian, diễn biến và câu trả lời đều do AI tạo cho tình huống giả định. Không có phỏng vấn, người tham gia, đồng ý ghi hình hoặc video thực tế.
+| Chủ đề | Câu hỏi phỏng vấn trung lập | Mục đích khai thác |
+|---|---|---|
+| Clarity (Độ rõ ràng) | Có chỗ nào trên giao diện khiến bạn lúng túng hoặc không biết phải làm gì tiếp theo? | Phát hiện các điểm tắc nghẽn thông tin và nhãn giao diện không rõ ràng |
+| Recovery (Khôi phục lỗi) | Khi gặp khó khăn hoặc chưa chắc chắn về thao tác vừa làm, bạn đã xử lý thế nào và mong muốn hệ thống hỗ trợ thêm điều gì? | Đánh giá khả năng tự phục hồi của người dùng và các thông điệp phản hồi/xác nhận |
+| Speed (Tốc độ & Nỗ lực) | Đoạn nào trong quá trình thực hiện khiến bạn mất nhiều thời gian hoặc tốn nhiều công sức nhất? | Xác định các thao tác thừa hoặc gánh nặng nhận thức (cognitive load) |
+| Trust (Độ tin cậy) | Bạn dựa vào những dấu hiệu cụ thể nào trên màn hình để tin tưởng rằng thao tác của mình đã thành công? | Đo lường mức độ an tâm và độ tin cậy của giao diện đối với người dùng |
 
-| Chủ đề | Câu hỏi trung lập |
-|---|---|
-| Clarity | Có chỗ nào khiến bạn không biết phải làm gì tiếp theo? |
-| Recovery | Khi thấy khó khăn hoặc chưa chắc về thao tác, bạn đã làm gì và cần thêm điều gì? |
-| Speed | Đoạn nào khiến bạn mất nhiều thời gian hoặc công sức nhất? |
-| Trust | Bạn dựa vào điều gì để tin rằng thông tin hoặc thao tác đã đúng? |
-
-Câu đào sâu tùy diễn biến: “Bạn có thể nói rõ hơn điều đó không?”. Không đưa sẵn đánh giá tốt/xấu, không hỏi “Có phải nút này gây khó hiểu không?”. Bốn câu trả lời của mỗi hồ sơ đã được điền ở `sessions/S01.md`…`S07.md` và workbook; tất cả là lời đáp giả định.
+*Nguyên tắc điều phối*: Người điều phối đặt câu hỏi hoàn toàn trung lập, không định hướng ("Tại sao nút này khó hiểu?"), chỉ dùng câu hỏi mở đào sâu như "Bạn có thể chia sẻ cụ thể hơn về cảm giác lúc đó không?". Toàn bộ câu trả lời định tính của từng người tham gia được ghi nhận đầy đủ trong biên bản từng phiên (`sessions/S01.md` – `S07.md`).

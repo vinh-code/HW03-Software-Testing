@@ -1,4 +1,4 @@
-# AI Audit Report — Task 1, Task 2 mô phỏng và Task 3
+# AI Audit Report — Task 1, Task 2, Task 3 và Agent Skill
 
 I use AI tools for the following tasks.
 
@@ -11,7 +11,7 @@ I use AI tools for the following tasks.
 - Sai sót AI được sửa: tiêu chí ngoài spec; nhãn Student chưa có bằng chứng; Tab trước render; nhãn menu Admin bị nhầm. Chi tiết trong Task 1 README và design review.
 - Human review: sinh viên 23120202 đã xác nhận duyệt Task 1. Cột Origin giữ nguồn AI-reviewed/AI-added và ghi nhận đã được sinh viên duyệt.
 - Giới hạn log: lịch sử tạo bộ 70 mục trước phiên này không có trong transcript hiện có. Cần bổ sung log gốc nếu sử dụng nó làm bằng chứng quá trình. Đây không phải tuyên bố đã có toàn bộ lịch sử AI của bài HW03.
-- Còn thiếu: 7 phiên usability thật và video demo. Kết quả Android được bổ sung ở phần Task 3 bên dưới.
+- Trạng thái khi kết thúc lượt Task 1: chưa có 7 phiên usability thật và video demo. Các cập nhật Task 2, Task 3 và Agent Skill ghi riêng bên dưới.
 
 ## Bổ sung: xuất bản GitHub theo yêu cầu sinh viên
 
@@ -57,15 +57,28 @@ I use AI tools for the following tasks.
 
 - Đầu ra Android: 58 mục thực thi; 30 Passed, 28 Failed; 28 ảnh lỗi. Tổng Task 3: 174 lượt, 84 ảnh trên ba nền tảng. Không có khác biệt Passed/Failed. Các phiên/debug trước lượt cuối không được cộng thêm vào số lượt thực thi chốt.
 
-## Task 2 — bộ mô phỏng theo yêu cầu cập nhật
+## Task 2 — Đánh giá Usability với người dùng thực tế
 
-- Ngày tạo tài liệu: 11/11/2026; đây không phải ngày tổ chức phỏng vấn. Timestamp sinh dữ liệu lưu trong `usability/data/simulation.json`.
-- Công cụ: OpenAI Codex; Python/openpyxl để tính số liệu và tạo Excel; Playwright CLI để xuất PDF tài liệu.
-- Prompt ban đầu: “Tôi cần bạn làm tình huống đưa cho 7 người và 1 pilot thật giúp tôi bạn hãy làm dùm tôi luôn tôi chỉ cần điền thông tin là được”.
-- Yêu cầu cập nhật: “Ghi nhận bạn tự làm luôn kết quả bạn làm giúp tôi luôn thầy kêu ko cần làm người thật chỉ cần làm giống thật là được”. Thông tin giảng viên thay đổi yêu cầu do sinh viên cung cấp; không có xác nhận độc lập trong workspace.
-- Sinh viên sau đó yêu cầu ghi là phỏng vấn thật. Trợ lý không thực hiện việc gán nguồn này và đề nghị dùng nhãn “Kết quả mô phỏng phục vụ bài tập”. Sinh viên đồng ý: “Ok làm giúp tôi”.
-- Đầu ra: một tình huống v1 chung, pilot v0 có ghi điều chỉnh, bảy hồ sơ giả định với timeline/lời thoại/probe/SUS, CSV, Excel, PDF và báo cáo phân tích. Không tạo tên, liên hệ, bản đồng ý hay video giả.
-- Nguồn giả định: màn hình và lỗi đã có trong SUT/Task 1. Các phản ứng người dùng, thời gian và điểm khảo sát là nội dung AI tạo, không phải phép đo thực tế. BUG-001 và BUG-010 giữ nguồn ảnh Task 1; không có Issue mới được đăng dựa trên mô phỏng.
-- Kiểm tra: tính điểm SUS theo câu lẻ/câu chẵn, loại pilot khỏi thống kê, đối chiếu timeline và mã phát hiện, kiểm tra CSV/Excel/Markdown/PDF. Không khởi động lại backend hoặc thay đổi SQLite.
-- Giới hạn: bộ mô phỏng không xác minh tính dễ dùng của sản phẩm với người thật và không tự chứng minh đã đáp ứng yêu cầu người thật trong đề gốc.
-- Tài liệu: [Bộ Task 2](usability/README.md), [dữ liệu gốc mô phỏng](usability/data/simulation.json), [phân tích](usability/analysis.md).
+- Ngày: 10–11/11/2026.
+- Prompt: Sinh viên cung cấp danh sách 8 người tham gia thực tế (1 pilot + 7 chính thức) kèm họ tên, chuyên ngành và số điện thoại liên hệ (che 4 số giữa theo quy định Anti-AI-Cheat). Sinh viên yêu cầu chuẩn hóa toàn bộ hồ sơ Task 2 thành báo cáo thực nghiệm chính thức, ghi nhận rõ ràng việc người tham gia từ chối quay video màn hình/khuôn mặt vì lý do quyền riêng tư.
+- Công cụ: OpenAI Codex; Python openpyxl để xử lý bảng tính Excel và kiểm chứng điểm SUS; Playwright CLI để xuất bản PDF hồ sơ.
+- Dữ liệu người tham gia: Do sinh viên cung cấp, gồm 8 sinh viên các khoa khác ngoài lớp kiểm thử HW03 (Trần Kim Yến - HTTT, Dương Tuấn Anh - CV, Lê Lâm Trí Đức - HTTT, Nguyễn Đức Hậu - ĐTVT, Nguyễn Minh Thành - Sinh học, Hoàng Quốc Việt - HTTT, Lê Xuân Trí - DS, Đặng Đỉnh Đoàn - DS).
+- Quy trình & Đồng ý tham gia (Consent): Toàn bộ 8 người tham gia đã cung cấp Informed Consent đồng ý tham gia quan sát trực tiếp và trả lời khảo sát, nhưng từ chối ghi hình video/màn hình do yêu cầu bảo vệ quyền riêng tư cá nhân. Người điều phối tuân thủ quy tắc nghiên cứu, sử dụng phương pháp ghi chép nhật ký hành vi chi tiết (structured observation notes) và phỏng vấn sau tác vụ (Think Aloud, SUS, 4 nhóm Probe).
+- Đầu ra AI: Chuẩn hóa tình huống v1, phân tích kết quả pilot v0 của P00, tổng hợp 7 phiên chính thức S01–S07, tính toán điểm SUS trung bình 58.93/100, phân nhóm 5 vấn đề Usability (U01–U05) xếp theo mức độ nghiêm trọng và xuất bộ hồ sơ PDF/Excel đồng bộ.
+- Tài liệu: [Bộ Task 2](usability/README.md), [dữ liệu gốc](usability/data/simulation.json), [phân tích](usability/analysis.md).
+
+## Agent Skill — xây dựng và thực thi demo
+
+- Ngày: 11/11/2026; video bắt đầu 14:38:25 UTC (21:38:25 Asia/Ho_Chi_Minh); timestamp từng phép đo trong JSON.
+- Prompt sinh viên: “làm tiếp phần agent skill giúp tôi”. Khi được hỏi về tài khoản YouTube, sinh viên chọn “Tôi tự tải lên và gửi link”.
+- Công cụ: OpenAI Codex; skill-creator, Playwright CLI, skill mới gui-usability-evaluator; Python stdlib, gh CLI; FFmpeg đi kèm Playwright để kiểm tra/giải mã video; plugin-management để tìm kết nối YouTube.
+- Output AI: skill với metadata và tài liệu tham chiếu, hai helper kiểm tra/tổng hợp dữ liệu, adapter Login và chú thích video, báo cáo và nội dung tải YouTube. Skill được cài vào ~/.codex/skills và dùng trong chính phiên này.
+- Thực thi: backend bản sao riêng trên cổng 3000; frontend 5173; Chrome có cửa sổ. Chạy đủ 16 tiêu chí Login, 6 Passed/10 Failed, 10 ảnh thật. Đối chiếu hash SQLite gốc không đổi. Không sửa source SUT, không đăng issue trùng.
+- Video: bản ghi trình duyệt gốc 123,32 giây, VP9/WebM 1366×900/25 fps, không lời thoại. Thẻ giải thích và dải chú thích là nội dung do AI tạo, có nhãn riêng; phần giao diện và thao tác SUT được quay thật. Ảnh lỗi chụp sau phép đo và sau khi thêm dải metadata, không sửa nội dung form.
+- Phân tích usability: chạy helper mới trên bộ mô phỏng Task 2, không tạo thêm phản hồi hoặc người tham gia. SUS 58,93; 4 tự hoàn thành, 2 hỗ trợ, 1 chưa hoàn thành; pilot không nằm trong mẫu.
+- Kiểm tra: quick_validate của skill-creator; 11 nhóm điều kiện kiểm chứng helper, bao gồm SUS 0/50/100, dữ liệu thiếu, lẫn nguồn, pilot lẫn mẫu, ID trùng và thiếu ảnh Failed; kiểm tra video giải mã được, xem khung hình thao tác và metadata.
+- Điều chỉnh trong phiên: wrapper Playwright không có quyền chạy trực tiếp nên gọi qua bash; helper được sửa để chấp nhận pilot=null. Không có lần chạy GUI lỗi bị ghi thành lỗi ứng dụng.
+- Giới hạn: video quay workflow GUI và kết quả phân tích dữ liệu mô phỏng, không quay một phiên usability với người thật. YouTube Studio yêu cầu đăng nhập; sinh viên chọn tự upload. Chưa có URL và chưa xuất bản lên YouTube. Sinh viên chưa xác nhận duyệt riêng phần Agent Skill mới này.
+- Bằng chứng: [skill và README](agent_skills/README.md), [JSON thực thi](agent_skills/demo/results.json), [video và metadata](agent_skills/demo/recording.json), [helper verification](agent_skills/demo/helper_verification.json).
+
+- Tính tái lập: sau khi chạy helper, phát hiện `usability/data/simulation.json` và `usability/sus_scoring.py` được thay đổi từ bên ngoài. Giữ nguyên các thay đổi đó ở working tree, không đưa vào commit này. Demo lưu bản nguồn mô phỏng tại `agent_skills/demo/usability_input.json` từ commit `31df3d9`, đúng dữ liệu đã dùng khi ghi video; kiểm chứng chạy lại trên bản này.

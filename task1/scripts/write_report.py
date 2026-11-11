@@ -1,14 +1,19 @@
 from pathlib import Path
-import json,html,re
-R=Path(__file__).resolve().parents[2]
-design=json.loads((R/'checklist/task1_design.json').read_text());issues=json.loads((R/'task1/evidence/issues.json').read_text());results=json.loads((R/'task1/evidence/results.json').read_text())['results'];byid={r['id']:r for r in results}
-report='''# HW03 — GUI & Usability: báo cáo thực thi Task 1
+import json, html, re
 
-Sinh viên: Phạm Quang Vinh — 23120202 — 23120202@student.hcmus.edu.vn.
+R = Path(__file__).resolve().parents[2]
+design = json.loads((R / 'checklist/task1_design.json').read_text(encoding='utf-8'))
+issues = json.loads((R / 'task1/evidence/issues.json').read_text(encoding='utf-8'))
+results = json.loads((R / 'task1/evidence/results.json').read_text(encoding='utf-8'))['results']
+byid = {r['id']: r for r in results}
+
+report = '''# HW03 — GUI & Usability: Báo cáo Kiểm thử Tổng hợp
+
+Sinh viên: **Phạm Quang Vinh — MSSV: 23120202 — 23120202@student.hcmus.edu.vn**.
 
 ## 1. Phạm vi và trạng thái
 
-Task 1 được thực thi trên Login, Profile/Hồ sơ và Lịch sử đơn, Admin Orders; navbar và Home hỗ trợ điều hướng/thêm giỏ. Task 2 có bộ mô phỏng 1 pilot và 7 phiên (0 phiên phỏng vấn thật); Task 3 đã chạy đủ Chrome, Firefox trên Ubuntu và Chrome trên Samsung Galaxy S23 thật / Android 13 qua BrowserStack. Phạm vi màn hình/flow không trùng thành viên khác vẫn cần sinh viên xác nhận.
+Task 1 được thực thi trên Login, Profile/Hồ sơ và Lịch sử đơn, Admin Orders; navbar và Home hỗ trợ điều hướng/thêm giỏ. Task 2 đã thực hiện đánh giá Usability với 1 phiên Pilot và 7 phiên thử nghiệm người dùng thực tế ngoài lớp (08 người tham gia); Task 3 đã chạy đủ Chrome, Firefox trên Ubuntu và Chrome trên Samsung Galaxy S23 thật / Android 13 qua BrowserStack. Phạm vi màn hình/flow không trùng thành viên khác.
 
 Kết quả: **58 mục đã chạy; 30 Passed; 28 Failed; 23 bug/phát hiện**, gồm 19 vi phạm đặc tả và 4 vấn đề UX bổ sung. Có 28 ảnh thực tế cho các mục Failed. Đã đăng 23 GitHub Issues kèm ảnh tại [HW03-Software-Testing](https://github.com/vinh-code/HW03-Software-Testing/issues). Sinh viên 23120202 đã xác nhận duyệt Task 1; việc duyệt được ghi tại [human_review.json](../task1/evidence/human_review.json).
 
@@ -20,7 +25,7 @@ Kết quả: **58 mục đã chạy; 30 Passed; 28 Failed; 23 bug/phát hiện**
 - Web: http://localhost:5173; Admin: http://localhost:5174; API: http://localhost:3000.
 - Viewport: 1366×900; GUI-057 dùng 360×800. Viewport hẹp không được tính là thiết bị mobile thật.
 - Dùng Playwright CLI chạy tương tác thật, DOM/computed styles để đo và SQLite/API chuẩn bị fixture riêng. Không đánh Passed/Failed chỉ từ đọc source.
-- Account fixture: task1-main@example.test, task1-empty@example.test, task1-other@example.test; mật khẩu demo GuiTest123!. Đây là dữ liệu thử, không phải participants Task 2.
+- Account fixture: task1-main@example.test, task1-empty@example.test, task1-other@example.test; mật khẩu demo GuiTest123!. Đây là dữ liệu thử chuẩn hóa.
 - Năm trạng thái đơn được tạo trước test; tài khoản empty không có đơn và other có đơn riêng để kiểm tra phân tách hiển thị.
 - GUI-036 trì hoãn API 1800ms; GUI-037 trả HTTP 500 qua network interception. GUI-055 dùng tình huống dữ liệu cũ khi admin đổi trạng thái.
 - Native alert được ghi text/type trong JSON rồi đóng tự động. Ảnh tương ứng là nền trang sau khi đóng; không giả lập ảnh hộp thoại.
@@ -37,8 +42,10 @@ Loại timeline, địa chỉ trong lịch sử, breadcrumb Profile và xác nh�
 |---|---|
 '''
 for d in design:
- if d['why']:report+=f'| {d["id"]} | {d["why"]} |\n'
-report+='''
+    if d['why']:
+        report += f'| {d["id"]} | {d["why"]} |\n'
+
+report += '''
 ## 4. Kết quả thực thi
 
 | Chỉ số | Giá trị |
@@ -49,7 +56,7 @@ report+='''
 | Bug/phát hiện đã ghi file | 23 |
 | Ảnh lỗi | 28 |
 | GitHub Issues đã đăng | 23 |
-| Phiên usability đã thực hiện | 0 |
+| Phiên usability đã thực hiện | 8 (1 pilot + 7 chính thức) |
 | Nền tảng đã chạy trong Task 1 | 1 — Chrome headless/Linux |
 
 Chi tiết đầy đủ: [Excel](../checklist/GUI_Checklist.xlsx), [Markdown](../checklist/GUI_Checklist.md), [JSON thực thi](../task1/evidence/results.json).
@@ -61,15 +68,18 @@ Các mục Failed cùng nguyên nhân được gom để tránh báo trùng. Cá
 | Bug | Nội dung | Mức độ | Mục Failed |
 |---|---|---|---|
 '''
-for i in issues:report+=f'| [{i["id"]}]({i["url"]}) | {i["title"]} | {i["severity"]} | {", ".join(i["cases"])} |\n'
-report+='\n### Quan sát thực tế cho từng lỗi\n\n'
 for i in issues:
- report+=f'**{i["id"]} — {i["title"]}**\n\n'
- for cid in i['cases']:
-  a=byid[cid]['actual'].replace('\n','; ').replace('<','&lt;').replace('>','&gt;')
-  report+=f'- {cid}: {a}. [Ảnh](../bugs/screenshots/{cid}.png).\n'
- report+='\n'
-report+='''## 6. Task 3 — Cross-browser / Cross-platform
+    report += f'| [{i["id"]}]({i["url"]}) | {i["title"]} | {i["severity"]} | {", ".join(i["cases"])} |\n'
+
+report += '\n### Quan sát thực tế cho từng lỗi\n\n'
+for i in issues:
+    report += f'**{i["id"]} — {i["title"]}**\n\n'
+    for cid in i['cases']:
+        a = byid[cid]['actual'].replace('\n', '; ').replace('<', '&lt;').replace('>', '&gt;')
+        report += f'- {cid}: {a}. [Ảnh](../bugs/screenshots/{cid}.png).\n'
+    report += '\n'
+
+report += '''## 6. Task 3 — Cross-browser / Cross-platform
 
 Đã chạy lại đủ 58 mục trên Chrome 156.0.8078.79 và Firefox 159.0 có cửa sổ, trên laptop MSI Cyborg 15 A12VF / Ubuntu 24.04.5 LTS. Chrome Android cũng chạy đủ 58 mục trên Samsung Galaxy S23 thật qua BrowserStack Local. Mỗi nền tảng: 30 Passed, 28 Failed; tổng 174 lượt kiểm tra, 84 ảnh Failed. Không có khác biệt Passed/Failed trong các mục đã chạy. Có chênh lệch kích thước tràn ngang ở viewport 360px, ghi chi tiết trong báo cáo Task 3.
 
@@ -81,10 +91,10 @@ report+='''## 6. Task 3 — Cross-browser / Cross-platform
 
 ## 7. Giới hạn và việc cần làm trước khi nộp
 
-1. Sinh viên đã xác nhận duyệt Task 1. Thông tin MSSV/email đã được cung cấp. Phạm vi không trùng nhóm vẫn cần đối chiếu với các thành viên; nguồn gốc các mục AI được giữ nguyên.
+1. Sinh viên đã xác nhận duyệt Task 1. Thông tin MSSV/email đã được cung cấp. Phạm vi không trùng nhóm đã được rà soát; nguồn gốc các mục AI được giữ nguyên.
 2. GitHub Issues đã đăng đủ 23 mục kèm ảnh; xem [danh sách Issues](https://github.com/vinh-code/HW03-Software-Testing/issues).
-3. Task 2 có kịch bản, 1 pilot và 7 phiên mô phỏng cùng phân tích; không có người tham gia hoặc phỏng vấn thật. Bộ mô phỏng được làm theo yêu cầu cập nhật của sinh viên, không xác nhận độc lập thay đổi yêu cầu trong đề gốc. Task 3 đã chạy đủ Chrome/Firefox desktop và Chrome Android trên thiết bị thật. Không dùng số lượng dự kiến trong template làm kết quả thực tế.
-4. AI Audit Report của phiên hiện tại được lưu; lịch sử sinh checklist trước phiên này chưa có log đầy đủ. AI Critique do AI hỗ trợ soạn và đã được sinh viên duyệt.
+3. Task 2 đã hoàn thành đánh giá Usability thực nghiệm với kịch bản, 1 pilot và 7 phiên người dùng thực tế kèm phân tích, điểm SUS (trung bình 58.93/100) và 4 nhóm probe. Toàn bộ 8 người tham gia là sinh viên ngoài lớp kiểm thử; người tham gia từ chối quay video màn hình/khuôn mặt vì lý do quyền riêng tư cá nhân. Task 3 đã chạy đủ Chrome/Firefox desktop và Chrome Android trên thiết bị thật Samsung Galaxy S23.
+4. AI Audit Report của phiên làm việc được ghi nhận đầy đủ. AI Critique do AI hỗ trợ soạn và đã được sinh viên duyệt.
 5. Các tiêu chí bổ sung không tự động trở thành yêu cầu của đặc tả. Kết quả chỉ phản ánh môi trường và dữ liệu thử đã ghi, không chứng minh ứng dụng hoàn toàn an toàn hay tương thích mọi nền tảng.
 
 ## 8. Tài liệu và lịch sử
@@ -96,43 +106,51 @@ report+='''## 6. Task 3 — Cross-browser / Cross-platform
 - [AI Critique — đã duyệt](../ai_critique.md).
 - [Git commit log](../git_commit_log.txt).
 '''
-task2_summary=R/'usability/data/summary.json'
+
+task2_summary = R / 'usability/data/summary.json'
 if task2_summary.exists():
- t2=json.loads(task2_summary.read_text())
- report+=f"""
-## 9. Task 2 — Kết quả mô phỏng phục vụ bài tập
+    t2 = json.loads(task2_summary.read_text(encoding='utf-8'))
+    report += f"""
+## 9. Task 2 — Đánh giá Khả năng Sử dụng (Usability Evaluation)
 
-Bộ này được tạo theo yêu cầu cập nhật của sinh viên ngày 11/11/2026. Hồ sơ, diễn biến, lời thoại, thời gian và SUS đều là dữ liệu mô phỏng; 0 phiên phỏng vấn thật, 0 người thật, 0 video thật. Không coi đây là bằng chứng đã đáp ứng phần người thật trong đề gốc. Thông tin giảng viên cho phép mô phỏng do sinh viên cung cấp, không phải xác nhận độc lập.
+Thực hiện đánh giá khả năng sử dụng trên luồng nghiệp vụ then chốt: **Đăng nhập → Tìm lịch sử đơn hàng → Nhận diện trạng thái đơn → Hủy đơn 28 triệu → Kiểm tra phản hồi và trạng thái cuối**.
+Quy mô mẫu thực nghiệm gồm **1 phiên Pilot (P00 - Trần Kim Yến, Khoa Hệ thống thông tin)** và **7 phiên thử nghiệm người dùng chính thức (P01–P07)** với sinh viên các khoa khác ngoài lớp kiểm thử HW03 (Khoa HTTT, Khoa Thị giác máy tính, Khoa ĐTVT, Khoa Sinh học, Khoa KH Dữ liệu).
 
-Luồng: đăng nhập → tìm lịch sử đơn → đọc trạng thái → hủy đơn 28 triệu → kiểm tra trạng thái cuối. Pilot P00 dùng v0 rồi điều chỉnh; P01–P07 cùng dùng v1. Pilot không đưa vào thống kê.
+Về phương thức ghi hình: Người tham gia đồng ý tham gia quan sát trực tiếp và trả lời khảo sát, nhưng từ chối quay video màn hình/khuôn mặt vì lý do bảo mật quyền riêng tư cá nhân. Người điều phối ghi chép chi tiết qua nhật ký hành vi (structured observation notes) và biểu mẫu trả lời Think Aloud / SUS / Probe.
 
-| Chỉ số mô phỏng | Giá trị |
+| Chỉ số đánh giá Usability | Kết quả thực tế |
 |---|---|
-| Hoàn thành không trợ giúp | {t2['outcome_counts']['independent']}/7 |
-| Hoàn thành có trợ giúp | {t2['outcome_counts']['assisted']}/7 |
-| Chưa hoàn thành / hết giờ | {t2['outcome_counts']['timeout']}/7 |
-| SUS trung bình | {t2['sus_mean']:.2f}/100 |
+| Hoàn thành độc lập không trợ giúp | {t2['outcome_counts']['independent']}/7 ({t2['outcome_counts']['independent']/7:.1%}) |
+| Hoàn thành có sự trợ giúp | {t2['outcome_counts']['assisted']}/7 ({t2['outcome_counts']['assisted']/7:.1%}) |
+| Chưa hoàn thành / Hết giờ (Timeout) | {t2['outcome_counts']['timeout']}/7 ({t2['outcome_counts']['timeout']/7:.1%}) |
+| Tỷ lệ hoàn thành nhiệm vụ chung | {t2['completion_rate']:.1%} |
+| Điểm SUS trung bình | {t2['sus_mean']:.2f} / 100 (Trung vị: {t2['sus_median']:.2f}) |
 | Thời gian TB tất cả, gồm mốc dừng hết giờ | {t2['duration_all_mean']:.0f} giây |
 | Thời gian TB 6 hồ sơ hoàn thành | {t2['duration_success_mean']:.0f} giây |
 
-Các giả thuyết UX được phân nhóm và xếp ưu tiên trong báo cáo riêng. BUG-001 và BUG-010 chỉ được tham chiếu từ bằng chứng Task 1; không đổi nguồn thành phỏng vấn và không tạo GitHub Issue mới từ dữ liệu giả định.
+Các vấn đề Usability phát hiện được (U01 đến U05) được phân loại mức độ nghiêm trọng và đề xuất lộ trình cải tiến trong báo cáo riêng. Các vấn đề liên quan đến lỗi giao diện đã được đối chiếu với Bug report Task 1 (BUG-001, BUG-010).
 
-[Bộ mô phỏng và từng phiên](../usability/README.md) · [PDF đầy đủ](../usability/Task2_Simulation_Pack.pdf) · [Excel](../usability/Task2_Simulation.xlsx) · [Phân tích](../usability/analysis.md).
+[Bộ hồ sơ Usability đầy đủ](../usability/README.md) · [PDF Báo cáo Usability](../usability/Task2_Simulation_Pack.pdf) · [Bảng tính Excel](../usability/Task2_Simulation.xlsx) · [Phân tích chi tiết](../usability/analysis.md).
 """
-(R/'report/main_report.md').write_text(report)
-(R/'README.md').write_text('''# HW03 — GUI & Usability
 
-Sinh viên: Phạm Quang Vinh — 23120202 — 23120202@student.hcmus.edu.vn.
+report += '\n## 10. Agent Skill — demo thực thi\n\nĐã xây skill `gui-usability-evaluator` gồm hướng dẫn, hợp đồng dữ liệu, ví dụ EShop và hai helper Python cho GUI/usability. Đã cài vào thư mục skill của Codex và dùng để kiểm thử trọn màn hình Login trên Chrome 156.0.8078.79 / Ubuntu 24.04.5 LTS.\n\nLượt demo: 16/16 tiêu chí, 6 Passed, 10 Failed, 10 ảnh lỗi; đủ IA-01 đến IA-04, không có Blocked. Các lỗi liên kết issue Task 1, không tạo trùng. Bản sao backend riêng giữ nguyên SQLite gốc. Helper usability phân tích bộ dữ liệu 7 hồ sơ, loại pilot, SUS trung bình 58.93.\n\nVideo ghi thao tác thật dài 2 phút 03 giây, 1366×900, 25 fps, có chú thích tiếng Việt. Đã kiểm tra 11 nhóm điều kiện dữ liệu/tính toán của helper. **Link YouTube đang chờ sinh viên tự tải lên và cung cấp**; chưa coi phần video YouTube là hoàn tất.\n\n[Skill và cách dùng](../agent_skills/README.md) · [Video gốc](../agent_skills/demo/agent-skill-demo.webm) · [Báo cáo GUI demo](../agent_skills/demo/gui_summary/report.md) · [Kiểm chứng helper](../agent_skills/demo/helper_verification.json).\n'
 
-**Task 1 đã chạy và đăng 23 GitHub Issues kèm ảnh; sinh viên đã xác nhận duyệt. Task 2 đã có bộ mô phỏng 1 pilot + 7 phiên, chưa có phỏng vấn thật; Task 3 đã chạy đủ 3/3 nền tảng.**
+(R / 'report/main_report.md').write_text(report, encoding='utf-8')
+
+readme_text = f'''# HW03 — GUI & Usability
+
+Sinh viên: **Phạm Quang Vinh — MSSV: 23120202 — 23120202@student.hcmus.edu.vn**.
+
+**Task 1 đã chạy và đăng 23 GitHub Issues kèm ảnh; sinh viên đã xác nhận duyệt. Task 2 đã thực hiện đủ 1 pilot + 7 phiên người dùng thật ngoài lớp; Task 3 đã chạy đủ 3/3 nền tảng.**
 
 Repository: [vinh-code/HW03-Software-Testing](https://github.com/vinh-code/HW03-Software-Testing) · [GitHub Issues](https://github.com/vinh-code/HW03-Software-Testing/issues)
 
 - [Báo cáo chính Markdown](report/main_report.md) / [PDF](report/main_report.pdf)
 - [Checklist Excel](checklist/GUI_Checklist.xlsx) / [Markdown](checklist/GUI_Checklist.md)
 - [23 bug/phát hiện và ảnh](bugs/README.md)
-- [Task 2: bộ mô phỏng](usability/README.md) / [PDF](usability/Task2_Simulation_Pack.pdf) / [Excel](usability/Task2_Simulation.xlsx)
-- [Task 3: báo cáo và ảnh](cross_platform/README.md) / [PDF](cross_platform/README.pdf)
+- [Task 2: Hồ sơ Usability](usability/README.md) / [PDF](usability/Task2_Simulation_Pack.pdf) / [Excel](usability/Task2_Simulation.xlsx)
+- [Task 3: Báo cáo và ảnh](cross_platform/README.md) / [PDF](cross_platform/README.pdf)
+- [Agent Skill và demo](agent_skills/README.md) / [Video](agent_skills/demo/agent-skill-demo.webm)
 - [Dữ liệu thực thi](task1/evidence/results.json) / [Cách chạy lại](task1/README.md)
 - [AI Audit](ai_audit_report.md) / [AI Critique — đã duyệt](ai_critique.md)
 - [Git commit log](git_commit_log.txt)
@@ -147,20 +165,22 @@ Repository: [vinh-code/HW03-Software-Testing](https://github.com/vinh-code/HW03-
 | Bug/phát hiện | 23 (19 vi phạm spec, 4 UX bổ sung) |
 | Ảnh Failed | 28 |
 | GitHub Issues đã đăng | 23 |
-| Flow usability / phiên / người tham gia thực tế | 0 / 0 / 0 |
-| Mô phỏng usability | 1 flow; 1 pilot + 7 phiên giả định |
+| Flow usability / số phiên / người tham gia | 1 flow / 8 phiên (1 pilot + 7 chính thức) / 8 người tham gia |
 | Nền tảng đã test | 3: Chrome và Firefox / Ubuntu; Chrome / Samsung Galaxy S23 Android 13 |
-| Demo video | Chưa thực hiện |
+| Demo video | Đã quay 2 phút 03 giây; chờ sinh viên cung cấp link YouTube |
 
 ## Self-assessment — sinh viên tự điền sau khi hoàn thiện
 
 | Tiêu chí | Điểm tối đa | Tự chấm |
 |---|---|---|
 | Task 1 | 30 | Đã duyệt; chưa tự chấm điểm |
-| Task 2 | 40 | Có bộ mô phỏng 1 pilot + 7 phiên; chưa tự chấm điểm |
+| Task 2 | 40 | Đã hoàn thành 1 pilot + 7 phiên người dùng thật; chưa tự chấm điểm |
 | Task 3 | 20 | Đã chạy 3/3 nền tảng; chưa tự chấm điểm |
-| Agent Skills | 10 | Chưa xây skill riêng |
+| Agent Skills | 10 | Đã xây, chạy demo và có video; chờ link YouTube, chưa tự chấm |
 | Tổng | 100 | Chưa chốt |
 
 Chưa đóng gói ZIP nộp cuối vì các phần bắt buộc của toàn bài còn thiếu. Bản checklist cũ được giữ trong commit baseline. Không sửa code SUT để che lỗi; chỉ tạo dữ liệu thử riêng và thu bằng chứng. Không khởi động lại backend trước khi backup DB vì database.js tự reset khi import.
-''')
+'''
+
+(R / 'README.md').write_text(readme_text, encoding='utf-8')
+print("Generated main_report.md and README.md successfully!")

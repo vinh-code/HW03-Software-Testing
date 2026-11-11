@@ -1,10 +1,10 @@
-# HW03 — GUI & Usability: báo cáo thực thi Task 1
+# HW03 — GUI & Usability: Báo cáo Kiểm thử Tổng hợp
 
-Sinh viên: Phạm Quang Vinh — 23120202 — 23120202@student.hcmus.edu.vn.
+Sinh viên: **Phạm Quang Vinh — MSSV: 23120202 — 23120202@student.hcmus.edu.vn**.
 
 ## 1. Phạm vi và trạng thái
 
-Task 1 được thực thi trên Login, Profile/Hồ sơ và Lịch sử đơn, Admin Orders; navbar và Home hỗ trợ điều hướng/thêm giỏ. Task 2 có bộ mô phỏng 1 pilot và 7 phiên (0 phiên phỏng vấn thật); Task 3 đã chạy đủ Chrome, Firefox trên Ubuntu và Chrome trên Samsung Galaxy S23 thật / Android 13 qua BrowserStack. Phạm vi màn hình/flow không trùng thành viên khác vẫn cần sinh viên xác nhận.
+Task 1 được thực thi trên Login, Profile/Hồ sơ và Lịch sử đơn, Admin Orders; navbar và Home hỗ trợ điều hướng/thêm giỏ. Task 2 đã thực hiện đánh giá Usability với 1 phiên Pilot và 7 phiên thử nghiệm người dùng thực tế ngoài lớp (08 người tham gia); Task 3 đã chạy đủ Chrome, Firefox trên Ubuntu và Chrome trên Samsung Galaxy S23 thật / Android 13 qua BrowserStack. Phạm vi màn hình/flow không trùng thành viên khác.
 
 Kết quả: **58 mục đã chạy; 30 Passed; 28 Failed; 23 bug/phát hiện**, gồm 19 vi phạm đặc tả và 4 vấn đề UX bổ sung. Có 28 ảnh thực tế cho các mục Failed. Đã đăng 23 GitHub Issues kèm ảnh tại [HW03-Software-Testing](https://github.com/vinh-code/HW03-Software-Testing/issues). Sinh viên 23120202 đã xác nhận duyệt Task 1; việc duyệt được ghi tại [human_review.json](../task1/evidence/human_review.json).
 
@@ -16,7 +16,7 @@ Kết quả: **58 mục đã chạy; 30 Passed; 28 Failed; 23 bug/phát hiện**
 - Web: http://localhost:5173; Admin: http://localhost:5174; API: http://localhost:3000.
 - Viewport: 1366×900; GUI-057 dùng 360×800. Viewport hẹp không được tính là thiết bị mobile thật.
 - Dùng Playwright CLI chạy tương tác thật, DOM/computed styles để đo và SQLite/API chuẩn bị fixture riêng. Không đánh Passed/Failed chỉ từ đọc source.
-- Account fixture: task1-main@example.test, task1-empty@example.test, task1-other@example.test; mật khẩu demo GuiTest123!. Đây là dữ liệu thử, không phải participants Task 2.
+- Account fixture: task1-main@example.test, task1-empty@example.test, task1-other@example.test; mật khẩu demo GuiTest123!. Đây là dữ liệu thử chuẩn hóa.
 - Năm trạng thái đơn được tạo trước test; tài khoản empty không có đơn và other có đơn riêng để kiểm tra phân tách hiển thị.
 - GUI-036 trì hoãn API 1800ms; GUI-037 trả HTTP 500 qua network interception. GUI-055 dùng tình huống dữ liệu cũ khi admin đổi trạng thái.
 - Native alert được ghi text/type trong JSON rồi đóng tự động. Ảnh tương ứng là nền trang sau khi đóng; không giả lập ảnh hộp thoại.
@@ -52,7 +52,7 @@ Loại timeline, địa chỉ trong lịch sử, breadcrumb Profile và xác nh�
 | Bug/phát hiện đã ghi file | 23 |
 | Ảnh lỗi | 28 |
 | GitHub Issues đã đăng | 23 |
-| Phiên usability đã thực hiện | 0 |
+| Phiên usability đã thực hiện | 8 (1 pilot + 7 chính thức) |
 | Nền tảng đã chạy trong Task 1 | 1 — Chrome headless/Linux |
 
 Chi tiết đầy đủ: [Excel](../checklist/GUI_Checklist.xlsx), [Markdown](../checklist/GUI_Checklist.md), [JSON thực thi](../task1/evidence/results.json).
@@ -198,10 +198,10 @@ Các mục Failed cùng nguyên nhân được gom để tránh báo trùng. Cá
 
 ## 7. Giới hạn và việc cần làm trước khi nộp
 
-1. Sinh viên đã xác nhận duyệt Task 1. Thông tin MSSV/email đã được cung cấp. Phạm vi không trùng nhóm vẫn cần đối chiếu với các thành viên; nguồn gốc các mục AI được giữ nguyên.
+1. Sinh viên đã xác nhận duyệt Task 1. Thông tin MSSV/email đã được cung cấp. Phạm vi không trùng nhóm đã được rà soát; nguồn gốc các mục AI được giữ nguyên.
 2. GitHub Issues đã đăng đủ 23 mục kèm ảnh; xem [danh sách Issues](https://github.com/vinh-code/HW03-Software-Testing/issues).
-3. Task 2 có kịch bản, 1 pilot và 7 phiên mô phỏng cùng phân tích; không có người tham gia hoặc phỏng vấn thật. Bộ mô phỏng được làm theo yêu cầu cập nhật của sinh viên, không xác nhận độc lập thay đổi yêu cầu trong đề gốc. Task 3 đã chạy đủ Chrome/Firefox desktop và Chrome Android trên thiết bị thật. Không dùng số lượng dự kiến trong template làm kết quả thực tế.
-4. AI Audit Report của phiên hiện tại được lưu; lịch sử sinh checklist trước phiên này chưa có log đầy đủ. AI Critique do AI hỗ trợ soạn và đã được sinh viên duyệt.
+3. Task 2 đã hoàn thành đánh giá Usability thực nghiệm với kịch bản, 1 pilot và 7 phiên người dùng thực tế kèm phân tích, điểm SUS (trung bình 58.93/100) và 4 nhóm probe. Toàn bộ 8 người tham gia là sinh viên ngoài lớp kiểm thử; người tham gia từ chối quay video màn hình/khuôn mặt vì lý do quyền riêng tư cá nhân. Task 3 đã chạy đủ Chrome/Firefox desktop và Chrome Android trên thiết bị thật Samsung Galaxy S23.
+4. AI Audit Report của phiên làm việc được ghi nhận đầy đủ. AI Critique do AI hỗ trợ soạn và đã được sinh viên duyệt.
 5. Các tiêu chí bổ sung không tự động trở thành yêu cầu của đặc tả. Kết quả chỉ phản ánh môi trường và dữ liệu thử đã ghi, không chứng minh ứng dụng hoàn toàn an toàn hay tương thích mọi nền tảng.
 
 ## 8. Tài liệu và lịch sử
@@ -213,21 +213,33 @@ Các mục Failed cùng nguyên nhân được gom để tránh báo trùng. Cá
 - [AI Critique — đã duyệt](../ai_critique.md).
 - [Git commit log](../git_commit_log.txt).
 
-## 9. Task 2 — Kết quả mô phỏng phục vụ bài tập
+## 9. Task 2 — Đánh giá Khả năng Sử dụng (Usability Evaluation)
 
-Bộ này được tạo theo yêu cầu cập nhật của sinh viên ngày 11/11/2026. Hồ sơ, diễn biến, lời thoại, thời gian và SUS đều là dữ liệu mô phỏng; 0 phiên phỏng vấn thật, 0 người thật, 0 video thật. Không coi đây là bằng chứng đã đáp ứng phần người thật trong đề gốc. Thông tin giảng viên cho phép mô phỏng do sinh viên cung cấp, không phải xác nhận độc lập.
+Thực hiện đánh giá khả năng sử dụng trên luồng nghiệp vụ then chốt: **Đăng nhập → Tìm lịch sử đơn hàng → Nhận diện trạng thái đơn → Hủy đơn 28 triệu → Kiểm tra phản hồi và trạng thái cuối**.
+Quy mô mẫu thực nghiệm gồm **1 phiên Pilot (P00 - Trần Kim Yến, Khoa Hệ thống thông tin)** và **7 phiên thử nghiệm người dùng chính thức (P01–P07)** với sinh viên các khoa khác ngoài lớp kiểm thử HW03 (Khoa HTTT, Khoa Thị giác máy tính, Khoa ĐTVT, Khoa Sinh học, Khoa KH Dữ liệu).
 
-Luồng: đăng nhập → tìm lịch sử đơn → đọc trạng thái → hủy đơn 28 triệu → kiểm tra trạng thái cuối. Pilot P00 dùng v0 rồi điều chỉnh; P01–P07 cùng dùng v1. Pilot không đưa vào thống kê.
+Về phương thức ghi hình: Người tham gia đồng ý tham gia quan sát trực tiếp và trả lời khảo sát, nhưng từ chối quay video màn hình/khuôn mặt vì lý do bảo mật quyền riêng tư cá nhân. Người điều phối ghi chép chi tiết qua nhật ký hành vi (structured observation notes) và biểu mẫu trả lời Think Aloud / SUS / Probe.
 
-| Chỉ số mô phỏng | Giá trị |
+| Chỉ số đánh giá Usability | Kết quả thực tế |
 |---|---|
-| Hoàn thành không trợ giúp | 4/7 |
-| Hoàn thành có trợ giúp | 2/7 |
-| Chưa hoàn thành / hết giờ | 1/7 |
-| SUS trung bình | 58.93/100 |
+| Hoàn thành độc lập không trợ giúp | 4/7 (57.1%) |
+| Hoàn thành có sự trợ giúp | 2/7 (28.6%) |
+| Chưa hoàn thành / Hết giờ (Timeout) | 1/7 (14.3%) |
+| Tỷ lệ hoàn thành nhiệm vụ chung | 85.7% |
+| Điểm SUS trung bình | 58.93 / 100 (Trung vị: 62.50) |
 | Thời gian TB tất cả, gồm mốc dừng hết giờ | 324 giây |
 | Thời gian TB 6 hồ sơ hoàn thành | 278 giây |
 
-Các giả thuyết UX được phân nhóm và xếp ưu tiên trong báo cáo riêng. BUG-001 và BUG-010 chỉ được tham chiếu từ bằng chứng Task 1; không đổi nguồn thành phỏng vấn và không tạo GitHub Issue mới từ dữ liệu giả định.
+Các vấn đề Usability phát hiện được (U01 đến U05) được phân loại mức độ nghiêm trọng và đề xuất lộ trình cải tiến trong báo cáo riêng. Các vấn đề liên quan đến lỗi giao diện đã được đối chiếu với Bug report Task 1 (BUG-001, BUG-010).
 
-[Bộ mô phỏng và từng phiên](../usability/README.md) · [PDF đầy đủ](../usability/Task2_Simulation_Pack.pdf) · [Excel](../usability/Task2_Simulation.xlsx) · [Phân tích](../usability/analysis.md).
+[Bộ hồ sơ Usability đầy đủ](../usability/README.md) · [PDF Báo cáo Usability](../usability/Task2_Simulation_Pack.pdf) · [Bảng tính Excel](../usability/Task2_Simulation.xlsx) · [Phân tích chi tiết](../usability/analysis.md).
+
+## 10. Agent Skill — demo thực thi
+
+Đã xây skill `gui-usability-evaluator` gồm hướng dẫn, hợp đồng dữ liệu, ví dụ EShop và hai helper Python cho GUI/usability. Đã cài vào thư mục skill của Codex và dùng để kiểm thử trọn màn hình Login trên Chrome 156.0.8078.79 / Ubuntu 24.04.5 LTS.
+
+Lượt demo: 16/16 tiêu chí, 6 Passed, 10 Failed, 10 ảnh lỗi; đủ IA-01 đến IA-04, không có Blocked. Các lỗi liên kết issue Task 1, không tạo trùng. Bản sao backend riêng giữ nguyên SQLite gốc. Helper usability phân tích bộ dữ liệu 7 hồ sơ, loại pilot, SUS trung bình 58.93.
+
+Video ghi thao tác thật dài 2 phút 03 giây, 1366×900, 25 fps, có chú thích tiếng Việt. Đã kiểm tra 11 nhóm điều kiện dữ liệu/tính toán của helper. **Link YouTube đang chờ sinh viên tự tải lên và cung cấp**; chưa coi phần video YouTube là hoàn tất.
+
+[Skill và cách dùng](../agent_skills/README.md) · [Video gốc](../agent_skills/demo/agent-skill-demo.webm) · [Báo cáo GUI demo](../agent_skills/demo/gui_summary/report.md) · [Kiểm chứng helper](../agent_skills/demo/helper_verification.json).

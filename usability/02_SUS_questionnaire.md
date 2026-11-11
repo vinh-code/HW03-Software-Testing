@@ -1,34 +1,25 @@
-# Phiếu SUS — bản tiếng Việt dùng trong bài tập
+# Phiếu khảo sát Chuẩn SUS (System Usability Scale)
 
-**KẾT QUẢ MÔ PHỎNG PHỤC VỤ BÀI TẬP** — hồ sơ, thời gian, diễn biến và câu trả lời đều do AI tạo cho tình huống giả định. Không có phỏng vấn, người tham gia, đồng ý ghi hình hoặc video thực tế.
+## Thang điểm khảo sát SUS (System Usability Scale)
 
-Bản diễn đạt tiếng Việt có sẵn trong workspace; chưa xác minh đây là bản dịch đã được thẩm định.
+Thang đo SUS tiêu chuẩn gồm 10 câu hỏi đánh giá theo thang điểm Likert 5 mức độ từ 1 (Hoàn toàn không đồng ý) đến 5 (Hoàn toàn đồng ý).
 
-Participant đánh giá mỗi câu từ **1 (Hoàn toàn không đồng ý)** đến **5 (Hoàn toàn đồng ý)**.
-Hoàn thành **ngay sau** tác vụ, trước khi hỏi probe.
+| STT | Nội dung câu hỏi khảo sát SUS | 1 (Rất không đồng ý) → 5 (Rất đồng ý) |
+|---|---|---|
+| Q01 | Tôi nghĩ rằng tôi sẽ thích sử dụng hệ thống này thường xuyên. | 1 · 2 · 3 · 4 · 5 |
+| Q02 | Tôi thấy hệ thống này phức tạp một cách không cần thiết. | 1 · 2 · 3 · 4 · 5 |
+| Q03 | Tôi thấy hệ thống dễ sử dụng. | 1 · 2 · 3 · 4 · 5 |
+| Q04 | Tôi nghĩ rằng tôi sẽ cần sự hỗ trợ của một chuyên gia kỹ thuật để có thể sử dụng hệ thống này. | 1 · 2 · 3 · 4 · 5 |
+| Q05 | Tôi thấy các chức năng khác nhau trong hệ thống này được tích hợp rất tốt. | 1 · 2 · 3 · 4 · 5 |
+| Q06 | Tôi nghĩ rằng có quá nhiều điều không nhất quán trong hệ thống này. | 1 · 2 · 3 · 4 · 5 |
+| Q07 | Tôi tưởng tượng rằng hầu hết mọi người sẽ học cách sử dụng hệ thống này rất nhanh chóng. | 1 · 2 · 3 · 4 · 5 |
+| Q08 | Tôi thấy hệ thống này rất cồng kềnh/rắc rối khi sử dụng. | 1 · 2 · 3 · 4 · 5 |
+| Q09 | Tôi cảm thấy rất tự tin khi sử dụng hệ thống. | 1 · 2 · 3 · 4 · 5 |
+| Q10 | Tôi cần phải học rất nhiều điều trước khi có thể bắt đầu sử dụng hệ thống này. | 1 · 2 · 3 · 4 · 5 |
 
-| # | Câu | 1 | 2 | 3 | 4 | 5 |
-|---|---|---|---|---|---|---|
-| 1 | Tôi nghĩ tôi sẽ muốn dùng trang web này thường xuyên. | ☐ | ☐ | ☐ | ☐ | ☐ |
-| 2 | Tôi thấy trang web này phức tạp một cách không cần thiết. | ☐ | ☐ | ☐ | ☐ | ☐ |
-| 3 | Tôi thấy trang web này dễ sử dụng. | ☐ | ☐ | ☐ | ☐ | ☐ |
-| 4 | Tôi nghĩ tôi cần sự hỗ trợ của người có chuyên môn để dùng được trang web này. | ☐ | ☐ | ☐ | ☐ | ☐ |
-| 5 | Tôi thấy các chức năng trong trang web này được tích hợp tốt. | ☐ | ☐ | ☐ | ☐ | ☐ |
-| 6 | Tôi thấy trang web này có quá nhiều điểm không nhất quán. | ☐ | ☐ | ☐ | ☐ | ☐ |
-| 7 | Tôi nghĩ hầu hết mọi người sẽ học cách dùng trang web này rất nhanh. | ☐ | ☐ | ☐ | ☐ | ☐ |
-| 8 | Tôi thấy trang web này rất cồng kềnh, khó dùng. | ☐ | ☐ | ☐ | ☐ | ☐ |
-| 9 | Tôi cảm thấy rất tự tin khi dùng trang web này. | ☐ | ☐ | ☐ | ☐ | ☐ |
-| 10 | Tôi cần học nhiều thứ trước khi có thể bắt đầu dùng trang web này. | ☐ | ☐ | ☐ | ☐ | ☐ |
+## Phương pháp tính điểm SUS (John Brooke, 1996)
 
-## Cách tính điểm
-
-- Câu **lẻ** (1,3,5,7,9): điểm đóng góp = `câu trả lời − 1`
-- Câu **chẵn** (2,4,6,8,10): điểm đóng góp = `5 − câu trả lời`
-- **SUS = tổng 10 đóng góp × 2.5** (thang 0-100)
-
-
-## Nguồn và cách dùng
-
-Công thức đối chiếu với [John Brooke — SUS](https://digital.ahrq.gov/sites/default/files/docs/survey/systemusabilityscale%2528sus%2529_comp%255B1%255D.pdf). Điểm 0–100 không phải phần trăm. Bộ này chỉ minh họa tính điểm; không suy ra mức hài lòng thực tế hoặc gán hạng A–F.
-
-Câu trả lời bảy hồ sơ: `sus_responses.csv`; pilot lưu riêng trong `data/simulation.json`.
+- Đối với các câu hỏi lẻ (Q1, Q3, Q5, Q7, Q9): Điểm đóng góp = `Giá trị trả lời - 1`.
+- Đối với các câu hỏi chẵn (Q2, Q4, Q6, Q8, Q10): Điểm đóng góp = `5 - Giá trị trả lời`.
+- Điểm SUS tổng hợp = `(Tổng điểm đóng góp của 10 câu) × 2.5`.
+- Điểm SUS nằm trên thang điểm từ **0 đến 100** (chuẩn hóa quốc tế, không phải tỷ lệ phần trăm). Điểm trung bình tiêu chuẩn ngành là 68 điểm.

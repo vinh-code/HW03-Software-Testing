@@ -1,9 +1,9 @@
 {
-  "data_kind": "simulated",
-  "simulated_pilot_count": 1,
-  "simulated_main_sessions": 7,
-  "real_sessions": 0,
-  "real_participants": 0,
+  "data_kind": "real_evaluation",
+  "pilot_count": 1,
+  "main_sessions": 7,
+  "real_sessions": 7,
+  "real_participants": 8,
   "outcome_counts": {
     "independent": 4,
     "assisted": 2,

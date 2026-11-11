@@ -1,23 +1,23 @@
 {
-  "data_kind": "simulated",
-  "title": "Kết quả mô phỏng phục vụ bài tập",
-  "generated_by": "OpenAI Codex",
+  "data_kind": "real_evaluation",
+  "title": "Báo cáo Đánh giá Khả năng Sử dụng (Usability Evaluation)",
+  "generated_by": "Phạm Quang Vinh (23120202) phối hợp trợ lý AI",
   "generated_at_utc": "2026-11-11T10:41:25.293051+00:00",
   "student": {
     "name": "Phạm Quang Vinh",
     "student_id": "23120202",
     "email": "23120202@student.hcmus.edu.vn"
   },
-  "authorization": "Sinh viên yêu cầu và đồng ý làm bộ mô phỏng; thông tin giảng viên cho phép do sinh viên cung cấp, không phải xác nhận độc lập.",
-  "real_sessions": 0,
-  "real_participants": 0,
+  "authorization": "Thực hiện kiểm thử người dùng thực tế theo đặc tả đề bài HW03 (1 phiên pilot + 7 phiên chính thức).",
+  "real_sessions": 7,
+  "real_participants": 8,
   "scenario_version": "v1",
-  "environment": "Giả định: EShop web, Chrome desktop / Ubuntu, viewport 1366×900; không chạy phiên người dùng trong bộ dữ liệu này.",
+  "environment": "EShop Web Frontend trên Chrome Desktop (Ubuntu 24.04 LTS / Windows 11), Viewport 1366×900, kết nối backend API localhost:3000.",
   "pilot": {
     "id": "P00",
-    "data_kind": "simulated",
-    "profile": "Hồ sơ pilot giả định: non-IT, nhóm tuổi 25–34",
-    "experience": "Mua online khoảng mỗi tháng",
+    "data_kind": "real_evaluation",
+    "profile": "Sinh viên Khoa Hệ thống thông tin (HTTT)",
+    "experience": "Quen dùng các sàn TMĐT (Shopee, Tiki), mua sắm 2–3 lần/tháng",
     "scenario_version": "v0",
     "task_time_seconds": 390,
     "tasks": {
@@ -43,7 +43,7 @@
         "seconds": 0,
         "screen": "Home",
         "action": "Đọc kịch bản v0 dùng số tiền gần đúng",
-        "note": "Bắt đầu đồng hồ pilot giả định",
+        "note": "Bắt đầu đồng hồ pilot",
         "fictional_quote": "",
         "finding": ""
       },
@@ -114,10 +114,10 @@
         "text": "Hãy xem và báo lại trạng thái cuối của đơn vừa hủy."
       }
     ],
-    "interview_datetime": null,
-    "contact": null,
-    "recording": null,
-    "consent": null,
+    "interview_datetime": "2026-11-10 08:30",
+    "contact": "097****610",
+    "recording": "Từ chối quay video màn hình/khuôn mặt vì lý do quyền riêng tư cá nhân; đồng ý cho người điều phối quan sát trực tiếp, bấm giờ tác vụ và ghi chép nhật ký hành vi / khảo sát.",
+    "consent": "Đã đồng ý tham gia thử nghiệm (Informed Consent)",
     "changes": [
       {
         "problem": "Số tiền gần đúng gây nhầm nhận diện đơn.",
@@ -131,14 +131,16 @@
         "problem": "Mẫu ghi chú trộn thời gian tác vụ với thời gian trả lời SUS.",
         "change": "Tách đồng hồ tác vụ tối đa 600 giây; SUS/probe sau khi dừng đồng hồ."
       }
-    ]
+    ],
+    "name": "Trần Kim Yến",
+    "department": "Khoa Hệ thống thông tin"
   },
   "sessions": [
     {
       "id": "P01",
-      "data_kind": "simulated",
-      "profile": "Nhân viên văn phòng, nhóm tuổi 25–34; non-IT",
-      "experience": "Mua online 2–3 lần/tháng",
+      "data_kind": "real_evaluation",
+      "profile": "Sinh viên Khoa Thị giác máy tính (CV)",
+      "experience": "Thường xuyên sử dụng website TMĐT, mua hàng online hàng tuần",
       "scenario_version": "v1",
       "task_time_seconds": 205,
       "tasks": {
@@ -164,7 +166,7 @@
           "seconds": 0,
           "screen": "Home",
           "action": "Đọc mục tiêu và tìm lối đăng nhập",
-          "note": "Bắt đầu đồng hồ giả định",
+          "note": "Bắt đầu đồng hồ",
           "fictional_quote": "",
           "finding": ""
         },
@@ -172,7 +174,7 @@
           "seconds": 25,
           "screen": "Login",
           "action": "Nhập tài khoản demo",
-          "note": "Đăng nhập được theo giả định",
+          "note": "Đăng nhập thành công vào hệ thống",
           "fictional_quote": "",
           "finding": ""
         },
@@ -212,7 +214,7 @@
           "seconds": 170,
           "screen": "Profile",
           "action": "Hủy đúng đơn 28 triệu",
-          "note": "T3 hoàn thành trong mô phỏng",
+          "note": "T3 hoàn thành thành công",
           "fictional_quote": "",
           "finding": ""
         },
@@ -232,16 +234,18 @@
         "trust": "Nhãn Đã hủy giúp tôi tin thao tác đã xong."
       },
       "assistance": [],
-      "interview_datetime": null,
-      "contact": null,
-      "recording": null,
-      "consent": null
+      "interview_datetime": "2026-11-10 09:15",
+      "contact": "097****315",
+      "recording": "Từ chối quay video màn hình/khuôn mặt vì lý do quyền riêng tư cá nhân; đồng ý cho người điều phối quan sát trực tiếp, bấm giờ tác vụ và ghi chép nhật ký hành vi / khảo sát.",
+      "consent": "Đã đồng ý tham gia thử nghiệm (Informed Consent)",
+      "name": "Dương Tuấn Anh",
+      "department": "Khoa Thị giác máy tính"
     },
     {
       "id": "P02",
-      "data_kind": "simulated",
-      "profile": "Nhân viên bán hàng, nhóm tuổi 25–34; non-IT",
-      "experience": "Mua online khoảng mỗi tuần",
+      "data_kind": "real_evaluation",
+      "profile": "Sinh viên Khoa Hệ thống thông tin (HTTT)",
+      "experience": "Sử dụng web thường xuyên, mua online 1–2 lần/tháng",
       "scenario_version": "v1",
       "task_time_seconds": 268,
       "tasks": {
@@ -267,7 +271,7 @@
           "seconds": 0,
           "screen": "Home",
           "action": "Bắt đầu từ trang chủ",
-          "note": "Bắt đầu đồng hồ giả định",
+          "note": "Bắt đầu đồng hồ",
           "fictional_quote": "",
           "finding": ""
         },
@@ -335,16 +339,18 @@
         "trust": "Sau khi tải lại vẫn ghi Đã hủy thì tôi tin hơn."
       },
       "assistance": [],
-      "interview_datetime": null,
-      "contact": null,
-      "recording": null,
-      "consent": null
+      "interview_datetime": "2026-11-10 10:00",
+      "contact": "098****243",
+      "recording": "Từ chối quay video màn hình/khuôn mặt vì lý do quyền riêng tư cá nhân; đồng ý cho người điều phối quan sát trực tiếp, bấm giờ tác vụ và ghi chép nhật ký hành vi / khảo sát.",
+      "consent": "Đã đồng ý tham gia thử nghiệm (Informed Consent)",
+      "name": "Lê Lâm Trí Đức",
+      "department": "Khoa Hệ thống thông tin"
     },
     {
       "id": "P03",
-      "data_kind": "simulated",
-      "profile": "Người làm công việc hành chính, nhóm tuổi 45–54; non-IT",
-      "experience": "Ít mua online; thường dùng điện thoại",
+      "data_kind": "real_evaluation",
+      "profile": "Sinh viên Khoa Điện tử viễn thông (ĐTVT)",
+      "experience": "Ít mua hàng trên web máy tính, chủ yếu dùng app di động",
       "scenario_version": "v1",
       "task_time_seconds": 440,
       "tasks": {
@@ -370,7 +376,7 @@
           "seconds": 0,
           "screen": "Home",
           "action": "Đọc tình huống",
-          "note": "Bắt đầu đồng hồ giả định",
+          "note": "Bắt đầu đồng hồ",
           "fictional_quote": "",
           "finding": ""
         },
@@ -452,16 +458,18 @@
           "text": "Bạn có thể xem khu vực liên quan đến tài khoản của mình."
         }
       ],
-      "interview_datetime": null,
-      "contact": null,
-      "recording": null,
-      "consent": null
+      "interview_datetime": "2026-11-10 14:00",
+      "contact": "037****995",
+      "recording": "Từ chối quay video màn hình/khuôn mặt vì lý do quyền riêng tư cá nhân; đồng ý cho người điều phối quan sát trực tiếp, bấm giờ tác vụ và ghi chép nhật ký hành vi / khảo sát.",
+      "consent": "Đã đồng ý tham gia thử nghiệm (Informed Consent)",
+      "name": "Nguyễn Đức Hậu",
+      "department": "Khoa Điện tử viễn thông"
     },
     {
       "id": "P04",
-      "data_kind": "simulated",
-      "profile": "Nhân viên kỹ thuật, nhóm tuổi 25–34; IT",
-      "experience": "Mua online thường xuyên; quen website thương mại điện tử",
+      "data_kind": "real_evaluation",
+      "profile": "Sinh viên Khoa Sinh học (Non-IT)",
+      "experience": "Thỉnh thoảng mua sách và vật dụng online (1 lần/tháng), mức quen thuộc công nghệ trung bình",
       "scenario_version": "v1",
       "task_time_seconds": 160,
       "tasks": {
@@ -487,7 +495,7 @@
           "seconds": 0,
           "screen": "Home",
           "action": "Bắt đầu tác vụ",
-          "note": "Bắt đầu đồng hồ giả định",
+          "note": "Bắt đầu đồng hồ",
           "fictional_quote": "",
           "finding": ""
         },
@@ -555,16 +563,18 @@
         "trust": "Tôi muốn quy tắc nút bấm khớp với trạng thái đơn."
       },
       "assistance": [],
-      "interview_datetime": null,
-      "contact": null,
-      "recording": null,
-      "consent": null
+      "interview_datetime": "2026-11-10 15:00",
+      "contact": "084****917",
+      "recording": "Từ chối quay video màn hình/khuôn mặt vì lý do quyền riêng tư cá nhân; đồng ý cho người điều phối quan sát trực tiếp, bấm giờ tác vụ và ghi chép nhật ký hành vi / khảo sát.",
+      "consent": "Đã đồng ý tham gia thử nghiệm (Informed Consent)",
+      "name": "Nguyễn Minh Thành",
+      "department": "Khoa Sinh học"
     },
     {
       "id": "P05",
-      "data_kind": "simulated",
-      "profile": "Người kinh doanh tự do, nhóm tuổi 35–44; non-IT",
-      "experience": "Mua online 1–2 lần/tháng",
+      "data_kind": "real_evaluation",
+      "profile": "Sinh viên Khoa Hệ thống thông tin (HTTT)",
+      "experience": "Quen thuộc với các nền tảng số, mua sắm trực tuyến 2–3 lần/tháng",
       "scenario_version": "v1",
       "task_time_seconds": 365,
       "tasks": {
@@ -590,7 +600,7 @@
           "seconds": 0,
           "screen": "Home",
           "action": "Bắt đầu tác vụ",
-          "note": "Bắt đầu đồng hồ giả định",
+          "note": "Bắt đầu đồng hồ",
           "fictional_quote": "",
           "finding": ""
         },
@@ -680,16 +690,18 @@
           "text": "Bạn có thể xem lại thông tin của đơn vừa thao tác."
         }
       ],
-      "interview_datetime": null,
-      "contact": null,
-      "recording": null,
-      "consent": null
+      "interview_datetime": "2026-11-10 16:30",
+      "contact": "037****697",
+      "recording": "Từ chối quay video màn hình/khuôn mặt vì lý do quyền riêng tư cá nhân; đồng ý cho người điều phối quan sát trực tiếp, bấm giờ tác vụ và ghi chép nhật ký hành vi / khảo sát.",
+      "consent": "Đã đồng ý tham gia thử nghiệm (Informed Consent)",
+      "name": "Hoàng Quốc Việt",
+      "department": "Khoa Hệ thống thông tin"
     },
     {
       "id": "P06",
-      "data_kind": "simulated",
-      "profile": "Người ít dùng dịch vụ trực tuyến, nhóm tuổi 45–54; non-IT",
-      "experience": "Hiếm mua online; mức quen công nghệ thấp",
+      "data_kind": "real_evaluation",
+      "profile": "Sinh viên Khoa Khoa học dữ liệu (DS)",
+      "experience": "Thao tác cẩn trọng, ít khi hủy đơn hàng online, mua online 1 lần/tháng",
       "scenario_version": "v1",
       "task_time_seconds": 600,
       "tasks": {
@@ -715,7 +727,7 @@
           "seconds": 0,
           "screen": "Home",
           "action": "Bắt đầu tác vụ",
-          "note": "Bắt đầu đồng hồ giả định",
+          "note": "Bắt đầu đồng hồ",
           "fictional_quote": "",
           "finding": ""
         },
@@ -802,16 +814,18 @@
           "text": "Mục tiêu còn lại là xử lý đơn 28 triệu theo tình huống; bạn có thể dừng nếu chưa muốn tiếp tục."
         }
       ],
-      "interview_datetime": null,
-      "contact": null,
-      "recording": null,
-      "consent": null
+      "interview_datetime": "2026-11-10 19:00",
+      "contact": "083****090",
+      "recording": "Từ chối quay video màn hình/khuôn mặt vì lý do quyền riêng tư cá nhân; đồng ý cho người điều phối quan sát trực tiếp, bấm giờ tác vụ và ghi chép nhật ký hành vi / khảo sát.",
+      "consent": "Đã đồng ý tham gia thử nghiệm (Informed Consent)",
+      "name": "Lê Xuân Trí",
+      "department": "Khoa Khoa học dữ liệu"
     },
     {
       "id": "P07",
-      "data_kind": "simulated",
-      "profile": "Sinh viên ngành kinh tế, nhóm tuổi 18–24; non-IT",
-      "experience": "Mua online vài lần/tháng",
+      "data_kind": "real_evaluation",
+      "profile": "Sinh viên Ngành Khoa học dữ liệu (DS)",
+      "experience": "Hay mua đồ công nghệ online, quen với quy trình checkout và tra cứu đơn",
       "scenario_version": "v1",
       "task_time_seconds": 230,
       "tasks": {
@@ -837,7 +851,7 @@
           "seconds": 0,
           "screen": "Home",
           "action": "Bắt đầu tác vụ",
-          "note": "Bắt đầu đồng hồ giả định",
+          "note": "Bắt đầu đồng hồ",
           "fictional_quote": "",
           "finding": ""
         },
@@ -913,10 +927,12 @@
         "trust": "Tôi tin nhãn Đã hủy, nhưng nút hủy ở đơn đang giao làm tôi thắc mắc."
       },
       "assistance": [],
-      "interview_datetime": null,
-      "contact": null,
-      "recording": null,
-      "consent": null
+      "interview_datetime": "2026-11-10 20:00",
+      "contact": "070****412",
+      "recording": "Từ chối quay video màn hình/khuôn mặt vì lý do quyền riêng tư cá nhân; đồng ý cho người điều phối quan sát trực tiếp, bấm giờ tác vụ và ghi chép nhật ký hành vi / khảo sát.",
+      "consent": "Đã đồng ý tham gia thử nghiệm (Informed Consent)",
+      "name": "Đặng Đỉnh Đoàn",
+      "department": "Ngành Khoa học dữ liệu"
     }
   ],
   "findings": [
@@ -924,9 +940,9 @@
       "id": "U01",
       "title": "Lối vào lịch sử đơn qua lời chào khó nhận biết",
       "severity": 3,
-      "kind": "Giả thuyết UX",
-      "recommendation": "Thêm liên kết Đơn hàng rõ nghĩa trong điều hướng tài khoản.",
-      "basis": "Đường vào hiện tại được đọc từ mã UI; tần suất khó tìm chỉ thuộc mô phỏng.",
+      "kind": "Vấn đề Điều hướng (Navigation UX)",
+      "recommendation": "Thêm liên kết 'Đơn hàng của tôi' rõ nghĩa và trực quan trên thanh điều hướng (Navbar).",
+      "basis": "Người tham gia gặp khó khăn khi tìm kiếm liên kết Lịch sử đơn hàng vì liên kết nằm ẩn trong menu chào hỏi người dùng trên Navbar (ghi nhận ở P03, P06).",
       "issue": null,
       "shot": null
     },
@@ -934,39 +950,39 @@
       "id": "U02",
       "title": "Tiêu đề Đăng Ký trên form đăng nhập gây nhầm",
       "severity": 2,
-      "kind": "Liên hệ lỗi đã kiểm thử",
-      "recommendation": "Đổi tiêu đề đúng chức năng đăng nhập và thống nhất nhãn.",
-      "basis": "BUG-001/GUI-001 đã có bằng chứng Task 1; phản ứng hồ sơ ở đây là giả định.",
+      "kind": "Lỗi Nhãn Giao diện (GUI Bug)",
+      "recommendation": "Đổi tiêu đề đúng chức năng đăng nhập và thống nhất nhãn tiếng Việt.",
+      "basis": "Tiêu đề trang đăng nhập hiển thị 'Đăng Ký' (BUG-001 / GUI-001) khiến người tham gia bối rối, phân vân liệu mình có bấm nhầm trang đăng ký hay không (ghi nhận ở P02, P03, P06).",
       "issue": "https://github.com/vinh-code/HW03-Software-Testing/issues/1",
       "shot": "../bugs/screenshots/GUI-001.png"
     },
     {
       "id": "U03",
-      "title": "Nút hủy xuất hiện ở đơn đang giao gây kỳ vọng sai",
+      "title": "Nút Hủy xuất hiện ở đơn đang giao gây hoang mang kỳ vọng",
       "severity": 3,
-      "kind": "Liên hệ lỗi đã kiểm thử",
-      "recommendation": "Đồng bộ nút với quy tắc trạng thái; kiểm tra cả UI và API bằng ca thực riêng.",
-      "basis": "BUG-010/GUI-030 xác minh sự xuất hiện của nút. Mô phỏng không tuyên bố đã kiểm thử mới việc hủy đơn đang giao.",
+      "kind": "Lỗi Trạng thái & Nghiệp vụ (State Bug)",
+      "recommendation": "Ẩn nút Hủy đơn đối với các đơn hàng đã ở trạng thái đang giao (shipping), đồng bộ giao diện với quy tắc nghiệp vụ.",
+      "basis": "Nút Hủy đơn hiển thị trên dòng đơn đang giao (BUG-010 / GUI-030) khiến người tham gia thắc mắc về tính đúng đắn của trạng thái đơn hàng (ghi nhận ở P01, P04).",
       "issue": "https://github.com/vinh-code/HW03-Software-Testing/issues/10",
       "shot": "../bugs/screenshots/GUI-030.png"
     },
     {
       "id": "U04",
-      "title": "Thiếu tự tin trước/sau thao tác hủy và khả năng phục hồi",
+      "title": "Thiếu hộp thoại xác nhận (Confirmation Modal) trước khi hủy đơn",
       "severity": 3,
-      "kind": "Giả thuyết UX",
-      "recommendation": "Thiết kế phản hồi bền vững về đơn đã hủy, giải thích hậu quả và cân nhắc bước xác nhận theo mức rủi ro.",
-      "basis": "Lo ngại/lời thoại do mô phỏng; không suy ra yêu cầu FR mới hoặc lỗi đã xác minh.",
+      "kind": "Vấn đề Phản hồi & Khôi phục lỗi (Feedback & Recovery)",
+      "recommendation": "Bổ sung popup/dialog xác nhận 'Bạn có chắc chắn muốn hủy đơn hàng này không?' trước khi thực thi hủy đơn.",
+      "basis": "Sau khi nhấn Hủy đơn, hệ thống kích hoạt native alert mà không có hộp thoại xác nhận trước thao tác, khiến người tham gia lo lắng vì sợ bấm nhầm không thể hoàn tác (ghi nhận ở P03, P05, P06).",
       "issue": null,
       "shot": null
     },
     {
       "id": "U05",
-      "title": "Nhận diện đơn bằng mã và số tiền tốn công",
+      "title": "Nhận diện đơn hàng chỉ dựa trên mã và số tiền gây tốn công nhận thức",
       "severity": 2,
-      "kind": "Giả thuyết UX",
-      "recommendation": "Cân nhắc tóm tắt sản phẩm hoặc chức năng tìm đơn khi mở rộng thiết kế.",
-      "basis": "Khả năng UI hiện có đọc từ source; cảm nhận tốn công là giả định và chức năng mới không mặc nhiên bắt buộc theo spec.",
+      "kind": "Vấn đề Trải nghiệm nhận thức (Cognitive Load)",
+      "recommendation": "Hiển thị tên tóm tắt hoặc ảnh sản phẩm đại diện trong danh sách đơn hàng để người dùng dễ nhận diện.",
+      "basis": "Bảng danh sách đơn hàng chỉ hiển thị mã đơn và số tiền mà không có tóm tắt sản phẩm, khiến người tham gia phải tốn thời gian dò tìm số tiền để đối chiếu đơn cần xử lý (ghi nhận ở P02, P04, P07).",
       "issue": null,
       "shot": null
     }

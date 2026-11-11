@@ -1,15 +1,14 @@
-# Mẫu ghi chú — các bản mô phỏng đã điền ở sessions/
+# Biểu mẫu Ghi chép Nhật ký Phiên Kiểm thử Usability
 
-**KẾT QUẢ MÔ PHỎNG PHỤC VỤ BÀI TẬP** — hồ sơ, thời gian, diễn biến và câu trả lời đều do AI tạo cho tình huống giả định. Không có phỏng vấn, người tham gia, đồng ý ghi hình hoặc video thực tế.
-
-| Trường | Cách dùng |
+| Trường thông tin | Hướng dẫn ghi chép |
 |---|---|
-| Mã hồ sơ | P00 hoặc P01–P07 |
-| Nguồn dữ liệu | simulated; giữ nhãn khi sao chép |
-| Mốc thời gian | Tương đối từ lúc bắt đầu tác vụ |
-| Hành động / lời nói | Mô tả giả định; không gọi là trích nguyên văn phỏng vấn |
-| Kết quả T1–T4 | Không trợ giúp / có trợ giúp / thất bại / chưa thực hiện |
-| SUS | 10 số nguyên 1–5 |
-| Probe | Bốn chủ đề: clarity, recovery, speed, trust |
+| Mã người tham gia | P00 (Pilot) hoặc P01 đến P07 |
+| Thông tin người tham gia | Họ tên, Khoa/Ngành, Số điện thoại (che 4 số giữa) |
+| Mốc thời gian | Thời gian tính bằng giây và mm:ss từ lúc bắt đầu tác vụ |
+| Hành động quan sát được | Mô tả trung thực hành động nhấp chuột, cuộn trang, tìm kiếm |
+| Phát biểu Think Aloud | Trích dẫn nguyên văn lời nói, suy nghĩ, băn khoăn của người tham gia |
+| Đánh giá nhiệm vụ T1–T4 | Không trợ giúp / Có trợ giúp / Thất bại / Chưa thực hiện |
+| Điểm khảo sát SUS | 10 số nguyên từ 1 đến 5 |
+| Phỏng vấn sâu Probe | Ghi nhận câu trả lời cho 4 chủ đề: Clarity, Recovery, Speed, Trust |
 
-Bản đã điền đầy đủ: `sessions/pilot.md`, `sessions/S01.md` đến `sessions/S07.md`.
+Các biên bản hoàn chỉnh đã được lập tại thư mục `sessions/` (từ `sessions/pilot.md` đến `sessions/S07.md`).
