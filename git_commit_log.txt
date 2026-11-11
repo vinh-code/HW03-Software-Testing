@@ -17,3 +17,6 @@ c0b055c | 2026-11-10 11:30:19 +0700 | Phạm Quang Vinh | test: compare Chrome a
 b206169 | 2026-11-10 12:30:30 +0700 | Phạm Quang Vinh | test: add real Android BrowserStack runner and viewport capture
 dede0db | 2026-11-10 12:32:00 +0700 | Phạm Quang Vinh | test: record 58 Android checks and 28 real device browser screenshots
 aa56ab9 | 2026-11-10 12:32:16 +0700 | Phạm Quang Vinh | docs: complete three-platform comparison, workbook and audit reports
+dbfd93c | 2026-11-10 12:32:16 +0700 | Phạm Quang Vinh | docs: export Android execution and reporting commit log
+d09ef28 | 2026-11-11 17:49:52 +0700 | Phạm Quang Vinh | docs: add clearly labelled pilot and seven simulated usability sessions
+624a543 | 2026-11-11 17:49:52 +0700 | Phạm Quang Vinh | docs: integrate simulated Task 2 analysis and audit into submission
