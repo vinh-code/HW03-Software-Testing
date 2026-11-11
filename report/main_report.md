@@ -4,7 +4,7 @@ Sinh viên: Phạm Quang Vinh — 23120202 — 23120202@student.hcmus.edu.vn.
 
 ## 1. Phạm vi và trạng thái
 
-Task 1 được thực thi trên Login, Profile/Hồ sơ và Lịch sử đơn, Admin Orders; navbar và Home hỗ trợ điều hướng/thêm giỏ. Task 2 chưa thực thi; Task 3 đã chạy đủ Chrome, Firefox trên Ubuntu và Chrome trên Samsung Galaxy S23 thật / Android 13 qua BrowserStack. Phạm vi màn hình/flow không trùng thành viên khác vẫn cần sinh viên xác nhận.
+Task 1 được thực thi trên Login, Profile/Hồ sơ và Lịch sử đơn, Admin Orders; navbar và Home hỗ trợ điều hướng/thêm giỏ. Task 2 có bộ mô phỏng 1 pilot và 7 phiên (0 phiên phỏng vấn thật); Task 3 đã chạy đủ Chrome, Firefox trên Ubuntu và Chrome trên Samsung Galaxy S23 thật / Android 13 qua BrowserStack. Phạm vi màn hình/flow không trùng thành viên khác vẫn cần sinh viên xác nhận.
 
 Kết quả: **58 mục đã chạy; 30 Passed; 28 Failed; 23 bug/phát hiện**, gồm 19 vi phạm đặc tả và 4 vấn đề UX bổ sung. Có 28 ảnh thực tế cho các mục Failed. Đã đăng 23 GitHub Issues kèm ảnh tại [HW03-Software-Testing](https://github.com/vinh-code/HW03-Software-Testing/issues). Sinh viên 23120202 đã xác nhận duyệt Task 1; việc duyệt được ghi tại [human_review.json](../task1/evidence/human_review.json).
 
@@ -200,7 +200,7 @@ Các mục Failed cùng nguyên nhân được gom để tránh báo trùng. Cá
 
 1. Sinh viên đã xác nhận duyệt Task 1. Thông tin MSSV/email đã được cung cấp. Phạm vi không trùng nhóm vẫn cần đối chiếu với các thành viên; nguồn gốc các mục AI được giữ nguyên.
 2. GitHub Issues đã đăng đủ 23 mục kèm ảnh; xem [danh sách Issues](https://github.com/vinh-code/HW03-Software-Testing/issues).
-3. Task 2 (pilot, 7 người thật, phân tích) chưa thực hiện. Task 3 đã chạy đủ Chrome/Firefox desktop và Chrome Android trên thiết bị thật. Không dùng số lượng dự kiến trong template làm kết quả thực tế.
+3. Task 2 có kịch bản, 1 pilot và 7 phiên mô phỏng cùng phân tích; không có người tham gia hoặc phỏng vấn thật. Bộ mô phỏng được làm theo yêu cầu cập nhật của sinh viên, không xác nhận độc lập thay đổi yêu cầu trong đề gốc. Task 3 đã chạy đủ Chrome/Firefox desktop và Chrome Android trên thiết bị thật. Không dùng số lượng dự kiến trong template làm kết quả thực tế.
 4. AI Audit Report của phiên hiện tại được lưu; lịch sử sinh checklist trước phiên này chưa có log đầy đủ. AI Critique do AI hỗ trợ soạn và đã được sinh viên duyệt.
 5. Các tiêu chí bổ sung không tự động trở thành yêu cầu của đặc tả. Kết quả chỉ phản ánh môi trường và dữ liệu thử đã ghi, không chứng minh ứng dụng hoàn toàn an toàn hay tương thích mọi nền tảng.
 
@@ -212,3 +212,22 @@ Các mục Failed cùng nguyên nhân được gom để tránh báo trùng. Cá
 - [AI Audit Report](../ai_audit_report.md).
 - [AI Critique — đã duyệt](../ai_critique.md).
 - [Git commit log](../git_commit_log.txt).
+
+## 9. Task 2 — Kết quả mô phỏng phục vụ bài tập
+
+Bộ này được tạo theo yêu cầu cập nhật của sinh viên ngày 11/11/2026. Hồ sơ, diễn biến, lời thoại, thời gian và SUS đều là dữ liệu mô phỏng; 0 phiên phỏng vấn thật, 0 người thật, 0 video thật. Không coi đây là bằng chứng đã đáp ứng phần người thật trong đề gốc. Thông tin giảng viên cho phép mô phỏng do sinh viên cung cấp, không phải xác nhận độc lập.
+
+Luồng: đăng nhập → tìm lịch sử đơn → đọc trạng thái → hủy đơn 28 triệu → kiểm tra trạng thái cuối. Pilot P00 dùng v0 rồi điều chỉnh; P01–P07 cùng dùng v1. Pilot không đưa vào thống kê.
+
+| Chỉ số mô phỏng | Giá trị |
+|---|---|
+| Hoàn thành không trợ giúp | 4/7 |
+| Hoàn thành có trợ giúp | 2/7 |
+| Chưa hoàn thành / hết giờ | 1/7 |
+| SUS trung bình | 58.93/100 |
+| Thời gian TB tất cả, gồm mốc dừng hết giờ | 324 giây |
+| Thời gian TB 6 hồ sơ hoàn thành | 278 giây |
+
+Các giả thuyết UX được phân nhóm và xếp ưu tiên trong báo cáo riêng. BUG-001 và BUG-010 chỉ được tham chiếu từ bằng chứng Task 1; không đổi nguồn thành phỏng vấn và không tạo GitHub Issue mới từ dữ liệu giả định.
+
+[Bộ mô phỏng và từng phiên](../usability/README.md) · [PDF đầy đủ](../usability/Task2_Simulation_Pack.pdf) · [Excel](../usability/Task2_Simulation.xlsx) · [Phân tích](../usability/analysis.md).

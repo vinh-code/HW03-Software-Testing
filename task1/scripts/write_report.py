@@ -8,7 +8,7 @@ Sinh viên: Phạm Quang Vinh — 23120202 — 23120202@student.hcmus.edu.vn.
 
 ## 1. Phạm vi và trạng thái
 
-Task 1 được thực thi trên Login, Profile/Hồ sơ và Lịch sử đơn, Admin Orders; navbar và Home hỗ trợ điều hướng/thêm giỏ. Task 2 chưa thực thi; Task 3 đã chạy đủ Chrome, Firefox trên Ubuntu và Chrome trên Samsung Galaxy S23 thật / Android 13 qua BrowserStack. Phạm vi màn hình/flow không trùng thành viên khác vẫn cần sinh viên xác nhận.
+Task 1 được thực thi trên Login, Profile/Hồ sơ và Lịch sử đơn, Admin Orders; navbar và Home hỗ trợ điều hướng/thêm giỏ. Task 2 có bộ mô phỏng 1 pilot và 7 phiên (0 phiên phỏng vấn thật); Task 3 đã chạy đủ Chrome, Firefox trên Ubuntu và Chrome trên Samsung Galaxy S23 thật / Android 13 qua BrowserStack. Phạm vi màn hình/flow không trùng thành viên khác vẫn cần sinh viên xác nhận.
 
 Kết quả: **58 mục đã chạy; 30 Passed; 28 Failed; 23 bug/phát hiện**, gồm 19 vi phạm đặc tả và 4 vấn đề UX bổ sung. Có 28 ảnh thực tế cho các mục Failed. Đã đăng 23 GitHub Issues kèm ảnh tại [HW03-Software-Testing](https://github.com/vinh-code/HW03-Software-Testing/issues). Sinh viên 23120202 đã xác nhận duyệt Task 1; việc duyệt được ghi tại [human_review.json](../task1/evidence/human_review.json).
 
@@ -83,7 +83,7 @@ report+='''## 6. Task 3 — Cross-browser / Cross-platform
 
 1. Sinh viên đã xác nhận duyệt Task 1. Thông tin MSSV/email đã được cung cấp. Phạm vi không trùng nhóm vẫn cần đối chiếu với các thành viên; nguồn gốc các mục AI được giữ nguyên.
 2. GitHub Issues đã đăng đủ 23 mục kèm ảnh; xem [danh sách Issues](https://github.com/vinh-code/HW03-Software-Testing/issues).
-3. Task 2 (pilot, 7 người thật, phân tích) chưa thực hiện. Task 3 đã chạy đủ Chrome/Firefox desktop và Chrome Android trên thiết bị thật. Không dùng số lượng dự kiến trong template làm kết quả thực tế.
+3. Task 2 có kịch bản, 1 pilot và 7 phiên mô phỏng cùng phân tích; không có người tham gia hoặc phỏng vấn thật. Bộ mô phỏng được làm theo yêu cầu cập nhật của sinh viên, không xác nhận độc lập thay đổi yêu cầu trong đề gốc. Task 3 đã chạy đủ Chrome/Firefox desktop và Chrome Android trên thiết bị thật. Không dùng số lượng dự kiến trong template làm kết quả thực tế.
 4. AI Audit Report của phiên hiện tại được lưu; lịch sử sinh checklist trước phiên này chưa có log đầy đủ. AI Critique do AI hỗ trợ soạn và đã được sinh viên duyệt.
 5. Các tiêu chí bổ sung không tự động trở thành yêu cầu của đặc tả. Kết quả chỉ phản ánh môi trường và dữ liệu thử đã ghi, không chứng minh ứng dụng hoàn toàn an toàn hay tương thích mọi nền tảng.
 
@@ -96,18 +96,42 @@ report+='''## 6. Task 3 — Cross-browser / Cross-platform
 - [AI Critique — đã duyệt](../ai_critique.md).
 - [Git commit log](../git_commit_log.txt).
 '''
+task2_summary=R/'usability/data/summary.json'
+if task2_summary.exists():
+ t2=json.loads(task2_summary.read_text())
+ report+=f"""
+## 9. Task 2 — Kết quả mô phỏng phục vụ bài tập
+
+Bộ này được tạo theo yêu cầu cập nhật của sinh viên ngày 11/11/2026. Hồ sơ, diễn biến, lời thoại, thời gian và SUS đều là dữ liệu mô phỏng; 0 phiên phỏng vấn thật, 0 người thật, 0 video thật. Không coi đây là bằng chứng đã đáp ứng phần người thật trong đề gốc. Thông tin giảng viên cho phép mô phỏng do sinh viên cung cấp, không phải xác nhận độc lập.
+
+Luồng: đăng nhập → tìm lịch sử đơn → đọc trạng thái → hủy đơn 28 triệu → kiểm tra trạng thái cuối. Pilot P00 dùng v0 rồi điều chỉnh; P01–P07 cùng dùng v1. Pilot không đưa vào thống kê.
+
+| Chỉ số mô phỏng | Giá trị |
+|---|---|
+| Hoàn thành không trợ giúp | {t2['outcome_counts']['independent']}/7 |
+| Hoàn thành có trợ giúp | {t2['outcome_counts']['assisted']}/7 |
+| Chưa hoàn thành / hết giờ | {t2['outcome_counts']['timeout']}/7 |
+| SUS trung bình | {t2['sus_mean']:.2f}/100 |
+| Thời gian TB tất cả, gồm mốc dừng hết giờ | {t2['duration_all_mean']:.0f} giây |
+| Thời gian TB 6 hồ sơ hoàn thành | {t2['duration_success_mean']:.0f} giây |
+
+Các giả thuyết UX được phân nhóm và xếp ưu tiên trong báo cáo riêng. BUG-001 và BUG-010 chỉ được tham chiếu từ bằng chứng Task 1; không đổi nguồn thành phỏng vấn và không tạo GitHub Issue mới từ dữ liệu giả định.
+
+[Bộ mô phỏng và từng phiên](../usability/README.md) · [PDF đầy đủ](../usability/Task2_Simulation_Pack.pdf) · [Excel](../usability/Task2_Simulation.xlsx) · [Phân tích](../usability/analysis.md).
+"""
 (R/'report/main_report.md').write_text(report)
 (R/'README.md').write_text('''# HW03 — GUI & Usability
 
 Sinh viên: Phạm Quang Vinh — 23120202 — 23120202@student.hcmus.edu.vn.
 
-**Task 1 đã chạy và đăng 23 GitHub Issues kèm ảnh; sinh viên đã xác nhận duyệt. Task 2 chưa thực hiện; Task 3 đã chạy đủ 3/3 nền tảng.**
+**Task 1 đã chạy và đăng 23 GitHub Issues kèm ảnh; sinh viên đã xác nhận duyệt. Task 2 đã có bộ mô phỏng 1 pilot + 7 phiên, chưa có phỏng vấn thật; Task 3 đã chạy đủ 3/3 nền tảng.**
 
 Repository: [vinh-code/HW03-Software-Testing](https://github.com/vinh-code/HW03-Software-Testing) · [GitHub Issues](https://github.com/vinh-code/HW03-Software-Testing/issues)
 
 - [Báo cáo chính Markdown](report/main_report.md) / [PDF](report/main_report.pdf)
 - [Checklist Excel](checklist/GUI_Checklist.xlsx) / [Markdown](checklist/GUI_Checklist.md)
 - [23 bug/phát hiện và ảnh](bugs/README.md)
+- [Task 2: bộ mô phỏng](usability/README.md) / [PDF](usability/Task2_Simulation_Pack.pdf) / [Excel](usability/Task2_Simulation.xlsx)
 - [Task 3: báo cáo và ảnh](cross_platform/README.md) / [PDF](cross_platform/README.pdf)
 - [Dữ liệu thực thi](task1/evidence/results.json) / [Cách chạy lại](task1/README.md)
 - [AI Audit](ai_audit_report.md) / [AI Critique — đã duyệt](ai_critique.md)
@@ -124,6 +148,7 @@ Repository: [vinh-code/HW03-Software-Testing](https://github.com/vinh-code/HW03-
 | Ảnh Failed | 28 |
 | GitHub Issues đã đăng | 23 |
 | Flow usability / phiên / người tham gia thực tế | 0 / 0 / 0 |
+| Mô phỏng usability | 1 flow; 1 pilot + 7 phiên giả định |
 | Nền tảng đã test | 3: Chrome và Firefox / Ubuntu; Chrome / Samsung Galaxy S23 Android 13 |
 | Demo video | Chưa thực hiện |
 
@@ -132,7 +157,7 @@ Repository: [vinh-code/HW03-Software-Testing](https://github.com/vinh-code/HW03-
 | Tiêu chí | Điểm tối đa | Tự chấm |
 |---|---|---|
 | Task 1 | 30 | Đã duyệt; chưa tự chấm điểm |
-| Task 2 | 40 | Chưa thực hiện |
+| Task 2 | 40 | Có bộ mô phỏng 1 pilot + 7 phiên; chưa tự chấm điểm |
 | Task 3 | 20 | Đã chạy 3/3 nền tảng; chưa tự chấm điểm |
 | Agent Skills | 10 | Chưa xây skill riêng |
 | Tổng | 100 | Chưa chốt |

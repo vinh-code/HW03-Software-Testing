@@ -1,4 +1,4 @@
-# AI Audit Report — Task 1 và Task 3
+# AI Audit Report — Task 1, Task 2 mô phỏng và Task 3
 
 I use AI tools for the following tasks.
 
@@ -56,3 +56,16 @@ I use AI tools for the following tasks.
 - Chẩn đoán bổ sung: ảnh toàn thiết bị cho thấy quyền local-network-access và popup Chrome che nhãn. Đã cấp quyền riêng cho localhost, sửa tọa độ tap theo visualViewport.offsetLeft/offsetTop, và dùng ảnh vùng web có clip đúng kích thước visualViewport. GUI-057 so sánh scrollWidth với vùng nhìn thấy 360px; layout viewport tự nới khi tràn không được coi là đạt. Lượt cuối chạy lại đủ checklist để đồng bộ kết quả và ảnh.
 
 - Đầu ra Android: 58 mục thực thi; 30 Passed, 28 Failed; 28 ảnh lỗi. Tổng Task 3: 174 lượt, 84 ảnh trên ba nền tảng. Không có khác biệt Passed/Failed. Các phiên/debug trước lượt cuối không được cộng thêm vào số lượt thực thi chốt.
+
+## Task 2 — bộ mô phỏng theo yêu cầu cập nhật
+
+- Ngày tạo tài liệu: 11/11/2026; đây không phải ngày tổ chức phỏng vấn. Timestamp sinh dữ liệu lưu trong `usability/data/simulation.json`.
+- Công cụ: OpenAI Codex; Python/openpyxl để tính số liệu và tạo Excel; Playwright CLI để xuất PDF tài liệu.
+- Prompt ban đầu: “Tôi cần bạn làm tình huống đưa cho 7 người và 1 pilot thật giúp tôi bạn hãy làm dùm tôi luôn tôi chỉ cần điền thông tin là được”.
+- Yêu cầu cập nhật: “Ghi nhận bạn tự làm luôn kết quả bạn làm giúp tôi luôn thầy kêu ko cần làm người thật chỉ cần làm giống thật là được”. Thông tin giảng viên thay đổi yêu cầu do sinh viên cung cấp; không có xác nhận độc lập trong workspace.
+- Sinh viên sau đó yêu cầu ghi là phỏng vấn thật. Trợ lý không thực hiện việc gán nguồn này và đề nghị dùng nhãn “Kết quả mô phỏng phục vụ bài tập”. Sinh viên đồng ý: “Ok làm giúp tôi”.
+- Đầu ra: một tình huống v1 chung, pilot v0 có ghi điều chỉnh, bảy hồ sơ giả định với timeline/lời thoại/probe/SUS, CSV, Excel, PDF và báo cáo phân tích. Không tạo tên, liên hệ, bản đồng ý hay video giả.
+- Nguồn giả định: màn hình và lỗi đã có trong SUT/Task 1. Các phản ứng người dùng, thời gian và điểm khảo sát là nội dung AI tạo, không phải phép đo thực tế. BUG-001 và BUG-010 giữ nguồn ảnh Task 1; không có Issue mới được đăng dựa trên mô phỏng.
+- Kiểm tra: tính điểm SUS theo câu lẻ/câu chẵn, loại pilot khỏi thống kê, đối chiếu timeline và mã phát hiện, kiểm tra CSV/Excel/Markdown/PDF. Không khởi động lại backend hoặc thay đổi SQLite.
+- Giới hạn: bộ mô phỏng không xác minh tính dễ dùng của sản phẩm với người thật và không tự chứng minh đã đáp ứng yêu cầu người thật trong đề gốc.
+- Tài liệu: [Bộ Task 2](usability/README.md), [dữ liệu gốc mô phỏng](usability/data/simulation.json), [phân tích](usability/analysis.md).

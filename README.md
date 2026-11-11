@@ -2,13 +2,14 @@
 
 Sinh viên: Phạm Quang Vinh — 23120202 — 23120202@student.hcmus.edu.vn.
 
-**Task 1 đã chạy và đăng 23 GitHub Issues kèm ảnh; sinh viên đã xác nhận duyệt. Task 2 chưa thực hiện; Task 3 đã chạy đủ 3/3 nền tảng.**
+**Task 1 đã chạy và đăng 23 GitHub Issues kèm ảnh; sinh viên đã xác nhận duyệt. Task 2 đã có bộ mô phỏng 1 pilot + 7 phiên, chưa có phỏng vấn thật; Task 3 đã chạy đủ 3/3 nền tảng.**
 
 Repository: [vinh-code/HW03-Software-Testing](https://github.com/vinh-code/HW03-Software-Testing) · [GitHub Issues](https://github.com/vinh-code/HW03-Software-Testing/issues)
 
 - [Báo cáo chính Markdown](report/main_report.md) / [PDF](report/main_report.pdf)
 - [Checklist Excel](checklist/GUI_Checklist.xlsx) / [Markdown](checklist/GUI_Checklist.md)
 - [23 bug/phát hiện và ảnh](bugs/README.md)
+- [Task 2: bộ mô phỏng](usability/README.md) / [PDF](usability/Task2_Simulation_Pack.pdf) / [Excel](usability/Task2_Simulation.xlsx)
 - [Task 3: báo cáo và ảnh](cross_platform/README.md) / [PDF](cross_platform/README.pdf)
 - [Dữ liệu thực thi](task1/evidence/results.json) / [Cách chạy lại](task1/README.md)
 - [AI Audit](ai_audit_report.md) / [AI Critique — đã duyệt](ai_critique.md)
@@ -25,6 +26,7 @@ Repository: [vinh-code/HW03-Software-Testing](https://github.com/vinh-code/HW03-
 | Ảnh Failed | 28 |
 | GitHub Issues đã đăng | 23 |
 | Flow usability / phiên / người tham gia thực tế | 0 / 0 / 0 |
+| Mô phỏng usability | 1 flow; 1 pilot + 7 phiên giả định |
 | Nền tảng đã test | 3: Chrome và Firefox / Ubuntu; Chrome / Samsung Galaxy S23 Android 13 |
 | Demo video | Chưa thực hiện |
 
@@ -33,7 +35,7 @@ Repository: [vinh-code/HW03-Software-Testing](https://github.com/vinh-code/HW03-
 | Tiêu chí | Điểm tối đa | Tự chấm |
 |---|---|---|
 | Task 1 | 30 | Đã duyệt; chưa tự chấm điểm |
-| Task 2 | 40 | Chưa thực hiện |
+| Task 2 | 40 | Có bộ mô phỏng 1 pilot + 7 phiên; chưa tự chấm điểm |
 | Task 3 | 20 | Đã chạy 3/3 nền tảng; chưa tự chấm điểm |
 | Agent Skills | 10 | Chưa xây skill riêng |
 | Tổng | 100 | Chưa chốt |
