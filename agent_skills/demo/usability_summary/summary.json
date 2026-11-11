@@ -1,0 +1,17 @@
+{
+  "data_kind": "simulated",
+  "main_sessions": 7,
+  "pilot_excluded": true,
+  "sus_valid_n": 7,
+  "sus_missing_n": 0,
+  "sus_mean": 58.92857142857143,
+  "sus_sample_sd": 20.909384996990728,
+  "outcomes": {
+    "independent": 4,
+    "assisted": 2,
+    "incomplete": 1
+  },
+  "elapsed_all_mean": 324,
+  "completed_elapsed_mean": 278,
+  "interpretation": "Synthetic example, not observed user satisfaction"
+}

@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "checks": [
+    "SUS reference scores 0, 50, 100",
+    "SUS rejects out-of-range, boolean and short input",
+    "Known seven-session sample and excluded pilot",
+    "Missing SUS excluded from score denominator",
+    "Mixed provenance rejected",
+    "Pilot contamination rejected",
+    "Optional null pilot accepted",
+    "Actual GUI evidence valid",
+    "Blocked run remains incomplete",
+    "Duplicate GUI IDs rejected",
+    "Missing failed screenshot rejected"
+  ]
+}

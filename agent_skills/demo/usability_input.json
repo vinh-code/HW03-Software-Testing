@@ -1,0 +1,974 @@
+{
+  "data_kind": "simulated",
+  "title": "Kết quả mô phỏng phục vụ bài tập",
+  "generated_by": "OpenAI Codex",
+  "generated_at_utc": "2026-11-11T10:41:25.293051+00:00",
+  "student": {
+    "name": "Phạm Quang Vinh",
+    "student_id": "23120202",
+    "email": "23120202@student.hcmus.edu.vn"
+  },
+  "authorization": "Sinh viên yêu cầu và đồng ý làm bộ mô phỏng; thông tin giảng viên cho phép do sinh viên cung cấp, không phải xác nhận độc lập.",
+  "real_sessions": 0,
+  "real_participants": 0,
+  "scenario_version": "v1",
+  "environment": "Giả định: EShop web, Chrome desktop / Ubuntu, viewport 1366×900; không chạy phiên người dùng trong bộ dữ liệu này.",
+  "pilot": {
+    "id": "P00",
+    "data_kind": "simulated",
+    "profile": "Hồ sơ pilot giả định: non-IT, nhóm tuổi 25–34",
+    "experience": "Mua online khoảng mỗi tháng",
+    "scenario_version": "v0",
+    "task_time_seconds": 390,
+    "tasks": {
+      "T1": "independent",
+      "T2": "independent",
+      "T3": "independent",
+      "T4": "assisted"
+    },
+    "sus_answers": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      4,
+      3,
+      3,
+      3
+    ],
+    "events": [
+      {
+        "seconds": 0,
+        "screen": "Home",
+        "action": "Đọc kịch bản v0 dùng số tiền gần đúng",
+        "note": "Bắt đầu đồng hồ pilot giả định",
+        "fictional_quote": "",
+        "finding": ""
+      },
+      {
+        "seconds": 55,
+        "screen": "Home",
+        "action": "Hỏi đơn khoảng 30 triệu có tính đơn 28 triệu không",
+        "note": "Vấn đề ở cách viết tình huống, không phải bằng chứng lỗi ứng dụng",
+        "fictional_quote": "",
+        "finding": ""
+      },
+      {
+        "seconds": 100,
+        "screen": "Login",
+        "action": "Đăng nhập bằng thông tin demo",
+        "note": "Moderator làm rõ mục tiêu nhận diện đơn bằng số tiền chính xác",
+        "fictional_quote": "",
+        "finding": ""
+      },
+      {
+        "seconds": 180,
+        "screen": "Profile",
+        "action": "Đọc trạng thái hai đơn",
+        "note": "T1/T2 hoàn thành",
+        "fictional_quote": "",
+        "finding": ""
+      },
+      {
+        "seconds": 240,
+        "screen": "Profile",
+        "action": "Hủy đơn 28 triệu",
+        "note": "T3 hoàn thành",
+        "fictional_quote": "",
+        "finding": ""
+      },
+      {
+        "seconds": 270,
+        "screen": "Profile",
+        "action": "Hỏi khi nào được coi là xong",
+        "note": "Chưa có điều kiện kết thúc rõ",
+        "fictional_quote": "",
+        "finding": ""
+      },
+      {
+        "seconds": 390,
+        "screen": "Profile",
+        "action": "Được nhắc xác nhận trạng thái cuối rồi dừng",
+        "note": "T4 có trợ giúp; sửa kịch bản trước bảy hồ sơ v1",
+        "fictional_quote": "",
+        "finding": ""
+      }
+    ],
+    "probes": {
+      "clarity": "Cụm khoảng 30 triệu dễ nhầm với 28 triệu.",
+      "recovery": "Tôi muốn biết cần báo lại trạng thái nào sau thao tác.",
+      "speed": "Tôi mất thời gian hỏi lại mục tiêu.",
+      "trust": "Có tiêu chí kết thúc rõ thì tôi dễ xác nhận hơn."
+    },
+    "assistance": [
+      {
+        "seconds": 55,
+        "level": 1,
+        "text": "Dùng đúng số tiền từng đơn trong tình huống."
+      },
+      {
+        "seconds": 390,
+        "level": 2,
+        "text": "Hãy xem và báo lại trạng thái cuối của đơn vừa hủy."
+      }
+    ],
+    "interview_datetime": null,
+    "contact": null,
+    "recording": null,
+    "consent": null,
+    "changes": [
+      {
+        "problem": "Số tiền gần đúng gây nhầm nhận diện đơn.",
+        "change": "v1 dùng chính xác 30.000.000, 45.000.000 và 28.000.000 đồng."
+      },
+      {
+        "problem": "Chưa định nghĩa lúc kết thúc.",
+        "change": "v1 yêu cầu báo trạng thái cuối và dấu hiệu xác nhận đã hủy."
+      },
+      {
+        "problem": "Mẫu ghi chú trộn thời gian tác vụ với thời gian trả lời SUS.",
+        "change": "Tách đồng hồ tác vụ tối đa 600 giây; SUS/probe sau khi dừng đồng hồ."
+      }
+    ]
+  },
+  "sessions": [
+    {
+      "id": "P01",
+      "data_kind": "simulated",
+      "profile": "Nhân viên văn phòng, nhóm tuổi 25–34; non-IT",
+      "experience": "Mua online 2–3 lần/tháng",
+      "scenario_version": "v1",
+      "task_time_seconds": 205,
+      "tasks": {
+        "T1": "independent",
+        "T2": "independent",
+        "T3": "independent",
+        "T4": "independent"
+      },
+      "sus_answers": [
+        4,
+        2,
+        4,
+        2,
+        4,
+        2,
+        4,
+        2,
+        4,
+        2
+      ],
+      "events": [
+        {
+          "seconds": 0,
+          "screen": "Home",
+          "action": "Đọc mục tiêu và tìm lối đăng nhập",
+          "note": "Bắt đầu đồng hồ giả định",
+          "fictional_quote": "",
+          "finding": ""
+        },
+        {
+          "seconds": 25,
+          "screen": "Login",
+          "action": "Nhập tài khoản demo",
+          "note": "Đăng nhập được theo giả định",
+          "fictional_quote": "",
+          "finding": ""
+        },
+        {
+          "seconds": 45,
+          "screen": "Home",
+          "action": "Mở giỏ rồi quay lại tìm các đơn đã đặt",
+          "note": "Chưa liên hệ lời chào với lịch sử đơn",
+          "fictional_quote": "Tôi đang tìm đơn đã mua, không phải giỏ hàng.",
+          "finding": "U01"
+        },
+        {
+          "seconds": 78,
+          "screen": "Profile",
+          "action": "Tìm thấy lịch sử qua liên kết lời chào",
+          "note": "Đọc lại số tiền để chọn đúng dòng",
+          "fictional_quote": "Có tên sản phẩm thì tôi nhận ra nhanh hơn.",
+          "finding": "U05"
+        },
+        {
+          "seconds": 100,
+          "screen": "Profile",
+          "action": "Xác định đơn 30 triệu: Đã giao",
+          "note": "T1 hoàn thành",
+          "fictional_quote": "",
+          "finding": ""
+        },
+        {
+          "seconds": 125,
+          "screen": "Profile",
+          "action": "Xác định đơn 45 triệu: Đang giao",
+          "note": "T2 hoàn thành; chú ý nút hủy vẫn hiện",
+          "fictional_quote": "Đơn đang giao vẫn có nút hủy à?",
+          "finding": "U03"
+        },
+        {
+          "seconds": 170,
+          "screen": "Profile",
+          "action": "Hủy đúng đơn 28 triệu",
+          "note": "T3 hoàn thành trong mô phỏng",
+          "fictional_quote": "",
+          "finding": ""
+        },
+        {
+          "seconds": 205,
+          "screen": "Profile",
+          "action": "Đọc lại trạng thái Đã hủy và kết thúc",
+          "note": "T4 hoàn thành; không trợ giúp",
+          "fictional_quote": "",
+          "finding": ""
+        }
+      ],
+      "probes": {
+        "clarity": "Tôi không đoán ngay lời chào là chỗ xem đơn.",
+        "recovery": "Nếu trạng thái đã hủy còn giữ nguyên sau tải lại thì tôi yên tâm.",
+        "speed": "Mất thời gian ở đoạn tìm lịch sử và đối chiếu số tiền.",
+        "trust": "Nhãn Đã hủy giúp tôi tin thao tác đã xong."
+      },
+      "assistance": [],
+      "interview_datetime": null,
+      "contact": null,
+      "recording": null,
+      "consent": null
+    },
+    {
+      "id": "P02",
+      "data_kind": "simulated",
+      "profile": "Nhân viên bán hàng, nhóm tuổi 25–34; non-IT",
+      "experience": "Mua online khoảng mỗi tuần",
+      "scenario_version": "v1",
+      "task_time_seconds": 268,
+      "tasks": {
+        "T1": "independent",
+        "T2": "independent",
+        "T3": "independent",
+        "T4": "independent"
+      },
+      "sus_answers": [
+        3,
+        2,
+        4,
+        2,
+        3,
+        3,
+        4,
+        2,
+        3,
+        3
+      ],
+      "events": [
+        {
+          "seconds": 0,
+          "screen": "Home",
+          "action": "Bắt đầu từ trang chủ",
+          "note": "Bắt đầu đồng hồ giả định",
+          "fictional_quote": "",
+          "finding": ""
+        },
+        {
+          "seconds": 32,
+          "screen": "Login",
+          "action": "Dừng lại khi thấy tiêu đề Đăng Ký",
+          "note": "Lưỡng lự giữa đăng nhập và tạo tài khoản",
+          "fictional_quote": "Tôi có tài khoản rồi, sao lại là đăng ký?",
+          "finding": "U02"
+        },
+        {
+          "seconds": 68,
+          "screen": "Home",
+          "action": "Đăng nhập xong, tìm mục Đơn hàng",
+          "note": "Quét các liên kết đầu trang",
+          "fictional_quote": "Tôi nghĩ phải có mục Đơn hàng riêng.",
+          "finding": "U01"
+        },
+        {
+          "seconds": 115,
+          "screen": "Profile",
+          "action": "So sánh từng dòng bằng số tiền",
+          "note": "Không có tên sản phẩm để nhận diện",
+          "fictional_quote": "Tôi phải đọc kỹ các con số.",
+          "finding": "U05"
+        },
+        {
+          "seconds": 140,
+          "screen": "Profile",
+          "action": "Nói đúng Đã giao cho đơn 30 triệu",
+          "note": "T1 hoàn thành",
+          "fictional_quote": "",
+          "finding": ""
+        },
+        {
+          "seconds": 168,
+          "screen": "Profile",
+          "action": "Nói đúng Đang giao cho đơn 45 triệu",
+          "note": "T2 hoàn thành",
+          "fictional_quote": "",
+          "finding": ""
+        },
+        {
+          "seconds": 220,
+          "screen": "Profile",
+          "action": "Hủy đơn 28 triệu",
+          "note": "T3 hoàn thành",
+          "fictional_quote": "",
+          "finding": ""
+        },
+        {
+          "seconds": 268,
+          "screen": "Profile",
+          "action": "Tự tải lại và thấy Đã hủy",
+          "note": "T4 hoàn thành; chủ động kiểm tra lại",
+          "fictional_quote": "",
+          "finding": ""
+        }
+      ],
+      "probes": {
+        "clarity": "Tiêu đề đăng ký làm tôi nghĩ mình vào nhầm trang.",
+        "recovery": "Tôi kiểm tra lại trạng thái khi chưa chắc thao tác đã xong.",
+        "speed": "Tìm lịch sử mất công hơn bước hủy.",
+        "trust": "Sau khi tải lại vẫn ghi Đã hủy thì tôi tin hơn."
+      },
+      "assistance": [],
+      "interview_datetime": null,
+      "contact": null,
+      "recording": null,
+      "consent": null
+    },
+    {
+      "id": "P03",
+      "data_kind": "simulated",
+      "profile": "Người làm công việc hành chính, nhóm tuổi 45–54; non-IT",
+      "experience": "Ít mua online; thường dùng điện thoại",
+      "scenario_version": "v1",
+      "task_time_seconds": 440,
+      "tasks": {
+        "T1": "assisted",
+        "T2": "independent",
+        "T3": "independent",
+        "T4": "independent"
+      },
+      "sus_answers": [
+        3,
+        4,
+        3,
+        4,
+        3,
+        3,
+        3,
+        4,
+        2,
+        4
+      ],
+      "events": [
+        {
+          "seconds": 0,
+          "screen": "Home",
+          "action": "Đọc tình huống",
+          "note": "Bắt đầu đồng hồ giả định",
+          "fictional_quote": "",
+          "finding": ""
+        },
+        {
+          "seconds": 45,
+          "screen": "Login",
+          "action": "Hỏi ý nghĩa Username và tiêu đề Đăng Ký",
+          "note": "Chưa hiểu đây là form đăng nhập",
+          "fictional_quote": "Chỗ này cần tên tôi hay địa chỉ email?",
+          "finding": "U02"
+        },
+        {
+          "seconds": 95,
+          "screen": "Home",
+          "action": "Đăng nhập rồi tìm lịch sử ở trang chủ",
+          "note": "Chưa thấy mục đơn hàng",
+          "fictional_quote": "Tôi không biết phải mở chỗ nào.",
+          "finding": "U01"
+        },
+        {
+          "seconds": 215,
+          "screen": "Home",
+          "action": "Sau 120 giây bế tắc, nhận gợi ý khu vực tài khoản",
+          "note": "Moderator hỗ trợ mức 2; không bấm thay",
+          "fictional_quote": "",
+          "finding": ""
+        },
+        {
+          "seconds": 270,
+          "screen": "Profile",
+          "action": "Tìm đúng đơn 30 triệu và trả lời Đã giao",
+          "note": "T1 hoàn thành có trợ giúp",
+          "fictional_quote": "",
+          "finding": ""
+        },
+        {
+          "seconds": 310,
+          "screen": "Profile",
+          "action": "Đọc đúng Đang giao cho đơn 45 triệu",
+          "note": "T2 hoàn thành",
+          "fictional_quote": "",
+          "finding": ""
+        },
+        {
+          "seconds": 345,
+          "screen": "Profile",
+          "action": "Cân nhắc trước khi hủy đơn 28 triệu",
+          "note": "Lo hủy nhầm và không biết phục hồi",
+          "fictional_quote": "Nếu tôi chọn nhầm thì có quay lại được không?",
+          "finding": "U04"
+        },
+        {
+          "seconds": 385,
+          "screen": "Profile",
+          "action": "Hủy đúng đơn 28 triệu",
+          "note": "T3 hoàn thành",
+          "fictional_quote": "",
+          "finding": ""
+        },
+        {
+          "seconds": 440,
+          "screen": "Profile",
+          "action": "Đọc nhãn Đã hủy rồi kết thúc",
+          "note": "T4 hoàn thành",
+          "fictional_quote": "",
+          "finding": ""
+        }
+      ],
+      "probes": {
+        "clarity": "Tôi cần từ ngữ rõ hơn ở trang đăng nhập và chỗ mở lịch sử.",
+        "recovery": "Tôi muốn biết cách xử lý nếu hủy nhầm.",
+        "speed": "Nếu không được gợi ý, tôi tìm lịch sử lâu hơn.",
+        "trust": "Tôi nhìn thấy Đã hủy nhưng vẫn muốn có chỗ xem lại thông báo."
+      },
+      "assistance": [
+        {
+          "seconds": 215,
+          "level": 2,
+          "text": "Bạn có thể xem khu vực liên quan đến tài khoản của mình."
+        }
+      ],
+      "interview_datetime": null,
+      "contact": null,
+      "recording": null,
+      "consent": null
+    },
+    {
+      "id": "P04",
+      "data_kind": "simulated",
+      "profile": "Nhân viên kỹ thuật, nhóm tuổi 25–34; IT",
+      "experience": "Mua online thường xuyên; quen website thương mại điện tử",
+      "scenario_version": "v1",
+      "task_time_seconds": 160,
+      "tasks": {
+        "T1": "independent",
+        "T2": "independent",
+        "T3": "independent",
+        "T4": "independent"
+      },
+      "sus_answers": [
+        4,
+        1,
+        5,
+        1,
+        4,
+        2,
+        5,
+        1,
+        4,
+        2
+      ],
+      "events": [
+        {
+          "seconds": 0,
+          "screen": "Home",
+          "action": "Bắt đầu tác vụ",
+          "note": "Bắt đầu đồng hồ giả định",
+          "fictional_quote": "",
+          "finding": ""
+        },
+        {
+          "seconds": 22,
+          "screen": "Login",
+          "action": "Đăng nhập bằng dữ liệu demo",
+          "note": "Không nhầm tiêu đề trong tình huống này",
+          "fictional_quote": "",
+          "finding": ""
+        },
+        {
+          "seconds": 48,
+          "screen": "Profile",
+          "action": "Mở liên kết tài khoản và nhìn thấy danh sách",
+          "note": "Không cần gợi ý",
+          "fictional_quote": "",
+          "finding": ""
+        },
+        {
+          "seconds": 68,
+          "screen": "Profile",
+          "action": "Xác định đơn 30 triệu đã giao",
+          "note": "T1 hoàn thành",
+          "fictional_quote": "",
+          "finding": ""
+        },
+        {
+          "seconds": 85,
+          "screen": "Profile",
+          "action": "Xác định đơn 45 triệu đang giao",
+          "note": "T2 hoàn thành",
+          "fictional_quote": "",
+          "finding": ""
+        },
+        {
+          "seconds": 100,
+          "screen": "Profile",
+          "action": "Nhận thấy nút hủy ở đơn đang giao",
+          "note": "Đặt câu hỏi về quy tắc trạng thái; không bấm nút đó",
+          "fictional_quote": "Thông thường đang giao thì không hủy trực tiếp được.",
+          "finding": "U03"
+        },
+        {
+          "seconds": 125,
+          "screen": "Profile",
+          "action": "Hủy đúng đơn 28 triệu",
+          "note": "T3 hoàn thành",
+          "fictional_quote": "",
+          "finding": ""
+        },
+        {
+          "seconds": 160,
+          "screen": "Profile",
+          "action": "Xác nhận trạng thái Đã hủy",
+          "note": "T4 hoàn thành",
+          "fictional_quote": "",
+          "finding": ""
+        }
+      ],
+      "probes": {
+        "clarity": "Tôi đoán được liên kết tài khoản dẫn đến lịch sử.",
+        "recovery": "Nút hủy nên chỉ xuất hiện ở trạng thái cho phép.",
+        "speed": "Các bước chính khá ngắn khi đã tìm đúng trang.",
+        "trust": "Tôi muốn quy tắc nút bấm khớp với trạng thái đơn."
+      },
+      "assistance": [],
+      "interview_datetime": null,
+      "contact": null,
+      "recording": null,
+      "consent": null
+    },
+    {
+      "id": "P05",
+      "data_kind": "simulated",
+      "profile": "Người kinh doanh tự do, nhóm tuổi 35–44; non-IT",
+      "experience": "Mua online 1–2 lần/tháng",
+      "scenario_version": "v1",
+      "task_time_seconds": 365,
+      "tasks": {
+        "T1": "independent",
+        "T2": "independent",
+        "T3": "independent",
+        "T4": "assisted"
+      },
+      "sus_answers": [
+        3,
+        3,
+        3,
+        3,
+        4,
+        3,
+        4,
+        3,
+        3,
+        3
+      ],
+      "events": [
+        {
+          "seconds": 0,
+          "screen": "Home",
+          "action": "Bắt đầu tác vụ",
+          "note": "Bắt đầu đồng hồ giả định",
+          "fictional_quote": "",
+          "finding": ""
+        },
+        {
+          "seconds": 35,
+          "screen": "Home",
+          "action": "Đăng nhập xong, tìm liên kết đơn hàng",
+          "note": "Chưa nhận ra ý nghĩa liên kết lời chào",
+          "fictional_quote": "Tôi tưởng đó chỉ là tên tài khoản.",
+          "finding": "U01"
+        },
+        {
+          "seconds": 90,
+          "screen": "Profile",
+          "action": "Tự tìm được lịch sử",
+          "note": "Không nhận trợ giúp",
+          "fictional_quote": "",
+          "finding": ""
+        },
+        {
+          "seconds": 115,
+          "screen": "Profile",
+          "action": "Đọc nhiều dòng để tìm số tiền đúng",
+          "note": "Muốn có tên sản phẩm",
+          "fictional_quote": "Đơn nào cũng chỉ thấy mã và số tiền.",
+          "finding": "U05"
+        },
+        {
+          "seconds": 135,
+          "screen": "Profile",
+          "action": "Nói đúng Đã giao cho đơn 30 triệu",
+          "note": "T1 hoàn thành",
+          "fictional_quote": "",
+          "finding": ""
+        },
+        {
+          "seconds": 165,
+          "screen": "Profile",
+          "action": "Nói đúng Đang giao cho đơn 45 triệu",
+          "note": "T2 hoàn thành",
+          "fictional_quote": "",
+          "finding": ""
+        },
+        {
+          "seconds": 220,
+          "screen": "Profile",
+          "action": "Hủy đúng đơn 28 triệu",
+          "note": "T3 hoàn thành",
+          "fictional_quote": "",
+          "finding": ""
+        },
+        {
+          "seconds": 240,
+          "screen": "Profile",
+          "action": "Vẫn chưa chắc thao tác đã hoàn tất",
+          "note": "Không chủ động dùng nhãn trạng thái làm bằng chứng",
+          "fictional_quote": "Tôi muốn biết chắc là đã hủy thật.",
+          "finding": "U04"
+        },
+        {
+          "seconds": 360,
+          "screen": "Profile",
+          "action": "Sau 120 giây bế tắc, nhận gợi ý xem thông tin đơn",
+          "note": "Moderator hỗ trợ mức 2",
+          "fictional_quote": "",
+          "finding": ""
+        },
+        {
+          "seconds": 365,
+          "screen": "Profile",
+          "action": "Đọc trạng thái Đã hủy và kết thúc",
+          "note": "T4 hoàn thành có trợ giúp",
+          "fictional_quote": "",
+          "finding": ""
+        }
+      ],
+      "probes": {
+        "clarity": "Tôi muốn tên mục lịch sử đơn hàng được viết rõ.",
+        "recovery": "Tôi muốn có thông tin để kiểm tra lại thao tác vừa làm.",
+        "speed": "Đọc các mã và số tiền mất thời gian hơn tôi nghĩ.",
+        "trust": "Tôi cần nhìn lại trạng thái sau khi hủy mới chắc chắn."
+      },
+      "assistance": [
+        {
+          "seconds": 360,
+          "level": 2,
+          "text": "Bạn có thể xem lại thông tin của đơn vừa thao tác."
+        }
+      ],
+      "interview_datetime": null,
+      "contact": null,
+      "recording": null,
+      "consent": null
+    },
+    {
+      "id": "P06",
+      "data_kind": "simulated",
+      "profile": "Người ít dùng dịch vụ trực tuyến, nhóm tuổi 45–54; non-IT",
+      "experience": "Hiếm mua online; mức quen công nghệ thấp",
+      "scenario_version": "v1",
+      "task_time_seconds": 600,
+      "tasks": {
+        "T1": "assisted",
+        "T2": "independent",
+        "T3": "failed",
+        "T4": "not_reached"
+      },
+      "sus_answers": [
+        2,
+        4,
+        2,
+        4,
+        2,
+        4,
+        3,
+        4,
+        2,
+        4
+      ],
+      "events": [
+        {
+          "seconds": 0,
+          "screen": "Home",
+          "action": "Bắt đầu tác vụ",
+          "note": "Bắt đầu đồng hồ giả định",
+          "fictional_quote": "",
+          "finding": ""
+        },
+        {
+          "seconds": 60,
+          "screen": "Login",
+          "action": "Phân vân giữa đăng nhập và đăng ký",
+          "note": "Đọc lại nhãn của form",
+          "fictional_quote": "Tôi có phải tạo tài khoản trước không?",
+          "finding": "U02"
+        },
+        {
+          "seconds": 130,
+          "screen": "Home",
+          "action": "Đăng nhập xong nhưng chưa tìm được lịch sử",
+          "note": "Dừng ở trang chủ",
+          "fictional_quote": "Tôi chỉ thấy sản phẩm.",
+          "finding": "U01"
+        },
+        {
+          "seconds": 250,
+          "screen": "Home",
+          "action": "Sau 120 giây bế tắc, nhận gợi ý khu vực tài khoản",
+          "note": "Moderator hỗ trợ mức 2",
+          "fictional_quote": "",
+          "finding": ""
+        },
+        {
+          "seconds": 320,
+          "screen": "Profile",
+          "action": "Đọc đúng Đã giao cho đơn 30 triệu",
+          "note": "T1 hoàn thành có trợ giúp",
+          "fictional_quote": "",
+          "finding": ""
+        },
+        {
+          "seconds": 365,
+          "screen": "Profile",
+          "action": "Đọc đúng Đang giao cho đơn 45 triệu",
+          "note": "T2 hoàn thành",
+          "fictional_quote": "",
+          "finding": ""
+        },
+        {
+          "seconds": 420,
+          "screen": "Profile",
+          "action": "Tìm đúng đơn 28 triệu nhưng chưa bấm hủy",
+          "note": "Lo tác động không thể đảo ngược",
+          "fictional_quote": "Tôi sợ hủy nhầm thì không lấy lại được.",
+          "finding": "U04"
+        },
+        {
+          "seconds": 540,
+          "screen": "Profile",
+          "action": "Nhắc lại mục tiêu sau 120 giây bế tắc",
+          "note": "Moderator hỗ trợ mức 1, không làm thay",
+          "fictional_quote": "",
+          "finding": ""
+        },
+        {
+          "seconds": 600,
+          "screen": "Profile",
+          "action": "Hết giới hạn tác vụ, dừng mà chưa hủy",
+          "note": "T3 thất bại/time-out; T4 chưa thực hiện",
+          "fictional_quote": "",
+          "finding": ""
+        }
+      ],
+      "probes": {
+        "clarity": "Tôi cần lời hướng dẫn dễ hiểu hơn để biết mình ở đâu.",
+        "recovery": "Tôi muốn có bước xác nhận hoặc giải thích trước khi hủy.",
+        "speed": "Tôi mất nhiều thời gian tìm trang và cân nhắc nút hủy.",
+        "trust": "Tôi chưa đủ tự tin để hoàn tất thao tác trong tình huống này."
+      },
+      "assistance": [
+        {
+          "seconds": 250,
+          "level": 2,
+          "text": "Bạn có thể xem khu vực liên quan đến tài khoản của mình."
+        },
+        {
+          "seconds": 540,
+          "level": 1,
+          "text": "Mục tiêu còn lại là xử lý đơn 28 triệu theo tình huống; bạn có thể dừng nếu chưa muốn tiếp tục."
+        }
+      ],
+      "interview_datetime": null,
+      "contact": null,
+      "recording": null,
+      "consent": null
+    },
+    {
+      "id": "P07",
+      "data_kind": "simulated",
+      "profile": "Sinh viên ngành kinh tế, nhóm tuổi 18–24; non-IT",
+      "experience": "Mua online vài lần/tháng",
+      "scenario_version": "v1",
+      "task_time_seconds": 230,
+      "tasks": {
+        "T1": "independent",
+        "T2": "independent",
+        "T3": "independent",
+        "T4": "independent"
+      },
+      "sus_answers": [
+        4,
+        2,
+        4,
+        2,
+        3,
+        3,
+        4,
+        2,
+        3,
+        2
+      ],
+      "events": [
+        {
+          "seconds": 0,
+          "screen": "Home",
+          "action": "Bắt đầu tác vụ",
+          "note": "Bắt đầu đồng hồ giả định",
+          "fictional_quote": "",
+          "finding": ""
+        },
+        {
+          "seconds": 30,
+          "screen": "Login",
+          "action": "Đăng nhập bằng tài khoản demo",
+          "note": "Tự thực hiện",
+          "fictional_quote": "",
+          "finding": ""
+        },
+        {
+          "seconds": 60,
+          "screen": "Profile",
+          "action": "Tự mở khu vực tài khoản",
+          "note": "Tìm được lịch sử",
+          "fictional_quote": "",
+          "finding": ""
+        },
+        {
+          "seconds": 85,
+          "screen": "Profile",
+          "action": "Đối chiếu số tiền vì không có tên sản phẩm",
+          "note": "Tìm kiếm bằng mắt",
+          "fictional_quote": "Tôi muốn biết mình đã mua món gì trong từng đơn.",
+          "finding": "U05"
+        },
+        {
+          "seconds": 110,
+          "screen": "Profile",
+          "action": "Nói đúng Đã giao cho đơn 30 triệu",
+          "note": "T1 hoàn thành",
+          "fictional_quote": "",
+          "finding": ""
+        },
+        {
+          "seconds": 135,
+          "screen": "Profile",
+          "action": "Nói đúng Đang giao cho đơn 45 triệu",
+          "note": "T2 hoàn thành",
+          "fictional_quote": "",
+          "finding": ""
+        },
+        {
+          "seconds": 155,
+          "screen": "Profile",
+          "action": "Thấy nút hủy ở đơn đang giao",
+          "note": "Không bấm vì mục tiêu chỉ hủy đơn 28 triệu",
+          "fictional_quote": "Nút này có áp dụng cho đơn đang giao không?",
+          "finding": "U03"
+        },
+        {
+          "seconds": 190,
+          "screen": "Profile",
+          "action": "Hủy đúng đơn 28 triệu",
+          "note": "T3 hoàn thành",
+          "fictional_quote": "",
+          "finding": ""
+        },
+        {
+          "seconds": 230,
+          "screen": "Profile",
+          "action": "Kiểm tra Đã hủy và kết thúc",
+          "note": "T4 hoàn thành",
+          "fictional_quote": "",
+          "finding": ""
+        }
+      ],
+      "probes": {
+        "clarity": "Các trạng thái dễ đọc; tôi muốn nhận diện đơn bằng sản phẩm.",
+        "recovery": "Tôi muốn có giải thích khi một hành động không được phép.",
+        "speed": "Đối chiếu đơn bằng số tiền là phần chậm nhất.",
+        "trust": "Tôi tin nhãn Đã hủy, nhưng nút hủy ở đơn đang giao làm tôi thắc mắc."
+      },
+      "assistance": [],
+      "interview_datetime": null,
+      "contact": null,
+      "recording": null,
+      "consent": null
+    }
+  ],
+  "findings": [
+    {
+      "id": "U01",
+      "title": "Lối vào lịch sử đơn qua lời chào khó nhận biết",
+      "severity": 3,
+      "kind": "Giả thuyết UX",
+      "recommendation": "Thêm liên kết Đơn hàng rõ nghĩa trong điều hướng tài khoản.",
+      "basis": "Đường vào hiện tại được đọc từ mã UI; tần suất khó tìm chỉ thuộc mô phỏng.",
+      "issue": null,
+      "shot": null
+    },
+    {
+      "id": "U02",
+      "title": "Tiêu đề Đăng Ký trên form đăng nhập gây nhầm",
+      "severity": 2,
+      "kind": "Liên hệ lỗi đã kiểm thử",
+      "recommendation": "Đổi tiêu đề đúng chức năng đăng nhập và thống nhất nhãn.",
+      "basis": "BUG-001/GUI-001 đã có bằng chứng Task 1; phản ứng hồ sơ ở đây là giả định.",
+      "issue": "https://github.com/vinh-code/HW03-Software-Testing/issues/1",
+      "shot": "../bugs/screenshots/GUI-001.png"
+    },
+    {
+      "id": "U03",
+      "title": "Nút hủy xuất hiện ở đơn đang giao gây kỳ vọng sai",
+      "severity": 3,
+      "kind": "Liên hệ lỗi đã kiểm thử",
+      "recommendation": "Đồng bộ nút với quy tắc trạng thái; kiểm tra cả UI và API bằng ca thực riêng.",
+      "basis": "BUG-010/GUI-030 xác minh sự xuất hiện của nút. Mô phỏng không tuyên bố đã kiểm thử mới việc hủy đơn đang giao.",
+      "issue": "https://github.com/vinh-code/HW03-Software-Testing/issues/10",
+      "shot": "../bugs/screenshots/GUI-030.png"
+    },
+    {
+      "id": "U04",
+      "title": "Thiếu tự tin trước/sau thao tác hủy và khả năng phục hồi",
+      "severity": 3,
+      "kind": "Giả thuyết UX",
+      "recommendation": "Thiết kế phản hồi bền vững về đơn đã hủy, giải thích hậu quả và cân nhắc bước xác nhận theo mức rủi ro.",
+      "basis": "Lo ngại/lời thoại do mô phỏng; không suy ra yêu cầu FR mới hoặc lỗi đã xác minh.",
+      "issue": null,
+      "shot": null
+    },
+    {
+      "id": "U05",
+      "title": "Nhận diện đơn bằng mã và số tiền tốn công",
+      "severity": 2,
+      "kind": "Giả thuyết UX",
+      "recommendation": "Cân nhắc tóm tắt sản phẩm hoặc chức năng tìm đơn khi mở rộng thiết kế.",
+      "basis": "Khả năng UI hiện có đọc từ source; cảm nhận tốn công là giả định và chức năng mới không mặc nhiên bắt buộc theo spec.",
+      "issue": null,
+      "shot": null
+    }
+  ]
+}

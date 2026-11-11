@@ -1,0 +1,8 @@
+id,data_kind,sus,elapsed_seconds,outcome
+P01,simulated,75.0,205,independent
+P02,simulated,62.5,268,independent
+P03,simulated,37.5,440,assisted
+P04,simulated,87.5,160,independent
+P05,simulated,55.0,365,assisted
+P06,simulated,27.5,600,incomplete
+P07,simulated,67.5,230,independent

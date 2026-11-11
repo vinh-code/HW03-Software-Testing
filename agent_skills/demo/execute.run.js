@@ -1,0 +1,45 @@
+async (page) => {
+const web='http://localhost:5173', results=[], dialogs=[];
+const pause=()=>page.waitForTimeout(250);
+const criteria=[{"id": "GUI-001", "ia": "IA-01", "screen": "Login", "expected": "Tiêu đề trang mô tả đúng chức năng Đăng nhập", "origin": "Reused reviewed Task 1 criterion; executed by gui-usability-evaluator demo", "why": "Bản cũ tập trung vào đơn hàng, chưa đối chiếu tiêu đề màn đăng nhập với mục đích thực tế.", "basis": "FR-21"}, {"id": "GUI-002", "ia": "IA-01", "screen": "Login", "expected": "Có đúng một h1 mô tả trang", "origin": "Reused reviewed Task 1 criterion; executed by gui-usability-evaluator demo", "why": "", "basis": "FR-21"}, {"id": "GUI-003", "ia": "IA-01", "screen": "Login", "expected": "Nhãn trường email bằng tiếng Việt và đúng nội dung", "origin": "Reused reviewed Task 1 criterion; executed by gui-usability-evaluator demo", "why": "Bản cũ chỉ kiểm tra type của email, bỏ qua nội dung nhãn Username.", "basis": "FR-21"}, {"id": "GUI-004", "ia": "IA-01", "screen": "Login", "expected": "Nút gửi có nhãn Đăng nhập bằng tiếng Việt", "origin": "Reused reviewed Task 1 criterion; executed by gui-usability-evaluator demo", "why": "Bản cũ chưa kiểm tra riêng ngôn ngữ nút gửi.", "basis": "FR-21"}, {"id": "GUI-005", "ia": "IA-02", "screen": "Login", "expected": "Email dùng type=email", "origin": "Reused reviewed Task 1 criterion; executed by gui-usability-evaluator demo", "why": "", "basis": "FR-02, FR-22"}, {"id": "GUI-006", "ia": "IA-02", "screen": "Login", "expected": "Mật khẩu dùng type=password", "origin": "Reused reviewed Task 1 criterion; executed by gui-usability-evaluator demo", "why": "", "basis": "FR-22"}, {"id": "GUI-007", "ia": "IA-02", "screen": "Login", "expected": "Hai trường bắt buộc có dấu * ở nhãn", "origin": "Reused reviewed Task 1 criterion; executed by gui-usability-evaluator demo", "why": "", "basis": "FR-22"}, {"id": "GUI-008", "ia": "IA-02", "screen": "Login", "expected": "Bỏ trống email bị chặn gửi form", "origin": "Reused reviewed Task 1 criterion; executed by gui-usability-evaluator demo", "why": "Bản cũ gộp form, chưa tách tình huống thiếu email.", "basis": "HTML validation / tiêu chí bổ sung"}, {"id": "GUI-009", "ia": "IA-02", "screen": "Login", "expected": "Bỏ trống mật khẩu bị chặn gửi form", "origin": "Reused reviewed Task 1 criterion; executed by gui-usability-evaluator demo", "why": "Bản cũ chưa tách tình huống thiếu mật khẩu.", "basis": "HTML validation / tiêu chí bổ sung"}, {"id": "GUI-010", "ia": "IA-02", "screen": "Login", "expected": "Email sai định dạng bị chặn tại form", "origin": "Reused reviewed Task 1 criterion; executed by gui-usability-evaluator demo", "why": "Kiểm tra type đơn thuần chưa chứng minh chặn email sai.", "basis": "FR-02"}, {"id": "GUI-011", "ia": "IA-02", "screen": "Login", "expected": "Lỗi đăng nhập nằm phía trên nút gửi", "origin": "Reused reviewed Task 1 criterion; executed by gui-usability-evaluator demo", "why": "", "basis": "FR-22"}, {"id": "GUI-012", "ia": "IA-04", "screen": "Login", "expected": "Đăng nhập sai có thông báo lỗi tiếng Việt", "origin": "Reused reviewed Task 1 criterion; executed by gui-usability-evaluator demo", "why": "", "basis": "FR-02, FR-21"}, {"id": "GUI-013", "ia": "IA-01", "screen": "Login", "expected": "Tab đầu tiên đi vào phần tử tương tác trên cùng, không nhảy tới submit", "origin": "Reused reviewed Task 1 criterion; executed by gui-usability-evaluator demo", "why": "", "basis": "FR-21"}, {"id": "GUI-014", "ia": "IA-03", "screen": "Login", "expected": "Liên kết Quên mật khẩu mở đúng trang", "origin": "Reused reviewed Task 1 criterion; executed by gui-usability-evaluator demo", "why": "", "basis": "IA-03; yêu cầu điều hướng bổ sung"}, {"id": "GUI-015", "ia": "IA-03", "screen": "Login", "expected": "Liên kết Đăng ký mở đúng trang", "origin": "Reused reviewed Task 1 criterion; executed by gui-usability-evaluator demo", "why": "", "basis": "IA-03; yêu cầu điều hướng bổ sung"}, {"id": "GUI-016", "ia": "IA-02", "screen": "Login", "expected": "Enter tại mật khẩu gửi form đăng nhập hợp lệ", "origin": "Reused reviewed Task 1 criterion; executed by gui-usability-evaluator demo", "why": "", "basis": "IA-02; hỗ trợ bàn phím bổ sung"}];
+const root="REPLACE_WITH_ABSOLUTE_DEMO_OUTPUT_DIRECTORY";
+await page.context().clearCookies();
+await page.goto(web+'/login');await page.evaluate(()=>localStorage.clear());await page.reload();
+const browser=page.context().browser().version();
+const environment={browser:'Chrome '+browser,os:'Ubuntu 24.04.5 LTS x86_64',viewport:'1366x900',execution:'headed Playwright CLI; isolated backend copy',sut_revision:"85af3ba875c88283615e22cb108f13e2fccaf0e9"};
+const check=async(n,ok,actual)=>{
+ const c=criteria[n-1],time=new Date().toISOString(),status=ok?'Passed':'Failed';
+ const screenshot=ok?null:'screenshots/'+c.id+'.png';
+ const row={...c,status,actual,url:page.url(),time,screenshot};results.push(row);
+ await page.evaluate(({c,status,actual,time,browser})=>{
+  document.getElementById('skill-demo-caption')?.remove();
+  const e=document.createElement('aside');e.id='skill-demo-caption';
+  e.style.cssText='position:fixed;bottom:0;left:0;right:0;z-index:999999;background:#13263b;color:white;border-top:4px solid '+(status==='Passed'?'#61e3b3':'#ffa581')+';padding:14px 24px;font:17px Arial;line-height:1.5;pointer-events:none';
+  e.textContent='CHÚ THÍCH DEMO · '+c.id+' · '+c.ia+' · '+status+' | Mong đợi: '+c.expected+' | Thực tế: '+actual+' | Phạm Quang Vinh · 23120202 · Chrome '+browser+' · '+time+' · '+location.href;
+  document.body.append(e);
+ },{c,status,actual,time,browser});
+ await page.waitForTimeout(2600);
+ if(screenshot)await page.screenshot({path:root+'/'+screenshot,fullPage:true});
+ await page.evaluate(()=>document.getElementById('skill-demo-caption')?.remove());
+};
+await page.goto(web+'/login');
+let txt=await page.locator('main h2').innerText();await check(1,/đăng nhập/i.test(txt),'Tiêu đề thực tế: '+txt);
+let n=await page.locator('main h1').count();await check(2,n===1,`Số h1: ${n}`);
+let labels=await page.locator('form label').allTextContents();await check(3,/email|thư điện tử/i.test(labels[0]),'Nhãn email: '+labels[0]);
+txt=await page.locator('form button').innerText();await check(4,txt==='Đăng nhập','Nhãn nút: '+txt);
+let types=await page.locator('form input').evaluateAll(es=>es.map(e=>e.type));await check(5,types[0]==='email','type email: '+types[0]);
+await page.locator('form input').nth(1).fill('DemoOnly123!');await check(6,types[1]==='password','type mật khẩu: '+types[1]+'; nhập dữ liệu thử DemoOnly123!');
+await check(7,labels.every(x=>x.includes('*')),'Nhãn: '+labels.join(' / '));
+await page.locator('form button').click();let valid=await page.locator('form input').nth(0).evaluate(e=>({valid:e.validity.valid,message:e.validationMessage}));await check(8,!valid.valid,JSON.stringify(valid));
+await page.locator('form input').nth(0).fill('unknown@example.test');await page.locator('form input').nth(1).fill('');await page.locator('form button').click();valid=await page.locator('form input').nth(1).evaluate(e=>({valid:e.validity.valid,message:e.validationMessage}));await check(9,!valid.valid,JSON.stringify(valid));
+await page.locator('form input').nth(0).fill('not-an-email');await page.locator('form input').nth(1).fill('DemoOnly123!');
+valid=await page.locator('form input').nth(0).evaluate(e=>({valid:e.validity.valid,typeMismatch:e.validity.typeMismatch}));await page.locator('form button').click();await page.getByText('Đăng nhập thất bại. Vui lòng kiểm tra lại.').waitFor();await check(10,!valid.valid,JSON.stringify(valid)+'; form gửi tới API và hiện lỗi đăng nhập');
+let err=page.getByText('Đăng nhập thất bại. Vui lòng kiểm tra lại.');let er=await err.boundingBox(),btn=await page.locator('form button').boundingBox();await check(11,er.y+er.height<=btn.y,`error.y=${er.y}, button.y=${btn.y}`);
+await check(12,await err.isVisible(),await err.innerText());
+await page.goto(web+'/login');await page.locator('form button').waitFor();await pause();await page.keyboard.press('Tab');let focused=await page.evaluate(()=>({tag:document.activeElement.tagName,text:document.activeElement.textContent,tabIndex:document.activeElement.tabIndex}));await check(13,focused.tag==='A'&&focused.text==='EShop',JSON.stringify(focused));
+await page.getByRole('link',{name:'Quên mật khẩu?'}).click();await check(14,page.url().endsWith('/forgot-password'),page.url());
+await page.goto(web+'/login');await page.getByRole('link',{name:'Đăng ký ngay'}).click();await check(15,page.url().endsWith('/register'),page.url());
+await page.goto(web+'/login');await page.locator('form input').nth(0).fill('skill-demo-23120202@example.test');await page.locator('form input').nth(1).fill('GuiTest123!');await page.locator('form input').nth(1).press('Enter');await page.waitForURL(web+'/');await check(16,page.url()===web+'/', 'Enter đăng nhập thành công, tới '+page.url());
+
+return {data_kind:"real",screen:"EShop Login — complete 16-criterion screen",environment,results,dialogs};
+}

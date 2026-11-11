@@ -1,0 +1,4 @@
+interface:
+  display_name: "GUI & Usability Evaluator"
+  short_description: "Kiểm thử GUI và phân tích usability có bằng chứng"
+  default_prompt: "Use $gui-usability-evaluator to evaluate the selected screen and summarize evidence-backed GUI and usability findings."

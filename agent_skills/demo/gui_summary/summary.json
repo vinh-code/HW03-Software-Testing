@@ -1,0 +1,21 @@
+{
+  "data_kind": "real",
+  "screen": "EShop Login — complete 16-criterion screen",
+  "designed": 16,
+  "executed": 16,
+  "counts": {
+    "Passed": 6,
+    "Failed": 10,
+    "Blocked": 0,
+    "Not run": 0
+  },
+  "coverage_state": "complete",
+  "missing_aspects": [],
+  "environment": {
+    "browser": "Chrome 156.0.8078.79",
+    "os": "Ubuntu 24.04.5 LTS x86_64",
+    "viewport": "1366x900",
+    "execution": "headed Playwright CLI; isolated backend copy",
+    "sut_revision": "85af3ba875c88283615e22cb108f13e2fccaf0e9"
+  }
+}
