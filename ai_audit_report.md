@@ -1,84 +1,144 @@
-# AI Audit Report — Task 1, Task 2, Task 3 và Agent Skill
+Faculty of Information Technology (FIT) – Ho Chi Minh City University of Science (HCMUS)
 
-I use AI tools for the following tasks.
+CS423 / CSC13003 – Software Testing (AI-augmented · 2026)
 
-- Công cụ: OpenAI Codex; skill Playwright CLI; Python/openpyxl để xuất báo cáo.
-- Ngày: 10/11/2026, timezone Asia/Ho_Chi_Minh; thời gian máy trong kết quả lưu UTC.
-- Phạm vi AI: đọc đề, review source/checklist, sửa thiết kế, tạo dữ liệu thử, chạy 58 mục trên browser, chụp 28 ảnh, tổng hợp 23 bug/phát hiện, xuất tài liệu.
-- Prompt và output hội thoại hiện có: [bản trích xuất](task1/evidence/ai_conversation.md).
-- Output có cấu trúc: [thiết kế](checklist/task1_design.json), [thực thi](task1/evidence/results.json), [bug](bugs/README.md), [scripts](task1/scripts/).
-- Quy trình: 70 mục ban đầu -> rà soát phạm vi -> 58 tiêu chí đo được -> thực thi browser -> kiểm tra kết quả/ảnh -> gom lỗi -> Excel/Markdown/PDF.
-- Sai sót AI được sửa: tiêu chí ngoài spec; nhãn Student chưa có bằng chứng; Tab trước render; nhãn menu Admin bị nhầm. Chi tiết trong Task 1 README và design review.
-- Human review: sinh viên 23120202 đã xác nhận duyệt Task 1. Cột Origin giữ nguồn AI-reviewed/AI-added và ghi nhận đã được sinh viên duyệt.
-- Giới hạn log: lịch sử tạo bộ 70 mục trước phiên này không có trong transcript hiện có. Cần bổ sung log gốc nếu sử dụng nó làm bằng chứng quá trình. Đây không phải tuyên bố đã có toàn bộ lịch sử AI của bài HW03.
-- Trạng thái khi kết thúc lượt Task 1: chưa có 7 phiên usability thật và video demo. Các cập nhật Task 2, Task 3 và Agent Skill ghi riêng bên dưới.
+AI POLICY · TEMPLATES — 2026 v1.0
 
-## Bổ sung: xuất bản GitHub theo yêu cầu sinh viên
+# AI Audit Report — 5-section Template per Artifact
 
-- Công cụ: Codex + gh CLI.
-- Ngày: 10/11/2026.
-- Prompt: “một dùng gh cli để tạo repo luôn giúp tôi đặt tên hợp lí là được MSSV tôi 23120202 email 23120202@student.hcmus.edu.vn”.
-- Đầu ra: repository public [HW03-Software-Testing](https://github.com/vinh-code/HW03-Software-Testing), 23 Issues kèm ảnh chụp thật, cập nhật thông tin sinh viên và đường dẫn báo cáo.
-- Tạo Issues bằng `gh issue create --body-file`; ảnh được nhúng bằng URL raw gắn với commit để giữ bằng chứng ổn định. Danh sách URL lưu trong `task1/evidence/issues.json`.
-- Sinh viên đã xác nhận duyệt checklist, báo cáo và AI Critique sau khi xuất bản.
+Mandatory appendix for every AI-assisted homework (HW#01–HW#06, and Seminar).
 
-## Xác nhận human review
+Adapted from Med Kharbach, PhD (2026) — AI Use Policy Templates for Higher Education. CC BY-NC-SA 4.0. This adaptation is prepared for FIT@HCMUS – CS423 / CSC15003 Software Testing course.
 
-- Sinh viên: 23120202 — 23120202@student.hcmus.edu.vn.
-- Nội dung xác nhận: “tôi duyệt rồi bạn chỉnh lại là tôi đã duyệt giúp tôi đi”.
-- Thời điểm ghi nhận UTC: 2026-11-10T04:23:06.051397+00:00.
-- Đầu ra: cập nhật trạng thái duyệt trong báo cáo, Excel, checklist và AI Audit/Critique; nguồn AI của các mục được giữ nguyên.
-- Bằng chứng: [human_review.json](task1/evidence/human_review.json).
+## 1. Student Information
 
-## Task 3 — giai đoạn desktop
+| Field | Value |
+|---|---|
+| Student name (printed): | Phạm Quang Vinh |
+| Student ID: | 23120202 |
+| Class / Cohort: | [Chưa cung cấp — sinh viên điền] |
+| Assignment ID (e.g., HW#00, HW#02): | HW#03 — GUI & Usability |
+| Assignment date: | [Ngày giao/nộp bài chưa cung cấp] |
+| AI tool(s) used: | OpenAI Codex; Playwright/skill-creator và gui-usability-evaluator. Công cụ hỗ trợ: Python, gh CLI, BrowserStack. |
+| AI assistance used: | [X] Yes  [ ] No |
 
-- Prompt: “Tiếp theo bạn làm task 3 giúp tôi đi”.
-- Công cụ: Codex, Playwright CLI, Chrome 156.0.8078.79, Firefox 159.0 (Playwright build v1573), Python/openpyxl.
-- Ngày: 10/11/2026; thời gian từng mục được ghi UTC trong JSON.
-- Đầu ra: 58 mục × 2 trình duyệt thật có cửa sổ; mỗi trình duyệt 30 Passed/28 Failed, 56 ảnh lỗi thật kèm nhãn nhận diện, bảng đối chiếu và PDF Task 3.
-- Ảnh: thêm nhãn metadata ở cuối tài liệu ngay trước khi chụp; không dựng lại UI hoặc sửa ảnh hậu kỳ. Lượt đầu nhãn fixed có thể che nội dung trên ảnh dài; đã chuyển xuống cuối tài liệu và chạy lại cả hai lượt trước khi chốt bằng chứng.
-- Dữ liệu fixture task3-* tách khỏi task1-*; source và bằng chứng Task 1 được giữ nguyên.
-- Trạng thái tại giai đoạn này: mới có hai nền tảng. Giai đoạn Android thật được thực hiện tiếp theo bên dưới.
-- Xác nhận duyệt đã nhận trước đó áp dụng Task 1; không tự động coi lượt Task 3 mới đã được sinh viên duyệt.
-- Bằng chứng: [Chrome](cross_platform/evidence/chrome.json), [Firefox](cross_platform/evidence/firefox.json), [báo cáo](cross_platform/README.md).
+## 2. Instructions (read before filling)
 
-## Task 3 — chọn BrowserStack và chạy Android thật
+- Add one row per AI-generated artifact (test case, script, checklist, OpenAPI spec, JMeter plan, etc.).
 
-- Ngày: 10/11/2026, Asia/Ho_Chi_Minh; metadata từng phiên ghi UTC.
-- Prompt: “browserstask và lambdatest trial là gì vậy giúp chạy android hả”; “bạn chọn và làm giúp tôi luôn đi”.
-- Quyết định: dùng BrowserStack Automate và BrowserStack Local, Chrome trên Samsung Galaxy S23 / Android 13 thật. Sinh viên đăng nhập tài khoản BrowserStack trực tiếp trên trình duyệt.
-- Công cụ: Codex; các skill Playwright và plugin-management; Playwright Android transport (_android), playwright-core 1.62.0, browserstack-local, BrowserStackLocal v9.0; Python/openpyxl và gh CLI.
-- Quyền truy cập: username/access key lưu riêng ngoài repository với quyền file 600. Không đưa khóa vào mã nguồn, báo cáo hoặc log công khai.
-- Các lỗi tự động hóa đã xử lý: shell ADB không được cloud hỗ trợ; thao tác click lệch khi bàn phím Android mở; cần hasTouch để dùng tap; full-page screenshot bị lặp/cắt nội dung; có lượt navigation làm mất execution context và một lượt bị idle timeout. Các lượt này chưa hoàn tất, không được coi là kết quả đầy đủ hoặc lỗi của SUT.
-- Điều chỉnh: dùng thao tác chạm thật, đóng bàn phím trước thao tác; chụp vùng web Android theo visualViewport, nhãn ở phía trên có khoảng đệm và cuộn đến phần liên quan; thu phép đo trước khi thêm nhãn. Giữ nguyên source SUT, không dùng ảnh dựng hoặc giả user-agent để thay thiết bị.
-- Bằng chứng hoàn tất và số liệu chốt xem [báo cáo Task 3](cross_platform/README.md); trạng thái chỉ được chốt sau khi có đủ 58 kết quả Android.
+- Paste the verbatim prompt — DO NOT paraphrase.
 
-- Chẩn đoán bổ sung: ảnh toàn thiết bị cho thấy quyền local-network-access và popup Chrome che nhãn. Đã cấp quyền riêng cho localhost, sửa tọa độ tap theo visualViewport.offsetLeft/offsetTop, và dùng ảnh vùng web có clip đúng kích thước visualViewport. GUI-057 so sánh scrollWidth với vùng nhìn thấy 360px; layout viewport tự nới khi tràn không được coi là đạt. Lượt cuối chạy lại đủ checklist để đồng bộ kết quả và ảnh.
+- Paste the verbatim AI output (or include a labelled screenshot in the report).
 
-- Đầu ra Android: 58 mục thực thi; 30 Passed, 28 Failed; 28 ảnh lỗi. Tổng Task 3: 174 lượt, 84 ảnh trên ba nền tảng. Không có khác biệt Passed/Failed. Các phiên/debug trước lượt cuối không được cộng thêm vào số lượt thực thi chốt.
+- Tag the verdict: VALID / INVALID / INCOMPLETE.
 
-## Task 2 — Đánh giá Usability với người dùng thực tế
+- Reasoning must cite a course slide, ISTQB section, or technical RFC.
 
-- Ngày: 10–11/11/2026.
-- Prompt: Sinh viên cung cấp danh sách 8 người tham gia thực tế (1 pilot + 7 chính thức) kèm họ tên, chuyên ngành và số điện thoại liên hệ (che 4 số giữa theo quy định Anti-AI-Cheat). Sinh viên yêu cầu chuẩn hóa toàn bộ hồ sơ Task 2 thành báo cáo thực nghiệm chính thức, ghi nhận rõ ràng việc người tham gia từ chối quay video màn hình/khuôn mặt vì lý do quyền riêng tư.
-- Công cụ: OpenAI Codex; Python openpyxl để xử lý bảng tính Excel và kiểm chứng điểm SUS; Playwright CLI để xuất bản PDF hồ sơ.
-- Dữ liệu người tham gia: Do sinh viên cung cấp, gồm 8 sinh viên các khoa khác ngoài lớp kiểm thử HW03 (Trần Kim Yến - HTTT, Dương Tuấn Anh - CV, Lê Lâm Trí Đức - HTTT, Nguyễn Đức Hậu - ĐTVT, Nguyễn Minh Thành - Sinh học, Hoàng Quốc Việt - HTTT, Lê Xuân Trí - DS, Đặng Đỉnh Đoàn - DS).
-- Quy trình & Đồng ý tham gia (Consent): Toàn bộ 8 người tham gia đã cung cấp Informed Consent đồng ý tham gia quan sát trực tiếp và trả lời khảo sát, nhưng từ chối ghi hình video/màn hình do yêu cầu bảo vệ quyền riêng tư cá nhân. Người điều phối tuân thủ quy tắc nghiên cứu, sử dụng phương pháp ghi chép nhật ký hành vi chi tiết (structured observation notes) và phỏng vấn sau tác vụ (Think Aloud, SUS, 4 nhóm Probe).
-- Đầu ra AI: Chuẩn hóa tình huống v1, phân tích kết quả pilot v0 của P00, tổng hợp 7 phiên chính thức S01–S07, tính toán điểm SUS trung bình 58.93/100, phân nhóm 5 vấn đề Usability (U01–U05) xếp theo mức độ nghiêm trọng và xuất bộ hồ sơ PDF/Excel đồng bộ.
-- Tài liệu: [Bộ Task 2](usability/README.md), [dữ liệu gốc](usability/data/simulation.json), [phân tích](usability/analysis.md).
+- Show the corrected artifact with the change highlighted.
 
-## Agent Skill — xây dựng và thực thi demo
+- Sample rows are in italic — replace them before submission.
 
-- Ngày: 11/11/2026; video bắt đầu 14:38:25 UTC (21:38:25 Asia/Ho_Chi_Minh); timestamp từng phép đo trong JSON.
-- Prompt sinh viên: “làm tiếp phần agent skill giúp tôi”. Khi được hỏi về tài khoản YouTube, sinh viên chọn “Tôi tự tải lên và gửi link”.
-- Công cụ: OpenAI Codex; skill-creator, Playwright CLI, skill mới gui-usability-evaluator; Python stdlib, gh CLI; FFmpeg đi kèm Playwright để kiểm tra/giải mã video; plugin-management để tìm kết nối YouTube.
-- Output AI: skill với metadata và tài liệu tham chiếu, hai helper kiểm tra/tổng hợp dữ liệu, adapter Login và chú thích video, báo cáo và nội dung tải YouTube. Skill được cài vào ~/.codex/skills và dùng trong chính phiên này.
-- Thực thi: backend bản sao riêng trên cổng 3000; frontend 5173; Chrome có cửa sổ. Chạy đủ 16 tiêu chí Login, 6 Passed/10 Failed, 10 ảnh thật. Đối chiếu hash SQLite gốc không đổi. Không sửa source SUT, không đăng issue trùng.
-- Video: bản ghi trình duyệt gốc 123,32 giây, VP9/WebM 1366×900/25 fps, không lời thoại. Thẻ giải thích và dải chú thích là nội dung do AI tạo, có nhãn riêng; phần giao diện và thao tác SUT được quay thật. Ảnh lỗi chụp sau phép đo và sau khi thêm dải metadata, không sửa nội dung form.
-- Phân tích usability: chạy helper mới trên bộ mô phỏng Task 2, không tạo thêm phản hồi hoặc người tham gia. SUS 58,93; 4 tự hoàn thành, 2 hỗ trợ, 1 chưa hoàn thành; pilot không nằm trong mẫu.
-- Kiểm tra: quick_validate của skill-creator; 11 nhóm điều kiện kiểm chứng helper, bao gồm SUS 0/50/100, dữ liệu thiếu, lẫn nguồn, pilot lẫn mẫu, ID trùng và thiếu ảnh Failed; kiểm tra video giải mã được, xem khung hình thao tác và metadata.
-- Điều chỉnh trong phiên: wrapper Playwright không có quyền chạy trực tiếp nên gọi qua bash; helper được sửa để chấp nhận pilot=null. Không có lần chạy GUI lỗi bị ghi thành lỗi ứng dụng.
-- Giới hạn: video quay workflow GUI và kết quả phân tích dữ liệu mô phỏng, không quay một phiên usability với người thật. YouTube Studio yêu cầu đăng nhập; sinh viên chọn tự upload. Chưa có URL và chưa xuất bản lên YouTube. Sinh viên chưa xác nhận duyệt riêng phần Agent Skill mới này.
-- Bằng chứng: [skill và README](agent_skills/README.md), [JSON thực thi](agent_skills/demo/results.json), [video và metadata](agent_skills/demo/recording.json), [helper verification](agent_skills/demo/helper_verification.json).
+- Kharbach, M. (2026). AI Use Policy Templates for Higher Education. CC BY-NC-SA 4.0.
 
-- Tính tái lập: sau khi chạy helper, phát hiện `usability/data/simulation.json` và `usability/sus_scoring.py` được thay đổi từ bên ngoài. Giữ nguyên các thay đổi đó ở working tree, không đưa vào commit này. Demo lưu bản nguồn mô phỏng tại `agent_skills/demo/usability_input.json` từ commit `31df3d9`, đúng dữ liệu đã dùng khi ghi video; kiểm chứng chạy lại trên bản này.
+- ISTQB Foundation Level Syllabus (latest version).
+
+- Hardman, P. (2025). A Post-AI Learning Taxonomy.
+
+- Fuster Rabella, M. (2025). OECD Education Working Paper No. 338.
+
+- Perkins, M., Roe, J., & Furze, L. (2025). AI Assessment Scale.
+
+- Anthropic (2025). Building reliable AI test agents — engineering blog.
+
+- DeepEval & Promptfoo documentation — testing frameworks for LLM systems.
+
+I use AI tools for the following tasks. Bản này đánh giá 10 artifact cụ thể, không tuyên bố bao phủ mọi lần tương tác AI trong toàn bộ lịch sử.
+
+Prompt được giữ nguyên văn; cột AI Output trích nguyên văn từ file đầu ra và dẫn đến bản đầy đủ. Nguồn được chốt bằng SHA-256 trong report/ai_audit_data.json. Trích đoạn được ghi rõ, không giả là toàn bộ phản hồi chat.
+
+Verdict đánh giá phiên bản artifact được dẫn ở cột (2), không phải Passed/Failed của SUT hoặc điểm tự chấm. VALID: bản dẫn có thể dùng nguyên trạng trong phạm vi nêu; INCOMPLETE: còn thiếu bằng chứng hoặc cần sửa; INVALID: sai và bị loại.
+
+Cột Student Fix ghi rõ AI đã sửa gì và sinh viên đã xác nhận gì; chữ đậm/tô vàng là thay đổi hoặc hành động cần chú ý. Duyệt Task 1 ngày 10/11 không tự động áp dụng cho các phần tạo sau. Bảng audit mới cần sinh viên rà soát.
+
+A05 là snapshot mô phỏng; A06 là bản dữ liệu đổi nhãn thành thực tế trong commit khác và chưa được xác minh ở đây. Không cộng hai nguồn thành một mẫu người tham gia.
+
+## 3. Audit Table — one row per artifact
+
+| (1) Prompt + Tool | (2) AI Output | (3) Verdict | (4) Reasoning (ISTQB) | (5) Student Fix |
+|---|---|---|---|---|
+| A01 — Checklist GUI đã rà soát<br>Tool: OpenAI Codex<br>Time: 10/11/2026 03:57:03 UTC<br>Prompt (nguyên văn): ok chỉnh giúp tôi sao đó chạy và ghi nhận lỗi để hoàn thành task 1 giúp tôi | Trích nguyên văn file đầu ra:<br>"expected": "Tiêu đề trang mô tả đúng chức năng Đăng nhập"<br>Bản đầy đủ: [A01 · source](checklist/task1_design.json) | VALID | ISTQB CTFL v4.0.1 §1.4.4: truy vết tiêu chí đến đặc tả. Bản được đánh giá là checklist 58 mục đã sửa, không phải bản nháp 70 mục. | Vòng trước: AI tách tiêu chí gộp và bỏ yêu cầu ngoài spec; sinh viên duyệt Task 1 theo human_review.json. Bản hiện tại giữ nguồn AI.<br>**58 mục; phân biệt vi phạm đặc tả và đề xuất UX.** |
+| A02 — Kết quả thực thi Task 1<br>Tool: OpenAI Codex<br>Time: 10/11/2026; từng phép đo có UTC trong JSON<br>Prompt (nguyên văn): ok chỉnh giúp tôi sao đó chạy và ghi nhận lỗi để hoàn thành task 1 giúp tôi | Trích nguyên văn file đầu ra:<br>"checklist_items": 58,<br>  "passed": 30,<br>  "failed": 28,<br>Bản đầy đủ: [A02 · source](task1/evidence/verification.json) | VALID | ISTQB §1.4.1: so sánh mong đợi với thực tế và ghi kết quả. JSON kiểm chứng khớp 58 mục và 28 ảnh; không suy kết quả từ source. | AI sửa lỗi Tab trước render và selector Admin trước khi chốt lượt chạy; sinh viên đã duyệt Task 1.<br>**Lỗi automation không được tính là bug SUT.** |
+| A03 — Bug report và GitHub Issue<br>Tool: OpenAI Codex<br>Time: 10/11/2026; kiểm chứng xuất bản 04:19:51 UTC<br>Prompt (nguyên văn): một dùng gh cli để tạo repo luôn giúp tôi đặt tên hợp lí là được MSSV tôi 23120202 email 23120202@student.hcmus.edu.vn | Trích nguyên văn file đầu ra:<br>- Mong đợi: Mật khẩu dùng type=password<br>- Thực tế: type mật khẩu: text; nhập dữ liệu thử DemoOnly123!<br>Bản đầy đủ: [A03 · source](bugs/BUG-005.md) | VALID | ISTQB §5.5: báo lỗi có bước tái hiện, mong đợi, thực tế và bằng chứng. BUG-005 liên kết GUI-006 và GitHub Issue #5. | Không sửa SUT. AI gom 28 mục Failed thành 23 phát hiện để tránh trùng; sinh viên đã duyệt Task 1.<br>**23 Issues có liên kết ảnh; giữ nguyên mức độ và cơ sở FR-22.** |
+| A04 — Báo cáo kiểm thử ba nền tảng<br>Tool: OpenAI Codex<br>Time: 10/11/2026; kiểm chứng 05:31:00 UTC<br>Prompt (nguyên văn): Tiếp theo bạn làm task 3 giúp tôi đi | Trích nguyên văn file đầu ra:<br>"completed_platforms": 3,<br>  "required_platforms": 3,<br>  "checks_executed": 174,<br>Bản đầy đủ: [A04 · source](cross_platform/evidence/verification.json) | VALID | ISTQB §5.3.2: báo cáo phạm vi, kết quả và giới hạn. Đối chiếu metadata ba lượt và 84 ảnh; đánh giá này không xác nhận tương thích mọi thiết bị. | AI sửa thao tác chạm/bàn phím và chụp ảnh Android; chỉ tính lượt hoàn tất. Bản ba nền tảng đạt kiểm chứng kỹ thuật; chưa tự gán sinh viên duyệt mới.<br>**Chrome + Firefox trên Ubuntu; Chrome trên Galaxy S23 / Android 13.** |
+| A05 — Dataset usability mô phỏng<br>Tool: OpenAI Codex<br>Time: 11/11/2026; thời gian sinh dữ liệu 10:41:25 UTC<br>Prompt (nguyên văn): Ghi nhận bạn tự làm luôn kết quả bạn làm giúp tôi luôn thầy kêu ko cần làm người thật chỉ cần làm giống thật là được<br>Sau trao đổi về nhãn mô phỏng, sinh viên đồng ý: “Ok làm giúp tôi”. | Trích nguyên văn file đầu ra:<br>"data_kind": "simulated",<br>  "title": "Kết quả mô phỏng phục vụ bài tập",<br>Bản đầy đủ: [A05 · source](agent_skills/demo/usability_input.json) | INCOMPLETE | ISTQB §5.3.2: nêu giới hạn bằng chứng. HW03 §6/§11 yêu cầu người thật; dữ liệu giả định không chứng minh đã thực hiện các phiên đó. | Giữ nhãn mô phỏng, loại pilot khỏi mẫu và không bịa consent. Sinh viên nói giảng viên cho phép mô phỏng; chưa có xác nhận độc lập trong hồ sơ này.<br>**0 phiên thực tế trong snapshot mô phỏng; SUS chỉ minh họa cách tính.** |
+| A06 — Nguồn dữ liệu Task 2 sau chỉnh sửa<br>Tool: OpenAI Codex<br>Time: Commit 9068d05 ngày 11/11/2026; chưa có log prompt gốc trong phiên này<br>Prompt (nguyên văn): [THIẾU PROMPT NGUYÊN VĂN]<br>THIẾU: không dựng lại prompt hoặc thời gian phỏng vấn từ mô tả trong báo cáo cũ. | Trích nguyên văn file đầu ra:<br>"data_kind": "real_evaluation",<br>Bản đầy đủ: [A06 · source](usability/data/simulation.json) | INCOMPLETE | ISTQB §5.4: quản lý phiên bản testware. So với A05, nhãn nguồn và thông tin phiên đã đổi; thay nhãn không tự chứng minh việc thu thập dữ liệu. HW03 §11 yêu cầu tính xác thực. | Chưa sửa các phiên Task 2 trong lượt định dạng này. Cần bổ sung prompt gốc và căn cứ thu thập để xác minh tuyên bố người thật; audit này không chứng nhận các phiên.<br>**Tách snapshot mô phỏng A05 khỏi bản tự khai là thực tế A06.** |
+| A07 — Agent Skill và helper phân tích<br>Tool: OpenAI Codex<br>Time: 11/11/2026; kiểm chứng kèm bản demo<br>Prompt (nguyên văn): làm tiếp phần agent skill giúp tôi | Trích nguyên văn file đầu ra:<br>"status": "passed",<br>Bản đầy đủ: [A07 · source](agent_skills/demo/helper_verification.json) | VALID | ISTQB §6.2: công cụ cần kiểm chứng. 11 nhóm kiểm tra helper đã đạt; không đồng nghĩa mọi ứng dụng đều được kiểm thử đầy đủ. | AI sửa xử lý pilot=null trước khi chốt; helper phân biệt missing, Blocked và dữ liệu mô phỏng. Chưa có xác nhận duyệt mới của sinh viên.<br>**11 nhóm kiểm chứng; không trộn nguồn real/simulated.** |
+| A08 — Video demo chỉ quay trình duyệt<br>Tool: OpenAI Codex<br>Time: 11/11/2026; video bắt đầu 14:38:25 UTC<br>Prompt (nguyên văn): làm tiếp phần agent skill giúp tôi | Trích nguyên văn file đầu ra:<br>"duration_seconds": 123.32,<br>Bản đầy đủ: [A08 · source](agent_skills/demo/recording.json) | INCOMPLETE | ISTQB §5.3.2: không báo hoàn thành vượt bằng chứng. HW03 §7 yêu cầu demo end-to-end; video chưa cho thấy gọi skill trong chat và agent tạo script. | Sinh viên chỉ ra thiếu sót; AI sửa kịch bản quay, giữ video cũ làm bằng chứng bổ sung. Chưa có bản quay mới hoặc URL YouTube được cung cấp.<br>**Quay: chat gọi skill → tạo/điều chỉnh script → chạy thật → báo cáo.** |
+| A09 — Kịch bản quay đã sửa theo phản hồi<br>Tool: OpenAI Codex<br>Time: 15/11/2026; theo ngày phiên trao đổi, không có timestamp chi tiết<br>Prompt (nguyên văn): ở phần script bạn phải trình bày skill này làm giúp tôi rồi sau đó mới bắt đầu vào skill chỉnh lại giúp tôi | Trích nguyên văn file đầu ra:<br>Dùng $gui-usability-evaluator kiểm thử toàn bộ màn hình Đăng nhập của EShop trong dự án này và báo cáo kết quả.<br>Bản đầy đủ: [A09 · source](report/ai_audit_evidence/recording_script_excerpt.md) | INCOMPLETE | ISTQB §1.4.4: truy vết artifact đến yêu cầu. Trích đoạn dùng một prompt ngắn đúng yêu cầu; file đầy đủ không còn trong workspace lúc xuất báo cáo nên chưa đủ căn cứ bàn giao. | AI đã thêm phần giới thiệu và bỏ prompt lặp lại quy trình. File bị xóa ngoài thao tác định dạng này; giữ trích đoạn đã đọc để đối chiếu, không tự phục hồi file hoặc coi là video đã quay.<br>**Cần bản kịch bản đầy đủ; hiện chỉ có trích đoạn lưu trong audit.** |
+| A10 — AI Critique đã duyệt<br>Tool: OpenAI Codex<br>Time: 10/11/2026; duyệt 04:23:06 UTC<br>Prompt (nguyên văn): ok chỉnh giúp tôi sao đó chạy và ghi nhận lỗi để hoàn thành task 1 giúp tôi<br>Yêu cầu chung hoàn thiện Task 1; không có prompt riêng chỉ yêu cầu viết critique trong log đã lưu. | Trích nguyên văn file đầu ra:<br>Bài học là phải kiểm tra cả tiêu chí lẫn cách thu bằng chứng.<br>Bản đầy đủ: [A10 · source](ai_critique.md) | VALID | ISTQB §3.2.2: review để phát hiện vấn đề của work product. Bài critique chỉ ra yêu cầu ngoài spec, tiêu chí gộp và lỗi automation. | Sinh viên xác nhận duyệt bằng câu “tôi duyệt rồi bạn chỉnh lại là tôi đã duyệt giúp tôi đi”. Nội dung do AI hỗ trợ soạn, không gán là sinh viên tự viết toàn bộ.<br>**Giữ phê bình cụ thể và giới hạn bằng chứng.** |
+
+## 4. Summary of AI Accuracy
+
+| Metric | Count | Percentage |
+|---|---:|---:|
+| Total AI-generated artifacts audited | 10 | 100% |
+| VALID | 6 | 60% |
+| INVALID | 0 | 0% |
+| INCOMPLETE | 4 | 40% |
+
+Tỷ lệ chỉ phản ánh 10 artifact được chọn và đối chiếu, không phải độ chính xác chung của mô hình hay điểm của bài.
+
+## 5. Conclusion — When should AI be used (or not)?
+
+AI hữu ích khi đối chiếu checklist, tạo script và tổng hợp bằng chứng. Kết quả đáng tin hơn khi gắn với tiêu chí, môi trường và ảnh thực thi. Tuy nhiên, AI từng suy diễn yêu cầu ngoài đặc tả và đánh giá video demo hoàn thành quá sớm. Dữ liệu mô phỏng chỉ phù hợp minh họa phân tích, không chứng minh đã phỏng vấn người thật. Vì vậy, nên dùng AI cho công việc lặp lại và hỗ trợ rà soát; người làm bài cần kiểm tra nguồn dữ liệu, kết quả và giới hạn trước khi nộp. Những chỗ thiếu prompt, bằng chứng hoặc xác nhận phải được ghi rõ. Không nên dùng lời khẳng định của AI thay cho quan sát hay phê duyệt của sinh viên.
+
+Kết luận: 132 từ theo khoảng trắng; không thay thế [AI Critique](ai_critique.md).
+
+## 6. Mandatory Disclosure (paste verbatim)
+
+Nguyên văn mẫu, chưa phải cam kết đã ký. Sinh viên cần hoàn thiện và xác nhận, đặc biệt nguồn dữ liệu A05/A06 và phần written entirely by me.
+
+"[Test cases / script / dataset / report] was initially generated by [AI tool name]; I reviewed and modified [section X], added [edge cases Y, Z]; [section W] was written entirely by me. The detailed AI Audit Report is attached as Appendix A. I confirm I did not use AI to generate any artifact listed in the prohibited category."
+
+## Signature
+
+| Field | Value |
+|---|---|
+| Student name (printed): | Phạm Quang Vinh |
+| Student ID: | 23120202 |
+| Class / Cohort: | [Chưa cung cấp — sinh viên điền] |
+| Course: | CS423 / CSC13003 – Software Testing |
+| Instructor: | [Chưa cung cấp — sinh viên điền] |
+| Date: | [Sinh viên điền ngày ký] |
+| Signature: | [Sinh viên tự ký — chưa ký] |
+
+## References
+
+- [Template do sinh viên cung cấp — FIT/HCMUS AI POLICY · TEMPLATES — 2026 v1.0](https://docs.google.com/document/d/1cCTeZHDd2eP_laBd4fr1oQEa7B-kfl-b/edit)
+
+- [ISTQB CTFL Syllabus v4.0.1 — §§1.4.1, 1.4.4, 3.2.2, 5.3.2, 5.4, 5.5, 6.2](https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf)
+
+- HW03 — §§6, 7, 9, 11, 14 (bản đề trong workspace)
+
+- Kharbach, M. (2026). AI Use Policy Templates for Higher Education. CC BY-NC-SA 4.0 — ghi công theo template được cung cấp; không xác minh riêng ấn phẩm gốc.
+
+## Evidence index — supporting material
+
+| ID | Full output | SHA-256 |
+|---|---|---|
+| A01 | [checklist/task1_design.json](checklist/task1_design.json) | `419cda0d019b0bf1b8433630f4526710de553808d690ff03c281e1bc407fbff0` |
+| A02 | [task1/evidence/verification.json](task1/evidence/verification.json) | `549576b9fe159328f1cb37effe0370bcf3d5592a1bb99ad4c89e4473bb87ef28` |
+| A03 | [bugs/BUG-005.md](bugs/BUG-005.md) | `20f336ff0d2f1db25aa8966fcba82be1091e359952dda1c85b76522ee9cbe364` |
+| A04 | [cross_platform/evidence/verification.json](cross_platform/evidence/verification.json) | `9b0f05360b763e7d953618917fc166df06e31fa4e8d9f859350f4911f57122ac` |
+| A05 | [agent_skills/demo/usability_input.json](agent_skills/demo/usability_input.json) | `45e4b17a39a4c39f4a4ba24938a694240a63f234b61fd236b5ab72da879aba01` |
+| A06 | [usability/data/simulation.json](usability/data/simulation.json) | `5e9ee94fafb3526689d9fff72212f7e3264353d6fe8e4798997fb33d1f841244` |
+| A07 | [agent_skills/demo/helper_verification.json](agent_skills/demo/helper_verification.json) | `fc1452e5261c30a02987f3018504dcc1b11d2bb7125e28aebed076260ceb3508` |
+| A08 | [agent_skills/demo/recording.json](agent_skills/demo/recording.json) | `139ac2e0d53f845468ec2af3e9e4f17a599820dace9d0ce16bfdbd48246f4373` |
+| A09 | [report/ai_audit_evidence/recording_script_excerpt.md](report/ai_audit_evidence/recording_script_excerpt.md) | `7cc3ccddc375b021cf368734d902a320885cee07be4991b3acc9720c69b17081` |
+| A10 | [ai_critique.md](ai_critique.md) | `275eda1d34c73434b064e3bbf94a3cfa7ba0d85b7b8272e7dc9ee65df3632e5a` |
+
+Log hội thoại: [Task 1](task1/evidence/ai_conversation.md). Xác nhận duyệt: [human_review.json](task1/evidence/human_review.json). Các prompt sau Task 1 được chép nguyên văn từ hội thoại hiện có; không khẳng định đã xuất đầy đủ log mọi phiên.
+
+Phiên định dạng hiện tại: OpenAI Codex, 15/11/2026. Prompt nguyên văn: “đây là template chỉnh lại cho giống giúp tôi”, kèm link template ở References. Đầu ra: Markdown, Word, PDF theo mẫu; chưa được sinh viên xác nhận duyệt mới.
+
+Dựng lại: `python report/build_ai_audit.py --pdf` (cần python-docx và LibreOffice). Nguồn dữ liệu: [ai_audit_data.json](report/ai_audit_data.json).

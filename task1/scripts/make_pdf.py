@@ -17,6 +17,9 @@ def inline(s):
  return s
 jobs=[]
 for name in (sys.argv[1:] or ['report/main_report','ai_audit_report','ai_critique','cross_platform/README']):
+ if name=='ai_audit_report' and (R/'report/build_ai_audit.py').exists():
+  print('AI Audit uses the supplied Word template; rebuild with python report/build_ai_audit.py --pdf. Keeping its existing PDF.')
+  continue
  lines=(R/(name+'.md')).read_text().splitlines();parts=[];table=False
  for line in lines:
   if line.startswith('|'):

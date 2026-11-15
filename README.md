@@ -13,7 +13,7 @@ Repository: [vinh-code/HW03-Software-Testing](https://github.com/vinh-code/HW03-
 - [Task 3: Báo cáo và ảnh](cross_platform/README.md) / [PDF](cross_platform/README.pdf)
 - [Agent Skill và demo](agent_skills/README.md) / [Video](agent_skills/demo/agent-skill-demo.webm)
 - [Dữ liệu thực thi](task1/evidence/results.json) / [Cách chạy lại](task1/README.md)
-- [AI Audit](ai_audit_report.md) / [AI Critique — đã duyệt](ai_critique.md)
+- [AI Audit](ai_audit_report.md) / [Word theo template](ai_audit_report.docx) / [PDF](ai_audit_report.pdf) / [AI Critique — đã duyệt](ai_critique.md)
 - [Git commit log](git_commit_log.txt)
 
 ## Test summary

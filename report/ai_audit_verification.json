@@ -1,0 +1,15 @@
+{
+  "template_structure": "matched; six numbered sections, signature, references and four tables",
+  "audit_rows": 10,
+  "verdicts": {
+    "VALID": 6,
+    "INVALID": 0,
+    "INCOMPLETE": 4
+  },
+  "conclusion_words": 132,
+  "pdf_pages": 8,
+  "pdf_horizontal_overflow": false,
+  "verbatim_output_excerpts": "matched all source files",
+  "student_signature": "not filled",
+  "original_template_sha256": "23f9a590dbbb702be85ca286a53a496ac43f43b3989e581771e52a9d85c645a6"
+}
