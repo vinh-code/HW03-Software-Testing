@@ -16,7 +16,7 @@ def inline(s):
  s=re.sub(r'`([^`]+)`',r'<code>\1</code>',s)
  return s
 jobs=[]
-for name in (sys.argv[1:] or ['report/main_report','ai_audit_report','ai_critique','cross_platform/README']):
+for name in (sys.argv[1:] or ['report/main_report','ai_audit_report','ai_critique','task3_cross_platform/README']):
  if name=='ai_audit_report' and (R/'report/build_ai_audit.py').exists():
   print('AI Audit uses the supplied Word template; rebuild with python report/build_ai_audit.py --pdf. Keeping its existing PDF.')
   continue
@@ -34,6 +34,6 @@ for name in (sys.argv[1:] or ['report/main_report','ai_audit_report','ai_critiqu
  if table:parts.append('</table>')
  doc='<!doctype html><html lang="vi"><meta charset="utf-8"><title>'+html.escape(lines[0].lstrip('# '))+'</title><style>body{font:11px Arial,sans-serif;color:#172334;line-height:1.5;overflow-wrap:anywhere}h1{font-size:23px;break-before:page}h1:first-child{break-before:auto}h2{font-size:16px;border-bottom:1px solid #ddd;margin-top:22px}h3{font-size:13px}table{border-collapse:collapse;width:100%;font-size:10px}td{border:1px solid #ccc;padding:5px;vertical-align:top}tr:first-child{font-weight:bold;background:#edf2f7}tr{break-inside:avoid}p{margin:6px 0}a{color:#155a8a}code{overflow-wrap:anywhere}</style><body>'+''.join(parts)+'</body></html>'
  (OUT/(Path(name).name+'.html')).write_text(doc)
- jobs.append({'html':doc,'pdf':str(R/(name+'.pdf')),'label':'HW03 — Usability Evaluation — 23120202' if name.startswith('usability/') else 'HW03 — 23120202 — Phạm Quang Vinh'})
+ jobs.append({'html':doc,'pdf':str(R/(name+'.pdf')),'label':'HW03 — Usability Evaluation — 23120202' if name.startswith('task2_usability/') else 'HW03 — 23120202 — Phạm Quang Vinh'})
 code='async (page) => {\nconst jobs='+json.dumps(jobs,ensure_ascii=False)+';\nfor (const job of jobs) {await page.setContent(job.html);await page.pdf({path:job.pdf,format:"A4",printBackground:true,displayHeaderFooter:true,headerTemplate:`<div style="font:8px Arial;width:100%;text-align:center">${job.label}</div>`,footerTemplate:`<div style="font:8px Arial;width:100%;text-align:center">23120202 · <span class="pageNumber"></span> / <span class="totalPages"></span></div>`,margin:{top:"18mm",bottom:"18mm",left:"16mm",right:"16mm"}});}\nreturn jobs.map(j=>j.pdf);\n}'
 (OUT/'pdf.run.js').write_text(code)

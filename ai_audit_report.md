@@ -135,14 +135,14 @@ The GUI checklist, automation test scripts, and initial reporting templates were
 
 | ID | Full output | SHA-256 |
 |---|---|---|
-| A01 | [checklist/task1_design.json](checklist/task1_design.json) | `419cda0d019b0bf1b8433630f4526710de553808d690ff03c281e1bc407fbff0` |
-| A02 | [task1/evidence/verification.json](task1/evidence/verification.json) | `549576b9fe159328f1cb37effe0370bcf3d5592a1bb99ad4c89e4473bb87ef28` |
-| A03 | [bugs/BUG-005.md](bugs/BUG-005.md) | `20f336ff0d2f1db25aa8966fcba82be1091e359952dda1c85b76522ee9cbe364` |
-| A04 | [cross_platform/evidence/verification.json](cross_platform/evidence/verification.json) | `9b0f05360b763e7d953618917fc166df06e31fa4e8d9f859350f4911f57122ac` |
-| A05 | [agent_skills/demo/usability_input.json](agent_skills/demo/usability_input.json) | `45e4b17a39a4c39f4a4ba24938a694240a63f234b61fd236b5ab72da879aba01` |
-| A06 | [usability/data/simulation.json](usability/data/simulation.json) | `5e9ee94fafb3526689d9fff72212f7e3264353d6fe8e4798997fb33d1f841244` |
-| A07 | [agent_skills/demo/helper_verification.json](agent_skills/demo/helper_verification.json) | `fc1452e5261c30a02987f3018504dcc1b11d2bb7125e28aebed076260ceb3508` |
-| A08 | [agent_skills/demo/recording.json](agent_skills/demo/recording.json) | `5500df4a7be15fb957d10d16ce1a24a4750c4b32a8e0843748e225ef8397629e` |
+| A01 | [task1_gui/checklist/task1_design.json](task1_gui/checklist/task1_design.json) | `419cda0d019b0bf1b8433630f4526710de553808d690ff03c281e1bc407fbff0` |
+| A02 | [task1_gui/evidence/verification.json](task1_gui/evidence/verification.json) | `549576b9fe159328f1cb37effe0370bcf3d5592a1bb99ad4c89e4473bb87ef28` |
+| A03 | [task1_gui/bugs/BUG-005.md](task1_gui/bugs/BUG-005.md) | `20f336ff0d2f1db25aa8966fcba82be1091e359952dda1c85b76522ee9cbe364` |
+| A04 | [task3_cross_platform/evidence/verification.json](task3_cross_platform/evidence/verification.json) | `9b0f05360b763e7d953618917fc166df06e31fa4e8d9f859350f4911f57122ac` |
+| A05 | [task4_agent_skills/demo/usability_input.json](task4_agent_skills/demo/usability_input.json) | `45e4b17a39a4c39f4a4ba24938a694240a63f234b61fd236b5ab72da879aba01` |
+| A06 | [task2_usability/data/simulation.json](task2_usability/data/simulation.json) | `5e9ee94fafb3526689d9fff72212f7e3264353d6fe8e4798997fb33d1f841244` |
+| A07 | [task4_agent_skills/demo/helper_verification.json](task4_agent_skills/demo/helper_verification.json) | `fc1452e5261c30a02987f3018504dcc1b11d2bb7125e28aebed076260ceb3508` |
+| A08 | [task4_agent_skills/demo/recording.json](task4_agent_skills/demo/recording.json) | `5500df4a7be15fb957d10d16ce1a24a4750c4b32a8e0843748e225ef8397629e` |
 | A09 | [report/ai_audit_evidence/recording_script_excerpt.md](report/ai_audit_evidence/recording_script_excerpt.md) | `7cc3ccddc375b021cf368734d902a320885cee07be4991b3acc9720c69b17081` |
 | A10 | [ai_critique.md](ai_critique.md) | `275eda1d34c73434b064e3bbf94a3cfa7ba0d85b7b8272e7dc9ee65df3632e5a` |
 

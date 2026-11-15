@@ -10,10 +10,10 @@ Mở [báo cáo tổng hợp PDF](report/main_report.pdf) trước, sau đó xem
 
 | Thứ tự | Nội dung chấm | Tài liệu chính | Bằng chứng chi tiết |
 |---|---|---|---|
-| 1 | Task 1 — GUI (30 điểm) | [Checklist Excel: 58 mục](checklist/GUI_Checklist.xlsx) | [23 bug report](bugs/README.md), `bugs/screenshots/`, `task1/evidence/` |
-| 2 | Task 2 — Usability (40 điểm) | [Báo cáo tổng hợp](usability/Task2_Usability_Report.pdf) / [Excel SUS](usability/Task2_Usability_Data.xlsx) | [Danh sách người tham gia](usability/05_participants.md), `usability/sessions/` — 1 pilot + 7 phiên |
-| 3 | Task 3 — Cross-platform (20 điểm) | [Báo cáo](cross_platform/README.pdf) | `cross_platform/screenshots/` — 84 ảnh trên 3 nền tảng |
-| 4 | Agent Skill (10 điểm) | [Hướng dẫn và skill](agent_skills/README.md) / [Video YouTube](https://youtu.be/Y1BYcoC3PGg) | `agent_skills/demo/` — script, kết quả và 10 ảnh |
+| 1 | Task 1 — GUI (30 điểm) | [Checklist Excel: 58 mục](task1_gui/checklist/GUI_Checklist.xlsx) | [23 bug report](task1_gui/bugs/README.md), `task1_gui/bugs/screenshots/`, `task1_gui/evidence/` |
+| 2 | Task 2 — Usability (40 điểm) | [Báo cáo tổng hợp](task2_usability/Task2_Usability_Report.pdf) / [Excel SUS](task2_usability/Task2_Usability_Data.xlsx) | [Danh sách người tham gia](task2_usability/05_participants.md), `task2_usability/sessions/` — 1 pilot + 7 phiên |
+| 3 | Task 3 — Cross-platform (20 điểm) | [Báo cáo](task3_cross_platform/README.pdf) | `task3_cross_platform/screenshots/` — 84 ảnh trên 3 nền tảng |
+| 4 | Agent Skill (10 điểm) | [Hướng dẫn và skill](task4_agent_skills/README.md) / [Video YouTube](https://youtu.be/Y1BYcoC3PGg) | `task4_agent_skills/demo/` — script, kết quả và 10 ảnh |
 | 5 | AI Audit và AI Critique | [Audit PDF](ai_audit_report.pdf) / [Critique PDF](ai_critique.pdf) | Bản Markdown cùng tên; Word theo template và `report/ai_audit_evidence/` |
 | 6 | Lịch sử thực hiện | [Git commit log](git_commit_log.txt) | [Repository](https://github.com/vinh-code/HW03-Software-Testing) |
 
@@ -21,26 +21,41 @@ Mở [báo cáo tổng hợp PDF](report/main_report.pdf) trước, sau đó xem
 
 ```text
 23120202_HW03_AI_GUIUsability_100/
-├── README.md                        ← đọc trước: chỉ dẫn, kết quả, tự chấm
-├── report/
-│   ├── main_report.md / .pdf         ← báo cáo tổng hợp
-│   ├── course_information.md        ← thông tin học phần
-│   └── ai_audit_evidence/           ← nguồn đối chiếu AI Audit
-├── checklist/                       ← Task 1: Excel và Markdown, thiết kế
-├── bugs/                            ← Task 1: 23 bug report và ảnh
-├── task1/                           ← Task 1: log, kết quả, script chạy lại
-├── usability/                       ← Task 2
-│   ├── Task2_Usability_Report.md / .pdf
-│   ├── Task2_Usability_Data.xlsx
-│   ├── 05_participants.md           ← danh sách 1 pilot + 7 người
-│   ├── sessions/                    ← biên bản 8 phiên
-│   ├── analysis.md                  ← phân tích và mức độ nghiêm trọng
-│   └── data/                        ← dữ liệu và thống kê
-├── cross_platform/                  ← Task 3: báo cáo, kết quả, ảnh
-├── agent_skills/                    ← skill, hướng dẫn và bằng chứng demo
-├── ai_audit_report.md / .pdf / .docx
-├── ai_critique.md / .pdf
-└── git_commit_log.txt
+├── README.md                              ← đọc trước: chỉ dẫn, bảng tra cứu, tự chấm
+├── ai_audit_report.md / .pdf / .docx      ← Báo cáo kiểm toán AI (10/10 VALID)
+├── ai_critique.md / .pdf                  ← Bản phản biện AI (296 từ)
+├── git_commit_log.txt                     ← Toàn bộ lịch sử commit Git
+│
+├── task1_gui/                             ← Task 1: GUI Checklist & Automation (30đ)
+│   ├── checklist/                         ← GUI Checklist (Excel & Markdown 58 mục)
+│   ├── bugs/                              ← 23 bug reports & screenshots
+│   ├── evidence/                          ← Log & kết quả 30 Passed / 28 Failed
+│   ├── scripts/                           ← Script Playwright tự động hóa
+│   └── README.md
+│
+├── task2_usability/                       ← Task 2: Usability Evaluation (40đ)
+│   ├── Task2_Usability_Report.md / .pdf   ← Báo cáo đánh giá Usability hoàn chỉnh
+│   ├── Task2_Usability_Data.xlsx          ← Số liệu SUS & ma trận tổng hợp
+│   ├── 05_participants.md                 ← Danh sách 8 người tham gia (1 pilot + 7 chính thức)
+│   ├── sessions/                          ← Biên bản chi tiết 8 phiên thử nghiệm
+│   ├── analysis.md                        ← Phân tích định tính / định lượng
+│   └── README.md
+│
+├── task3_cross_platform/                  ← Task 3: Cross-Platform Testing (20đ)
+│   ├── README.pdf / README.md             ← Báo cáo kiểm thử đa nền tảng
+│   ├── screenshots/                       ← 84 ảnh minh chứng (Chrome, Firefox, Galaxy S23)
+│   ├── evidence/                          ← Log & dữ liệu thực thi BrowserStack
+│   └── scripts/
+│
+├── task4_agent_skills/                    ← Task 4: Agent Skills & Demo Video (10đ)
+│   ├── README.md                          ← Hướng dẫn sử dụng & link YouTube demo
+│   ├── gui-usability-evaluator/           ← Mã nguồn Agent Skill theo Nielsen Heuristics
+│   └── demo/                              ← Kết quả thực thi minh chứng
+│
+└── report/                                ← Báo cáo tổng kết toàn khóa
+    ├── main_report.md / .pdf              ← Báo cáo tổng hợp trọn gói
+    ├── course_information.md              ← Thông tin học phần & giảng viên
+    └── templates/                         ← Mẫu văn bản học vụ
 ```
 
 Cây trên liệt kê các phần chính để tra cứu. Các thư mục `scripts/` và file JSON/CSV là mã chạy lại và dữ liệu hỗ trợ; bản PDF dành cho đọc/chấm, Markdown dành cho đối chiếu nội dung, Excel dành cho kiểm tra số liệu.
@@ -52,12 +67,12 @@ Cây trên liệt kê các phần chính để tra cứu. Các thư mục `scrip
 Repository: [vinh-code/HW03-Software-Testing](https://github.com/vinh-code/HW03-Software-Testing) · [GitHub Issues](https://github.com/vinh-code/HW03-Software-Testing/issues)
 
 - [Báo cáo chính Markdown](report/main_report.md) / [PDF](report/main_report.pdf)
-- [Checklist Excel](checklist/GUI_Checklist.xlsx) / [Markdown](checklist/GUI_Checklist.md)
-- [23 bug/phát hiện và ảnh](bugs/README.md)
-- [Task 2: Hồ sơ Usability](usability/README.md) / [PDF](usability/Task2_Usability_Report.pdf) / [Excel](usability/Task2_Usability_Data.xlsx)
-- [Task 3: Báo cáo và ảnh](cross_platform/README.md) / [PDF](cross_platform/README.pdf)
-- [Agent Skill và demo](agent_skills/README.md) / [Video YouTube](https://youtu.be/Y1BYcoC3PGg)
-- [Dữ liệu thực thi](task1/evidence/results.json) / [Cách chạy lại](task1/README.md)
+- [Checklist Excel](task1_gui/checklist/GUI_Checklist.xlsx) / [Markdown](task1_gui/checklist/GUI_Checklist.md)
+- [23 bug/phát hiện và ảnh](task1_gui/bugs/README.md)
+- [Task 2: Hồ sơ Usability](task2_usability/README.md) / [PDF](task2_usability/Task2_Usability_Report.pdf) / [Excel](task2_usability/Task2_Usability_Data.xlsx)
+- [Task 3: Báo cáo và ảnh](task3_cross_platform/README.md) / [PDF](task3_cross_platform/README.pdf)
+- [Agent Skill và demo](task4_agent_skills/README.md) / [Video YouTube](https://youtu.be/Y1BYcoC3PGg)
+- [Dữ liệu thực thi](task1_gui/evidence/results.json) / [Cách chạy lại](task1_gui/README.md)
 - [AI Audit](ai_audit_report.md) / [Word theo template](ai_audit_report.docx) / [PDF](ai_audit_report.pdf) / [AI Critique — đã duyệt](ai_critique.md)
 - [Git commit log](git_commit_log.txt)
 

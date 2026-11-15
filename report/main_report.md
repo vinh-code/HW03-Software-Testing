@@ -10,7 +10,7 @@ Học phần: **CS423 / CSC13003 – Software Testing (AI-augmented) — Term 20
 
 Task 1 được thực thi trên Login, Profile/Hồ sơ và Lịch sử đơn, Admin Orders; navbar và Home hỗ trợ điều hướng/thêm giỏ. Hồ sơ Task 2 gồm 1 phiên Pilot và 7 phiên chính thức, do sinh viên xác nhận đã trực tiếp thực hiện và điền kết quả; Task 3 đã chạy đủ Chrome, Firefox trên Ubuntu và Chrome trên Samsung Galaxy S23 thật / Android 13 qua BrowserStack. Phạm vi màn hình/flow không trùng thành viên khác.
 
-Kết quả: **58 mục đã chạy; 30 Passed; 28 Failed; 23 bug/phát hiện**, gồm 19 vi phạm đặc tả và 4 vấn đề UX bổ sung. Có 28 ảnh thực tế cho các mục Failed. Đã đăng 23 GitHub Issues kèm ảnh tại [HW03-Software-Testing](https://github.com/vinh-code/HW03-Software-Testing/issues). Sinh viên 23120202 đã xác nhận duyệt Task 1; việc duyệt được ghi tại [human_review.json](../task1/evidence/human_review.json).
+Kết quả: **58 mục đã chạy; 30 Passed; 28 Failed; 23 bug/phát hiện**, gồm 19 vi phạm đặc tả và 4 vấn đề UX bổ sung. Có 28 ảnh thực tế cho các mục Failed. Đã đăng 23 GitHub Issues kèm ảnh tại [HW03-Software-Testing](https://github.com/vinh-code/HW03-Software-Testing/issues). Sinh viên 23120202 đã xác nhận duyệt Task 1; việc duyệt được ghi tại [human_review.json](../task1_gui/evidence/human_review.json).
 
 ## 2. Môi trường và phương pháp
 
@@ -59,7 +59,7 @@ Loại timeline, địa chỉ trong lịch sử, breadcrumb Profile và xác nh�
 | Phiên usability đã thực hiện | 8 (1 pilot + 7 chính thức) |
 | Nền tảng đã chạy trong Task 1 | 1 — Chrome headless/Linux |
 
-Chi tiết đầy đủ: [Excel](../checklist/GUI_Checklist.xlsx), [Markdown](../checklist/GUI_Checklist.md), [JSON thực thi](../task1/evidence/results.json).
+Chi tiết đầy đủ: [Excel](../task1_gui/checklist/GUI_Checklist.xlsx), [Markdown](../task1_gui/checklist/GUI_Checklist.md), [JSON thực thi](../task1_gui/evidence/results.json).
 
 ## 5. Bug report
 
@@ -95,100 +95,100 @@ Các mục Failed cùng nguyên nhân được gom để tránh báo trùng. Cá
 
 **BUG-001 — Trang đăng nhập mang tiêu đề Đăng Ký**
 
-- GUI-001: Tiêu đề thực tế: Đăng Ký. [Ảnh](../bugs/screenshots/GUI-001.png).
+- GUI-001: Tiêu đề thực tế: Đăng Ký. [Ảnh](../task1_gui/bugs/screenshots/GUI-001.png).
 
 **BUG-002 — Login và Profile thiếu h1 mô tả trang**
 
-- GUI-002: Số h1: 0. [Ảnh](../bugs/screenshots/GUI-002.png).
-- GUI-023: Số h1: 0. [Ảnh](../bugs/screenshots/GUI-023.png).
+- GUI-002: Số h1: 0. [Ảnh](../task1_gui/bugs/screenshots/GUI-002.png).
+- GUI-023: Số h1: 0. [Ảnh](../task1_gui/bugs/screenshots/GUI-023.png).
 
 **BUG-003 — Nhãn email và nút đăng nhập dùng tiếng Anh**
 
-- GUI-003: Nhãn email: Username. [Ảnh](../bugs/screenshots/GUI-003.png).
-- GUI-004: Nhãn nút: Sign In. [Ảnh](../bugs/screenshots/GUI-004.png).
+- GUI-003: Nhãn email: Username. [Ảnh](../task1_gui/bugs/screenshots/GUI-003.png).
+- GUI-004: Nhãn nút: Sign In. [Ảnh](../task1_gui/bugs/screenshots/GUI-004.png).
 
 **BUG-004 — Email dùng text và không chặn định dạng sai**
 
-- GUI-005: type email: text. [Ảnh](../bugs/screenshots/GUI-005.png).
-- GUI-010: {"valid":true,"typeMismatch":false}; form gửi tới API và hiện lỗi đăng nhập. [Ảnh](../bugs/screenshots/GUI-010.png).
+- GUI-005: type email: text. [Ảnh](../task1_gui/bugs/screenshots/GUI-005.png).
+- GUI-010: {"valid":true,"typeMismatch":false}; form gửi tới API và hiện lỗi đăng nhập. [Ảnh](../task1_gui/bugs/screenshots/GUI-010.png).
 
 **BUG-005 — Mật khẩu đăng nhập hiển thị nguyên văn**
 
-- GUI-006: type mật khẩu: text; nhập dữ liệu thử DemoOnly123!. [Ảnh](../bugs/screenshots/GUI-006.png).
+- GUI-006: type mật khẩu: text; nhập dữ liệu thử DemoOnly123!. [Ảnh](../task1_gui/bugs/screenshots/GUI-006.png).
 
 **BUG-006 — Thiếu dấu sao ở nhãn các trường bắt buộc**
 
-- GUI-007: Nhãn: Username / Mật khẩu. [Ảnh](../bugs/screenshots/GUI-007.png).
-- GUI-025: Nhãn: Họ Tên. [Ảnh](../bugs/screenshots/GUI-025.png).
+- GUI-007: Nhãn: Username / Mật khẩu. [Ảnh](../task1_gui/bugs/screenshots/GUI-007.png).
+- GUI-025: Nhãn: Họ Tên. [Ảnh](../task1_gui/bugs/screenshots/GUI-025.png).
 
 **BUG-007 — Lỗi đăng nhập nằm dưới nút gửi**
 
-- GUI-011: error.y=517, button.y=425. [Ảnh](../bugs/screenshots/GUI-011.png).
+- GUI-011: error.y=517, button.y=425. [Ảnh](../task1_gui/bugs/screenshots/GUI-011.png).
 
 **BUG-008 — Tab từ đầu trang nhảy thẳng tới Sign In**
 
-- GUI-013: {"tag":"BUTTON","text":"Sign In","tabIndex":1}. [Ảnh](../bugs/screenshots/GUI-013.png).
+- GUI-013: {"tag":"BUTTON","text":"Sign In","tabIndex":1}. [Ảnh](../task1_gui/bugs/screenshots/GUI-013.png).
 
 **BUG-009 — Validation điện thoại từ chối số hợp lệ và nhận số sai**
 
-- GUI-027: [{"type":"alert","message":"Số điện thoại không hợp lệ. Vui lòng nhập đúng 9-10 chữ số."}]. [Ảnh](../bugs/screenshots/GUI-027.png).
-- GUI-028: [{"type":"alert","message":"Cập nhật thành công!"}]. [Ảnh](../bugs/screenshots/GUI-028.png).
+- GUI-027: [{"type":"alert","message":"Số điện thoại không hợp lệ. Vui lòng nhập đúng 9-10 chữ số."}]. [Ảnh](../task1_gui/bugs/screenshots/GUI-027.png).
+- GUI-028: [{"type":"alert","message":"Cập nhật thành công!"}]. [Ảnh](../task1_gui/bugs/screenshots/GUI-028.png).
 
 **BUG-010 — User thấy nút Hủy đơn khi đơn đang giao**
 
-- GUI-030: shipping có 1 nút Hủy đơn. [Ảnh](../bugs/screenshots/GUI-030.png).
+- GUI-030: shipping có 1 nút Hủy đơn. [Ảnh](../task1_gui/bugs/screenshots/GUI-030.png).
 
 **BUG-011 — UX: đang tải đơn lại báo chưa có đơn**
 
-- GUI-036: Nội dung trong lúc API trì hoãn 1800ms: Hồ sơ của bạn; Email (Không đổi); Họ Tên; Số điện thoại; Địa chỉ giao hàng; Cập nhật; Lịch sử đơn hàng; ; Bạn chưa có đơn hàng nào.. [Ảnh](../bugs/screenshots/GUI-036.png).
+- GUI-036: Nội dung trong lúc API trì hoãn 1800ms: Hồ sơ của bạn; Email (Không đổi); Họ Tên; Số điện thoại; Địa chỉ giao hàng; Cập nhật; Lịch sử đơn hàng; ; Bạn chưa có đơn hàng nào.. [Ảnh](../task1_gui/bugs/screenshots/GUI-036.png).
 
 **BUG-012 — UX: API tải đơn lỗi 500 bị hiển thị thành danh sách trống**
 
-- GUI-037: HTTP 500 được mô phỏng tại biên mạng; UI: Hồ sơ của bạn; Email (Không đổi); Họ Tên; Số điện thoại; Địa chỉ giao hàng; Cập nhật; Lịch sử đơn hàng; ; Bạn chưa có đơn hàng nào.. [Ảnh](../bugs/screenshots/GUI-037.png).
+- GUI-037: HTTP 500 được mô phỏng tại biên mạng; UI: Hồ sơ của bạn; Email (Không đổi); Họ Tên; Số điện thoại; Địa chỉ giao hàng; Cập nhật; Lịch sử đơn hàng; ; Bạn chưa có đơn hàng nào.. [Ảnh](../task1_gui/bugs/screenshots/GUI-037.png).
 
 **BUG-013 — Empty state lịch sử đơn thiếu hình minh họa**
 
-- GUI-038: Thông điệp: Bạn chưa có đơn hàng nào.; số icon/ảnh: 0. [Ảnh](../bugs/screenshots/GUI-038.png).
+- GUI-038: Thông điệp: Bạn chưa có đơn hàng nào.; số icon/ảnh: 0. [Ảnh](../task1_gui/bugs/screenshots/GUI-038.png).
 
 **BUG-014 — Nút đăng xuất mang nhãn Thoát**
 
-- GUI-039: Nhãn: Thoát. [Ảnh](../bugs/screenshots/GUI-039.png).
+- GUI-039: Nhãn: Thoát. [Ảnh](../task1_gui/bugs/screenshots/GUI-039.png).
 
 **BUG-015 — Navbar không đổi highlight theo trang hiện tại**
 
-- GUI-040: class tại Profile=hover:underline text-yellow-300; tại Home=hover:underline text-yellow-300. [Ảnh](../bugs/screenshots/GUI-040.png).
+- GUI-040: class tại Profile=hover:underline text-yellow-300; tại Home=hover:underline text-yellow-300. [Ảnh](../task1_gui/bugs/screenshots/GUI-040.png).
 
 **BUG-016 — Giỏ hàng trên navbar không có badge số lượng**
 
-- GUI-043: Đã thêm 1 sản phẩm; link giỏ: Giỏ hàng. [Ảnh](../bugs/screenshots/GUI-043.png).
+- GUI-043: Đã thêm 1 sản phẩm; link giỏ: Giỏ hàng. [Ảnh](../task1_gui/bugs/screenshots/GUI-043.png).
 
 **BUG-017 — Admin vẫn có nút chuyển đơn Đã hủy sang Đã giao**
 
-- GUI-050: canceled: ["Đánh dấu Đã giao"]. [Ảnh](../bugs/screenshots/GUI-050.png).
+- GUI-050: canceled: ["Đánh dấu Đã giao"]. [Ảnh](../task1_gui/bugs/screenshots/GUI-050.png).
 
 **BUG-018 — Nút Hủy đơn trong Admin có màu xám**
 
-- GUI-052: ["rgb(156, 163, 175)","rgb(156, 163, 175)","rgb(156, 163, 175)","rgb(156, 163, 175)","rgb(156, 163, 175)"]. [Ảnh](../bugs/screenshots/GUI-052.png).
+- GUI-052: ["rgb(156, 163, 175)","rgb(156, 163, 175)","rgb(156, 163, 175)","rgb(156, 163, 175)","rgb(156, 163, 175)"]. [Ảnh](../task1_gui/bugs/screenshots/GUI-052.png).
 
 **BUG-019 — Địa chỉ giao hàng trong Admin bị render HTML**
 
-- GUI-053: Thẻ b render: 1; text: GUI_ADDRESS. [Ảnh](../bugs/screenshots/GUI-053.png).
+- GUI-053: Thẻ b render: 1; text: GUI_ADDRESS. [Ảnh](../task1_gui/bugs/screenshots/GUI-053.png).
 
 **BUG-020 — Lỗi hủy đơn hiển thị chuỗi tiếng Anh từ API**
 
-- GUI-055: [{"type":"alert","message":"Lỗi: Cannot cancel this order."}]; user đang xem trang cũ, admin đã chuyển đơn sang delivered. [Ảnh](../bugs/screenshots/GUI-055.png).
+- GUI-055: [{"type":"alert","message":"Lỗi: Cannot cancel this order."}]; user đang xem trang cũ, admin đã chuyển đơn sang delivered. [Ảnh](../task1_gui/bugs/screenshots/GUI-055.png).
 
 **BUG-021 — UX: nhãn form hồ sơ không liên kết với ô nhập**
 
-- GUI-056: [{"type":"INPUT","labels":0},{"type":"INPUT","labels":0},{"type":"TEXTAREA","labels":0}]. [Ảnh](../bugs/screenshots/GUI-056.png).
+- GUI-056: [{"type":"INPUT","labels":0},{"type":"INPUT","labels":0},{"type":"TEXTAREA","labels":0}]. [Ảnh](../task1_gui/bugs/screenshots/GUI-056.png).
 
 **BUG-022 — UX: lịch sử đơn làm tràn ngang ở viewport 360px**
 
-- GUI-057: {"viewport":360,"scroll":396}. [Ảnh](../bugs/screenshots/GUI-057.png).
+- GUI-057: {"viewport":360,"scroll":396}. [Ảnh](../task1_gui/bugs/screenshots/GUI-057.png).
 
 **BUG-023 — Tên người dùng trên navbar bị render HTML**
 
-- GUI-058: Số thẻ b được render: 1; text: Chào, GUI_NAME. [Ảnh](../bugs/screenshots/GUI-058.png).
+- GUI-058: Số thẻ b được render: 1; text: Chào, GUI_NAME. [Ảnh](../task1_gui/bugs/screenshots/GUI-058.png).
 
 ## 6. Task 3 — Cross-browser / Cross-platform
 
@@ -198,7 +198,7 @@ Các mục Failed cùng nguyên nhân được gom để tránh báo trùng. Cá
 
 **Task 3 đã thực thi đủ 3/3 nền tảng.** Nền tảng thứ ba là Chrome 149.0.0.0 (user-agent rút gọn) trên Samsung Galaxy S23 / Android 13.0 thật do BrowserStack cung cấp, viewport ban đầu 360×649 CSS pixels. BrowserStack Local đưa thiết bị về localhost của máy chạy SUT. Metadata phiên xác nhận OS riêng vì user-agent Android bị rút gọn. Xác nhận human review trước đó áp dụng Task 1.
 
-[Báo cáo và bảng đối chiếu Task 3](../cross_platform/README.md) · [PDF](../cross_platform/README.pdf) · [Excel, sheet Cross-platform](../checklist/GUI_Checklist.xlsx).
+[Báo cáo và bảng đối chiếu Task 3](../task3_cross_platform/README.md) · [PDF](../task3_cross_platform/README.pdf) · [Excel, sheet Cross-platform](../task1_gui/checklist/GUI_Checklist.xlsx).
 
 ## 7. Giới hạn và việc cần làm trước khi nộp
 
@@ -210,9 +210,9 @@ Các mục Failed cùng nguyên nhân được gom để tránh báo trùng. Cá
 
 ## 8. Tài liệu và lịch sử
 
-- [Rà soát thiết kế](../task1/DESIGN_REVIEW.md).
-- [Quy trình và script chạy lại](../task1/README.md).
-- [Bug report](../bugs/README.md).
+- [Rà soát thiết kế](../task1_gui/DESIGN_REVIEW.md).
+- [Quy trình và script chạy lại](../task1_gui/README.md).
+- [Bug report](../task1_gui/bugs/README.md).
 - [AI Audit Report](../ai_audit_report.md).
 - [AI Critique — đã duyệt](../ai_critique.md).
 - [Git commit log](../git_commit_log.txt).
@@ -236,7 +236,7 @@ Về phương thức ghi hình: Người tham gia đồng ý tham gia quan sát 
 
 Các vấn đề Usability phát hiện được (U01 đến U05) được phân loại mức độ nghiêm trọng và đề xuất lộ trình cải tiến trong báo cáo riêng. Các vấn đề liên quan đến lỗi giao diện đã được đối chiếu với Bug report Task 1 (BUG-001, BUG-010).
 
-[Bộ hồ sơ Usability đầy đủ](../usability/README.md) · [PDF Báo cáo Usability](../usability/Task2_Usability_Report.pdf) · [Bảng tính Excel](../usability/Task2_Usability_Data.xlsx) · [Phân tích chi tiết](../usability/analysis.md).
+[Bộ hồ sơ Usability đầy đủ](../task2_usability/README.md) · [PDF Báo cáo Usability](../task2_usability/Task2_Usability_Report.pdf) · [Bảng tính Excel](../task2_usability/Task2_Usability_Data.xlsx) · [Phân tích chi tiết](../task2_usability/analysis.md).
 
 ## 10. Agent Skill — demo thực thi
 
@@ -246,4 +246,4 @@ Lượt demo: 16/16 tiêu chí, 6 Passed, 10 Failed, 10 ảnh lỗi; đủ IA-01
 
 Video ghi thao tác thật dài 2 phút 03 giây, 1366×900, 25 fps, có chú thích tiếng Việt. Đã kiểm tra 11 nhóm điều kiện dữ liệu/tính toán của helper. **Video demo nộp bài:** [YouTube](https://youtu.be/Y1BYcoC3PGg), do sinh viên cung cấp ngày 15/11/2026. Thông số 2 phút 03 giây thuộc bản WebM cũ; nội dung video YouTube chưa được rà soát trong lần cập nhật này.
 
-[Skill và cách dùng](../agent_skills/README.md) · [Video YouTube](https://youtu.be/Y1BYcoC3PGg) · [Báo cáo GUI demo](../agent_skills/demo/gui_summary/report.md) · [Kiểm chứng helper](../agent_skills/demo/helper_verification.json).
+[Skill và cách dùng](../task4_agent_skills/README.md) · [Video YouTube](https://youtu.be/Y1BYcoC3PGg) · [Báo cáo GUI demo](../task4_agent_skills/demo/gui_summary/report.md) · [Kiểm chứng helper](../task4_agent_skills/demo/helper_verification.json).
