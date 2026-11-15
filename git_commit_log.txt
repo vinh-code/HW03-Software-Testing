@@ -29,3 +29,5 @@ a50c4c3 | 2026-11-11 21:51:11 +0700 | Phạm Quang Vinh | docs: export updated c
 a6c884e | 2026-11-15 18:55:36 +0700 | Phạm Quang Vinh | docs: fill course details and add student YouTube demo link
 d3f638d | 2026-11-15 18:55:36 +0700 | Phạm Quang Vinh | docs: refresh commit log for course metadata update
 5963616 | 2026-11-15 18:59:25 +0700 | Phạm Quang Vinh | docs: fill submission date signature name and self-assessed scores
+294bf24 | 2026-11-15 18:59:25 +0700 | Phạm Quang Vinh | docs: refresh log after completing student fields
+9506009 | 2026-11-15 19:24:14 +0700 | Phạm Quang Vinh | docs: finalize AI audit report and submission README
