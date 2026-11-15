@@ -27,3 +27,5 @@ a50c4c3 | 2026-11-11 21:51:11 +0700 | Phạm Quang Vinh | docs: export updated c
 5f18bd1 | 2026-11-15 18:44:54 +0700 | Phạm Quang Vinh | docs: format AI audit using supplied five-column template
 63d671a | 2026-11-15 18:44:54 +0700 | Phạm Quang Vinh | docs: update commit log after AI audit template revision
 a6c884e | 2026-11-15 18:55:36 +0700 | Phạm Quang Vinh | docs: fill course details and add student YouTube demo link
+d3f638d | 2026-11-15 18:55:36 +0700 | Phạm Quang Vinh | docs: refresh commit log for course metadata update
+5963616 | 2026-11-15 18:59:25 +0700 | Phạm Quang Vinh | docs: fill submission date signature name and self-assessed scores
