@@ -33,3 +33,4 @@ d3f638d | 2026-11-15 18:55:36 +0700 | Phạm Quang Vinh | docs: refresh commit l
 9506009 | 2026-11-15 19:24:14 +0700 | Phạm Quang Vinh | docs: finalize AI audit report and submission README
 2aafa8a | 2026-11-15 19:24:30 +0700 | Phạm Quang Vinh | docs: export final git commit log for submission
 1e12e94 | 2026-11-15 19:40:27 +0700 | Phạm Quang Vinh | docs: streamline submission files and add grading navigation
+84b6e03 | 2026-11-15 19:40:27 +0700 | Phạm Quang Vinh | docs: refresh submission commit log after cleanup
