@@ -21,7 +21,7 @@ Báo cáo kết quả kiểm thử khả năng sử dụng (Usability Evaluation
 - [Biên bản Phiên S06 — Lê Xuân Trí (P06)](sessions/S06.md)
 - [Biên bản Phiên S07 — Đặng Đỉnh Đoàn (P07)](sessions/S07.md)
 - [Báo cáo Phân tích Tổng hợp](analysis.md)
-- [Tập dữ liệu gốc](data/simulation.json) · [Bảng điểm CSV SUS](sus_responses.csv) · [Tổng hợp số liệu JSON](data/summary.json)
+- [Dữ liệu tổng hợp JSON](data/simulation.json) · [Bảng điểm CSV SUS](sus_responses.csv) · [Tổng hợp số liệu JSON](data/summary.json)
 
 ## Tóm tắt Kết quả Thực nghiệm
 
