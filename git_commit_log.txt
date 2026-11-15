@@ -36,3 +36,6 @@ d3f638d | 2026-11-15 18:55:36 +0700 | Phạm Quang Vinh | docs: refresh commit l
 84b6e03 | 2026-11-15 19:40:27 +0700 | Phạm Quang Vinh | docs: refresh submission commit log after cleanup
 6578b76 | 2026-11-15 19:50:21 +0700 | Phạm Quang Vinh | docs: record final commit log entry
 5aae42b | 2026-11-15 20:12:11 +0700 | Phạm Quang Vinh | refactor: restructure submission directory into task1_gui, task2_usability, task3_cross_platform, and task4_agent_skills
+4dae061 | 2026-11-15 20:12:35 +0700 | Phạm Quang Vinh | docs: refresh commit log after task folder restructuring
+34b0291 | 2026-11-15 20:14:40 +0700 | Phạm Quang Vinh | docs: finalize AI audit docx and pdf with new task paths
+28b7524 | 2026-11-15 20:18:45 +0700 | Phạm Quang Vinh | docs: update task2 readme dataset label
