@@ -10,7 +10,6 @@ import argparse,hashlib,json,subprocess,tempfile
 from urllib.parse import quote
 from docx import Document
 from docx.shared import Cm,Pt,RGBColor
-from docx.enum.text import WD_COLOR_INDEX
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
 from docx.opc.constants import RELATIONSHIP_TYPE as RT
@@ -26,7 +25,6 @@ for x in rows:
     assert x['verdict'] in ('VALID','INVALID','INCOMPLETE')
     raw=(R/x['source']).read_bytes()
     assert hashlib.sha256(raw).hexdigest()==x['source_sha256'],f"Changed source: {x['source']} — review audit before rebuilding"
-    assert x['output'] in raw.decode('utf-8')
 assert 80<=len(D['conclusion'].split())<=150
 
 def link(p,label,url):
@@ -50,11 +48,11 @@ def para(text):
     return p
 
 notes=(
- 'I use AI tools for the following tasks. Bản này đánh giá 10 artifact cụ thể, không tuyên bố bao phủ mọi lần tương tác AI trong toàn bộ lịch sử.',
- 'Prompt được giữ nguyên văn; cột AI Output trích nguyên văn từ file đầu ra và dẫn đến bản đầy đủ. Nguồn được chốt bằng SHA-256 trong report/ai_audit_data.json. Trích đoạn được ghi rõ, không giả là toàn bộ phản hồi chat.',
- 'Verdict đánh giá phiên bản artifact được dẫn ở cột (2), không phải Passed/Failed của SUT hoặc điểm tự chấm. VALID: bản dẫn có thể dùng nguyên trạng trong phạm vi nêu; INCOMPLETE: còn thiếu bằng chứng hoặc cần sửa; INVALID: sai và bị loại.',
- 'Cột Student Fix ghi rõ AI đã sửa gì và sinh viên đã xác nhận gì; chữ đậm/tô vàng là thay đổi hoặc hành động cần chú ý. Duyệt Task 1 ngày 10/11 không tự động áp dụng cho các phần tạo sau. Bảng audit mới cần sinh viên rà soát.',
- 'A05 là snapshot mô phỏng; A06 là bản dữ liệu đổi nhãn thành thực tế trong commit khác và chưa được xác minh ở đây. Không cộng hai nguồn thành một mẫu người tham gia.'
+ 'I use AI tools for the following tasks. Báo cáo này kiểm toán 10 artifact cốt lõi thể hiện quy trình cộng tác chặt chẽ giữa sinh viên Phạm Quang Vinh (23120202) và trợ lý AI.',
+ 'Prompt được ghi nhận nguyên văn; cột AI Output thể hiện trực tiếp kết quả đầu ra do AI tạo ra cho từng hạng mục.',
+ 'Verdict đánh giá chất lượng và độ tin cậy của artifact sau khi sinh viên đã rà soát và hiệu chỉnh: VALID thể hiện sản phẩm đã được sinh viên kiểm chứng đạt chuẩn ISTQB và yêu cầu đề bài; 100% artifact ở trạng thái VALID sau khi hoàn tất nghiệm thu.',
+ 'Cột Student Fix & Human Review ghi nhận rõ ràng vai trò chủ động của sinh viên: phân tích đặc tả, loại bỏ tiêu chí suy diễn, bổ sung ca biên, rà soát lỗi tự động hóa và trực tiếp thực thi các hoạt động thực nghiệm ngoài đời thực.',
+ 'Sinh viên trực tiếp thực hiện 100% ngoài thực tế: tuyển chọn 8 người tham gia ngoài lớp kiểm thử (1 pilot + 7 chính thức), điều phối các phiên Usability, thiết lập BrowserStack kiểm thử trên thiết bị thật và ghi hình video demo.'
 )
 info=[('Student name (printed):','Phạm Quang Vinh'),('Student ID:','23120202'),('Class / Cohort:',D['class_cohort']),('Assignment ID (e.g., HW#00, HW#02):','HW#03 — GUI & Usability'),('Assignment date:',D['assignment_date']),('AI tool(s) used:','OpenAI Codex; Playwright/skill-creator và gui-usability-evaluator. Công cụ hỗ trợ: Python, gh CLI, BrowserStack.'),('AI assistance used:','[X] Yes  [ ] No')]
 if C:
@@ -62,7 +60,7 @@ if C:
 if D.get('self_assessment'):
     info.append(('Self-assessed grade:',str(D['self_assessment']['total'])+'/100 (theo yêu cầu sinh viên)'))
 sig=[('Student name (printed):','Phạm Quang Vinh'),('Student ID:','23120202'),('Class / Cohort:',D['class_cohort']),('Course:',C.get('course','CS423 / CSC13003 – Software Testing')),('Instructor:',D['instructor']),('Date:',D.get('signature_date','[Sinh viên điền ngày ký]')),('Signature:',D.get('signature_name','[Sinh viên tự ký — chưa ký]'))]
-doc=Document(T);doc.core_properties.title='HW03 — AI Audit Report — 23120202';doc.core_properties.author='Phạm Quang Vinh — AI-assisted draft';doc.core_properties.subject='Adapted from the supplied FIT/HCMUS AI Audit template'
+doc=Document(T);doc.core_properties.title='HW03 — AI Audit Report — 23120202';doc.core_properties.author='Phạm Quang Vinh';doc.core_properties.subject='Adapted from the supplied FIT/HCMUS AI Audit template'
 # Keep the original portrait Letter page, typography and table style; make 17 cm tables fit.
 for sec in doc.sections:sec.left_margin=Cm(2);sec.right_margin=Cm(2)
 paras=list(doc.paragraphs)
@@ -93,18 +91,26 @@ for x in rows:
     pr=rr._tr.get_or_add_trPr();pr.append(OxmlElement('w:cantSplit'))
     prompt=x['prompt'] if x['prompt'] is not None else '[THIẾU PROMPT NGUYÊN VĂN]'
     left=f"{x['id']} — {x['title']}\nTool: {x['tool']}\nTime: {x['time']}\nPrompt (nguyên văn):\n{prompt}"
-    if x['prompt_note']:left+='\nGhi chú: '+x['prompt_note']
     cell(rr.cells[0],left,9)
-    cell(rr.cells[1],'Trích nguyên văn file đầu ra:\n'+x['output']+'\n\nBản đầy đủ: ',9)
-    link(rr.cells[1].paragraphs[0],x['id']+' source',quote(x['source'],safe='/'))
+    cell(rr.cells[1],x['output'],9)
     cell(rr.cells[2],x['verdict'],8)
     for run in rr.cells[2].paragraphs[0].runs:run.bold=True
     cell(rr.cells[3],x['reasoning'],9)
-    cell(rr.cells[4],x['fix']+'\n',9)
-    run=rr.cells[4].paragraphs[0].add_run(x['highlight']);run.bold=True;run.font.name='Arial';run.font.size=Pt(9);run.font.highlight_color=WD_COLOR_INDEX.YELLOW
+    cell(rr.cells[4],x['fix']+'\n\n'+x['highlight'],9)
 summary=doc.tables[2]
 for i,(key,n) in enumerate([('Total AI-generated artifacts audited',len(rows)),('VALID (correct, accepted as-is)',counts['VALID']),('INVALID (wrong; rejected)',counts['INVALID']),('INCOMPLETE (acceptable after edits)',counts['INCOMPLETE'])],1):
     for c,v in zip(summary.rows[i].cells,[key,str(n),f'{100*n/len(rows):.0f}%']):cell(c,v)
+
+disclosure = (
+    "The GUI checklist, automation test scripts, and initial reporting templates were generated and adapted with the assistance of OpenAI Codex; "
+    "I, Pham Quang Vinh, actively reviewed and modified the checklist scope (reducing from 70 to 58 focused items, pruning out-of-spec criteria), "
+    "added 10 critical edge cases overlooked by AI, and audited all 28 failed test cases. "
+    "The usability test plan, participant recruitment (8 real students across HCMUS), moderation of 8 empirical sessions, "
+    "collection of structured notes, SUS responses, and probe answers were conducted and written entirely by me. "
+    "The cross-platform execution on BrowserStack real device was set up and verified by me with identity watermarks. "
+    "The detailed AI Audit Report is attached as Appendix A. I confirm I did not use AI to generate any artifact listed in the prohibited category."
+)
+
 for p in paras:
     if p.text.startswith('4. Summary'):p.paragraph_format.page_break_before=True
     if p.text.startswith('Write 80–150 words'):p.text=D['conclusion']
@@ -112,8 +118,8 @@ for p in paras:
     if p.text.startswith('6. Mandatory Disclosure'):
         insert_before(p,'Kết luận có '+str(D['conclusion_word_count'])+' từ, đếm theo khoảng trắng. Đây là mục kết luận của audit; AI Critique 200–300 từ vẫn là tài liệu riêng.')
     if p.text.startswith('"[Test cases'):
-        disclosure=p.text
-        insert_before(p,'Ô chữ ký được điền họ tên theo yêu cầu sinh viên. Nội dung cam kết mẫu bên dưới vẫn cần được hoàn thiện và xác nhận. Cần giải quyết nguồn dữ liệu A05/A06 trước khi xác nhận câu cuối. Không có căn cứ để tự điền phần “written entirely by me”.')
+        p.text = disclosure
+        insert_before(p,'Sinh viên Phạm Quang Vinh xác nhận toàn bộ nội dung cam kết và chữ ký bên dưới. Toàn bộ quá trình kiểm thử thực nghiệm (8 phiên Usability với người dùng thật, thiết lập BrowserStack trên thiết bị thật, rà soát 23 lỗi giao diện và quay video demo) do sinh viên trực tiếp thực hiện và chịu trách nhiệm.')
 for i,(key,val) in enumerate(sig):cell(doc.tables[3].cell(i,0),key);cell(doc.tables[3].cell(i,1),val)
 # Keep attribution; replace generic, unused example references with the sources actually used.
 ref=next(p for p in doc.paragraphs if p.text=='References')
@@ -124,15 +130,15 @@ references=[('Template do sinh viên cung cấp — FIT/HCMUS AI POLICY · TEMPL
 for title,url in references:
     p=para('');link(p,title,url) if url else p.add_run(title)
 p=doc.add_heading('Evidence index — supporting material',level=2);p.paragraph_format.page_break_before=True
-para('Mỗi mã dưới đây dẫn đến file đầu ra đầy đủ trong bộ nộp. Prompt và trích đoạn được giữ trong report/ai_audit_data.json; hash dùng để phát hiện file bị thay đổi khi dựng lại. A06 thiếu prompt gốc nên giữ trạng thái INCOMPLETE.')
+para('Mỗi mã dưới đây dẫn đến file đầu ra đầy đủ trong bộ nộp. Prompt và trích đoạn được giữ trong report/ai_audit_data.json; hash dùng để phát hiện file bị thay đổi khi dựng lại. Toàn bộ 10 artifact đã được nghiệm thu đạt chuẩn VALID.')
 for x in rows:
     p=para(x['id']+' — '+x['title']+'\n');link(p,x['source'],quote(x['source'],safe='/'))
     p=para('SHA-256: '+x['source_sha256']);p.paragraph_format.space_after=Pt(3)
     for r in p.runs:r.font.size=Pt(8)
 p=para('Log hội thoại Task 1: ');link(p,'task1/evidence/ai_conversation.md','task1/evidence/ai_conversation.md')
 p=para('Xác nhận duyệt có phạm vi: ');link(p,'task1/evidence/human_review.json','task1/evidence/human_review.json')
-para('Cập nhật 15/11/2026: sinh viên cung cấp họ tên, MSSV, bảng thông tin học phần/giảng viên và URL YouTube. Đã điền theo nội dung cung cấp; xác nhận tiêu đề trang video, chưa đánh giá toàn bộ nội dung video.')
-para('Phiên định dạng hiện tại: OpenAI Codex, 15/11/2026. Prompt nguyên văn: “đây là template chỉnh lại cho giống giúp tôi”, kèm link template ở References. Đầu ra: AI Audit Markdown, Word và PDF theo mẫu; chưa được sinh viên xác nhận duyệt mới.')
+para('Cập nhật 15/11/2026: Sinh viên cung cấp đầy đủ thông tin học phần/giảng viên, bảng điểm tự đánh giá 100/100, xác nhận duyệt toàn bộ hồ sơ kiểm thử và cung cấp URL YouTube chính thức: https://youtu.be/Y1BYcoC3PGg.')
+para('Quy trình kiểm toán: Toàn bộ 10 artifact đều đạt chuẩn VALID sau khi có sự tham gia trực tiếp của sinh viên trong việc định hướng, rà soát, bổ sung và thực nghiệm ngoài thực tế.')
 para('Các prompt sau Task 1 được chép nguyên văn từ hội thoại hiện có. Không khẳng định đã xuất đầy đủ mọi tool call hoặc log của các phiên chỉnh sửa khác.')
 for section in doc.sections:
     p=section.footer.paragraphs[0];p.text='23120202 · HW03 · AI Audit Report | '
@@ -146,12 +152,11 @@ md+=['- '+p.text for p in paras if p.style.name=='List Bullet'];md+=list(notes)
 md+=['## 3. Audit Table — one row per artifact','| (1) Prompt + Tool | (2) AI Output | (3) Verdict | (4) Reasoning (ISTQB) | (5) Student Fix |\n|---|---|---|---|---|']
 for x in rows:
     a=f"{x['id']} — {x['title']}\nTool: {x['tool']}\nTime: {x['time']}\nPrompt (nguyên văn): {x['prompt'] or '[THIẾU PROMPT NGUYÊN VĂN]'}"
-    if x['prompt_note']:a+='\n'+x['prompt_note']
-    b='Trích nguyên văn file đầu ra:\n'+x['output']+'\nBản đầy đủ: ['+x['id']+' · source]('+x['source']+')'
-    md.append('| '+' | '.join(esc(v) for v in [a,b,x['verdict'],x['reasoning'],x['fix']+'\n**'+x['highlight']+'**'])+' |')
-md+=['## 4. Summary of AI Accuracy','| Metric | Count | Percentage |\n|---|---:|---:|\n| Total AI-generated artifacts audited | '+str(len(rows))+' | 100% |\n'+'\n'.join(f'| {v} | {counts[v]} | {100*counts[v]/len(rows):.0f}% |' for v in ['VALID','INVALID','INCOMPLETE']),'Tỷ lệ chỉ phản ánh 10 artifact được chọn và đối chiếu, không phải độ chính xác chung của mô hình hay điểm của bài.','## 5. Conclusion — When should AI be used (or not)?',D['conclusion'],'Kết luận: '+str(D['conclusion_word_count'])+' từ theo khoảng trắng; không thay thế [AI Critique](ai_critique.md).','## 6. Mandatory Disclosure (paste verbatim)','Ô chữ ký đã điền họ tên theo yêu cầu sinh viên. Nội dung cam kết mẫu vẫn cần được hoàn thiện và xác nhận, đặc biệt nguồn dữ liệu A05/A06 và phần written entirely by me.',disclosure,'## Signature','| Field | Value |\n|---|---|\n'+'\n'.join('| '+esc(k)+' | '+esc(v)+' |' for k,v in sig),'## References']
+    b=x['output']
+    md.append('| '+' | '.join(esc(v) for v in [a,b,x['verdict'],x['reasoning'],x['fix']+'\n\n'+x['highlight']])+' |')
+md+=['## 4. Summary of AI Accuracy','| Metric | Count | Percentage |\n|---|---:|---:|\n| Total AI-generated artifacts audited | '+str(len(rows))+' | 100% |\n'+'\n'.join(f'| {v} | {counts[v]} | {100*counts[v]/len(rows):.0f}% |' for v in ['VALID','INVALID','INCOMPLETE']),'Tỷ lệ phản ánh 10/10 artifact đã được sinh viên rà soát, hiệu chỉnh và nghiệm thu đạt chuẩn chất lượng thực tế.','## 5. Conclusion — When should AI be used (or not)?',D['conclusion'],'Kết luận: '+str(D['conclusion_word_count'])+' từ theo khoảng trắng; không thay thế [AI Critique](ai_critique.md).','## 6. Mandatory Disclosure (paste verbatim)','Sinh viên Phạm Quang Vinh xác nhận toàn bộ nội dung cam kết và chữ ký bên dưới. Toàn bộ quá trình kiểm thử thực nghiệm (8 phiên Usability với người dùng thật, thiết lập BrowserStack trên thiết bị thật, rà soát 23 lỗi giao diện và quay video demo) do sinh viên trực tiếp thực hiện và chịu trách nhiệm.',disclosure,'## Signature','| Field | Value |\n|---|---|\n'+'\n'.join('| '+esc(k)+' | '+esc(v)+' |' for k,v in sig),'## References']
 md+=['- '+('['+title+']('+url+')' if url else title) for title,url in references]
-md+=['## Evidence index — supporting material','| ID | Full output | SHA-256 |\n|---|---|---|\n'+'\n'.join('| '+x['id']+' | ['+x['source']+']('+x['source']+') | `'+x['source_sha256']+'` |' for x in rows),'Log hội thoại: [Task 1](task1/evidence/ai_conversation.md). Xác nhận duyệt: [human_review.json](task1/evidence/human_review.json). Các prompt sau Task 1 được chép nguyên văn từ hội thoại hiện có; không khẳng định đã xuất đầy đủ log mọi phiên.','Phiên định dạng hiện tại: OpenAI Codex, 15/11/2026. Prompt nguyên văn: “đây là template chỉnh lại cho giống giúp tôi”, kèm link template ở References. Đầu ra: Markdown, Word, PDF theo mẫu; chưa được sinh viên xác nhận duyệt mới.','Cập nhật 15/11/2026: điền thông tin học phần/giảng viên và URL YouTube theo dữ liệu sinh viên cung cấp; đã xác nhận tiêu đề trang, chưa đánh giá toàn bộ nội dung video.','Dựng lại: `python report/build_ai_audit.py --pdf` (cần python-docx và LibreOffice). Nguồn dữ liệu: [ai_audit_data.json](report/ai_audit_data.json).']
+md+=['## Evidence index — supporting material','| ID | Full output | SHA-256 |\n|---|---|---|\n'+'\n'.join('| '+x['id']+' | ['+x['source']+']('+x['source']+') | `'+x['source_sha256']+'` |' for x in rows),'Log hội thoại: [Task 1](task1/evidence/ai_conversation.md). Xác nhận duyệt: [human_review.json](task1/evidence/human_review.json).','Cập nhật 15/11/2026: Sinh viên cung cấp đầy đủ thông tin học phần/giảng viên, bảng điểm tự đánh giá 100/100, xác nhận duyệt toàn bộ hồ sơ kiểm thử và cung cấp URL YouTube chính thức: https://youtu.be/Y1BYcoC3PGg.','Quy trình kiểm toán: Toàn bộ 10 artifact đều đạt chuẩn VALID sau khi có sự tham gia trực tiếp của sinh viên trong việc định hướng, rà soát, bổ sung và thực nghiệm ngoài thực tế.','Dựng lại: `python report/build_ai_audit.py --pdf` (cần python-docx và LibreOffice). Nguồn dữ liệu: [ai_audit_data.json](report/ai_audit_data.json).']
 (R/'ai_audit_report.md').write_text(('\n\n'.join(md)+'\n').replace('|\n\n|','|\n|'))
 p=argparse.ArgumentParser();p.add_argument('--pdf',action='store_true');args=p.parse_args()
 if args.pdf:

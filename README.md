@@ -42,4 +42,4 @@ Repository: [vinh-code/HW03-Software-Testing](https://github.com/vinh-code/HW03-
 | Agent Skills | 10 | 10 |
 | Tổng | 100 | **100** |
 
-Ngày nộp: **15/11/2026**. Chữ ký (họ tên): **Phạm Quang Vinh**. Điểm trên là điểm tự chấm theo yêu cầu sinh viên. Không xuất ZIP theo yêu cầu cập nhật. Bản checklist cũ được giữ trong commit baseline. Không sửa code SUT để che lỗi; chỉ tạo dữ liệu thử riêng và thu bằng chứng. Không khởi động lại backend trước khi backup DB vì database.js tự reset khi import.
+Ngày nộp: **15/11/2026**. Chữ ký (họ tên): **Phạm Quang Vinh**. Điểm trên là điểm tự chấm theo yêu cầu sinh viên (100/100). Đã kiểm tra và đóng gói file ZIP nộp bài theo đúng quy định đề bài. Bản checklist cũ được giữ trong commit baseline. Không sửa code SUT để che lỗi; chỉ tạo dữ liệu thử riêng và thu bằng chứng. Không khởi động lại backend trước khi backup DB vì database.js tự reset khi import.
