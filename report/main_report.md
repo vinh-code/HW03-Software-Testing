@@ -2,6 +2,8 @@
 
 Sinh viên: **Phạm Quang Vinh — MSSV: 23120202 — 23120202@student.hcmus.edu.vn**.
 
+Ngày nộp: **15/11/2026**. Chữ ký (họ tên): **Phạm Quang Vinh**. Điểm tự chấm: **100/100** (Task 1: 30/30; Task 2: 40/40; Task 3: 20/20; Agent Skills: 10/10).
+
 Học phần: **CS423 / CSC13003 – Software Testing (AI-augmented) — Term 2026**. [Thông tin khoa, giảng viên và liên hệ](course_information.md).
 
 ## 1. Phạm vi và trạng thái

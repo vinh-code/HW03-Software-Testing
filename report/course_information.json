@@ -28,5 +28,15 @@
     "Student Acknowledgement"
   ],
   "demo_youtube_url": "https://youtu.be/Y1BYcoC3PGg",
-  "source": "Thông tin và URL do sinh viên cung cấp trong hội thoại ngày 15/11/2026. Term không được dùng để suy ra ngày giao/nộp bài hoặc mã lớp riêng."
+  "source": "Thông tin và URL do sinh viên cung cấp trong hội thoại ngày 15/11/2026. Term không được dùng để suy ra ngày giao/nộp bài hoặc mã lớp riêng. Ngày nộp hôm nay, chữ ký ghi họ tên và điểm tự chấm tối đa được sinh viên yêu cầu ngày 15/11/2026.",
+  "submission_date": "15/11/2026",
+  "signature_date": "15/11/2026",
+  "signature_name": "Phạm Quang Vinh",
+  "self_assessment": {
+    "task1": 30,
+    "task2": 40,
+    "task3": 20,
+    "agent_skills": 10,
+    "total": 100
+  }
 }

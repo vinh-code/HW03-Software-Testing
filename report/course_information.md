@@ -15,5 +15,13 @@ Thông tin do sinh viên cung cấp ngày 15/11/2026.
 | Faculty-provided AI account | Any AI Tool (e.g., ChatGPT, Claude, Gemini, Copilot, Cursor) |
 | Companion templates | AI Audit Report · Disclosure Form · Reflective Statement · Privacy Checklist · Student Acknowledgement |
 | Demo video | [YouTube](https://youtu.be/Y1BYcoC3PGg) |
+| Submission date | 15/11/2026 |
+| Signature date | 15/11/2026 |
+| Signature (printed name) | Phạm Quang Vinh |
+| Task 1 — self-assessed | 30/30 |
+| Task 2 — self-assessed | 40/40 |
+| Task 3 — self-assessed | 20/20 |
+| Agent Skills — self-assessed | 10/10 |
+| Total — self-assessed | 100/100 |
 
-Term 2026 không xác định ngày giao/nộp bài hoặc mã lớp riêng. Ngày ký và chữ ký do sinh viên hoàn thiện. Điểm tự chấm chưa được cung cấp.
+Ngày nộp, họ tên ở ô chữ ký và điểm tự chấm được điền theo yêu cầu sinh viên ngày 15/11/2026.
