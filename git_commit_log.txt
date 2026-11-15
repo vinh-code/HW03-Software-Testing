@@ -34,3 +34,5 @@ d3f638d | 2026-11-15 18:55:36 +0700 | Phạm Quang Vinh | docs: refresh commit l
 2aafa8a | 2026-11-15 19:24:30 +0700 | Phạm Quang Vinh | docs: export final git commit log for submission
 1e12e94 | 2026-11-15 19:40:27 +0700 | Phạm Quang Vinh | docs: streamline submission files and add grading navigation
 84b6e03 | 2026-11-15 19:40:27 +0700 | Phạm Quang Vinh | docs: refresh submission commit log after cleanup
+6578b76 | 2026-11-15 19:50:21 +0700 | Phạm Quang Vinh | docs: record final commit log entry
+5aae42b | 2026-11-15 20:12:11 +0700 | Phạm Quang Vinh | refactor: restructure submission directory into task1_gui, task2_usability, task3_cross_platform, and task4_agent_skills
