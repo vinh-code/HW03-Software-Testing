@@ -2,6 +2,8 @@
 
 Sinh viên: **Phạm Quang Vinh — MSSV: 23120202 — 23120202@student.hcmus.edu.vn**.
 
+Học phần: **CS423 / CSC13003 – Software Testing (AI-augmented) — Term 2026**. [Thông tin khoa, giảng viên và liên hệ](course_information.md).
+
 ## 1. Phạm vi và trạng thái
 
 Task 1 được thực thi trên Login, Profile/Hồ sơ và Lịch sử đơn, Admin Orders; navbar và Home hỗ trợ điều hướng/thêm giỏ. Task 2 đã thực hiện đánh giá Usability với 1 phiên Pilot và 7 phiên thử nghiệm người dùng thực tế ngoài lớp (08 người tham gia); Task 3 đã chạy đủ Chrome, Firefox trên Ubuntu và Chrome trên Samsung Galaxy S23 thật / Android 13 qua BrowserStack. Phạm vi màn hình/flow không trùng thành viên khác.
@@ -240,6 +242,6 @@ Các vấn đề Usability phát hiện được (U01 đến U05) được phân
 
 Lượt demo: 16/16 tiêu chí, 6 Passed, 10 Failed, 10 ảnh lỗi; đủ IA-01 đến IA-04, không có Blocked. Các lỗi liên kết issue Task 1, không tạo trùng. Bản sao backend riêng giữ nguyên SQLite gốc. Helper usability phân tích bộ dữ liệu 7 hồ sơ, loại pilot, SUS trung bình 58.93.
 
-Video ghi thao tác thật dài 2 phút 03 giây, 1366×900, 25 fps, có chú thích tiếng Việt. Đã kiểm tra 11 nhóm điều kiện dữ liệu/tính toán của helper. **Link YouTube đang chờ sinh viên tự tải lên và cung cấp**; chưa coi phần video YouTube là hoàn tất.
+Video ghi thao tác thật dài 2 phút 03 giây, 1366×900, 25 fps, có chú thích tiếng Việt. Đã kiểm tra 11 nhóm điều kiện dữ liệu/tính toán của helper. **Video demo nộp bài:** [YouTube](https://youtu.be/Y1BYcoC3PGg), do sinh viên cung cấp ngày 15/11/2026. Thông số 2 phút 03 giây thuộc bản WebM cũ; nội dung video YouTube chưa được rà soát trong lần cập nhật này.
 
 [Skill và cách dùng](../agent_skills/README.md) · [Video gốc](../agent_skills/demo/agent-skill-demo.webm) · [Báo cáo GUI demo](../agent_skills/demo/gui_summary/report.md) · [Kiểm chứng helper](../agent_skills/demo/helper_verification.json).

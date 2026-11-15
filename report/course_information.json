@@ -1,0 +1,32 @@
+{
+  "student_name": "Phạm Quang Vinh",
+  "student_id": "23120202",
+  "student_email": "23120202@student.hcmus.edu.vn",
+  "course": "CS423 / CSC13003 – Software Testing (AI-augmented)",
+  "faculty": "Faculty of Information Technology (FIT) – HCMUS",
+  "term": "2026",
+  "lecturers_tas": [
+    "Dr. Lam Quang Vu",
+    "Dr. Tran Duy Hoang",
+    "MSc. Tran Thi Bich Hanh",
+    "MSc. Truong Phuoc Loc",
+    "MSc. Ho Tuan Thanh"
+  ],
+  "contacts": [
+    "lqvu@fit.hcmus.edu.vn",
+    "tdhoang@fit.hcmus.edu.vn",
+    "ttbhanh@fit.hcmus.edu.vn",
+    "tploc@fit.hcmus.edu.vn",
+    "hthanh@fit.hcmus.edu.vn"
+  ],
+  "faculty_provided_ai_account": "Any AI Tool (e.g., ChatGPT, Claude, Gemini, Copilot, Cursor)",
+  "companion_templates": [
+    "AI Audit Report",
+    "Disclosure Form",
+    "Reflective Statement",
+    "Privacy Checklist",
+    "Student Acknowledgement"
+  ],
+  "demo_youtube_url": "https://youtu.be/Y1BYcoC3PGg",
+  "source": "Thông tin và URL do sinh viên cung cấp trong hội thoại ngày 15/11/2026. Term không được dùng để suy ra ngày giao/nộp bài hoặc mã lớp riêng."
+}

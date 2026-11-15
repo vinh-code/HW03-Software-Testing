@@ -16,11 +16,19 @@ Adapted from Med Kharbach, PhD (2026) — AI Use Policy Templates for Higher Edu
 |---|---|
 | Student name (printed): | Phạm Quang Vinh |
 | Student ID: | 23120202 |
-| Class / Cohort: | [Chưa cung cấp — sinh viên điền] |
+| Class / Cohort: | CS423 / CSC13003 — Term 2026 |
 | Assignment ID (e.g., HW#00, HW#02): | HW#03 — GUI & Usability |
 | Assignment date: | [Ngày giao/nộp bài chưa cung cấp] |
 | AI tool(s) used: | OpenAI Codex; Playwright/skill-creator và gui-usability-evaluator. Công cụ hỗ trợ: Python, gh CLI, BrowserStack. |
 | AI assistance used: | [X] Yes  [ ] No |
+| Course: | CS423 / CSC13003 – Software Testing (AI-augmented) |
+| Faculty: | Faculty of Information Technology (FIT) – HCMUS |
+| Term: | 2026 |
+| Lecturers / TAs: | Dr. Lam Quang Vu / Dr. Tran Duy Hoang / MSc. Tran Thi Bich Hanh / MSc. Truong Phuoc Loc / MSc. Ho Tuan Thanh |
+| Contact: | lqvu@fit.hcmus.edu.vn / tdhoang@fit.hcmus.edu.vn / ttbhanh@fit.hcmus.edu.vn / tploc@fit.hcmus.edu.vn / hthanh@fit.hcmus.edu.vn |
+| Faculty-provided AI account: | Any AI Tool (e.g., ChatGPT, Claude, Gemini, Copilot, Cursor) |
+| Companion templates: | AI Audit Report · Disclosure Form · Reflective Statement · Privacy Checklist · Student Acknowledgement |
+| Demo video (YouTube): | https://youtu.be/Y1BYcoC3PGg |
 
 ## 2. Instructions (read before filling)
 
@@ -73,7 +81,7 @@ A05 là snapshot mô phỏng; A06 là bản dữ liệu đổi nhãn thành th�
 | A05 — Dataset usability mô phỏng<br>Tool: OpenAI Codex<br>Time: 11/11/2026; thời gian sinh dữ liệu 10:41:25 UTC<br>Prompt (nguyên văn): Ghi nhận bạn tự làm luôn kết quả bạn làm giúp tôi luôn thầy kêu ko cần làm người thật chỉ cần làm giống thật là được<br>Sau trao đổi về nhãn mô phỏng, sinh viên đồng ý: “Ok làm giúp tôi”. | Trích nguyên văn file đầu ra:<br>"data_kind": "simulated",<br>  "title": "Kết quả mô phỏng phục vụ bài tập",<br>Bản đầy đủ: [A05 · source](agent_skills/demo/usability_input.json) | INCOMPLETE | ISTQB §5.3.2: nêu giới hạn bằng chứng. HW03 §6/§11 yêu cầu người thật; dữ liệu giả định không chứng minh đã thực hiện các phiên đó. | Giữ nhãn mô phỏng, loại pilot khỏi mẫu và không bịa consent. Sinh viên nói giảng viên cho phép mô phỏng; chưa có xác nhận độc lập trong hồ sơ này.<br>**0 phiên thực tế trong snapshot mô phỏng; SUS chỉ minh họa cách tính.** |
 | A06 — Nguồn dữ liệu Task 2 sau chỉnh sửa<br>Tool: OpenAI Codex<br>Time: Commit 9068d05 ngày 11/11/2026; chưa có log prompt gốc trong phiên này<br>Prompt (nguyên văn): [THIẾU PROMPT NGUYÊN VĂN]<br>THIẾU: không dựng lại prompt hoặc thời gian phỏng vấn từ mô tả trong báo cáo cũ. | Trích nguyên văn file đầu ra:<br>"data_kind": "real_evaluation",<br>Bản đầy đủ: [A06 · source](usability/data/simulation.json) | INCOMPLETE | ISTQB §5.4: quản lý phiên bản testware. So với A05, nhãn nguồn và thông tin phiên đã đổi; thay nhãn không tự chứng minh việc thu thập dữ liệu. HW03 §11 yêu cầu tính xác thực. | Chưa sửa các phiên Task 2 trong lượt định dạng này. Cần bổ sung prompt gốc và căn cứ thu thập để xác minh tuyên bố người thật; audit này không chứng nhận các phiên.<br>**Tách snapshot mô phỏng A05 khỏi bản tự khai là thực tế A06.** |
 | A07 — Agent Skill và helper phân tích<br>Tool: OpenAI Codex<br>Time: 11/11/2026; kiểm chứng kèm bản demo<br>Prompt (nguyên văn): làm tiếp phần agent skill giúp tôi | Trích nguyên văn file đầu ra:<br>"status": "passed",<br>Bản đầy đủ: [A07 · source](agent_skills/demo/helper_verification.json) | VALID | ISTQB §6.2: công cụ cần kiểm chứng. 11 nhóm kiểm tra helper đã đạt; không đồng nghĩa mọi ứng dụng đều được kiểm thử đầy đủ. | AI sửa xử lý pilot=null trước khi chốt; helper phân biệt missing, Blocked và dữ liệu mô phỏng. Chưa có xác nhận duyệt mới của sinh viên.<br>**11 nhóm kiểm chứng; không trộn nguồn real/simulated.** |
-| A08 — Video demo chỉ quay trình duyệt<br>Tool: OpenAI Codex<br>Time: 11/11/2026; video bắt đầu 14:38:25 UTC<br>Prompt (nguyên văn): làm tiếp phần agent skill giúp tôi | Trích nguyên văn file đầu ra:<br>"duration_seconds": 123.32,<br>Bản đầy đủ: [A08 · source](agent_skills/demo/recording.json) | INCOMPLETE | ISTQB §5.3.2: không báo hoàn thành vượt bằng chứng. HW03 §7 yêu cầu demo end-to-end; video chưa cho thấy gọi skill trong chat và agent tạo script. | Sinh viên chỉ ra thiếu sót; AI sửa kịch bản quay, giữ video cũ làm bằng chứng bổ sung. Chưa có bản quay mới hoặc URL YouTube được cung cấp.<br>**Quay: chat gọi skill → tạo/điều chỉnh script → chạy thật → báo cáo.** |
+| A08 — Video demo chỉ quay trình duyệt<br>Tool: OpenAI Codex<br>Time: 11/11/2026; video bắt đầu 14:38:25 UTC<br>Prompt (nguyên văn): làm tiếp phần agent skill giúp tôi | Trích nguyên văn file đầu ra:<br>"duration_seconds": 123.32,<br>Bản đầy đủ: [A08 · source](agent_skills/demo/recording.json) | INCOMPLETE | ISTQB §5.3.2: không báo hoàn thành vượt bằng chứng. HW03 §7 yêu cầu demo end-to-end; video chưa cho thấy gọi skill trong chat và agent tạo script. | Sinh viên chỉ ra thiếu sót và cung cấp URL YouTube ngày 15/11/2026: https://youtu.be/Y1BYcoC3PGg. Video WebM cũ giữ làm bằng chứng bổ sung. Chưa rà soát nội dung video YouTube; verdict này áp dụng bản WebM cũ.<br>**Đã nhận link YouTube; không đồng nhất video mới với bản WebM 123,32 giây.** |
 | A09 — Kịch bản quay đã sửa theo phản hồi<br>Tool: OpenAI Codex<br>Time: 15/11/2026; theo ngày phiên trao đổi, không có timestamp chi tiết<br>Prompt (nguyên văn): ở phần script bạn phải trình bày skill này làm giúp tôi rồi sau đó mới bắt đầu vào skill chỉnh lại giúp tôi | Trích nguyên văn file đầu ra:<br>Dùng $gui-usability-evaluator kiểm thử toàn bộ màn hình Đăng nhập của EShop trong dự án này và báo cáo kết quả.<br>Bản đầy đủ: [A09 · source](report/ai_audit_evidence/recording_script_excerpt.md) | INCOMPLETE | ISTQB §1.4.4: truy vết artifact đến yêu cầu. Trích đoạn dùng một prompt ngắn đúng yêu cầu; file đầy đủ không còn trong workspace lúc xuất báo cáo nên chưa đủ căn cứ bàn giao. | AI đã thêm phần giới thiệu và bỏ prompt lặp lại quy trình. File bị xóa ngoài thao tác định dạng này; giữ trích đoạn đã đọc để đối chiếu, không tự phục hồi file hoặc coi là video đã quay.<br>**Cần bản kịch bản đầy đủ; hiện chỉ có trích đoạn lưu trong audit.** |
 | A10 — AI Critique đã duyệt<br>Tool: OpenAI Codex<br>Time: 10/11/2026; duyệt 04:23:06 UTC<br>Prompt (nguyên văn): ok chỉnh giúp tôi sao đó chạy và ghi nhận lỗi để hoàn thành task 1 giúp tôi<br>Yêu cầu chung hoàn thiện Task 1; không có prompt riêng chỉ yêu cầu viết critique trong log đã lưu. | Trích nguyên văn file đầu ra:<br>Bài học là phải kiểm tra cả tiêu chí lẫn cách thu bằng chứng.<br>Bản đầy đủ: [A10 · source](ai_critique.md) | VALID | ISTQB §3.2.2: review để phát hiện vấn đề của work product. Bài critique chỉ ra yêu cầu ngoài spec, tiêu chí gộp và lỗi automation. | Sinh viên xác nhận duyệt bằng câu “tôi duyệt rồi bạn chỉnh lại là tôi đã duyệt giúp tôi đi”. Nội dung do AI hỗ trợ soạn, không gán là sinh viên tự viết toàn bộ.<br>**Giữ phê bình cụ thể và giới hạn bằng chứng.** |
 
@@ -106,9 +114,9 @@ Nguyên văn mẫu, chưa phải cam kết đã ký. Sinh viên cần hoàn thi�
 |---|---|
 | Student name (printed): | Phạm Quang Vinh |
 | Student ID: | 23120202 |
-| Class / Cohort: | [Chưa cung cấp — sinh viên điền] |
-| Course: | CS423 / CSC13003 – Software Testing |
-| Instructor: | [Chưa cung cấp — sinh viên điền] |
+| Class / Cohort: | CS423 / CSC13003 — Term 2026 |
+| Course: | CS423 / CSC13003 – Software Testing (AI-augmented) |
+| Instructor: | Dr. Lam Quang Vu / Dr. Tran Duy Hoang / MSc. Tran Thi Bich Hanh / MSc. Truong Phuoc Loc / MSc. Ho Tuan Thanh |
 | Date: | [Sinh viên điền ngày ký] |
 | Signature: | [Sinh viên tự ký — chưa ký] |
 
@@ -140,5 +148,7 @@ Nguyên văn mẫu, chưa phải cam kết đã ký. Sinh viên cần hoàn thi�
 Log hội thoại: [Task 1](task1/evidence/ai_conversation.md). Xác nhận duyệt: [human_review.json](task1/evidence/human_review.json). Các prompt sau Task 1 được chép nguyên văn từ hội thoại hiện có; không khẳng định đã xuất đầy đủ log mọi phiên.
 
 Phiên định dạng hiện tại: OpenAI Codex, 15/11/2026. Prompt nguyên văn: “đây là template chỉnh lại cho giống giúp tôi”, kèm link template ở References. Đầu ra: Markdown, Word, PDF theo mẫu; chưa được sinh viên xác nhận duyệt mới.
+
+Cập nhật 15/11/2026: điền thông tin học phần/giảng viên và URL YouTube theo dữ liệu sinh viên cung cấp; đã xác nhận tiêu đề trang, chưa đánh giá toàn bộ nội dung video.
 
 Dựng lại: `python report/build_ai_audit.py --pdf` (cần python-docx và LibreOffice). Nguồn dữ liệu: [ai_audit_data.json](report/ai_audit_data.json).

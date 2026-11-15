@@ -7,9 +7,14 @@
     "INCOMPLETE": 4
   },
   "conclusion_words": 132,
-  "pdf_pages": 8,
+  "pdf_pages": 9,
   "pdf_horizontal_overflow": false,
   "verbatim_output_excerpts": "matched all source files",
   "student_signature": "not filled",
-  "original_template_sha256": "23f9a590dbbb702be85ca286a53a496ac43f43b3989e581771e52a9d85c645a6"
+  "original_template_sha256": "23f9a590dbbb702be85ca286a53a496ac43f43b3989e581771e52a9d85c645a6",
+  "course_information": "all user-supplied fields present",
+  "lecturers_tas": 5,
+  "contact_emails": 5,
+  "youtube_url": "https://youtu.be/Y1BYcoC3PGg",
+  "youtube_content_reviewed": false
 }

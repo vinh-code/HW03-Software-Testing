@@ -2,6 +2,8 @@
 
 Sinh viên: **Phạm Quang Vinh — MSSV: 23120202 — 23120202@student.hcmus.edu.vn**.
 
+Học phần: **CS423 / CSC13003 – Software Testing (AI-augmented) — Term 2026**. [Thông tin khoa, giảng viên và liên hệ](report/course_information.md).
+
 **Task 1 đã chạy và đăng 23 GitHub Issues kèm ảnh; sinh viên đã xác nhận duyệt. Task 2 đã thực hiện đủ 1 pilot + 7 phiên người dùng thật ngoài lớp; Task 3 đã chạy đủ 3/3 nền tảng.**
 
 Repository: [vinh-code/HW03-Software-Testing](https://github.com/vinh-code/HW03-Software-Testing) · [GitHub Issues](https://github.com/vinh-code/HW03-Software-Testing/issues)
@@ -28,7 +30,7 @@ Repository: [vinh-code/HW03-Software-Testing](https://github.com/vinh-code/HW03-
 | GitHub Issues đã đăng | 23 |
 | Flow usability / số phiên / người tham gia | 1 flow / 8 phiên (1 pilot + 7 chính thức) / 8 người tham gia |
 | Nền tảng đã test | 3: Chrome và Firefox / Ubuntu; Chrome / Samsung Galaxy S23 Android 13 |
-| Demo video | Đã quay 2 phút 03 giây; chờ sinh viên cung cấp link YouTube |
+| Demo video | [Video YouTube do sinh viên cung cấp](https://youtu.be/Y1BYcoC3PGg) |
 
 ## Self-assessment — sinh viên tự điền sau khi hoàn thiện
 
@@ -37,7 +39,7 @@ Repository: [vinh-code/HW03-Software-Testing](https://github.com/vinh-code/HW03-
 | Task 1 | 30 | Đã duyệt; chưa tự chấm điểm |
 | Task 2 | 40 | Đã hoàn thành 1 pilot + 7 phiên người dùng thật; chưa tự chấm điểm |
 | Task 3 | 20 | Đã chạy 3/3 nền tảng; chưa tự chấm điểm |
-| Agent Skills | 10 | Đã xây, chạy demo và có video; chờ link YouTube, chưa tự chấm |
+| Agent Skills | 10 | Đã có skill và link YouTube; chưa tự chấm |
 | Tổng | 100 | Chưa chốt |
 
 Chưa đóng gói ZIP nộp cuối vì các phần bắt buộc của toàn bài còn thiếu. Bản checklist cũ được giữ trong commit baseline. Không sửa code SUT để che lỗi; chỉ tạo dữ liệu thử riêng và thu bằng chứng. Không khởi động lại backend trước khi backup DB vì database.js tự reset khi import.

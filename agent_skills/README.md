@@ -2,11 +2,12 @@
 
 Phạm Quang Vinh — 23120202 — 23120202@student.hcmus.edu.vn.
 
-Đã xây và dùng skill trên toàn bộ màn hình Login EShop, chạy thật 16/16 tiêu chí: **6 Passed, 10 Failed**, có 10 ảnh lỗi. Video gốc dài **2 phút 03 giây**, 1366×900, 25 fps, không có lời thoại; chú thích tiếng Việt xuất hiện ngay trong bản ghi. **Link YouTube đang chờ sinh viên tải lên và gửi lại**; đây là phần còn thiếu để hoàn tất yêu cầu video YouTube của đề.
+Đã xây và dùng skill trên toàn bộ màn hình Login EShop, chạy thật 16/16 tiêu chí: **6 Passed, 10 Failed**, có 10 ảnh lỗi. Video gốc dài **2 phút 03 giây**, 1366×900, 25 fps, không có lời thoại; chú thích tiếng Việt xuất hiện ngay trong bản ghi. **Video nộp bài do sinh viên cung cấp:** [Xem trên YouTube](https://youtu.be/Y1BYcoC3PGg). Link đã mở được và xác nhận tiêu đề; nội dung video chưa được rà soát trong lần cập nhật này. Thông số 2 phút 03 giây ở trên thuộc bản WebM ngày 11/11, không mặc định là thông số video YouTube.
 
 ## Tài liệu và bằng chứng
 
 - [Skill tái sử dụng](gui-usability-evaluator/SKILL.md) và [hợp đồng dữ liệu](gui-usability-evaluator/references/evidence-contract.md).
+- [Video demo nộp bài trên YouTube](https://youtu.be/Y1BYcoC3PGg) · [Metadata link](demo/submission_video.json).
 - [Video demo gốc WebM](demo/agent-skill-demo.webm) — tải file về để xem hoặc tải lên YouTube.
 - [Kết quả GUI](demo/gui_summary/report.md), [CSV](demo/gui_summary/results.csv), [JSON gốc](demo/results.json), [10 ảnh](demo/screenshots/).
 - [Phân tích usability bằng helper mới](demo/usability_summary/summary.json): dữ liệu mô phỏng Task 2, 7 hồ sơ, loại pilot, SUS 58,93. Không có phiên phỏng vấn mới.

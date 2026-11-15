@@ -1,5 +1,8 @@
 # AI Audit — Agent Skill
 
+Cập nhật 15/11/2026: sinh viên cung cấp [video YouTube nộp bài](https://youtu.be/Y1BYcoC3PGg). Đã xác nhận tiêu đề trang; chưa rà soát toàn bộ nội dung. Các ghi nhận ngày 11/11 bên dưới mô tả trạng thái tại thời điểm tạo video WebM cũ.
+
+
 I use AI tools for the following tasks.
 
 

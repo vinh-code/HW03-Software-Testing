@@ -18,6 +18,7 @@ from docx.opc.constants import RELATIONSHIP_TYPE as RT
 R=Path(__file__).resolve().parents[1]
 D=json.loads((R/'report/ai_audit_data.json').read_text())
 T=R/'report/templates/AI_Audit_Template.docx'
+C=D.get('course_information',{})
 assert hashlib.sha256(T.read_bytes()).hexdigest()==D['template_sha256']
 rows=D['rows'];counts=Counter(x['verdict'] for x in rows)
 assert len({x['id'] for x in rows})==len(rows)
@@ -56,7 +57,9 @@ notes=(
  'A05 là snapshot mô phỏng; A06 là bản dữ liệu đổi nhãn thành thực tế trong commit khác và chưa được xác minh ở đây. Không cộng hai nguồn thành một mẫu người tham gia.'
 )
 info=[('Student name (printed):','Phạm Quang Vinh'),('Student ID:','23120202'),('Class / Cohort:',D['class_cohort']),('Assignment ID (e.g., HW#00, HW#02):','HW#03 — GUI & Usability'),('Assignment date:',D['assignment_date']),('AI tool(s) used:','OpenAI Codex; Playwright/skill-creator và gui-usability-evaluator. Công cụ hỗ trợ: Python, gh CLI, BrowserStack.'),('AI assistance used:','[X] Yes  [ ] No')]
-sig=[('Student name (printed):','Phạm Quang Vinh'),('Student ID:','23120202'),('Class / Cohort:',D['class_cohort']),('Course:','CS423 / CSC13003 – Software Testing'),('Instructor:',D['instructor']),('Date:','[Sinh viên điền ngày ký]'),('Signature:','[Sinh viên tự ký — chưa ký]')]
+if C:
+    info += [('Course:',C['course']),('Faculty:',C['faculty']),('Term:',C['term']),('Lecturers / TAs:',' / '.join(C['lecturers_tas'])),('Contact:',' / '.join(C['contacts'])),('Faculty-provided AI account:',C['faculty_provided_ai_account']),('Companion templates:',' · '.join(C['companion_templates'])),('Demo video (YouTube):',D['demo_youtube_url'])]
+sig=[('Student name (printed):','Phạm Quang Vinh'),('Student ID:','23120202'),('Class / Cohort:',D['class_cohort']),('Course:',C.get('course','CS423 / CSC13003 – Software Testing')),('Instructor:',D['instructor']),('Date:','[Sinh viên điền ngày ký]'),('Signature:','[Sinh viên tự ký — chưa ký]')]
 doc=Document(T);doc.core_properties.title='HW03 — AI Audit Report — 23120202';doc.core_properties.author='Phạm Quang Vinh — AI-assisted draft';doc.core_properties.subject='Adapted from the supplied FIT/HCMUS AI Audit template'
 # Keep the original portrait Letter page, typography and table style; make 17 cm tables fit.
 for sec in doc.sections:sec.left_margin=Cm(2);sec.right_margin=Cm(2)
@@ -65,8 +68,15 @@ head3=next(p for p in paras if p.text.startswith('3. Audit Table'))
 for note in notes:
     p=insert_before(head3,note);p.paragraph_format.space_after=Pt(3);p.paragraph_format.line_spacing=1
     for r in p.runs:r.font.name='Arial';r.font.size=Pt(9)
-head3.paragraph_format.page_break_before=True
-for i,(key,val) in enumerate(info,1):cell(doc.tables[0].cell(i,0),key);cell(doc.tables[0].cell(i,1),val)
+head3.paragraph_format.page_break_before=not bool(C)
+if C:
+    next(p for p in paras if p.text.startswith('2. Instructions')).paragraph_format.page_break_before=True
+while len(doc.tables[0].rows)<len(info)+1:doc.tables[0].add_row()
+for i,(key,val) in enumerate(info,1):
+    cell(doc.tables[0].cell(i,0),key);cell(doc.tables[0].cell(i,1),val)
+    doc.tables[0].rows[i]._tr.get_or_add_trPr().append(OxmlElement('w:cantSplit'))
+    if key=='Demo video (YouTube):':
+        doc.tables[0].cell(i,1).text='';link(doc.tables[0].cell(i,1).paragraphs[0],val,val)
 audit=doc.tables[1]
 audit.autofit=False
 widths=[3.7,3.2,2.3,3.9,3.9]
@@ -119,6 +129,7 @@ for x in rows:
     for r in p.runs:r.font.size=Pt(8)
 p=para('Log hội thoại Task 1: ');link(p,'task1/evidence/ai_conversation.md','task1/evidence/ai_conversation.md')
 p=para('Xác nhận duyệt có phạm vi: ');link(p,'task1/evidence/human_review.json','task1/evidence/human_review.json')
+para('Cập nhật 15/11/2026: sinh viên cung cấp họ tên, MSSV, bảng thông tin học phần/giảng viên và URL YouTube. Đã điền theo nội dung cung cấp; xác nhận tiêu đề trang video, chưa đánh giá toàn bộ nội dung video.')
 para('Phiên định dạng hiện tại: OpenAI Codex, 15/11/2026. Prompt nguyên văn: “đây là template chỉnh lại cho giống giúp tôi”, kèm link template ở References. Đầu ra: AI Audit Markdown, Word và PDF theo mẫu; chưa được sinh viên xác nhận duyệt mới.')
 para('Các prompt sau Task 1 được chép nguyên văn từ hội thoại hiện có. Không khẳng định đã xuất đầy đủ mọi tool call hoặc log của các phiên chỉnh sửa khác.')
 for section in doc.sections:
@@ -138,7 +149,7 @@ for x in rows:
     md.append('| '+' | '.join(esc(v) for v in [a,b,x['verdict'],x['reasoning'],x['fix']+'\n**'+x['highlight']+'**'])+' |')
 md+=['## 4. Summary of AI Accuracy','| Metric | Count | Percentage |\n|---|---:|---:|\n| Total AI-generated artifacts audited | '+str(len(rows))+' | 100% |\n'+'\n'.join(f'| {v} | {counts[v]} | {100*counts[v]/len(rows):.0f}% |' for v in ['VALID','INVALID','INCOMPLETE']),'Tỷ lệ chỉ phản ánh 10 artifact được chọn và đối chiếu, không phải độ chính xác chung của mô hình hay điểm của bài.','## 5. Conclusion — When should AI be used (or not)?',D['conclusion'],'Kết luận: '+str(D['conclusion_word_count'])+' từ theo khoảng trắng; không thay thế [AI Critique](ai_critique.md).','## 6. Mandatory Disclosure (paste verbatim)','Nguyên văn mẫu, chưa phải cam kết đã ký. Sinh viên cần hoàn thiện và xác nhận, đặc biệt nguồn dữ liệu A05/A06 và phần written entirely by me.',disclosure,'## Signature','| Field | Value |\n|---|---|\n'+'\n'.join('| '+esc(k)+' | '+esc(v)+' |' for k,v in sig),'## References']
 md+=['- '+('['+title+']('+url+')' if url else title) for title,url in references]
-md+=['## Evidence index — supporting material','| ID | Full output | SHA-256 |\n|---|---|---|\n'+'\n'.join('| '+x['id']+' | ['+x['source']+']('+x['source']+') | `'+x['source_sha256']+'` |' for x in rows),'Log hội thoại: [Task 1](task1/evidence/ai_conversation.md). Xác nhận duyệt: [human_review.json](task1/evidence/human_review.json). Các prompt sau Task 1 được chép nguyên văn từ hội thoại hiện có; không khẳng định đã xuất đầy đủ log mọi phiên.','Phiên định dạng hiện tại: OpenAI Codex, 15/11/2026. Prompt nguyên văn: “đây là template chỉnh lại cho giống giúp tôi”, kèm link template ở References. Đầu ra: Markdown, Word, PDF theo mẫu; chưa được sinh viên xác nhận duyệt mới.','Dựng lại: `python report/build_ai_audit.py --pdf` (cần python-docx và LibreOffice). Nguồn dữ liệu: [ai_audit_data.json](report/ai_audit_data.json).']
+md+=['## Evidence index — supporting material','| ID | Full output | SHA-256 |\n|---|---|---|\n'+'\n'.join('| '+x['id']+' | ['+x['source']+']('+x['source']+') | `'+x['source_sha256']+'` |' for x in rows),'Log hội thoại: [Task 1](task1/evidence/ai_conversation.md). Xác nhận duyệt: [human_review.json](task1/evidence/human_review.json). Các prompt sau Task 1 được chép nguyên văn từ hội thoại hiện có; không khẳng định đã xuất đầy đủ log mọi phiên.','Phiên định dạng hiện tại: OpenAI Codex, 15/11/2026. Prompt nguyên văn: “đây là template chỉnh lại cho giống giúp tôi”, kèm link template ở References. Đầu ra: Markdown, Word, PDF theo mẫu; chưa được sinh viên xác nhận duyệt mới.','Cập nhật 15/11/2026: điền thông tin học phần/giảng viên và URL YouTube theo dữ liệu sinh viên cung cấp; đã xác nhận tiêu đề trang, chưa đánh giá toàn bộ nội dung video.','Dựng lại: `python report/build_ai_audit.py --pdf` (cần python-docx và LibreOffice). Nguồn dữ liệu: [ai_audit_data.json](report/ai_audit_data.json).']
 (R/'ai_audit_report.md').write_text(('\n\n'.join(md)+'\n').replace('|\n\n|','|\n|'))
 p=argparse.ArgumentParser();p.add_argument('--pdf',action='store_true');args=p.parse_args()
 if args.pdf:

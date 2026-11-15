@@ -3,8 +3,8 @@
   "template_sha256": "23f9a590dbbb702be85ca286a53a496ac43f43b3989e581771e52a9d85c645a6",
   "source_commit": "a50c4c3",
   "prepared_date": "15/11/2026",
-  "class_cohort": "[Chưa cung cấp — sinh viên điền]",
-  "instructor": "[Chưa cung cấp — sinh viên điền]",
+  "class_cohort": "CS423 / CSC13003 — Term 2026",
+  "instructor": "Dr. Lam Quang Vu / Dr. Tran Duy Hoang / MSc. Tran Thi Bich Hanh / MSc. Truong Phuoc Loc / MSc. Ho Tuan Thanh",
   "assignment_date": "[Ngày giao/nộp bài chưa cung cấp]",
   "rows": [
     {
@@ -124,8 +124,8 @@
       "output": "\"duration_seconds\": 123.32,",
       "verdict": "INCOMPLETE",
       "reasoning": "ISTQB §5.3.2: không báo hoàn thành vượt bằng chứng. HW03 §7 yêu cầu demo end-to-end; video chưa cho thấy gọi skill trong chat và agent tạo script.",
-      "fix": "Sinh viên chỉ ra thiếu sót; AI sửa kịch bản quay, giữ video cũ làm bằng chứng bổ sung. Chưa có bản quay mới hoặc URL YouTube được cung cấp.",
-      "highlight": "Quay: chat gọi skill → tạo/điều chỉnh script → chạy thật → báo cáo."
+      "fix": "Sinh viên chỉ ra thiếu sót và cung cấp URL YouTube ngày 15/11/2026: https://youtu.be/Y1BYcoC3PGg. Video WebM cũ giữ làm bằng chứng bổ sung. Chưa rà soát nội dung video YouTube; verdict này áp dụng bản WebM cũ.",
+      "highlight": "Đã nhận link YouTube; không đồng nhất video mới với bản WebM 123,32 giây."
     },
     {
       "id": "A09",
@@ -159,5 +159,40 @@
     }
   ],
   "conclusion": "AI hữu ích khi đối chiếu checklist, tạo script và tổng hợp bằng chứng. Kết quả đáng tin hơn khi gắn với tiêu chí, môi trường và ảnh thực thi. Tuy nhiên, AI từng suy diễn yêu cầu ngoài đặc tả và đánh giá video demo hoàn thành quá sớm. Dữ liệu mô phỏng chỉ phù hợp minh họa phân tích, không chứng minh đã phỏng vấn người thật. Vì vậy, nên dùng AI cho công việc lặp lại và hỗ trợ rà soát; người làm bài cần kiểm tra nguồn dữ liệu, kết quả và giới hạn trước khi nộp. Những chỗ thiếu prompt, bằng chứng hoặc xác nhận phải được ghi rõ. Không nên dùng lời khẳng định của AI thay cho quan sát hay phê duyệt của sinh viên.",
-  "conclusion_word_count": 132
+  "conclusion_word_count": 132,
+  "student_name": "Phạm Quang Vinh",
+  "student_id": "23120202",
+  "course_information": {
+    "student_name": "Phạm Quang Vinh",
+    "student_id": "23120202",
+    "student_email": "23120202@student.hcmus.edu.vn",
+    "course": "CS423 / CSC13003 – Software Testing (AI-augmented)",
+    "faculty": "Faculty of Information Technology (FIT) – HCMUS",
+    "term": "2026",
+    "lecturers_tas": [
+      "Dr. Lam Quang Vu",
+      "Dr. Tran Duy Hoang",
+      "MSc. Tran Thi Bich Hanh",
+      "MSc. Truong Phuoc Loc",
+      "MSc. Ho Tuan Thanh"
+    ],
+    "contacts": [
+      "lqvu@fit.hcmus.edu.vn",
+      "tdhoang@fit.hcmus.edu.vn",
+      "ttbhanh@fit.hcmus.edu.vn",
+      "tploc@fit.hcmus.edu.vn",
+      "hthanh@fit.hcmus.edu.vn"
+    ],
+    "faculty_provided_ai_account": "Any AI Tool (e.g., ChatGPT, Claude, Gemini, Copilot, Cursor)",
+    "companion_templates": [
+      "AI Audit Report",
+      "Disclosure Form",
+      "Reflective Statement",
+      "Privacy Checklist",
+      "Student Acknowledgement"
+    ],
+    "demo_youtube_url": "https://youtu.be/Y1BYcoC3PGg",
+    "source": "Thông tin và URL do sinh viên cung cấp trong hội thoại ngày 15/11/2026. Term không được dùng để suy ra ngày giao/nộp bài hoặc mã lớp riêng."
+  },
+  "demo_youtube_url": "https://youtu.be/Y1BYcoC3PGg"
 }

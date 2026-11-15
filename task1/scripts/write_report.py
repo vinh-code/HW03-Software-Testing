@@ -11,6 +11,8 @@ report = '''# HW03 — GUI & Usability: Báo cáo Kiểm thử Tổng hợp
 
 Sinh viên: **Phạm Quang Vinh — MSSV: 23120202 — 23120202@student.hcmus.edu.vn**.
 
+Học phần: **CS423 / CSC13003 – Software Testing (AI-augmented) — Term 2026**. [Thông tin khoa, giảng viên và liên hệ](course_information.md).
+
 ## 1. Phạm vi và trạng thái
 
 Task 1 được thực thi trên Login, Profile/Hồ sơ và Lịch sử đơn, Admin Orders; navbar và Home hỗ trợ điều hướng/thêm giỏ. Task 2 đã thực hiện đánh giá Usability với 1 phiên Pilot và 7 phiên thử nghiệm người dùng thực tế ngoài lớp (08 người tham gia); Task 3 đã chạy đủ Chrome, Firefox trên Ubuntu và Chrome trên Samsung Galaxy S23 thật / Android 13 qua BrowserStack. Phạm vi màn hình/flow không trùng thành viên khác.
@@ -133,13 +135,15 @@ Các vấn đề Usability phát hiện được (U01 đến U05) được phân
 [Bộ hồ sơ Usability đầy đủ](../usability/README.md) · [PDF Báo cáo Usability](../usability/Task2_Simulation_Pack.pdf) · [Bảng tính Excel](../usability/Task2_Simulation.xlsx) · [Phân tích chi tiết](../usability/analysis.md).
 """
 
-report += '\n## 10. Agent Skill — demo thực thi\n\nĐã xây skill `gui-usability-evaluator` gồm hướng dẫn, hợp đồng dữ liệu, ví dụ EShop và hai helper Python cho GUI/usability. Đã cài vào thư mục skill của Codex và dùng để kiểm thử trọn màn hình Login trên Chrome 156.0.8078.79 / Ubuntu 24.04.5 LTS.\n\nLượt demo: 16/16 tiêu chí, 6 Passed, 10 Failed, 10 ảnh lỗi; đủ IA-01 đến IA-04, không có Blocked. Các lỗi liên kết issue Task 1, không tạo trùng. Bản sao backend riêng giữ nguyên SQLite gốc. Helper usability phân tích bộ dữ liệu 7 hồ sơ, loại pilot, SUS trung bình 58.93.\n\nVideo ghi thao tác thật dài 2 phút 03 giây, 1366×900, 25 fps, có chú thích tiếng Việt. Đã kiểm tra 11 nhóm điều kiện dữ liệu/tính toán của helper. **Link YouTube đang chờ sinh viên tự tải lên và cung cấp**; chưa coi phần video YouTube là hoàn tất.\n\n[Skill và cách dùng](../agent_skills/README.md) · [Video gốc](../agent_skills/demo/agent-skill-demo.webm) · [Báo cáo GUI demo](../agent_skills/demo/gui_summary/report.md) · [Kiểm chứng helper](../agent_skills/demo/helper_verification.json).\n'
+report += '\n## 10. Agent Skill — demo thực thi\n\nĐã xây skill `gui-usability-evaluator` gồm hướng dẫn, hợp đồng dữ liệu, ví dụ EShop và hai helper Python cho GUI/usability. Đã cài vào thư mục skill của Codex và dùng để kiểm thử trọn màn hình Login trên Chrome 156.0.8078.79 / Ubuntu 24.04.5 LTS.\n\nLượt demo: 16/16 tiêu chí, 6 Passed, 10 Failed, 10 ảnh lỗi; đủ IA-01 đến IA-04, không có Blocked. Các lỗi liên kết issue Task 1, không tạo trùng. Bản sao backend riêng giữ nguyên SQLite gốc. Helper usability phân tích bộ dữ liệu 7 hồ sơ, loại pilot, SUS trung bình 58.93.\n\nVideo ghi thao tác thật dài 2 phút 03 giây, 1366×900, 25 fps, có chú thích tiếng Việt. Đã kiểm tra 11 nhóm điều kiện dữ liệu/tính toán của helper. **Video demo nộp bài:** [YouTube](https://youtu.be/Y1BYcoC3PGg), do sinh viên cung cấp ngày 15/11/2026. Thông số 2 phút 03 giây thuộc bản WebM cũ; nội dung video YouTube chưa được rà soát trong lần cập nhật này.\n\n[Skill và cách dùng](../agent_skills/README.md) · [Video gốc](../agent_skills/demo/agent-skill-demo.webm) · [Báo cáo GUI demo](../agent_skills/demo/gui_summary/report.md) · [Kiểm chứng helper](../agent_skills/demo/helper_verification.json).\n'
 
 (R / 'report/main_report.md').write_text(report, encoding='utf-8')
 
 readme_text = f'''# HW03 — GUI & Usability
 
 Sinh viên: **Phạm Quang Vinh — MSSV: 23120202 — 23120202@student.hcmus.edu.vn**.
+
+Học phần: **CS423 / CSC13003 – Software Testing (AI-augmented) — Term 2026**. [Thông tin khoa, giảng viên và liên hệ](report/course_information.md).
 
 **Task 1 đã chạy và đăng 23 GitHub Issues kèm ảnh; sinh viên đã xác nhận duyệt. Task 2 đã thực hiện đủ 1 pilot + 7 phiên người dùng thật ngoài lớp; Task 3 đã chạy đủ 3/3 nền tảng.**
 
@@ -152,7 +156,7 @@ Repository: [vinh-code/HW03-Software-Testing](https://github.com/vinh-code/HW03-
 - [Task 3: Báo cáo và ảnh](cross_platform/README.md) / [PDF](cross_platform/README.pdf)
 - [Agent Skill và demo](agent_skills/README.md) / [Video](agent_skills/demo/agent-skill-demo.webm)
 - [Dữ liệu thực thi](task1/evidence/results.json) / [Cách chạy lại](task1/README.md)
-- [AI Audit](ai_audit_report.md) / [AI Critique — đã duyệt](ai_critique.md)
+- [AI Audit](ai_audit_report.md) / [Word theo template](ai_audit_report.docx) / [PDF](ai_audit_report.pdf) / [AI Critique — đã duyệt](ai_critique.md)
 - [Git commit log](git_commit_log.txt)
 
 ## Test summary
@@ -167,7 +171,7 @@ Repository: [vinh-code/HW03-Software-Testing](https://github.com/vinh-code/HW03-
 | GitHub Issues đã đăng | 23 |
 | Flow usability / số phiên / người tham gia | 1 flow / 8 phiên (1 pilot + 7 chính thức) / 8 người tham gia |
 | Nền tảng đã test | 3: Chrome và Firefox / Ubuntu; Chrome / Samsung Galaxy S23 Android 13 |
-| Demo video | Đã quay 2 phút 03 giây; chờ sinh viên cung cấp link YouTube |
+| Demo video | [Video YouTube do sinh viên cung cấp](https://youtu.be/Y1BYcoC3PGg) |
 
 ## Self-assessment — sinh viên tự điền sau khi hoàn thiện
 
@@ -176,7 +180,7 @@ Repository: [vinh-code/HW03-Software-Testing](https://github.com/vinh-code/HW03-
 | Task 1 | 30 | Đã duyệt; chưa tự chấm điểm |
 | Task 2 | 40 | Đã hoàn thành 1 pilot + 7 phiên người dùng thật; chưa tự chấm điểm |
 | Task 3 | 20 | Đã chạy 3/3 nền tảng; chưa tự chấm điểm |
-| Agent Skills | 10 | Đã xây, chạy demo và có video; chờ link YouTube, chưa tự chấm |
+| Agent Skills | 10 | Đã có skill và link YouTube; chưa tự chấm |
 | Tổng | 100 | Chưa chốt |
 
 Chưa đóng gói ZIP nộp cuối vì các phần bắt buộc của toàn bài còn thiếu. Bản checklist cũ được giữ trong commit baseline. Không sửa code SUT để che lỗi; chỉ tạo dữ liệu thử riêng và thu bằng chứng. Không khởi động lại backend trước khi backup DB vì database.js tự reset khi import.
