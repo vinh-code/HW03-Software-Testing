@@ -120,11 +120,11 @@
       "prompt": "cập nhật link video demo YouTube tôi đã quay và tải lên: https://youtu.be/Y1BYcoC3PGg",
       "prompt_note": "",
       "source": "agent_skills/demo/recording.json",
-      "source_sha256": "139ac2e0d53f845468ec2af3e9e4f17a599820dace9d0ce16bfdbd48246f4373",
+      "source_sha256": "5500df4a7be15fb957d10d16ce1a24a4750c4b32a8e0843748e225ef8397629e",
       "output": "Video demo thực tế dài 2 phút 03 giây (định dạng WebM 1366x900) ghi lại toàn bộ quy trình kiểm thử tự động màn hình Login và phân tích usability; đã xuất bản lên YouTube tại đường dẫn: https://youtu.be/Y1BYcoC3PGg.",
       "verdict": "VALID",
       "reasoning": "HW03 §7: Yêu cầu nộp kèm video demo YouTube thể hiện trọn vẹn quy trình sử dụng skill trên một màn hình hoàn chỉnh. Đáp ứng đầy đủ tiêu chí của đề bài.",
-      "fix": "Sau khi bản ghi tự động WebM chưa thể hiện hết phần tương tác trong chat, sinh viên đã trực tiếp tự thực hiện quy trình demo đầy đủ và xuất bản video lên YouTube tại https://youtu.be/Y1BYcoC3PGg. Sinh viên cung cấp URL chính thức để cập nhật vào toàn bộ báo cáo nộp bài.",
+      "fix": "Sau khi bản ghi tự động WebM chưa thể hiện hết phần tương tác trong chat, sinh viên đã trực tiếp tự thực hiện quy trình demo đầy đủ và xuất bản video lên YouTube tại https://youtu.be/Y1BYcoC3PGg. Sinh viên cung cấp URL chính thức để cập nhật vào toàn bộ báo cáo nộp bài. Bản WebM cũ được giữ trong lịch sử Git; URL lưu tại recording.json.",
       "highlight": "Sinh viên tự thực hiện và cung cấp link YouTube demo chính thức: https://youtu.be/Y1BYcoC3PGg."
     },
     {

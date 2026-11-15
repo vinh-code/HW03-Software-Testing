@@ -22,5 +22,8 @@
   "verified_at_utc": "2026-11-11T14:43:38.524498+00:00",
   "usability_source_commit": "31df3d900f2b9e003df96f30fc8f2ece7324823a",
   "usability_input_sha256": "45e4b17a39a4c39f4a4ba24938a694240a63f234b61fd236b5ab72da879aba01",
-  "video_full_decode_verified": true
+  "video_full_decode_verified": true,
+  "archived_url": "https://github.com/vinh-code/HW03-Software-Testing/blob/2aafa8aa260b537a33874b53bceb9403944b6a82/agent_skills/demo/agent-skill-demo.webm",
+  "local_file_in_submission": false,
+  "retention_note": "Browser-only recording retained in Git history after submission cleanup; see submission_video.json for the student-provided YouTube URL."
 }

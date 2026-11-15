@@ -17,6 +17,6 @@ I use AI tools for the following tasks.
 - Kiểm tra: quick_validate của skill-creator; 11 nhóm điều kiện kiểm chứng helper, bao gồm SUS 0/50/100, dữ liệu thiếu, lẫn nguồn, pilot lẫn mẫu, ID trùng và thiếu ảnh Failed; kiểm tra video giải mã được, xem khung hình thao tác và metadata.
 - Điều chỉnh trong phiên: wrapper Playwright không có quyền chạy trực tiếp nên gọi qua bash; helper được sửa để chấp nhận pilot=null. Không có lần chạy GUI lỗi bị ghi thành lỗi ứng dụng.
 - Giới hạn: video quay workflow GUI và kết quả phân tích dữ liệu mô phỏng, không quay một phiên usability với người thật. YouTube Studio yêu cầu đăng nhập; sinh viên chọn tự upload. Chưa có URL và chưa xuất bản lên YouTube. Sinh viên chưa xác nhận duyệt riêng phần Agent Skill mới này.
-- Bằng chứng: [skill và README](agent_skills/README.md), [JSON thực thi](agent_skills/demo/results.json), [video và metadata](agent_skills/demo/recording.json), [helper verification](agent_skills/demo/helper_verification.json).
+- Bằng chứng: [skill và README](README.md), [JSON thực thi](demo/results.json), [video và metadata](demo/recording.json), [helper verification](demo/helper_verification.json).
 
 - Tính tái lập: sau khi chạy helper, phát hiện `usability/data/simulation.json` và `usability/sus_scoring.py` được thay đổi từ bên ngoài. Giữ nguyên các thay đổi đó ở working tree, không đưa vào commit này. Demo lưu bản nguồn mô phỏng tại `agent_skills/demo/usability_input.json` từ commit `31df3d9`, đúng dữ liệu đã dùng khi ghi video; kiểm chứng chạy lại trên bản này.

@@ -8,11 +8,11 @@ Phạm Quang Vinh — 23120202 — 23120202@student.hcmus.edu.vn.
 
 - [Skill tái sử dụng](gui-usability-evaluator/SKILL.md) và [hợp đồng dữ liệu](gui-usability-evaluator/references/evidence-contract.md).
 - [Video demo nộp bài trên YouTube](https://youtu.be/Y1BYcoC3PGg) · [Metadata link](demo/submission_video.json).
-- [Video demo gốc WebM](demo/agent-skill-demo.webm) — tải file về để xem hoặc tải lên YouTube.
+- [Video trình duyệt cũ trong lịch sử Git](https://github.com/vinh-code/HW03-Software-Testing/blob/2aafa8aa260b537a33874b53bceb9403944b6a82/agent_skills/demo/agent-skill-demo.webm) — bằng chứng bổ sung; đã bỏ bản WebM khỏi thư mục nộp.
 - [Kết quả GUI](demo/gui_summary/report.md), [CSV](demo/gui_summary/results.csv), [JSON gốc](demo/results.json), [10 ảnh](demo/screenshots/).
 - [Phân tích usability bằng helper mới](demo/usability_summary/summary.json): dữ liệu mô phỏng Task 2, 7 hồ sơ, loại pilot, SUS 58,93. Không có phiên phỏng vấn mới.
 - [AI Audit riêng phần Agent Skill](ai_audit.md).
-- [Kiểm chứng helper](demo/helper_verification.json), [metadata video](demo/recording.json), [nội dung tải YouTube](demo/youtube_upload.md).
+- [Kiểm chứng helper](demo/helper_verification.json), [metadata video](demo/recording.json).
 
 ## Cài và gọi skill
 

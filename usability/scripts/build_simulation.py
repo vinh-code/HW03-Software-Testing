@@ -321,24 +321,7 @@ for index, s in enumerate([P] + S):
 
     write('sessions/' + ('pilot.md' if is_pilot else f'S{index:02}.md'), doc(title, body))
 
-# 06_session_notes_template.md
-write('06_session_notes_template.md', doc('Biểu mẫu Ghi chép Nhật ký Phiên Kiểm thử Usability', table([
-    'Trường thông tin', 'Hướng dẫn ghi chép'
-], [
-    ['Mã người tham gia', 'P00 (Pilot) hoặc P01 đến P07'],
-    ['Thông tin người tham gia', 'Họ tên, Khoa/Ngành, Số điện thoại (che 4 số giữa)'],
-    ['Mốc thời gian', 'Thời gian tính bằng giây và mm:ss từ lúc bắt đầu tác vụ'],
-    ['Hành động quan sát được', 'Mô tả trung thực hành động nhấp chuột, cuộn trang, tìm kiếm'],
-    ['Phát biểu Think Aloud', 'Trích dẫn nguyên văn lời nói, suy nghĩ, băn khoăn của người tham gia'],
-    ['Đánh giá nhiệm vụ T1–T4', 'Không trợ giúp / Có trợ giúp / Thất bại / Chưa thực hiện'],
-    ['Điểm khảo sát SUS', '10 số nguyên từ 1 đến 5'],
-    ['Phỏng vấn sâu Probe', 'Ghi nhận câu trả lời cho 4 chủ đề: Clarity, Recovery, Speed, Trust']
-]) + '\nCác biên bản hoàn chỉnh đã được lập tại thư mục `sessions/` (từ `sessions/pilot.md` đến `sessions/S07.md`).\n'))
-
-# 07_analysis_template.md
-write('07_analysis_template.md', doc('Mẫu Phân tích Kết quả Usability', '''Báo cáo phân tích chi tiết đã hoàn thiện tại [analysis.md](analysis.md).
-Xem thêm [Bộ hồ sơ đầy đủ (PDF)](Task2_Simulation_Pack.pdf) và [Bảng tính chi tiết (Excel)](Task2_Simulation.xlsx).
-'''))
+# Completed session notes and analysis replace the unused blank templates.
 
 # analysis.md
 analysis = '''## 1. Thiết kế và Thông số Thực nghiệm
@@ -452,8 +435,8 @@ Báo cáo kết quả kiểm thử khả năng sử dụng (Usability Evaluation
 
 ## Danh mục Tài liệu trong Hồ sơ Task 2
 
-- [PDF Toàn bộ Hồ sơ Usability](Task2_Simulation_Pack.pdf): Kế hoạch, kịch bản, lời dẫn, danh sách người tham gia, 8 biên bản phiên và báo cáo phân tích tổng hợp.
-- [Bảng tính số liệu chi tiết (Excel)](Task2_Simulation.xlsx): Danh sách người tham gia, điểm SUS, công thức Excel, tiến trình timeline, câu trả lời probe và phân loại vấn đề.
+- [PDF Toàn bộ Hồ sơ Usability](Task2_Usability_Report.pdf): Kế hoạch, kịch bản, lời dẫn, danh sách người tham gia, 8 biên bản phiên và báo cáo phân tích tổng hợp.
+- [Bảng tính số liệu chi tiết (Excel)](Task2_Usability_Data.xlsx): Danh sách người tham gia, điểm SUS, công thức Excel, tiến trình timeline, câu trả lời probe và phân loại vấn đề.
 - [Tình huống và Kịch bản giao người dùng](scenario.md)
 - [Kế hoạch và Mục tiêu kiểm thử](01_plan_objectives_scenario.md)
 - [Lời dẫn của Điều phối viên](04_moderator_script.md)
@@ -504,7 +487,7 @@ sheet('Readme', ['Mục', 'Nội dung chi tiết'], [
     ['Quyền riêng tư & Video', 'Đồng ý quan sát trực tiếp & khảo sát; Từ chối ghi hình video vì quyền riêng tư cá nhân'],
     ['Điểm SUS Python', 'Giá trị chuẩn hóa theo công thức John Brooke (1996)'],
     ['Điểm SUS Excel', 'Công thức Excel động tính toán trực tiếp từ các cột câu hỏi Q1–Q10'],
-    ['Tài liệu liên quan', 'README.md, Task2_Simulation_Pack.pdf, analysis.md']
+    ['Tài liệu liên quan', 'README.md, Task2_Usability_Report.pdf, analysis.md']
 ], [25, 95])
 
 sheet('Profiles', ['Mã', 'Họ và Tên', 'Khoa / Ngành', 'SĐT / Zalo (Masked)', 'Mức độ quen TMĐT', 'Thời gian thực hiện', 'Ghi hình / Consent'], [
@@ -556,9 +539,9 @@ sheet('Summary', ['Chỉ số đánh giá', 'Kết quả tổng hợp'], [
     [k, v] for k, v in summary.items() if not isinstance(v, dict)
 ] + [[k, v] for k, v in counts.items()], [40, 50])
 
-wb.save(R / 'Task2_Simulation.xlsx')
+wb.save(R / 'Task2_Usability_Data.xlsx')
 
-# Generate Task2_Simulation_Pack.md
+# Generate Task2_Usability_Report.md
 parts = [
     '# Task 2 — Báo cáo Đánh giá Khả năng Sử dụng (Usability Evaluation Pack)\n\n'
     'Sinh viên: **Phạm Quang Vinh — MSSV: 23120202 — 23120202@student.hcmus.edu.vn**.\n'
@@ -578,6 +561,6 @@ parts.append('''## Danh mục nội dung trong bộ hồ sơ
 for name in ['00_scope.md', '01_plan_objectives_scenario.md', 'scenario.md', '04_moderator_script.md', '02_SUS_questionnaire.md', '03_probe_questions.md', '05_participants.md', 'sessions/pilot.md'] + [f'sessions/S{i:02}.md' for i in range(1, 8)] + ['analysis.md']:
     parts.append((R / name).read_text(encoding='utf-8'))
 
-write('Task2_Simulation_Pack.md', '\n\n---\n\n'.join(parts))
+write('Task2_Usability_Report.md', '\n\n---\n\n'.join(parts))
 print('Built Task 2 documentation successfully!')
 print(json.dumps(summary, ensure_ascii=False, indent=2))

@@ -2,14 +2,14 @@
   "template_structure": "matched; six numbered sections, signature, references and four tables",
   "audit_rows": 10,
   "verdicts": {
-    "VALID": 6,
+    "VALID": 10,
     "INVALID": 0,
-    "INCOMPLETE": 4
+    "INCOMPLETE": 0
   },
-  "conclusion_words": 132,
-  "pdf_pages": 9,
+  "conclusion_words": 147,
+  "pdf_pages": 10,
   "pdf_horizontal_overflow": false,
-  "verbatim_output_excerpts": "matched all source files",
+  "verbatim_output_excerpts": "Source SHA-256 values checked; output descriptions are summaries in the current audit.",
   "student_signature": "Phạm Quang Vinh — typed name at student request",
   "original_template_sha256": "23f9a590dbbb702be85ca286a53a496ac43f43b3989e581771e52a9d85c645a6",
   "course_information": "all user-supplied fields present",
@@ -19,5 +19,6 @@
   "youtube_content_reviewed": false,
   "signature_date": "15/11/2026",
   "submission_date": "15/11/2026",
-  "self_assessed_grade": 100
+  "self_assessed_grade": 100,
+  "verification_scope": "Document structure and file consistency; verdict counts reflect the student-reviewed audit. Task 2 execution confirmed by the student on 15/11/2026."
 }

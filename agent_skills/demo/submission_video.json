@@ -5,6 +5,6 @@
   "provided_date": "2026-11-15",
   "page_title_verified": true,
   "content_reviewed": false,
-  "local_browser_only_video": "agent-skill-demo.webm",
-  "same_as_local_browser_only_video": null
+  "same_as_local_browser_only_video": null,
+  "historical_browser_only_video_url": "https://github.com/vinh-code/HW03-Software-Testing/blob/2aafa8aa260b537a33874b53bceb9403944b6a82/agent_skills/demo/agent-skill-demo.webm"
 }

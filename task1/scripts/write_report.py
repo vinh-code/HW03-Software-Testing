@@ -17,7 +17,7 @@ Học phần: **CS423 / CSC13003 – Software Testing (AI-augmented) — Term 20
 
 ## 1. Phạm vi và trạng thái
 
-Task 1 được thực thi trên Login, Profile/Hồ sơ và Lịch sử đơn, Admin Orders; navbar và Home hỗ trợ điều hướng/thêm giỏ. Task 2 đã thực hiện đánh giá Usability với 1 phiên Pilot và 7 phiên thử nghiệm người dùng thực tế ngoài lớp (08 người tham gia); Task 3 đã chạy đủ Chrome, Firefox trên Ubuntu và Chrome trên Samsung Galaxy S23 thật / Android 13 qua BrowserStack. Phạm vi màn hình/flow không trùng thành viên khác.
+Task 1 được thực thi trên Login, Profile/Hồ sơ và Lịch sử đơn, Admin Orders; navbar và Home hỗ trợ điều hướng/thêm giỏ. Hồ sơ Task 2 gồm 1 phiên Pilot và 7 phiên chính thức, do sinh viên xác nhận đã trực tiếp thực hiện và điền kết quả; Task 3 đã chạy đủ Chrome, Firefox trên Ubuntu và Chrome trên Samsung Galaxy S23 thật / Android 13 qua BrowserStack. Phạm vi màn hình/flow không trùng thành viên khác.
 
 Kết quả: **58 mục đã chạy; 30 Passed; 28 Failed; 23 bug/phát hiện**, gồm 19 vi phạm đặc tả và 4 vấn đề UX bổ sung. Có 28 ảnh thực tế cho các mục Failed. Đã đăng 23 GitHub Issues kèm ảnh tại [HW03-Software-Testing](https://github.com/vinh-code/HW03-Software-Testing/issues). Sinh viên 23120202 đã xác nhận duyệt Task 1; việc duyệt được ghi tại [human_review.json](../task1/evidence/human_review.json).
 
@@ -134,10 +134,10 @@ Về phương thức ghi hình: Người tham gia đồng ý tham gia quan sát 
 
 Các vấn đề Usability phát hiện được (U01 đến U05) được phân loại mức độ nghiêm trọng và đề xuất lộ trình cải tiến trong báo cáo riêng. Các vấn đề liên quan đến lỗi giao diện đã được đối chiếu với Bug report Task 1 (BUG-001, BUG-010).
 
-[Bộ hồ sơ Usability đầy đủ](../usability/README.md) · [PDF Báo cáo Usability](../usability/Task2_Simulation_Pack.pdf) · [Bảng tính Excel](../usability/Task2_Simulation.xlsx) · [Phân tích chi tiết](../usability/analysis.md).
+[Bộ hồ sơ Usability đầy đủ](../usability/README.md) · [PDF Báo cáo Usability](../usability/Task2_Usability_Report.pdf) · [Bảng tính Excel](../usability/Task2_Usability_Data.xlsx) · [Phân tích chi tiết](../usability/analysis.md).
 """
 
-report += '\n## 10. Agent Skill — demo thực thi\n\nĐã xây skill `gui-usability-evaluator` gồm hướng dẫn, hợp đồng dữ liệu, ví dụ EShop và hai helper Python cho GUI/usability. Đã cài vào thư mục skill của Codex và dùng để kiểm thử trọn màn hình Login trên Chrome 156.0.8078.79 / Ubuntu 24.04.5 LTS.\n\nLượt demo: 16/16 tiêu chí, 6 Passed, 10 Failed, 10 ảnh lỗi; đủ IA-01 đến IA-04, không có Blocked. Các lỗi liên kết issue Task 1, không tạo trùng. Bản sao backend riêng giữ nguyên SQLite gốc. Helper usability phân tích bộ dữ liệu 7 hồ sơ, loại pilot, SUS trung bình 58.93.\n\nVideo ghi thao tác thật dài 2 phút 03 giây, 1366×900, 25 fps, có chú thích tiếng Việt. Đã kiểm tra 11 nhóm điều kiện dữ liệu/tính toán của helper. **Video demo nộp bài:** [YouTube](https://youtu.be/Y1BYcoC3PGg), do sinh viên cung cấp ngày 15/11/2026. Thông số 2 phút 03 giây thuộc bản WebM cũ; nội dung video YouTube chưa được rà soát trong lần cập nhật này.\n\n[Skill và cách dùng](../agent_skills/README.md) · [Video gốc](../agent_skills/demo/agent-skill-demo.webm) · [Báo cáo GUI demo](../agent_skills/demo/gui_summary/report.md) · [Kiểm chứng helper](../agent_skills/demo/helper_verification.json).\n'
+report += '\n## 10. Agent Skill — demo thực thi\n\nĐã xây skill `gui-usability-evaluator` gồm hướng dẫn, hợp đồng dữ liệu, ví dụ EShop và hai helper Python cho GUI/usability. Đã cài vào thư mục skill của Codex và dùng để kiểm thử trọn màn hình Login trên Chrome 156.0.8078.79 / Ubuntu 24.04.5 LTS.\n\nLượt demo: 16/16 tiêu chí, 6 Passed, 10 Failed, 10 ảnh lỗi; đủ IA-01 đến IA-04, không có Blocked. Các lỗi liên kết issue Task 1, không tạo trùng. Bản sao backend riêng giữ nguyên SQLite gốc. Helper usability phân tích bộ dữ liệu 7 hồ sơ, loại pilot, SUS trung bình 58.93.\n\nVideo ghi thao tác thật dài 2 phút 03 giây, 1366×900, 25 fps, có chú thích tiếng Việt. Đã kiểm tra 11 nhóm điều kiện dữ liệu/tính toán của helper. **Video demo nộp bài:** [YouTube](https://youtu.be/Y1BYcoC3PGg), do sinh viên cung cấp ngày 15/11/2026. Thông số 2 phút 03 giây thuộc bản WebM cũ; nội dung video YouTube chưa được rà soát trong lần cập nhật này.\n\n[Skill và cách dùng](../agent_skills/README.md) · [Video YouTube](https://youtu.be/Y1BYcoC3PGg) · [Báo cáo GUI demo](../agent_skills/demo/gui_summary/report.md) · [Kiểm chứng helper](../agent_skills/demo/helper_verification.json).\n'
 
 (R / 'report/main_report.md').write_text(report, encoding='utf-8')
 
@@ -147,16 +147,16 @@ Sinh viên: **Phạm Quang Vinh — MSSV: 23120202 — 23120202@student.hcmus.ed
 
 Học phần: **CS423 / CSC13003 – Software Testing (AI-augmented) — Term 2026**. [Thông tin khoa, giảng viên và liên hệ](report/course_information.md).
 
-**Task 1 đã chạy và đăng 23 GitHub Issues kèm ảnh; sinh viên đã xác nhận duyệt. Task 2 đã thực hiện đủ 1 pilot + 7 phiên người dùng thật ngoài lớp; Task 3 đã chạy đủ 3/3 nền tảng.**
+**Task 1 đã chạy và đăng 23 GitHub Issues kèm ảnh; sinh viên đã xác nhận duyệt. Task 2 có đủ hồ sơ 1 pilot + 7 phiên do sinh viên thực hiện; Task 3 đã chạy đủ 3/3 nền tảng.**
 
 Repository: [vinh-code/HW03-Software-Testing](https://github.com/vinh-code/HW03-Software-Testing) · [GitHub Issues](https://github.com/vinh-code/HW03-Software-Testing/issues)
 
 - [Báo cáo chính Markdown](report/main_report.md) / [PDF](report/main_report.pdf)
 - [Checklist Excel](checklist/GUI_Checklist.xlsx) / [Markdown](checklist/GUI_Checklist.md)
 - [23 bug/phát hiện và ảnh](bugs/README.md)
-- [Task 2: Hồ sơ Usability](usability/README.md) / [PDF](usability/Task2_Simulation_Pack.pdf) / [Excel](usability/Task2_Simulation.xlsx)
+- [Task 2: Hồ sơ Usability](usability/README.md) / [PDF](usability/Task2_Usability_Report.pdf) / [Excel](usability/Task2_Usability_Data.xlsx)
 - [Task 3: Báo cáo và ảnh](cross_platform/README.md) / [PDF](cross_platform/README.pdf)
-- [Agent Skill và demo](agent_skills/README.md) / [Video](agent_skills/demo/agent-skill-demo.webm)
+- [Agent Skill và demo](agent_skills/README.md) / [Video YouTube](https://youtu.be/Y1BYcoC3PGg)
 - [Dữ liệu thực thi](task1/evidence/results.json) / [Cách chạy lại](task1/README.md)
 - [AI Audit](ai_audit_report.md) / [Word theo template](ai_audit_report.docx) / [PDF](ai_audit_report.pdf) / [AI Critique — đã duyệt](ai_critique.md)
 - [Git commit log](git_commit_log.txt)
@@ -171,7 +171,7 @@ Repository: [vinh-code/HW03-Software-Testing](https://github.com/vinh-code/HW03-
 | Bug/phát hiện | 23 (19 vi phạm spec, 4 UX bổ sung) |
 | Ảnh Failed | 28 |
 | GitHub Issues đã đăng | 23 |
-| Flow usability / số phiên / người tham gia | 1 flow / 8 phiên (1 pilot + 7 chính thức) / 8 người tham gia |
+| Hồ sơ usability | 1 flow / 8 biên bản (1 pilot + 7 chính thức) |
 | Nền tảng đã test | 3: Chrome và Firefox / Ubuntu; Chrome / Samsung Galaxy S23 Android 13 |
 | Demo video | [Video YouTube do sinh viên cung cấp](https://youtu.be/Y1BYcoC3PGg) |
 
@@ -188,5 +188,6 @@ Repository: [vinh-code/HW03-Software-Testing](https://github.com/vinh-code/HW03-
 Ngày nộp: **15/11/2026**. Chữ ký (họ tên): **Phạm Quang Vinh**. Điểm trên là điểm tự chấm theo yêu cầu sinh viên. Không xuất ZIP theo yêu cầu cập nhật. Bản checklist cũ được giữ trong commit baseline. Không sửa code SUT để che lỗi; chỉ tạo dữ liệu thử riêng và thu bằng chứng. Không khởi động lại backend trước khi backup DB vì database.js tự reset khi import.
 '''
 
+readme_text = readme_text.replace('**Task 1', '## Hướng dẫn chấm bài\n\nMở [báo cáo tổng hợp PDF](report/main_report.pdf) trước, sau đó xem từng phần theo bảng dưới.\n\n| Thứ tự | Nội dung chấm | Tài liệu chính | Bằng chứng chi tiết |\n|---|---|---|---|\n| 1 | Task 1 — GUI (30 điểm) | [Checklist Excel: 58 mục](checklist/GUI_Checklist.xlsx) | [23 bug report](bugs/README.md), `bugs/screenshots/`, `task1/evidence/` |\n| 2 | Task 2 — Usability (40 điểm) | [Báo cáo tổng hợp](usability/Task2_Usability_Report.pdf) / [Excel SUS](usability/Task2_Usability_Data.xlsx) | [Danh sách người tham gia](usability/05_participants.md), `usability/sessions/` — 1 pilot + 7 phiên |\n| 3 | Task 3 — Cross-platform (20 điểm) | [Báo cáo](cross_platform/README.pdf) | `cross_platform/screenshots/` — 84 ảnh trên 3 nền tảng |\n| 4 | Agent Skill (10 điểm) | [Hướng dẫn và skill](agent_skills/README.md) / [Video YouTube](https://youtu.be/Y1BYcoC3PGg) | `agent_skills/demo/` — script, kết quả và 10 ảnh |\n| 5 | AI Audit và AI Critique | [Audit PDF](ai_audit_report.pdf) / [Critique PDF](ai_critique.pdf) | Bản Markdown cùng tên; Word theo template và `report/ai_audit_evidence/` |\n| 6 | Lịch sử thực hiện | [Git commit log](git_commit_log.txt) | [Repository](https://github.com/vinh-code/HW03-Software-Testing) |\n\n### Cây thư mục nộp bài\n\n```text\n23120202_HW03_AI_GUIUsability_100/\n├── README.md                        ← đọc trước: chỉ dẫn, kết quả, tự chấm\n├── report/\n│   ├── main_report.md / .pdf         ← báo cáo tổng hợp\n│   ├── course_information.md        ← thông tin học phần\n│   └── ai_audit_evidence/           ← nguồn đối chiếu AI Audit\n├── checklist/                       ← Task 1: Excel và Markdown, thiết kế\n├── bugs/                            ← Task 1: 23 bug report và ảnh\n├── task1/                           ← Task 1: log, kết quả, script chạy lại\n├── usability/                       ← Task 2\n│   ├── Task2_Usability_Report.md / .pdf\n│   ├── Task2_Usability_Data.xlsx\n│   ├── 05_participants.md           ← danh sách 1 pilot + 7 người\n│   ├── sessions/                    ← biên bản 8 phiên\n│   ├── analysis.md                  ← phân tích và mức độ nghiêm trọng\n│   └── data/                        ← dữ liệu và thống kê\n├── cross_platform/                  ← Task 3: báo cáo, kết quả, ảnh\n├── agent_skills/                    ← skill, hướng dẫn và bằng chứng demo\n├── ai_audit_report.md / .pdf / .docx\n├── ai_critique.md / .pdf\n└── git_commit_log.txt\n```\n\nCây trên liệt kê các phần chính để tra cứu. Các thư mục `scripts/` và file JSON/CSV là mã chạy lại và dữ liệu hỗ trợ; bản PDF dành cho đọc/chấm, Markdown dành cho đối chiếu nội dung, Excel dành cho kiểm tra số liệu.\n\n**Kiểm tra thành phần:** đã có đủ các nhóm tài liệu bắt buộc theo mục 14 của đề; thông tin sinh viên, cam kết AI, ngày nộp, họ tên ở ô chữ ký và bảng tự chấm đã điền. Sinh viên xác nhận đã trực tiếp thực hiện Task 2 và điền kết quả trong hồ sơ tổng hợp.\n\n' + '**Task 1', 1)
 (R / 'README.md').write_text(readme_text, encoding='utf-8')
 print("Generated main_report.md and README.md successfully!")

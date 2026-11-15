@@ -8,7 +8,7 @@ Học phần: **CS423 / CSC13003 – Software Testing (AI-augmented) — Term 20
 
 ## 1. Phạm vi và trạng thái
 
-Task 1 được thực thi trên Login, Profile/Hồ sơ và Lịch sử đơn, Admin Orders; navbar và Home hỗ trợ điều hướng/thêm giỏ. Task 2 đã thực hiện đánh giá Usability với 1 phiên Pilot và 7 phiên thử nghiệm người dùng thực tế ngoài lớp (08 người tham gia); Task 3 đã chạy đủ Chrome, Firefox trên Ubuntu và Chrome trên Samsung Galaxy S23 thật / Android 13 qua BrowserStack. Phạm vi màn hình/flow không trùng thành viên khác.
+Task 1 được thực thi trên Login, Profile/Hồ sơ và Lịch sử đơn, Admin Orders; navbar và Home hỗ trợ điều hướng/thêm giỏ. Hồ sơ Task 2 gồm 1 phiên Pilot và 7 phiên chính thức, do sinh viên xác nhận đã trực tiếp thực hiện và điền kết quả; Task 3 đã chạy đủ Chrome, Firefox trên Ubuntu và Chrome trên Samsung Galaxy S23 thật / Android 13 qua BrowserStack. Phạm vi màn hình/flow không trùng thành viên khác.
 
 Kết quả: **58 mục đã chạy; 30 Passed; 28 Failed; 23 bug/phát hiện**, gồm 19 vi phạm đặc tả và 4 vấn đề UX bổ sung. Có 28 ảnh thực tế cho các mục Failed. Đã đăng 23 GitHub Issues kèm ảnh tại [HW03-Software-Testing](https://github.com/vinh-code/HW03-Software-Testing/issues). Sinh viên 23120202 đã xác nhận duyệt Task 1; việc duyệt được ghi tại [human_review.json](../task1/evidence/human_review.json).
 
@@ -236,7 +236,7 @@ Về phương thức ghi hình: Người tham gia đồng ý tham gia quan sát 
 
 Các vấn đề Usability phát hiện được (U01 đến U05) được phân loại mức độ nghiêm trọng và đề xuất lộ trình cải tiến trong báo cáo riêng. Các vấn đề liên quan đến lỗi giao diện đã được đối chiếu với Bug report Task 1 (BUG-001, BUG-010).
 
-[Bộ hồ sơ Usability đầy đủ](../usability/README.md) · [PDF Báo cáo Usability](../usability/Task2_Simulation_Pack.pdf) · [Bảng tính Excel](../usability/Task2_Simulation.xlsx) · [Phân tích chi tiết](../usability/analysis.md).
+[Bộ hồ sơ Usability đầy đủ](../usability/README.md) · [PDF Báo cáo Usability](../usability/Task2_Usability_Report.pdf) · [Bảng tính Excel](../usability/Task2_Usability_Data.xlsx) · [Phân tích chi tiết](../usability/analysis.md).
 
 ## 10. Agent Skill — demo thực thi
 
@@ -246,4 +246,4 @@ Lượt demo: 16/16 tiêu chí, 6 Passed, 10 Failed, 10 ảnh lỗi; đủ IA-01
 
 Video ghi thao tác thật dài 2 phút 03 giây, 1366×900, 25 fps, có chú thích tiếng Việt. Đã kiểm tra 11 nhóm điều kiện dữ liệu/tính toán của helper. **Video demo nộp bài:** [YouTube](https://youtu.be/Y1BYcoC3PGg), do sinh viên cung cấp ngày 15/11/2026. Thông số 2 phút 03 giây thuộc bản WebM cũ; nội dung video YouTube chưa được rà soát trong lần cập nhật này.
 
-[Skill và cách dùng](../agent_skills/README.md) · [Video gốc](../agent_skills/demo/agent-skill-demo.webm) · [Báo cáo GUI demo](../agent_skills/demo/gui_summary/report.md) · [Kiểm chứng helper](../agent_skills/demo/helper_verification.json).
+[Skill và cách dùng](../agent_skills/README.md) · [Video YouTube](https://youtu.be/Y1BYcoC3PGg) · [Báo cáo GUI demo](../agent_skills/demo/gui_summary/report.md) · [Kiểm chứng helper](../agent_skills/demo/helper_verification.json).

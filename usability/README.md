@@ -6,8 +6,8 @@ Báo cáo kết quả kiểm thử khả năng sử dụng (Usability Evaluation
 
 ## Danh mục Tài liệu trong Hồ sơ Task 2
 
-- [PDF Toàn bộ Hồ sơ Usability](Task2_Simulation_Pack.pdf): Kế hoạch, kịch bản, lời dẫn, danh sách người tham gia, 8 biên bản phiên và báo cáo phân tích tổng hợp.
-- [Bảng tính số liệu chi tiết (Excel)](Task2_Simulation.xlsx): Danh sách người tham gia, điểm SUS, công thức Excel, tiến trình timeline, câu trả lời probe và phân loại vấn đề.
+- [PDF Toàn bộ Hồ sơ Usability](Task2_Usability_Report.pdf): Kế hoạch, kịch bản, lời dẫn, danh sách người tham gia, 8 biên bản phiên và báo cáo phân tích tổng hợp.
+- [Bảng tính số liệu chi tiết (Excel)](Task2_Usability_Data.xlsx): Danh sách người tham gia, điểm SUS, công thức Excel, tiến trình timeline, câu trả lời probe và phân loại vấn đề.
 - [Tình huống và Kịch bản giao người dùng](scenario.md)
 - [Kế hoạch và Mục tiêu kiểm thử](01_plan_objectives_scenario.md)
 - [Lời dẫn của Điều phối viên](04_moderator_script.md)

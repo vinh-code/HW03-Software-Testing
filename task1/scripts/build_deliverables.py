@@ -101,18 +101,7 @@ if cross_runs:
   for cell in row:cell.alignment=Alignment(wrap_text=True,vertical='top')
  s.append(['Task 3 platforms',f'{len(cross_runs)}/3; '+('complete' if len(cross_runs)>=3 else 'incomplete')])
 wb.save(ROOT/'checklist/GUI_Checklist.xlsx');(ROOT/'checklist/GUI_Checklist.md').write_text('\n'.join(md)+'\n')
-for row in ws.iter_rows(min_row=2):
- if row[10].value:
-  row[10].value=row[10].value.removeprefix('../')
-  row[10].hyperlink=row[10].value
-if 'Cross-platform' in wb.sheetnames:
- for row in wb['Cross-platform'].iter_rows(min_row=2):
-  if row[5].value:
-   row[5].value=row[5].value.removeprefix('../')
-   row[5].hyperlink=row[5].value
-wb.save(ROOT/'GUI_Checklist.xlsx')
-# Root Markdown is a pointer: relative evidence links remain correct in the canonical checklist.
-(ROOT/'GUI_Checklist.md').write_text('# GUI Checklist\n\nBản chính: [checklist/GUI_Checklist.md](checklist/GUI_Checklist.md). Excel ở đây đồng bộ với [bản chính](checklist/GUI_Checklist.xlsx).\n\n58 mục đã chạy: 30 Passed, 28 Failed.\n')
+# Only the canonical checklist/ copies are emitted.
 summary=['# Task 1 — Bug report','','28 mục Failed được gom thành 23 bug/phát hiện; trong đó 4 vấn đề UX bổ sung.','','| Bug | Nội dung | Mức độ | Checklist | GitHub |','|---|---|---|---|---|']
 for i in issues:summary.append(f'| [{i["id"]}]({i["id"]}.md) | {i["title"]} | {i["severity"]} | {", ".join(i["cases"])} | {i["url"] or "Chưa đăng"} |')
 (ROOT/'bugs/README.md').write_text('\n'.join(summary)+'\n')

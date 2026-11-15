@@ -16,7 +16,7 @@ for stage in ['login','profile','admin']:
   with sqlite3.connect(ROOT/'sut/backend/database.sqlite') as c:
    for state in ('pending','confirmed'):c.execute('update orders set status=? where id=?',(state,f['orders'][state]))
  code='async (page) => {\nconst fixture='+json.dumps(f)+';\n'+(S/'common.js').read_text()+(S/f'{stage}.body.js').read_text()+'\nreturn {results,dialogs,browser:page.context().browser().version(),ua:await page.evaluate(()=>navigator.userAgent)};\n}'
- p=S/f'{stage}.run.js';p.write_text(code)
+ p=OUT/f'{stage}.run.js';p.write_text(code)
  proc=subprocess.run(cli+['run-code','--filename',str(p)],capture_output=True,text=True,check=True)
  (OUT/f'{stage}.log').write_text(proc.stdout)
  if '### Result\n' not in proc.stdout:raise RuntimeError(f'{stage} did not return results: '+proc.stdout[:2000])
